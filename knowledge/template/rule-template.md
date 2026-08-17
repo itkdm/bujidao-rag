@@ -1,19 +1,8 @@
 ---
-# ==================== 必填字段 ====================
+# ==================== 必填字段（所有 rule 通用） ====================
 id: KB-RULE-{DOMAIN}-{APP}-{TOPIC}
 type: rule
-scope: {cross-app/appCode}
-
-# 业务归属
-domain: {domain}
-application: {appCode}
-appType: {前端应用/后端应用}
-
-# 规则分类
-ruleArea: {boundary/permission/status/data-visibility/security/config/compliance}
-topic: {topicCode}
-
-# 状态管理
+scope: {cross-app / {appCode}}
 status: DRAFT
 authorship: {human/ai-assisted/mixed}
 owner: {team-name}
@@ -24,6 +13,17 @@ updatedAt: YYYY-MM-DD
 verifiedAt: YYYY-MM-DD
 confidence: medium
 stability: evolving
+
+# ==================== 条件字段（仅当 scope != cross-app 时填写） ====================
+# 当 scope: cross-app 时，以下字段不填写，也不应填写 global/none/N/A 等伪值。
+# 当 scope: {appCode} 时，根据规则实际需要填写，其中 application 应与 scope 对应。
+# domain: {domain}
+# application: {appCode}
+# appType: {前端应用/后端应用}
+
+# 规则分类
+ruleArea: {development/collaboration/delivery/security/compliance/boundary/permission/status/data-visibility/config/knowledge-management}
+topic: {topicCode}
 
 # 证据
 evidence:
@@ -40,9 +40,10 @@ tags:
   - {tag1}
   - {tag2}
 anchors:
-  - APPLICATION:{appCode}
   - RULE_AREA:{ruleArea}
   - RULE_TOPIC:{topicCode}
+  # 仅当 scope != cross-app 时添加：
+  # - APPLICATION:{appCode}
 ---
 
 # {规则主题名称}
@@ -51,7 +52,7 @@ anchors:
 
 - 适用场景：{什么任务需要读取本文}
 - 关键规则：{本文最重要的规则，最多三条}
-- 关联知识：{相关 base/tech/feature/rule 文档}
+- 关联知识：{相关 base/tech/feature/rule 文档，或 main/ 下其他全局知识}
 - 使用前必须核对：{规则依赖的代码、配置、文档或人工确认是否变化}
 
 ## 证据来源
@@ -88,9 +89,10 @@ anchors:
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `domain/base/` | {相关事实入口} |
-| `tech/` | {相关实现约束} |
-| `domain/feature/` | {相关功能流程} |
+| `domain/base/` | {相关事实入口（仅应用级 rule）} |
+| `domain/feature/` | {相关功能流程（仅应用级 rule）} |
+| `tech/` | {相关实现约束（仅应用级 rule）} |
+| `main/` | {相关全局知识（仅 cross-app rule）} |
 
 ## 待确认问题
 

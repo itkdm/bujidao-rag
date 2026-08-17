@@ -174,6 +174,8 @@ anchors:
 | `glossary` | `template/tech-template.md` | `main/glossary/` |
 
 > **注意**：`type` 只描述知识内容类型，不描述文件位置或状态。基础设施文件（见 2.2）不需要 `type` 字段。
+>
+> **`rule` 类型说明**：`rule` 同时支持跨应用全局规则和应用级规则。`scope: cross-app` 时不要求填写 `application` / `domain` / `appType` 等应用专属字段；应用级 rule 根据模板要求填写对应应用信息。详见 `template/rule-template.md`。
 
 ### 3.3 authorship：生成方式
 
@@ -272,6 +274,8 @@ evidence:
 **判断标准**：
 - 是"必须遵守的协作/流程规范" → `main/rules/`
 - 是"技术实现层面的通用约束" → `main/tech/`
+
+> **`main/rules/` 与 `rule-template.md` 的关系**：`main/rules/` 下的全局规则使用 `scope: cross-app`，套用 `template/rule-template.md` 时不填写 `domain` / `application` / `appType` 等应用专属字段。应用级业务规则使用 `scope: {appCode}`，填写对应应用信息。
 
 ### 4.3 applications/ 内部结构规则
 
