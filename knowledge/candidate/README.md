@@ -1,11 +1,19 @@
 ---
-id: KB-ENTRY-KUAYOU-CANDIDATE-INDEX
-type: index
-domain: kuayou
-status: DRAFT
+# 知识库导航基础设施文件
+id: KB-NAV-GLOBAL-README
+scope: cross-app
+status: OFFICIAL
 owner: bujidao
+maintainers:
+- bujidao
 version: 1
-updatedAt: 2026-08-09 15:55:00
+updatedAt: 2026-08-17
+verifiedAt: 2026-08-17
+tags:
+- navigation
+- GLOBAL
+anchors:
+- GLOBAL:CANDIDATE-README
 ---
 
 # 候选知识索引

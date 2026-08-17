@@ -1,12 +1,19 @@
 ---
-id: KB-ENTRY-KUAYOU-RUOYI-VUE-PRO-FEATURE-INDEX
-type: index
-domain: kuayou
-application: ruoyi-vue-pro
-status: DRAFT
+# 知识库导航基础设施文件
+id: KB-NAV-ruoyi-vue-pro-README
+scope: app-specific
+status: OFFICIAL
 owner: bujidao
+maintainers:
+- bujidao
 version: 1
-updatedAt: 2026-08-09 15:55:00
+updatedAt: 2026-08-17
+verifiedAt: 2026-08-17
+tags:
+- navigation
+- ruoyi-vue-pro
+anchors:
+- ruoyi-vue-pro:FEATURE-README
 ---
 
 # ruoyi-vue-pro 功能知识索引

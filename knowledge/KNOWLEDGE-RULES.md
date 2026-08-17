@@ -55,17 +55,77 @@ anchors:
 
 ### 2.2 基础设施文件
 
-基础设施文件是知识库的运行框架，**不受"知识文件必须套模板"约束**，采用本文件定义的元规则。
+基础设施文件是知识库的运行框架，**不受"知识文件必须套模板"约束**，采用本文件定义的元规则。分为两类：
 
-| 文件/目录 | 说明 |
-|-----------|------|
+#### 2.2.1 规则基础设施
+
+| 文件 | 说明 |
+|------|------|
 | `KNOWLEDGE-RULES.md` | 全局规则（本文件） |
 | `ROUTING.md` | 知识检索路由表 |
-| `README.md` | 知识库定位说明 |
-| `INDEX.md` | 全局索引 |
 | `template/` | 写作模板目录 |
 
-基础设施文件不要求 `type` 字段，不要求套用模板，但必须包含本文件定义的公共 Front Matter 字段（见第三章）。
+#### 2.2.2 导航基础设施（Navigation Infrastructure）
+
+**定义**：所有职责纯粹为**目录说明 + 路由导航**的 `README.md` 和 `INDEX.md` 文件，无论位于哪个目录层级，均属于导航基础设施文件。
+
+**判定标准**：满足以下任一条件即为导航基础设施：
+- 文件名为 `README.md` 或 `INDEX.md`
+- 内容仅为目录结构说明、文件列表、路由指引、使用规则
+- 不包含具体知识内容（接口定义、业务规则、技术约束等）
+
+**覆盖范围**（不限于此）：
+
+| 路径模式 | 示例 |
+|----------|------|
+| `knowledge/README.md` | 知识库定位说明 |
+| `knowledge/INDEX.md` | 全局索引 |
+| `main/README.md` | main 目录说明 |
+| `applications/{app}/README.md` | 应用目录说明 |
+| `applications/{app}/INDEX.md` | 应用知识索引 |
+| `applications/{app}/domain/base/README.md` | base 子域入口 |
+| `applications/{app}/domain/rule/README.md` | rule 子域入口 |
+| `applications/{app}/domain/feature/README.md` | feature 子域入口 |
+| `applications/{app}/tech/README.md` | tech 子域入口 |
+| `candidate/README.md` | 候选知识说明 |
+| `personal/README.md` | 个人笔记说明 |
+| `reference/README.md` | 参考资料说明 |
+
+**Front Matter 规范**：
+
+导航基础设施文件使用简化 Front Matter，不使用 `type` 字段，不套知识模板：
+
+```yaml
+---
+# 知识库导航基础设施文件
+id: KB-NAV-{APP}-{TYPE}
+scope: {app-specific | cross-app}
+status: OFFICIAL
+owner: {owner}
+maintainers:
+- {maintainer}
+version: 1
+updatedAt: {date}
+verifiedAt: {date}
+tags:
+- navigation
+- {app}
+anchors:
+- {APP}:{TYPE}
+---
+```
+
+**关键区别**：
+
+| 维度 | 知识文件 | 导航基础设施文件 |
+|------|----------|------------------|
+| 是否使用模板 | 是 | 否 |
+| 是否有 `type` 字段 | 是（base/tech/rule/application） | 否 |
+| 是否进入 ROUTING | 是 | 否 |
+| status 取值 | OFFICIAL / DEPRECATED / DRAFT / CANDIDATE | 仅 OFFICIAL |
+| 内容性质 | 具体知识 | 目录说明 + 路由导航 |
+
+> **注意**：如果某个 `README.md` 或 `INDEX.md` 中包含了具体知识内容（如接口定义、业务规则），应将其拆分为独立的知识文件，导航文件仅保留路由指引。
 
 ### 2.3 为什么这样区分
 

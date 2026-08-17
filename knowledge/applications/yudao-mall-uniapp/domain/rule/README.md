@@ -1,12 +1,19 @@
 ---
-id: KB-ENTRY-KUAYOU-YUDAO-MALL-UNIAPP-RULE-INDEX
-type: index
-domain: kuayou
-application: yudao-mall-uniapp
-status: DRAFT
+# 知识库导航基础设施文件
+id: KB-NAV-yudao-mall-uniapp-README
+scope: app-specific
+status: OFFICIAL
 owner: bujidao
+maintainers:
+- bujidao
 version: 1
-updatedAt: 2026-08-09 15:55:00
+updatedAt: 2026-08-17
+verifiedAt: 2026-08-17
+tags:
+- navigation
+- yudao-mall-uniapp
+anchors:
+- yudao-mall-uniapp:RULE-README
 ---
 
 # yudao-mall-uniapp 规则知识索引
