@@ -168,8 +168,8 @@ anchors:
 | `application` | `template/application-template.md` | `applications/{app}/` |
 | `tech` | `template/tech-template.md` | `main/tech/` 或 `applications/{app}/tech/` |
 | `rule` | `template/rule-template.md` | `main/rules/` 或 `applications/{app}/domain/rule/` |
-| `flow` | `template/tech-template.md` | `applications/{app}/domain/product/` 或 `domain/solution/` |
-| `state` | `template/tech-template.md` | `applications/{app}/domain/product/` 或 `main/states/` |
+| `flow` | `template/tech-template.md` | `applications/{app}/domain/feature/` |
+| `state` | `template/tech-template.md` | `applications/{app}/domain/feature/` 或 `main/states/` |
 | `base` | `template/base-template.md` | `applications/{app}/domain/base/` |
 | `glossary` | `template/tech-template.md` | `main/glossary/` |
 
@@ -280,17 +280,28 @@ applications/{app}/
 ├── application-{app}.md    # 应用总览（必须有）
 ├── INDEX.md                # 应用内导航（必须有）
 ├── domain/
-│   ├── product/            # 主干能力，稳定，写"做什么"
-│   ├── solution/           # 差异化方案，写"差异是什么"
+│   ├── feature/            # 功能能力与主要业务流程
 │   ├── rule/               # 应用级业务规则
 │   └── base/               # 接口/消息/模型/Repository 索引
 └── tech/                   # 应用级技术约束
 ```
 
+**feature/ 定义**：
+
+`feature/` 用于沉淀应用当前已经存在且经过确认的功能能力、功能边界和主要业务流程等稳定知识。
+
+**feature/ 不是万能目录**，以下内容应归入对应目录：
+
+| 内容类型 | 归属目录 |
+|----------|----------|
+| 具体 API、DTO、表、字段、代码位置 | `base/` |
+| 权限、状态约束、业务条件、数据边界 | `rule/` |
+| 框架用法、事务、缓存、异常、工程实现约束 | `tech/` |
+
 **强制约束**：
-- `solution/` 下**禁止复制** `product/` 全流程，只写差异部分
 - `base/` 只做索引（指向代码路径），不展开实现细节
-- AI 读取顺序：应用总览 → INDEX → product → solution → rule → base → tech → 回到代码
+- AI 读取顺序：应用总览 → INDEX → 按需求选择 feature / rule / base / tech → 回到代码
+- 不要求 Agent 每次依次读取所有四类知识，应按需求渐进加载
 
 ### 4.4 candidate/ 目录结构
 
@@ -306,7 +317,7 @@ candidate/
     └── {app2}/
 ```
 
-晋升路径示例：`candidate/applications/order/domain/product/xxx.md` → `applications/order/domain/product/xxx.md`
+晋升路径示例：`candidate/applications/order/domain/feature/xxx.md` → `applications/order/domain/feature/xxx.md`
 
 ---
 
@@ -486,9 +497,11 @@ owner/研发同学 review candidate/ → 确认稳定 → 合并到 main/ 或 ap
 
 | 触发事件 | 需要更新的知识 |
 |----------|----------------|
-| 接口签名变更 | `applications/{app}/domain/base/api.md` + 引用该接口的 flow |
+| 接口签名变更 | `applications/{app}/domain/base/api.md` + 引用该接口的 feature |
 | 新增/修改状态 | 对应 `state-*.md` |
-| 新增业务身份或差异化逻辑 | 对应 `solution/` 目录 |
+| 功能能力、主要业务流程变化 | 对应 `feature/` 目录 |
+| 业务规则、权限、状态约束、数据边界变化 | 对应 `rule/` 目录 |
+| API、模型、表、消息等定位入口变化 | 对应 `base/` 目录 |
 | 全局规则变更 | `main/rules/` |
 | 全局技术约束变更 | `main/tech/` |
 | 应用职责调整 | `application-{app}.md` |

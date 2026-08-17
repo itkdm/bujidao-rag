@@ -83,7 +83,8 @@ anchors:
 | --- | --- |
 | 模块、包结构、Controller、API、DO、VO、DTO、表、SQL、配置、权限编码、MQ、Job | 先按应用关键词进入对应 `applications/{appCode}/INDEX.md`，再读取该应用的 `domain/base/README.md` |
 | 需要知道"怎么实现、为什么这样实现" | 转到该应用的 `tech/README.md` |
-| 需要知道业务流程或业务规则 | 转到该应用的 `domain/product/` 或 `domain/rule/` |
+| 需要了解功能能力、主要业务流程 | 转到该应用的 `domain/feature/` |
+| 需要了解业务规则、权限、状态约束、数据边界 | 转到该应用的 `domain/rule/` |
 
 ## 规则知识路由
 
