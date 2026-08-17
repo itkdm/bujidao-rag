@@ -1,0 +1,112 @@
+---
+# ==================== 必填字段 ====================
+id: KB-BASE-{DOMAIN}-{APP}-{TOPIC}
+type: base
+scope: {appCode}
+
+# 业务归属
+domain: {domain}
+application: {appCode}
+appType: {前端应用/后端应用}
+
+# 基础索引分类
+baseArea: {module/api/model/database/config/permission/async}
+topic: {topicCode}
+
+# 状态管理
+status: DRAFT
+authorship: {human/ai-assisted/mixed}
+owner: {team-name}
+maintainers:
+  - {userId}
+version: 1
+updatedAt: YYYY-MM-DD
+verifiedAt: YYYY-MM-DD
+confidence: medium
+stability: evolving
+
+# 证据
+evidence:
+  - type: code
+    ref: {相关代码路径}
+    verifiedAt: YYYY-MM-DD
+  - type: doc
+    ref: {相关文档路径}
+  - type: human
+    ref: {确认人/时间}
+
+# 标签与锚点
+tags:
+  - {tag1}
+  - {tag2}
+anchors:
+  - APPLICATION:{appCode}
+  - BASE_AREA:{baseArea}
+  - BASE_TOPIC:{topicCode}
+---
+
+# {基础索引主题名称}
+
+## AI 使用摘要
+
+- 适用场景：{什么任务需要读取本文}
+- 关键入口：{核心路径/类/配置/表/接口/命令}
+- 关键事实：{本文最重要的事实，最多三条}
+- 关联知识：{相关 feature/rule/base/tech 文档}
+- 使用前必须核对：{代码路径、配置、表结构、上游变更等}
+
+## 证据来源
+
+| 类型 | 来源 | 说明 |
+| --- | --- | --- |
+| code | {相关代码路径} | {代码核对说明} |
+| doc | {相关文档路径} | {文档来源说明} |
+| human | {确认人/时间} | {人工确认说明} |
+
+## 索引范围
+
+说明本文收录哪些事实入口，例如模块、接口、模型、配置、表、权限编码、消息、任务等。
+
+## 不收录范围
+
+说明本文不解释什么，避免和 `tech/`、`feature/`、`rule/` 混淆。
+
+## 事实索引
+
+| 对象 | 路径/名称 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| {对象} | `{路径或名称}` | {类型} | {说明} |
+
+## 命名与定位规则
+
+记录如何通过名称、路径、前缀、后缀、注解、表名或配置项快速定位对象。
+
+## 关键路径
+
+| 路径 | 用途 | 备注 |
+| --- | --- | --- |
+| `{路径}` | {用途} | {备注} |
+
+## 与其他知识的关系
+
+| 知识类型 | 关系 |
+| --- | --- |
+| `tech/` | {相关技术约束} |
+| `domain/feature/` | {相关功能流程} |
+| `domain/rule/` | {相关业务规则} |
+
+## 变更影响
+
+说明这些事实入口变化后，可能影响哪些代码、配置、文档、接口、表结构或知识文件。
+
+## 待确认问题
+
+| 问题 | 当前状态 | 影响 |
+| --- | --- | --- |
+| {问题} | 待确认 | {影响说明} |
+
+## 变更历史
+
+| 版本 | 日期 | 变更内容 | 变更人 |
+| --- | --- | --- | --- |
+| 1 | YYYY-MM-DD | 初始版本 | 布吉岛 |

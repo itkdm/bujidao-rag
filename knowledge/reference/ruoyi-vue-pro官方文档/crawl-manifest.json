@@ -1,0 +1,5003 @@
+{
+  "source": "https://doc.iocoder.cn",
+  "appJsUrl": "https://doc.iocoder.cn/assets/js/app.d1054cab.js",
+  "crawledAt": "2026-08-09T06:55:00.681Z",
+  "successCount": 386,
+  "failureCount": 0,
+  "results": [
+    {
+      "route": "/video/",
+      "oldPath": "/01.开发指南/01.萌新必读/03.视频教程.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\03.视频教程.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/03.视频教程.html",
+      "title": "视频教程",
+      "url": "https://doc.iocoder.cn/video/",
+      "bytes": 13795
+    },
+    {
+      "route": "/technology/",
+      "oldPath": "/01.开发指南/01.萌新必读/08.技术选型.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\08.技术选型.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/08.技术选型.html",
+      "title": "技术选型",
+      "url": "https://doc.iocoder.cn/technology/",
+      "bytes": 4054
+    },
+    {
+      "route": "/api-doc/",
+      "oldPath": "/01.开发指南/01.萌新必读/07.接口文档.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\07.接口文档.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/07.接口文档.html",
+      "title": "接口文档",
+      "url": "https://doc.iocoder.cn/api-doc/",
+      "bytes": 6304
+    },
+    {
+      "route": "/qun/",
+      "oldPath": "/01.开发指南/01.萌新必读/02.交流群.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\02.交流群.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/02.交流群.html",
+      "title": "交流群",
+      "url": "https://doc.iocoder.cn/qun/",
+      "bytes": 1544
+    },
+    {
+      "route": "/feature/",
+      "oldPath": "/01.开发指南/01.萌新必读/04.功能列表.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\04.功能列表.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/04.功能列表.html",
+      "title": "功能列表",
+      "url": "https://doc.iocoder.cn/feature/",
+      "bytes": 15518
+    },
+    {
+      "route": "/project-intro/",
+      "oldPath": "/01.开发指南/01.萌新必读/09.项目结构.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\09.项目结构.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/09.项目结构.html",
+      "title": "项目结构",
+      "url": "https://doc.iocoder.cn/project-intro/",
+      "bytes": 23603
+    },
+    {
+      "route": "/dev-hot-swap/",
+      "oldPath": "/01.开发指南/01.萌新必读/10.代码热加载.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\10.代码热加载.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/10.代码热加载.html",
+      "title": "代码热加载",
+      "url": "https://doc.iocoder.cn/dev-hot-swap/",
+      "bytes": 5553
+    },
+    {
+      "route": "/quick-start/",
+      "oldPath": "/01.开发指南/01.萌新必读/05.快速启动【后端】.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\05.快速启动【后端】.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/05.快速启动【后端】.html",
+      "title": "快速启动（后端项目）",
+      "url": "https://doc.iocoder.cn/quick-start/",
+      "bytes": 11165
+    },
+    {
+      "route": "/project-rename/",
+      "oldPath": "/01.开发指南/01.萌新必读/11.一键改包.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\11.一键改包.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/11.一键改包.html",
+      "title": "一键改包",
+      "url": "https://doc.iocoder.cn/project-rename/",
+      "bytes": 3077
+    },
+    {
+      "route": "/waibao/",
+      "oldPath": "/01.开发指南/01.萌新必读/100.项目外包.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\100.项目外包.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/100.项目外包.html",
+      "title": "项目外包",
+      "url": "https://doc.iocoder.cn/waibao/",
+      "bytes": 1357
+    },
+    {
+      "route": "/intro/",
+      "oldPath": "/01.开发指南/01.萌新必读/01.简介.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\01.简介.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/01.简介.html",
+      "title": "简介",
+      "url": "https://doc.iocoder.cn/intro/",
+      "bytes": 3324
+    },
+    {
+      "route": "/migrate-module/",
+      "oldPath": "/01.开发指南/01.萌新必读/12.迁移模块.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\12.迁移模块.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/12.迁移模块.html",
+      "title": "迁移模块（适合新项目）",
+      "url": "https://doc.iocoder.cn/migrate-module/",
+      "bytes": 11570
+    },
+    {
+      "route": "/sql-update/",
+      "oldPath": "/01.开发指南/01.萌新必读/14.表结构变更.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\14.表结构变更.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/14.表结构变更.html",
+      "title": "表结构变更（版本升级）",
+      "url": "https://doc.iocoder.cn/sql-update/",
+      "bytes": 5165
+    },
+    {
+      "route": "/delete-code/",
+      "oldPath": "/01.开发指南/01.萌新必读/13.删除功能.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\13.删除功能.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/13.删除功能.html",
+      "title": "删除功能（以租户为例）",
+      "url": "https://doc.iocoder.cn/delete-code/",
+      "bytes": 23080
+    },
+    {
+      "route": "/remove-redis/",
+      "oldPath": "/01.开发指南/01.萌新必读/16.如何去除 Redis 依赖.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\16.如何去除 Redis 依赖.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/16.如何去除 Redis 依赖.html",
+      "title": "如何去除 Redis 缓存",
+      "url": "https://doc.iocoder.cn/remove-redis/",
+      "bytes": 2781
+    },
+    {
+      "route": "/natapp/",
+      "oldPath": "/01.开发指南/01.萌新必读/98.内网穿透.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\98.内网穿透.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/98.内网穿透.html",
+      "title": "内网穿透",
+      "url": "https://doc.iocoder.cn/natapp/",
+      "bytes": 1313
+    },
+    {
+      "route": "/xinchuang-db/",
+      "oldPath": "/01.开发指南/01.萌新必读/15.国产信创数据库.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\15.国产信创数据库.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/15.国产信创数据库.html",
+      "title": "国产信创数据库（DM 达梦、大金、OpenGauss、瀚高）",
+      "url": "https://doc.iocoder.cn/xinchuang-db/",
+      "bytes": 14677
+    },
+    {
+      "route": "/module-new/",
+      "oldPath": "/01.开发指南/02.后端手册/01.新建模块.html",
+      "relativePath": "01.开发指南\\02.后端手册\\01.新建模块.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/01.新建模块.html",
+      "title": "新建模块",
+      "url": "https://doc.iocoder.cn/module-new/",
+      "bytes": 9698
+    },
+    {
+      "route": "/interview/",
+      "oldPath": "/01.开发指南/01.萌新必读/99.面试题&简历.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\99.面试题&简历.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/99.面试题&简历.html",
+      "title": "面试题、简历模版、简历优化",
+      "url": "https://doc.iocoder.cn/interview/",
+      "bytes": 9008
+    },
+    {
+      "route": "/new-feature/master-sub/",
+      "oldPath": "/01.开发指南/02.后端手册/03.代码生成（主子表）.html",
+      "relativePath": "01.开发指南\\02.后端手册\\03.代码生成（主子表）.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/03.代码生成（主子表）.html",
+      "title": "代码生成【主子表】",
+      "url": "https://doc.iocoder.cn/new-feature/master-sub/",
+      "bytes": 8300
+    },
+    {
+      "route": "/new-feature/tree/",
+      "oldPath": "/01.开发指南/02.后端手册/04.代码生成（树表）.html",
+      "relativePath": "01.开发指南\\02.后端手册\\04.代码生成（树表）.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/04.代码生成（树表）.html",
+      "title": "代码生成（树表）",
+      "url": "https://doc.iocoder.cn/new-feature/tree/",
+      "bytes": 3104
+    },
+    {
+      "route": "/new-feature/",
+      "oldPath": "/01.开发指南/02.后端手册/02.代码生成（单表）.html",
+      "relativePath": "01.开发指南\\02.后端手册\\02.代码生成（单表）.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/02.代码生成（单表）.html",
+      "title": "代码生成【单表】（新增功能）",
+      "url": "https://doc.iocoder.cn/new-feature/",
+      "bytes": 14734
+    },
+    {
+      "route": "/data-permission/",
+      "oldPath": "/01.开发指南/02.后端手册/08.数据权限.html",
+      "relativePath": "01.开发指南\\02.后端手册\\08.数据权限.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/08.数据权限.html",
+      "title": "数据权限",
+      "url": "https://doc.iocoder.cn/data-permission/",
+      "bytes": 11604
+    },
+    {
+      "route": "/resource-permission/",
+      "oldPath": "/01.开发指南/02.后端手册/07.功能权限.html",
+      "relativePath": "01.开发指南\\02.后端手册\\07.功能权限.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/07.功能权限.html",
+      "title": "功能权限",
+      "url": "https://doc.iocoder.cn/resource-permission/",
+      "bytes": 11129
+    },
+    {
+      "route": "/new-feature/admin-uniapp/",
+      "oldPath": "/01.开发指南/02.后端手册/05.代码生成（移动端）.html",
+      "relativePath": "01.开发指南\\02.后端手册\\05.代码生成（移动端）.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/05.代码生成（移动端）.html",
+      "title": "代码生成（移动端）",
+      "url": "https://doc.iocoder.cn/new-feature/admin-uniapp/",
+      "bytes": 3902
+    },
+    {
+      "route": "/oauth2/",
+      "oldPath": "/01.开发指南/02.后端手册/11.OAuth2x0.html",
+      "relativePath": "01.开发指南\\02.后端手册\\11.OAuth2x0.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/11.OAuth2x0.html",
+      "title": "OAuth 2.0（SSO 单点登录)",
+      "url": "https://doc.iocoder.cn/oauth2/",
+      "bytes": 15494
+    },
+    {
+      "route": "/user-center/",
+      "oldPath": "/01.开发指南/02.后端手册/09.用户体系.html",
+      "relativePath": "01.开发指南\\02.后端手册\\09.用户体系.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/09.用户体系.html",
+      "title": "用户体系",
+      "url": "https://doc.iocoder.cn/user-center/",
+      "bytes": 14514
+    },
+    {
+      "route": "/saas-tenant/dynamic/",
+      "oldPath": "/01.开发指南/02.后端手册/13.SaaS 多租户（数据库隔离）.html",
+      "relativePath": "01.开发指南\\02.后端手册\\13.SaaS 多租户（数据库隔离）.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/13.SaaS 多租户（数据库隔离）.html",
+      "title": "SaaS 多租户【数据库隔离】",
+      "url": "https://doc.iocoder.cn/saas-tenant/dynamic/",
+      "bytes": 8569
+    },
+    {
+      "route": "/social-user/",
+      "oldPath": "/01.开发指南/02.后端手册/10.三方登录.html",
+      "relativePath": "01.开发指南\\02.后端手册\\10.三方登录.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/10.三方登录.html",
+      "title": "三方登录",
+      "url": "https://doc.iocoder.cn/social-user/",
+      "bytes": 8716
+    },
+    {
+      "route": "/saas-tenant/",
+      "oldPath": "/01.开发指南/02.后端手册/12.SaaS 多租户（字段隔离）.html",
+      "relativePath": "01.开发指南\\02.后端手册\\12.SaaS 多租户（字段隔离）.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/12.SaaS 多租户（字段隔离）.html",
+      "title": "SaaS 多租户【字段隔离】",
+      "url": "https://doc.iocoder.cn/saas-tenant/",
+      "bytes": 19289
+    },
+    {
+      "route": "/page-feature/",
+      "oldPath": "/01.开发指南/02.后端手册/17.分页实现.html",
+      "relativePath": "01.开发指南\\02.后端手册\\17.分页实现.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/17.分页实现.html",
+      "title": "分页实现",
+      "url": "https://doc.iocoder.cn/page-feature/",
+      "bytes": 9633
+    },
+    {
+      "route": "/websocket/",
+      "oldPath": "/01.开发指南/02.后端手册/14.WebSocket.html",
+      "relativePath": "01.开发指南\\02.后端手册\\14.WebSocket.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/14.WebSocket.html",
+      "title": "WebSocket 实时通信",
+      "url": "https://doc.iocoder.cn/websocket/",
+      "bytes": 15992
+    },
+    {
+      "route": "/exception/",
+      "oldPath": "/01.开发指南/02.后端手册/15.异常处理.html",
+      "relativePath": "01.开发指南\\02.后端手册\\15.异常处理.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/15.异常处理.html",
+      "title": "异常处理（错误码）",
+      "url": "https://doc.iocoder.cn/exception/",
+      "bytes": 11048
+    },
+    {
+      "route": "/validator/",
+      "oldPath": "/01.开发指南/02.后端手册/16.参数校验.html",
+      "relativePath": "01.开发指南\\02.后端手册\\16.参数校验.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/16.参数校验.html",
+      "title": "参数校验、时间传参",
+      "url": "https://doc.iocoder.cn/validator/",
+      "bytes": 12451
+    },
+    {
+      "route": "/vo/",
+      "oldPath": "/01.开发指南/02.后端手册/18.VO 对象转换、数据翻译.html",
+      "relativePath": "01.开发指南\\02.后端手册\\18.VO 对象转换、数据翻译.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/18.VO 对象转换、数据翻译.html",
+      "title": "VO 对象转换、数据翻译",
+      "url": "https://doc.iocoder.cn/vo/",
+      "bytes": 8528
+    },
+    {
+      "route": "/file/",
+      "oldPath": "/01.开发指南/02.后端手册/19.上传下载.html",
+      "relativePath": "01.开发指南\\02.后端手册\\19.上传下载.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/19.上传下载.html",
+      "title": "文件存储（上传下载）",
+      "url": "https://doc.iocoder.cn/file/",
+      "bytes": 15324
+    },
+    {
+      "route": "/system-log/",
+      "oldPath": "/01.开发指南/02.后端手册/21.系统日志.html",
+      "relativePath": "01.开发指南\\02.后端手册\\21.系统日志.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/21.系统日志.html",
+      "title": "操作日志、访问日志、异常日志",
+      "url": "https://doc.iocoder.cn/system-log/",
+      "bytes": 15353
+    },
+    {
+      "route": "/excel-import-and-export/",
+      "oldPath": "/01.开发指南/02.后端手册/20.Excel 导入导出.html",
+      "relativePath": "01.开发指南\\02.后端手册\\20.Excel 导入导出.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/20.Excel 导入导出.html",
+      "title": "Excel 导入导出",
+      "url": "https://doc.iocoder.cn/excel-import-and-export/",
+      "bytes": 14363
+    },
+    {
+      "route": "/mybatis-pro/",
+      "oldPath": "/01.开发指南/02.后端手册/26.MyBatis 联表x分页.html",
+      "relativePath": "01.开发指南\\02.后端手册\\26.MyBatis 联表x分页.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/26.MyBatis 联表x分页.html",
+      "title": "MyBatis 联表&分页查询",
+      "url": "https://doc.iocoder.cn/mybatis-pro/",
+      "bytes": 9353
+    },
+    {
+      "route": "/dynamic-datasource/",
+      "oldPath": "/01.开发指南/02.后端手册/27.多数据源.html",
+      "relativePath": "01.开发指南\\02.后端手册\\27.多数据源.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/27.多数据源.html",
+      "title": "多数据源（读写分离）、事务",
+      "url": "https://doc.iocoder.cn/dynamic-datasource/",
+      "bytes": 7836
+    },
+    {
+      "route": "/mybatis/",
+      "oldPath": "/01.开发指南/02.后端手册/25.MyBatis 数据库.html",
+      "relativePath": "01.开发指南\\02.后端手册\\25.MyBatis 数据库.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/25.MyBatis 数据库.html",
+      "title": "MyBatis 数据库",
+      "url": "https://doc.iocoder.cn/mybatis/",
+      "bytes": 16193
+    },
+    {
+      "route": "/local-cache/",
+      "oldPath": "/01.开发指南/02.后端手册/29.本地缓存.html",
+      "relativePath": "01.开发指南\\02.后端手册\\29.本地缓存.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/29.本地缓存.html",
+      "title": "本地缓存",
+      "url": "https://doc.iocoder.cn/local-cache/",
+      "bytes": 6057
+    },
+    {
+      "route": "/async-task/",
+      "oldPath": "/01.开发指南/02.后端手册/30.异步任务.html",
+      "relativePath": "01.开发指南\\02.后端手册\\30.异步任务.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/30.异步任务.html",
+      "title": "异步任务",
+      "url": "https://doc.iocoder.cn/async-task/",
+      "bytes": 2681
+    },
+    {
+      "route": "/redis-cache/",
+      "oldPath": "/01.开发指南/02.后端手册/28.Redis 缓存.html",
+      "relativePath": "01.开发指南\\02.后端手册\\28.Redis 缓存.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/28.Redis 缓存.html",
+      "title": "Redis 缓存",
+      "url": "https://doc.iocoder.cn/redis-cache/",
+      "bytes": 10450
+    },
+    {
+      "route": "/distributed-lock/",
+      "oldPath": "/01.开发指南/02.后端手册/31.分布式锁.html",
+      "relativePath": "01.开发指南\\02.后端手册\\31.分布式锁.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/31.分布式锁.html",
+      "title": "分布式锁",
+      "url": "https://doc.iocoder.cn/distributed-lock/",
+      "bytes": 4173
+    },
+    {
+      "route": "/http-sign/",
+      "oldPath": "/01.开发指南/02.后端手册/34.HTTP 签名.html",
+      "relativePath": "01.开发指南\\02.后端手册\\34.HTTP 签名.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/34.HTTP 签名.html",
+      "title": "HTTP 接口签名（防篡改）",
+      "url": "https://doc.iocoder.cn/http-sign/",
+      "bytes": 4471
+    },
+    {
+      "route": "/rate-limiter/",
+      "oldPath": "/01.开发指南/02.后端手册/33.请求限流.html",
+      "relativePath": "01.开发指南\\02.后端手册\\33.请求限流.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/33.请求限流.html",
+      "title": "请求限流（RateLimiter）",
+      "url": "https://doc.iocoder.cn/rate-limiter/",
+      "bytes": 4377
+    },
+    {
+      "route": "/config-center/",
+      "oldPath": "/01.开发指南/02.后端手册/43.配置管理.html",
+      "relativePath": "01.开发指南\\02.后端手册\\43.配置管理.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/43.配置管理.html",
+      "title": "配置管理",
+      "url": "https://doc.iocoder.cn/config-center/",
+      "bytes": 2928
+    },
+    {
+      "route": "/api-encrypt/",
+      "oldPath": "/01.开发指南/02.后端手册/35.HTTP 加解密.html",
+      "relativePath": "01.开发指南\\02.后端手册\\35.HTTP 加解密.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/35.HTTP 加解密.html",
+      "title": "HTTP 接口加解密",
+      "url": "https://doc.iocoder.cn/api-encrypt/",
+      "bytes": 8446
+    },
+    {
+      "route": "/idempotent/",
+      "oldPath": "/01.开发指南/02.后端手册/32.幂等性.html",
+      "relativePath": "01.开发指南\\02.后端手册\\32.幂等性.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/32.幂等性.html",
+      "title": "幂等性（防重复提交）",
+      "url": "https://doc.iocoder.cn/idempotent/",
+      "bytes": 5245
+    },
+    {
+      "route": "/unit-test/",
+      "oldPath": "/01.开发指南/02.后端手册/40.单元测试.html",
+      "relativePath": "01.开发指南\\02.后端手册\\40.单元测试.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/40.单元测试.html",
+      "title": "单元测试",
+      "url": "https://doc.iocoder.cn/unit-test/",
+      "bytes": 7710
+    },
+    {
+      "route": "/captcha/",
+      "oldPath": "/01.开发指南/02.后端手册/41.验证码.html",
+      "relativePath": "01.开发指南\\02.后端手册\\41.验证码.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/41.验证码.html",
+      "title": "验证码",
+      "url": "https://doc.iocoder.cn/captcha/",
+      "bytes": 6336
+    },
+    {
+      "route": "/db-doc/",
+      "oldPath": "/01.开发指南/02.后端手册/44.数据库文档.html",
+      "relativePath": "01.开发指南\\02.后端手册\\44.数据库文档.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/44.数据库文档.html",
+      "title": "数据库文档",
+      "url": "https://doc.iocoder.cn/db-doc/",
+      "bytes": 1191
+    },
+    {
+      "route": "/message-queue/event/",
+      "oldPath": "/01.开发指南/03.中间件手册/11.消息队列（内存）.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\11.消息队列（内存）.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/11.消息队列（内存）.html",
+      "title": "消息队列（内存）",
+      "url": "https://doc.iocoder.cn/message-queue/event/",
+      "bytes": 4370
+    },
+    {
+      "route": "/util/",
+      "oldPath": "/01.开发指南/02.后端手册/42.工具类 Util.html",
+      "relativePath": "01.开发指南\\02.后端手册\\42.工具类 Util.md",
+      "category": [
+        "01.开发指南",
+        "02.后端手册"
+      ],
+      "officialPath": "/01.开发指南/02.后端手册/42.工具类 Util.html",
+      "title": "工具类 Util",
+      "url": "https://doc.iocoder.cn/util/",
+      "bytes": 3240
+    },
+    {
+      "route": "/message-queue/redis/",
+      "oldPath": "/01.开发指南/03.中间件手册/12.消息队列（Redis）.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\12.消息队列（Redis）.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/12.消息队列（Redis）.html",
+      "title": "消息队列（Redis）",
+      "url": "https://doc.iocoder.cn/message-queue/redis/",
+      "bytes": 8039
+    },
+    {
+      "route": "/message-queue/rocketmq/",
+      "oldPath": "/01.开发指南/03.中间件手册/13.消息队列（RocketMQ）.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\13.消息队列（RocketMQ）.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/13.消息队列（RocketMQ）.html",
+      "title": "消息队列（RocketMQ）",
+      "url": "https://doc.iocoder.cn/message-queue/rocketmq/",
+      "bytes": 5462
+    },
+    {
+      "route": "/job/",
+      "oldPath": "/01.开发指南/03.中间件手册/06.定时任务.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\06.定时任务.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/06.定时任务.html",
+      "title": "定时任务",
+      "url": "https://doc.iocoder.cn/job/",
+      "bytes": 7372
+    },
+    {
+      "route": "/message-queue/rabbitmq/",
+      "oldPath": "/01.开发指南/03.中间件手册/14.消息队列（RabbitMQ）.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\14.消息队列（RabbitMQ）.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/14.消息队列（RabbitMQ）.html",
+      "title": "消息队列（RabbitMQ）",
+      "url": "https://doc.iocoder.cn/message-queue/rabbitmq/",
+      "bytes": 5194
+    },
+    {
+      "route": "/message-queue/kafka/",
+      "oldPath": "/01.开发指南/03.中间件手册/15.消息队列（Kafka）.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\15.消息队列（Kafka）.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/15.消息队列（Kafka）.html",
+      "title": "消息队列（Kafka）",
+      "url": "https://doc.iocoder.cn/message-queue/kafka/",
+      "bytes": 5916
+    },
+    {
+      "route": "/server-protection/",
+      "oldPath": "/01.开发指南/03.中间件手册/22.限流熔断.html",
+      "relativePath": "01.开发指南\\03.中间件手册\\22.限流熔断.md",
+      "category": [
+        "01.开发指南",
+        "03.中间件手册"
+      ],
+      "officialPath": "/01.开发指南/03.中间件手册/22.限流熔断.html",
+      "title": "限流熔断",
+      "url": "https://doc.iocoder.cn/server-protection/",
+      "bytes": 485
+    },
+    {
+      "route": "/bpm-preview/",
+      "oldPath": "/01.开发指南/10.工作流手册/01.工作流演示.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\01.工作流演示.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/01.工作流演示.html",
+      "title": "工作流演示",
+      "url": "https://doc.iocoder.cn/bpm-preview/",
+      "bytes": 8478
+    },
+    {
+      "route": "/bpm/dameng/",
+      "oldPath": "/01.开发指南/10.工作流手册/03.工作流（达梦适配）.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\03.工作流（达梦适配）.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/03.工作流（达梦适配）.html",
+      "title": "工作流（达梦适配）",
+      "url": "https://doc.iocoder.cn/bpm/dameng/",
+      "bytes": 1609
+    },
+    {
+      "route": "/bpm/",
+      "oldPath": "/01.开发指南/10.工作流手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/bpm/",
+      "bytes": 5172
+    },
+    {
+      "route": "/bpm/use-bpm-form/",
+      "oldPath": "/01.开发指南/10.工作流手册/04.审批接入（流程表单）.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\04.审批接入（流程表单）.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/04.审批接入（流程表单）.html",
+      "title": "审批接入（流程表单）",
+      "url": "https://doc.iocoder.cn/bpm/use-bpm-form/",
+      "bytes": 15635
+    },
+    {
+      "route": "/bpm/model-designer-dingding/",
+      "oldPath": "/01.开发指南/10.工作流手册/12.流程设计器（钉钉、飞书）.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\12.流程设计器（钉钉、飞书）.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/12.流程设计器（钉钉、飞书）.html",
+      "title": "流程设计器（钉钉、飞书）",
+      "url": "https://doc.iocoder.cn/bpm/model-designer-dingding/",
+      "bytes": 8867
+    },
+    {
+      "route": "/bpm/use-business-form/",
+      "oldPath": "/01.开发指南/10.工作流手册/05.审批接入（业务表单）.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\05.审批接入（业务表单）.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/05.审批接入（业务表单）.html",
+      "title": "审批接入（业务表单）",
+      "url": "https://doc.iocoder.cn/bpm/use-business-form/",
+      "bytes": 15459
+    },
+    {
+      "route": "/bpm/assignee/",
+      "oldPath": "/01.开发指南/10.工作流手册/20.选择审批人、发起人自选.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\20.选择审批人、发起人自选.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/20.选择审批人、发起人自选.html",
+      "title": "选择审批人、发起人自选",
+      "url": "https://doc.iocoder.cn/bpm/assignee/",
+      "bytes": 11284
+    },
+    {
+      "route": "/bpm/multi-instance/",
+      "oldPath": "/01.开发指南/10.工作流手册/21.会签、或签、依次审批.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\21.会签、或签、依次审批.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/21.会签、或签、依次审批.html",
+      "title": "会签、或签、依次审批",
+      "url": "https://doc.iocoder.cn/bpm/multi-instance/",
+      "bytes": 5581
+    },
+    {
+      "route": "/bpm/model-designer-bpmn/",
+      "oldPath": "/01.开发指南/10.工作流手册/11.流程设计器（BPMN）.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\11.流程设计器（BPMN）.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/11.流程设计器（BPMN）.html",
+      "title": "流程设计器（BPMN）",
+      "url": "https://doc.iocoder.cn/bpm/model-designer-bpmn/",
+      "bytes": 14429
+    },
+    {
+      "route": "/bpm/task-todo-done/",
+      "oldPath": "/01.开发指南/10.工作流手册/23.审批通过、不通过、驳回.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\23.审批通过、不通过、驳回.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/23.审批通过、不通过、驳回.html",
+      "title": "审批通过、不通过、驳回",
+      "url": "https://doc.iocoder.cn/bpm/task-todo-done/",
+      "bytes": 11217
+    },
+    {
+      "route": "/bpm/sign/",
+      "oldPath": "/01.开发指南/10.工作流手册/24.审批加签、减签.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\24.审批加签、减签.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/24.审批加签、减签.html",
+      "title": "审批加签、减签",
+      "url": "https://doc.iocoder.cn/bpm/sign/",
+      "bytes": 13676
+    },
+    {
+      "route": "/bpm/process-instance/",
+      "oldPath": "/01.开发指南/10.工作流手册/22.流程发起、取消、重新发起.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\22.流程发起、取消、重新发起.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/22.流程发起、取消、重新发起.html",
+      "title": "流程发起、取消、重新发起",
+      "url": "https://doc.iocoder.cn/bpm/process-instance/",
+      "bytes": 11640
+    },
+    {
+      "route": "/bpm/listener/",
+      "oldPath": "/01.开发指南/10.工作流手册/30.执行监听器、任务监听器.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\30.执行监听器、任务监听器.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/30.执行监听器、任务监听器.html",
+      "title": "执行监听器、任务监听器",
+      "url": "https://doc.iocoder.cn/bpm/listener/",
+      "bytes": 11404
+    },
+    {
+      "route": "/bpm/task-delegation-and-cc/",
+      "oldPath": "/01.开发指南/10.工作流手册/25.审批转办、委派、抄送.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\25.审批转办、委派、抄送.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/25.审批转办、委派、抄送.html",
+      "title": "审批转办、委派、抄送",
+      "url": "https://doc.iocoder.cn/bpm/task-delegation-and-cc/",
+      "bytes": 5499
+    },
+    {
+      "route": "/bpm/expression/",
+      "oldPath": "/01.开发指南/10.工作流手册/31.流程表达式.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\31.流程表达式.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/31.流程表达式.html",
+      "title": "流程表达式",
+      "url": "https://doc.iocoder.cn/bpm/expression/",
+      "bytes": 4987
+    },
+    {
+      "route": "/report/",
+      "oldPath": "/01.开发指南/11.大屏手册/01.报表设计器.html",
+      "relativePath": "01.开发指南\\11.大屏手册\\01.报表设计器.md",
+      "category": [
+        "01.开发指南",
+        "11.大屏手册"
+      ],
+      "officialPath": "/01.开发指南/11.大屏手册/01.报表设计器.html",
+      "title": "报表设计器",
+      "url": "https://doc.iocoder.cn/report/",
+      "bytes": 4745
+    },
+    {
+      "route": "/bpm/message/",
+      "oldPath": "/01.开发指南/10.工作流手册/41.流程审批通知.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\41.流程审批通知.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/41.流程审批通知.html",
+      "title": "流程审批通知",
+      "url": "https://doc.iocoder.cn/bpm/message/",
+      "bytes": 1467
+    },
+    {
+      "route": "/bpm/mobile/",
+      "oldPath": "/01.开发指南/10.工作流手册/50.移动端审批.html",
+      "relativePath": "01.开发指南\\10.工作流手册\\50.移动端审批.md",
+      "category": [
+        "01.开发指南",
+        "10.工作流手册"
+      ],
+      "officialPath": "/01.开发指南/10.工作流手册/50.移动端审批.html",
+      "title": "移动端审批",
+      "url": "https://doc.iocoder.cn/bpm/mobile/",
+      "bytes": 9281
+    },
+    {
+      "route": "/pay/build/",
+      "oldPath": "/01.开发指南/12.支付手册/01.功能开启.html",
+      "relativePath": "01.开发指南\\12.支付手册\\01.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/01.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/pay/build/",
+      "bytes": 12984
+    },
+    {
+      "route": "/report/screen/",
+      "oldPath": "/01.开发指南/11.大屏手册/02.大屏设计器.html",
+      "relativePath": "01.开发指南\\11.大屏手册\\02.大屏设计器.md",
+      "category": [
+        "01.开发指南",
+        "11.大屏手册"
+      ],
+      "officialPath": "/01.开发指南/11.大屏手册/02.大屏设计器.html",
+      "title": "大屏设计器",
+      "url": "https://doc.iocoder.cn/report/screen/",
+      "bytes": 6847
+    },
+    {
+      "route": "/pay/alipay-pay-demo/",
+      "oldPath": "/01.开发指南/12.支付手册/11.支付宝支付接入.html",
+      "relativePath": "01.开发指南\\12.支付手册\\11.支付宝支付接入.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/11.支付宝支付接入.html",
+      "title": "支付宝支付接入",
+      "url": "https://doc.iocoder.cn/pay/alipay-pay-demo/",
+      "bytes": 9627
+    },
+    {
+      "route": "/pay/mobile/",
+      "oldPath": "/01.开发指南/12.支付手册/100.移动端支付管理.html",
+      "relativePath": "01.开发指南\\12.支付手册\\100.移动端支付管理.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/100.移动端支付管理.html",
+      "title": "移动端支付管理",
+      "url": "https://doc.iocoder.cn/pay/mobile/",
+      "bytes": 1286
+    },
+    {
+      "route": "/pay/wx-pub-pay-demo/",
+      "oldPath": "/01.开发指南/12.支付手册/12.微信公众号支付接入.html",
+      "relativePath": "01.开发指南\\12.支付手册\\12.微信公众号支付接入.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/12.微信公众号支付接入.html",
+      "title": "微信公众号支付接入",
+      "url": "https://doc.iocoder.cn/pay/wx-pub-pay-demo/",
+      "bytes": 4768
+    },
+    {
+      "route": "/pay/wx-lite-pay-demo/",
+      "oldPath": "/01.开发指南/12.支付手册/13.微信小程序支付接入.html",
+      "relativePath": "01.开发指南\\12.支付手册\\13.微信小程序支付接入.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/13.微信小程序支付接入.html",
+      "title": "微信小程序支付接入",
+      "url": "https://doc.iocoder.cn/pay/wx-lite-pay-demo/",
+      "bytes": 3773
+    },
+    {
+      "route": "/pay/wx-transfer-demo/",
+      "oldPath": "/01.开发指南/12.支付手册/26.微信转账接入.html",
+      "relativePath": "01.开发指南\\12.支付手册\\26.微信转账接入.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/26.微信转账接入.html",
+      "title": "微信转账接入",
+      "url": "https://doc.iocoder.cn/pay/wx-transfer-demo/",
+      "bytes": 4232
+    },
+    {
+      "route": "/pay/alipay-transfer-demo/",
+      "oldPath": "/01.开发指南/12.支付手册/25.支付宝转账接入.html",
+      "relativePath": "01.开发指南\\12.支付手册\\25.支付宝转账接入.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/25.支付宝转账接入.html",
+      "title": "支付宝转账接入",
+      "url": "https://doc.iocoder.cn/pay/alipay-transfer-demo/",
+      "bytes": 6786
+    },
+    {
+      "route": "/pay/mock/",
+      "oldPath": "/01.开发指南/12.支付手册/31.模拟支付、退款.html",
+      "relativePath": "01.开发指南\\12.支付手册\\31.模拟支付、退款.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/31.模拟支付、退款.html",
+      "title": "模拟支付、退款",
+      "url": "https://doc.iocoder.cn/pay/mock/",
+      "bytes": 1873
+    },
+    {
+      "route": "/pay/refund-demo/",
+      "oldPath": "/01.开发指南/12.支付手册/21.支付宝、微信退款接入.html",
+      "relativePath": "01.开发指南\\12.支付手册\\21.支付宝、微信退款接入.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/21.支付宝、微信退款接入.html",
+      "title": "支付宝、微信退款接入",
+      "url": "https://doc.iocoder.cn/pay/refund-demo/",
+      "bytes": 4206
+    },
+    {
+      "route": "/pay/wallet/",
+      "oldPath": "/01.开发指南/12.支付手册/30.钱包充值、支付、退款.html",
+      "relativePath": "01.开发指南\\12.支付手册\\30.钱包充值、支付、退款.md",
+      "category": [
+        "01.开发指南",
+        "12.支付手册"
+      ],
+      "officialPath": "/01.开发指南/12.支付手册/30.钱包充值、支付、退款.html",
+      "title": "钱包充值、支付、退款",
+      "url": "https://doc.iocoder.cn/pay/wallet/",
+      "bytes": 14172
+    },
+    {
+      "route": "/member/weixin-mp-login/",
+      "oldPath": "/01.开发指南/13.会员手册/02.微信公众号登录.html",
+      "relativePath": "01.开发指南\\13.会员手册\\02.微信公众号登录.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/02.微信公众号登录.html",
+      "title": "微信公众号登录",
+      "url": "https://doc.iocoder.cn/member/weixin-mp-login/",
+      "bytes": 6530
+    },
+    {
+      "route": "/member/weixin-lite-login/",
+      "oldPath": "/01.开发指南/13.会员手册/03.微信小程序登录.html",
+      "relativePath": "01.开发指南\\13.会员手册\\03.微信小程序登录.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/03.微信小程序登录.html",
+      "title": "微信小程序登录",
+      "url": "https://doc.iocoder.cn/member/weixin-lite-login/",
+      "bytes": 5727
+    },
+    {
+      "route": "/member/build/",
+      "oldPath": "/01.开发指南/13.会员手册/01.功能开启.html",
+      "relativePath": "01.开发指南\\13.会员手册\\01.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/01.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/member/build/",
+      "bytes": 2611
+    },
+    {
+      "route": "/member/mobile/",
+      "oldPath": "/01.开发指南/13.会员手册/100.移动端会员管理.html",
+      "relativePath": "01.开发指南\\13.会员手册\\100.移动端会员管理.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/100.移动端会员管理.html",
+      "title": "移动端会员管理",
+      "url": "https://doc.iocoder.cn/member/mobile/",
+      "bytes": 1316
+    },
+    {
+      "route": "/member/weixin-lite-subscribe-message/",
+      "oldPath": "/01.开发指南/13.会员手册/04.微信小程序订阅消息.html",
+      "relativePath": "01.开发指南\\13.会员手册\\04.微信小程序订阅消息.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/04.微信小程序订阅消息.html",
+      "title": "微信小程序订阅消息",
+      "url": "https://doc.iocoder.cn/member/weixin-lite-subscribe-message/",
+      "bytes": 7018
+    },
+    {
+      "route": "/member/weixin-lite-qrcode/",
+      "oldPath": "/01.开发指南/13.会员手册/05.微信小程序码.html",
+      "relativePath": "01.开发指南\\13.会员手册\\05.微信小程序码.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/05.微信小程序码.html",
+      "title": "微信小程序码",
+      "url": "https://doc.iocoder.cn/member/weixin-lite-qrcode/",
+      "bytes": 2432
+    },
+    {
+      "route": "/member/user/",
+      "oldPath": "/01.开发指南/13.会员手册/11.会员用户、标签、分组.html",
+      "relativePath": "01.开发指南\\13.会员手册\\11.会员用户、标签、分组.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/11.会员用户、标签、分组.html",
+      "title": "会员用户、标签、分组",
+      "url": "https://doc.iocoder.cn/member/user/",
+      "bytes": 6535
+    },
+    {
+      "route": "/member/level/",
+      "oldPath": "/01.开发指南/13.会员手册/12.会员等级、积分、签到.html",
+      "relativePath": "01.开发指南\\13.会员手册\\12.会员等级、积分、签到.md",
+      "category": [
+        "01.开发指南",
+        "13.会员手册"
+      ],
+      "officialPath": "/01.开发指南/13.会员手册/12.会员等级、积分、签到.html",
+      "title": "会员等级、积分、签到",
+      "url": "https://doc.iocoder.cn/member/level/",
+      "bytes": 12318
+    },
+    {
+      "route": "/mall/build/",
+      "oldPath": "/01.开发指南/14.商城手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\14.商城手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/mall/build/",
+      "bytes": 8545
+    },
+    {
+      "route": "/mall-preview/",
+      "oldPath": "/01.开发指南/14.商城手册/01.商城演示.html",
+      "relativePath": "01.开发指南\\14.商城手册\\01.商城演示.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/01.商城演示.html",
+      "title": "商城演示",
+      "url": "https://doc.iocoder.cn/mall-preview/",
+      "bytes": 5400
+    },
+    {
+      "route": "/mall/admin-mobile/",
+      "oldPath": "/01.开发指南/14.商城手册/100.移动端商城管理.html",
+      "relativePath": "01.开发指南\\14.商城手册\\100.移动端商城管理.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/100.移动端商城管理.html",
+      "title": "移动端商城管理",
+      "url": "https://doc.iocoder.cn/mall/admin-mobile/",
+      "bytes": 1652
+    },
+    {
+      "route": "/mall/diy/",
+      "oldPath": "/01.开发指南/14.商城手册/03.店铺装修.html",
+      "relativePath": "01.开发指南\\14.商城手册\\03.店铺装修.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/03.店铺装修.html",
+      "title": "商城装修",
+      "url": "https://doc.iocoder.cn/mall/diy/",
+      "bytes": 15310
+    },
+    {
+      "route": "/mall/product-category/",
+      "oldPath": "/01.开发指南/14.商城手册/10.【商品】商品分类.html",
+      "relativePath": "01.开发指南\\14.商城手册\\10.【商品】商品分类.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/10.【商品】商品分类.html",
+      "title": "【商品】商品分类",
+      "url": "https://doc.iocoder.cn/mall/product-category/",
+      "bytes": 2408
+    },
+    {
+      "route": "/mall/kefu/",
+      "oldPath": "/01.开发指南/14.商城手册/04.在线客服.html",
+      "relativePath": "01.开发指南\\14.商城手册\\04.在线客服.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/04.在线客服.html",
+      "title": "在线客服",
+      "url": "https://doc.iocoder.cn/mall/kefu/",
+      "bytes": 7110
+    },
+    {
+      "route": "/mall/product-spu-sku/",
+      "oldPath": "/01.开发指南/14.商城手册/12.【商品】商品 SPU 与 SKU.html",
+      "relativePath": "01.开发指南\\14.商城手册\\12.【商品】商品 SPU 与 SKU.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/12.【商品】商品 SPU 与 SKU.html",
+      "title": "【商品】商品 SPU 与 SKU",
+      "url": "https://doc.iocoder.cn/mall/product-spu-sku/",
+      "bytes": 11556
+    },
+    {
+      "route": "/mall/product-property/",
+      "oldPath": "/01.开发指南/14.商城手册/11.【商品】商品属性.html",
+      "relativePath": "01.开发指南\\14.商城手册\\11.【商品】商品属性.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/11.【商品】商品属性.html",
+      "title": "【商品】商品属性",
+      "url": "https://doc.iocoder.cn/mall/product-property/",
+      "bytes": 4156
+    },
+    {
+      "route": "/mall/trade-cart/",
+      "oldPath": "/01.开发指南/14.商城手册/21.【交易】购物车.html",
+      "relativePath": "01.开发指南\\14.商城手册\\21.【交易】购物车.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/21.【交易】购物车.html",
+      "title": "【交易】购物车",
+      "url": "https://doc.iocoder.cn/mall/trade-cart/",
+      "bytes": 2960
+    },
+    {
+      "route": "/mall/product-comment/",
+      "oldPath": "/01.开发指南/14.商城手册/13.【商品】商品评价.html",
+      "relativePath": "01.开发指南\\14.商城手册\\13.【商品】商品评价.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/13.【商品】商品评价.html",
+      "title": "【商品】商品评价",
+      "url": "https://doc.iocoder.cn/mall/product-comment/",
+      "bytes": 5409
+    },
+    {
+      "route": "/mall/trade-aftersale/",
+      "oldPath": "/01.开发指南/14.商城手册/23.【交易】售后退款.html",
+      "relativePath": "01.开发指南\\14.商城手册\\23.【交易】售后退款.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/23.【交易】售后退款.html",
+      "title": "【交易】售后退款",
+      "url": "https://doc.iocoder.cn/mall/trade-aftersale/",
+      "bytes": 11900
+    },
+    {
+      "route": "/mall/trade-delivery-express/",
+      "oldPath": "/01.开发指南/14.商城手册/24.【交易】快递发货.html",
+      "relativePath": "01.开发指南\\14.商城手册\\24.【交易】快递发货.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/24.【交易】快递发货.html",
+      "title": "【交易】快递发货",
+      "url": "https://doc.iocoder.cn/mall/trade-delivery-express/",
+      "bytes": 6031
+    },
+    {
+      "route": "/mall/point-activity/",
+      "oldPath": "/01.开发指南/14.商城手册/31.【营销】积分商城.html",
+      "relativePath": "01.开发指南\\14.商城手册\\31.【营销】积分商城.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/31.【营销】积分商城.html",
+      "title": "【营销】积分商城",
+      "url": "https://doc.iocoder.cn/mall/point-activity/",
+      "bytes": 5038
+    },
+    {
+      "route": "/mall/promotion-coupon/",
+      "oldPath": "/01.开发指南/14.商城手册/30.【营销】优惠劵.html",
+      "relativePath": "01.开发指南\\14.商城手册\\30.【营销】优惠劵.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/30.【营销】优惠劵.html",
+      "title": "【营销】优惠劵",
+      "url": "https://doc.iocoder.cn/mall/promotion-coupon/",
+      "bytes": 9549
+    },
+    {
+      "route": "/mall/trade-brokerage/",
+      "oldPath": "/01.开发指南/14.商城手册/26.【交易】分销返佣.html",
+      "relativePath": "01.开发指南\\14.商城手册\\26.【交易】分销返佣.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/26.【交易】分销返佣.html",
+      "title": "【交易】分销返佣",
+      "url": "https://doc.iocoder.cn/mall/trade-brokerage/",
+      "bytes": 14642
+    },
+    {
+      "route": "/mall/promotion-combination/",
+      "oldPath": "/01.开发指南/14.商城手册/32.【营销】拼团活动.html",
+      "relativePath": "01.开发指南\\14.商城手册\\32.【营销】拼团活动.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/32.【营销】拼团活动.html",
+      "title": "【营销】拼团活动",
+      "url": "https://doc.iocoder.cn/mall/promotion-combination/",
+      "bytes": 12150
+    },
+    {
+      "route": "/mall/trade-delivery-pickup/",
+      "oldPath": "/01.开发指南/14.商城手册/25.【交易】门店自提.html",
+      "relativePath": "01.开发指南\\14.商城手册\\25.【交易】门店自提.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/25.【交易】门店自提.html",
+      "title": "【交易】门店自提",
+      "url": "https://doc.iocoder.cn/mall/trade-delivery-pickup/",
+      "bytes": 5076
+    },
+    {
+      "route": "/mall/promotion-seckill/",
+      "oldPath": "/01.开发指南/14.商城手册/33.【营销】秒杀活动.html",
+      "relativePath": "01.开发指南\\14.商城手册\\33.【营销】秒杀活动.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/33.【营销】秒杀活动.html",
+      "title": "【营销】秒杀活动",
+      "url": "https://doc.iocoder.cn/mall/promotion-seckill/",
+      "bytes": 7213
+    },
+    {
+      "route": "/mall/trade-order/",
+      "oldPath": "/01.开发指南/14.商城手册/22.【交易】交易订单.html",
+      "relativePath": "01.开发指南\\14.商城手册\\22.【交易】交易订单.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/22.【交易】交易订单.html",
+      "title": "【交易】交易订单",
+      "url": "https://doc.iocoder.cn/mall/trade-order/",
+      "bytes": 21208
+    },
+    {
+      "route": "/mall/promotion-record/",
+      "oldPath": "/01.开发指南/14.商城手册/35.【营销】满减送活动.html",
+      "relativePath": "01.开发指南\\14.商城手册\\35.【营销】满减送活动.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/35.【营销】满减送活动.html",
+      "title": "【营销】满减送活动",
+      "url": "https://doc.iocoder.cn/mall/promotion-record/",
+      "bytes": 4182
+    },
+    {
+      "route": "/mall/promotion-bargain/",
+      "oldPath": "/01.开发指南/14.商城手册/34.【营销】砍价活动.html",
+      "relativePath": "01.开发指南\\14.商城手册\\34.【营销】砍价活动.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/34.【营销】砍价活动.html",
+      "title": "【营销】砍价活动",
+      "url": "https://doc.iocoder.cn/mall/promotion-bargain/",
+      "bytes": 7655
+    },
+    {
+      "route": "/mall/statistics/",
+      "oldPath": "/01.开发指南/14.商城手册/40.【统计】会员、商品、交易统计.html",
+      "relativePath": "01.开发指南\\14.商城手册\\40.【统计】会员、商品、交易统计.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/40.【统计】会员、商品、交易统计.html",
+      "title": "【统计】会员、商品、交易统计",
+      "url": "https://doc.iocoder.cn/mall/statistics/",
+      "bytes": 6519
+    },
+    {
+      "route": "/mall/promotion-discount/",
+      "oldPath": "/01.开发指南/14.商城手册/36.【营销】限时折扣.html",
+      "relativePath": "01.开发指南\\14.商城手册\\36.【营销】限时折扣.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/36.【营销】限时折扣.html",
+      "title": "【营销】限时折扣",
+      "url": "https://doc.iocoder.cn/mall/promotion-discount/",
+      "bytes": 4570
+    },
+    {
+      "route": "/mall/promotion-content/",
+      "oldPath": "/01.开发指南/14.商城手册/37.【营销】内容管理.html",
+      "relativePath": "01.开发指南\\14.商城手册\\37.【营销】内容管理.md",
+      "category": [
+        "01.开发指南",
+        "14.商城手册"
+      ],
+      "officialPath": "/01.开发指南/14.商城手册/37.【营销】内容管理.html",
+      "title": "【营销】内容管理",
+      "url": "https://doc.iocoder.cn/mall/promotion-content/",
+      "bytes": 5800
+    },
+    {
+      "route": "/erp-preview/",
+      "oldPath": "/01.开发指南/15.ERP手册/01.ERP 演示.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\01.ERP 演示.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/01.ERP 演示.html",
+      "title": "ERP 演示",
+      "url": "https://doc.iocoder.cn/erp-preview/",
+      "bytes": 3248
+    },
+    {
+      "route": "/erp/build/",
+      "oldPath": "/01.开发指南/15.ERP手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/erp/build/",
+      "bytes": 2673
+    },
+    {
+      "route": "/erp/product/",
+      "oldPath": "/01.开发指南/15.ERP手册/10.【产品】产品信息、分类、单位.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\10.【产品】产品信息、分类、单位.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/10.【产品】产品信息、分类、单位.html",
+      "title": "【产品】产品信息、分类、单位",
+      "url": "https://doc.iocoder.cn/erp/product/",
+      "bytes": 4910
+    },
+    {
+      "route": "/erp/mobile/",
+      "oldPath": "/01.开发指南/15.ERP手册/100.移动端ERP.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\100.移动端ERP.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/100.移动端ERP.html",
+      "title": "移动端 ERP",
+      "url": "https://doc.iocoder.cn/erp/mobile/",
+      "bytes": 1353
+    },
+    {
+      "route": "/erp/stock-in-out/",
+      "oldPath": "/01.开发指南/15.ERP手册/21.【库存】其它入库、其它出库.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\21.【库存】其它入库、其它出库.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/21.【库存】其它入库、其它出库.html",
+      "title": "【库存】其它入库、其它出库",
+      "url": "https://doc.iocoder.cn/erp/stock-in-out/",
+      "bytes": 9221
+    },
+    {
+      "route": "/erp/stock/",
+      "oldPath": "/01.开发指南/15.ERP手册/20.【库存】产品库存、库存明细.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\20.【库存】产品库存、库存明细.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/20.【库存】产品库存、库存明细.html",
+      "title": "【库存】产品库存、库存明细",
+      "url": "https://doc.iocoder.cn/erp/stock/",
+      "bytes": 5726
+    },
+    {
+      "route": "/erp/stock-move-check/",
+      "oldPath": "/01.开发指南/15.ERP手册/22.【库存】库存调拨、库存盘点.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\22.【库存】库存调拨、库存盘点.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/22.【库存】库存调拨、库存盘点.html",
+      "title": "【库存】库存调拨、库存盘点",
+      "url": "https://doc.iocoder.cn/erp/stock-move-check/",
+      "bytes": 9031
+    },
+    {
+      "route": "/sale/finance-payment-receipt/",
+      "oldPath": "/01.开发指南/15.ERP手册/50.【财务】采购付款、销售收款.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\50.【财务】采购付款、销售收款.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/50.【财务】采购付款、销售收款.html",
+      "title": "【财务】采购付款、销售收款",
+      "url": "https://doc.iocoder.cn/sale/finance-payment-receipt/",
+      "bytes": 10094
+    },
+    {
+      "route": "/erp/purchase/",
+      "oldPath": "/01.开发指南/15.ERP手册/30.【采购】采购订单、入库、退货.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\30.【采购】采购订单、入库、退货.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/30.【采购】采购订单、入库、退货.html",
+      "title": "【采购】采购订单、入库、退货",
+      "url": "https://doc.iocoder.cn/erp/purchase/",
+      "bytes": 20963
+    },
+    {
+      "route": "/crm/build/",
+      "oldPath": "/01.开发指南/16.CRM手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/crm/build/",
+      "bytes": 2680
+    },
+    {
+      "route": "/crm-preview/",
+      "oldPath": "/01.开发指南/16.CRM手册/01.CRM 演示.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\01.CRM 演示.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/01.CRM 演示.html",
+      "title": "CRM 演示",
+      "url": "https://doc.iocoder.cn/crm-preview/",
+      "bytes": 3640
+    },
+    {
+      "route": "/erp/sale/",
+      "oldPath": "/01.开发指南/15.ERP手册/40.【销售】销售订单、出库、退货.html",
+      "relativePath": "01.开发指南\\15.ERP手册\\40.【销售】销售订单、出库、退货.md",
+      "category": [
+        "01.开发指南",
+        "15.ERP手册"
+      ],
+      "officialPath": "/01.开发指南/15.ERP手册/40.【销售】销售订单、出库、退货.html",
+      "title": "【销售】销售订单、出库、退货",
+      "url": "https://doc.iocoder.cn/erp/sale/",
+      "bytes": 20821
+    },
+    {
+      "route": "/crm/mobile/",
+      "oldPath": "/01.开发指南/16.CRM手册/100.移动端CRM.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\100.移动端CRM.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/100.移动端CRM.html",
+      "title": "移动端 CRM",
+      "url": "https://doc.iocoder.cn/crm/mobile/",
+      "bytes": 1384
+    },
+    {
+      "route": "/crm/clue/",
+      "oldPath": "/01.开发指南/16.CRM手册/10.【线索】线索管理.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\10.【线索】线索管理.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/10.【线索】线索管理.html",
+      "title": "【线索】线索管理",
+      "url": "https://doc.iocoder.cn/crm/clue/",
+      "bytes": 5898
+    },
+    {
+      "route": "/crm/customer/",
+      "oldPath": "/01.开发指南/16.CRM手册/20.【客户】客户管理、公海客户.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\20.【客户】客户管理、公海客户.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/20.【客户】客户管理、公海客户.html",
+      "title": "【客户】客户管理、公海客户",
+      "url": "https://doc.iocoder.cn/crm/customer/",
+      "bytes": 13890
+    },
+    {
+      "route": "/crm/contract/",
+      "oldPath": "/01.开发指南/16.CRM手册/40.【合同】合同管理、合同提醒.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\40.【合同】合同管理、合同提醒.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/40.【合同】合同管理、合同提醒.html",
+      "title": "【合同】合同管理、合同提醒",
+      "url": "https://doc.iocoder.cn/crm/contract/",
+      "bytes": 8424
+    },
+    {
+      "route": "/crm/business/",
+      "oldPath": "/01.开发指南/16.CRM手册/30.【商机】商机管理、商机状态.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\30.【商机】商机管理、商机状态.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/30.【商机】商机管理、商机状态.html",
+      "title": "【商机】商机管理、商机状态",
+      "url": "https://doc.iocoder.cn/crm/business/",
+      "bytes": 10408
+    },
+    {
+      "route": "/crm/receivable/",
+      "oldPath": "/01.开发指南/16.CRM手册/50.【回款】回款管理、回款计划.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\50.【回款】回款管理、回款计划.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/50.【回款】回款管理、回款计划.html",
+      "title": "【回款】回款管理、回款计划",
+      "url": "https://doc.iocoder.cn/crm/receivable/",
+      "bytes": 9875
+    },
+    {
+      "route": "/crm/follow-up/",
+      "oldPath": "/01.开发指南/16.CRM手册/91.【通用】跟进记录、待办事项.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\91.【通用】跟进记录、待办事项.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/91.【通用】跟进记录、待办事项.html",
+      "title": "【通用】跟进记录、待办事项",
+      "url": "https://doc.iocoder.cn/crm/follow-up/",
+      "bytes": 3685
+    },
+    {
+      "route": "/ai/build/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/ai/build/",
+      "bytes": 10360
+    },
+    {
+      "route": "/crm/product/",
+      "oldPath": "/01.开发指南/16.CRM手册/60.【产品】产品管理、产品分类.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\60.【产品】产品管理、产品分类.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/60.【产品】产品管理、产品分类.html",
+      "title": "【产品】产品管理、产品分类",
+      "url": "https://doc.iocoder.cn/crm/product/",
+      "bytes": 3641
+    },
+    {
+      "route": "/crm/permission/",
+      "oldPath": "/01.开发指南/16.CRM手册/90.【通用】数据权限.html",
+      "relativePath": "01.开发指南\\16.CRM手册\\90.【通用】数据权限.md",
+      "category": [
+        "01.开发指南",
+        "16.CRM手册"
+      ],
+      "officialPath": "/01.开发指南/16.CRM手册/90.【通用】数据权限.html",
+      "title": "【通用】数据权限",
+      "url": "https://doc.iocoder.cn/crm/permission/",
+      "bytes": 7112
+    },
+    {
+      "route": "/ai-preview/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/01.AI 大模型演示.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\01.AI 大模型演示.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/01.AI 大模型演示.html",
+      "title": "AI 大模型演示",
+      "url": "https://doc.iocoder.cn/ai-preview/",
+      "bytes": 5070
+    },
+    {
+      "route": "/ai/mobile/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/100.移动端AI大模型.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\100.移动端AI大模型.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/100.移动端AI大模型.html",
+      "title": "移动端 AI 大模型",
+      "url": "https://doc.iocoder.cn/ai/mobile/",
+      "bytes": 1259
+    },
+    {
+      "route": "/ai/image/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/12.AI 绘画创作.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\12.AI 绘画创作.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/12.AI 绘画创作.html",
+      "title": "AI 绘画创作",
+      "url": "https://doc.iocoder.cn/ai/image/",
+      "bytes": 6139
+    },
+    {
+      "route": "/ai/chat/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/11.AI 对话聊天.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\11.AI 对话聊天.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/11.AI 对话聊天.html",
+      "title": "AI 聊天对话",
+      "url": "https://doc.iocoder.cn/ai/chat/",
+      "bytes": 12707
+    },
+    {
+      "route": "/ai/music/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/14.AI 音乐创作.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\14.AI 音乐创作.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/14.AI 音乐创作.html",
+      "title": "AI 音乐创作",
+      "url": "https://doc.iocoder.cn/ai/music/",
+      "bytes": 609
+    },
+    {
+      "route": "/ai/knowledge/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/13.AI 知识库.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\13.AI 知识库.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/13.AI 知识库.html",
+      "title": "AI 知识库（RAG）",
+      "url": "https://doc.iocoder.cn/ai/knowledge/",
+      "bytes": 19262
+    },
+    {
+      "route": "/ai/write/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/15.AI 写作助手.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\15.AI 写作助手.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/15.AI 写作助手.html",
+      "title": "AI 写作助手",
+      "url": "https://doc.iocoder.cn/ai/write/",
+      "bytes": 6009
+    },
+    {
+      "route": "/ai/mindmap/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/16.AI 思维导图.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\16.AI 思维导图.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/16.AI 思维导图.html",
+      "title": "AI 思维导图",
+      "url": "https://doc.iocoder.cn/ai/mindmap/",
+      "bytes": 5291
+    },
+    {
+      "route": "/ai/tool/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/17. AI 工具调用.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\17. AI 工具调用.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/17. AI 工具调用.html",
+      "title": "AI 工具（function calling）",
+      "url": "https://doc.iocoder.cn/ai/tool/",
+      "bytes": 3196
+    },
+    {
+      "route": "/ai/workflow/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/18.AI 工作流.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\18.AI 工作流.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/18.AI 工作流.html",
+      "title": "AI 工作流",
+      "url": "https://doc.iocoder.cn/ai/workflow/",
+      "bytes": 144
+    },
+    {
+      "route": "/ai/dify/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/19.Dify 工作流.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\19.Dify 工作流.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/19.Dify 工作流.html",
+      "title": "Dify 工作流",
+      "url": "https://doc.iocoder.cn/ai/dify/",
+      "bytes": 3648
+    },
+    {
+      "route": "/ai/coze/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/21.Coze 智能体.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\21.Coze 智能体.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/21.Coze 智能体.html",
+      "title": "Coze 智能体",
+      "url": "https://doc.iocoder.cn/ai/coze/",
+      "bytes": 3163
+    },
+    {
+      "route": "/ai/thinking/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/30.推理模式（thinking）.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\30.推理模式（thinking）.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/30.推理模式（thinking）.html",
+      "title": "推理模式（thinking）",
+      "url": "https://doc.iocoder.cn/ai/thinking/",
+      "bytes": 3581
+    },
+    {
+      "route": "/ai/web-search/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/31.联网搜索.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\31.联网搜索.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/31.联网搜索.html",
+      "title": "联网搜索",
+      "url": "https://doc.iocoder.cn/ai/web-search/",
+      "bytes": 1553
+    },
+    {
+      "route": "/ai/fastgpt/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/20.FastGPT 工作流.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\20.FastGPT 工作流.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/20.FastGPT 工作流.html",
+      "title": "FastGPT 工作流",
+      "url": "https://doc.iocoder.cn/ai/fastgpt/",
+      "bytes": 3185
+    },
+    {
+      "route": "/ai/mcp-client/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/32.MCP Client 客户端.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\32.MCP Client 客户端.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/32.MCP Client 客户端.html",
+      "title": "MCP Client 客户端",
+      "url": "https://doc.iocoder.cn/ai/mcp-client/",
+      "bytes": 4337
+    },
+    {
+      "route": "/ai/mcp-server/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/33.MCP Server 服务端.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\33.MCP Server 服务端.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/33.MCP Server 服务端.html",
+      "title": "MCP Server 服务端",
+      "url": "https://doc.iocoder.cn/ai/mcp-server/",
+      "bytes": 1824
+    },
+    {
+      "route": "/ai/openai/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/80.【模型接入】OpenAI.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\80.【模型接入】OpenAI.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/80.【模型接入】OpenAI.html",
+      "title": "【模型接入】OpenAI",
+      "url": "https://doc.iocoder.cn/ai/openai/",
+      "bytes": 4402
+    },
+    {
+      "route": "/ai/claude/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/79.【模型接入】Claude.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\79.【模型接入】Claude.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/79.【模型接入】Claude.html",
+      "title": "【模型接入】Claude",
+      "url": "https://doc.iocoder.cn/ai/claude/",
+      "bytes": 4170
+    },
+    {
+      "route": "/ai/deep-seek/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/82.【模型接入】DeepSeek.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\82.【模型接入】DeepSeek.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/82.【模型接入】DeepSeek.html",
+      "title": "【模型接入】DeepSeek",
+      "url": "https://doc.iocoder.cn/ai/deep-seek/",
+      "bytes": 8222
+    },
+    {
+      "route": "/ai/tongyi/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/81.【模型接入】通义千问.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\81.【模型接入】通义千问.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/81.【模型接入】通义千问.html",
+      "title": "【模型接入】通义千问",
+      "url": "https://doc.iocoder.cn/ai/tongyi/",
+      "bytes": 5056
+    },
+    {
+      "route": "/ai/hunyuan/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/84.【模型接入】腾讯混元.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\84.【模型接入】腾讯混元.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/84.【模型接入】腾讯混元.html",
+      "title": "【模型接入】腾讯混元",
+      "url": "https://doc.iocoder.cn/ai/hunyuan/",
+      "bytes": 2639
+    },
+    {
+      "route": "/ai/doubao/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/83.【模型接入】字节豆包.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\83.【模型接入】字节豆包.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/83.【模型接入】字节豆包.html",
+      "title": "【模型接入】字节豆包",
+      "url": "https://doc.iocoder.cn/ai/doubao/",
+      "bytes": 3042
+    },
+    {
+      "route": "/ai/siliconflow/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/85.【模型接入】硅基流动.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\85.【模型接入】硅基流动.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/85.【模型接入】硅基流动.html",
+      "title": "【模型接入】硅基流动",
+      "url": "https://doc.iocoder.cn/ai/siliconflow/",
+      "bytes": 2987
+    },
+    {
+      "route": "/ai/minimax/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/86.【模型接入】MiniMax.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\86.【模型接入】MiniMax.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/86.【模型接入】MiniMax.html",
+      "title": "【模型接入】MiniMax",
+      "url": "https://doc.iocoder.cn/ai/minimax/",
+      "bytes": 2770
+    },
+    {
+      "route": "/ai/moonshot/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/87.【模型接入】月之暗面.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\87.【模型接入】月之暗面.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/87.【模型接入】月之暗面.html",
+      "title": "【模型接入】月之暗面",
+      "url": "https://doc.iocoder.cn/ai/moonshot/",
+      "bytes": 2539
+    },
+    {
+      "route": "/ai/baichuan/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/88.【模型接入】百川智能.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\88.【模型接入】百川智能.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/88.【模型接入】百川智能.html",
+      "title": "【模型接入】百川智能",
+      "url": "https://doc.iocoder.cn/ai/baichuan/",
+      "bytes": 3021
+    },
+    {
+      "route": "/ai/yiyan/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/89.【模型接入】文心一言.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\89.【模型接入】文心一言.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/89.【模型接入】文心一言.html",
+      "title": "【模型接入】文心一言",
+      "url": "https://doc.iocoder.cn/ai/yiyan/",
+      "bytes": 2673
+    },
+    {
+      "route": "/ai/llama/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/90.【模型接入】LLAMA.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\90.【模型接入】LLAMA.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/90.【模型接入】LLAMA.html",
+      "title": "【模型接入】LLAMA",
+      "url": "https://doc.iocoder.cn/ai/llama/",
+      "bytes": 2757
+    },
+    {
+      "route": "/ai/xinghuo/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/92.【模型接入】讯飞星火.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\92.【模型接入】讯飞星火.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/92.【模型接入】讯飞星火.html",
+      "title": "【模型接入】讯飞星火",
+      "url": "https://doc.iocoder.cn/ai/xinghuo/",
+      "bytes": 2859
+    },
+    {
+      "route": "/ai/azure-openai/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/93.【模型接入】微软 OpenAI.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\93.【模型接入】微软 OpenAI.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/93.【模型接入】微软 OpenAI.html",
+      "title": "【模型接入】微软 OpenAI",
+      "url": "https://doc.iocoder.cn/ai/azure-openai/",
+      "bytes": 2934
+    },
+    {
+      "route": "/ai/gemini/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/94.【模型接入】谷歌 Gemini.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\94.【模型接入】谷歌 Gemini.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/94.【模型接入】谷歌 Gemini.html",
+      "title": "【模型接入】谷歌 Gemini",
+      "url": "https://doc.iocoder.cn/ai/gemini/",
+      "bytes": 5036
+    },
+    {
+      "route": "/ai/stable-diffusion/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/95.【模型接入】Stable Diffusion.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\95.【模型接入】Stable Diffusion.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/95.【模型接入】Stable Diffusion.html",
+      "title": "【模型接入】Stable Diffusion",
+      "url": "https://doc.iocoder.cn/ai/stable-diffusion/",
+      "bytes": 4080
+    },
+    {
+      "route": "/ai/midjourney/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/96.【模型接入】Midjourney.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\96.【模型接入】Midjourney.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/96.【模型接入】Midjourney.html",
+      "title": "【模型接入】Midjourney",
+      "url": "https://doc.iocoder.cn/ai/midjourney/",
+      "bytes": 3439
+    },
+    {
+      "route": "/ai/suno/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/97.【模型接入】Suno.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\97.【模型接入】Suno.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/97.【模型接入】Suno.html",
+      "title": "【模型接入】Suno",
+      "url": "https://doc.iocoder.cn/ai/suno/",
+      "bytes": 2109
+    },
+    {
+      "route": "/ai/grok/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/98.【模型接入】Grok.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\98.【模型接入】Grok.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/98.【模型接入】Grok.html",
+      "title": "【模型接入】Grok",
+      "url": "https://doc.iocoder.cn/ai/grok/",
+      "bytes": 2638
+    },
+    {
+      "route": "/ai/stepfun/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/99.【模型接入】阶跃星辰.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\99.【模型接入】阶跃星辰.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/99.【模型接入】阶跃星辰.html",
+      "title": "【模型接入】阶跃星辰",
+      "url": "https://doc.iocoder.cn/ai/stepfun/",
+      "bytes": 2500
+    },
+    {
+      "route": "/iot/build/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/03.功能开启.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\03.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/03.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/iot/build/",
+      "bytes": 6408
+    },
+    {
+      "route": "/iot/mobile/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/100.移动端IoT物联网.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\100.移动端IoT物联网.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/100.移动端IoT物联网.html",
+      "title": "移动端 IoT 物联网",
+      "url": "https://doc.iocoder.cn/iot/mobile/",
+      "bytes": 1312
+    },
+    {
+      "route": "/ai/glm/",
+      "oldPath": "/01.开发指南/17.AI大模型手册/91.【模型接入】智谱 GLM.html",
+      "relativePath": "01.开发指南\\17.AI大模型手册\\91.【模型接入】智谱 GLM.md",
+      "category": [
+        "01.开发指南",
+        "17.AI大模型手册"
+      ],
+      "officialPath": "/01.开发指南/17.AI大模型手册/91.【模型接入】智谱 GLM.html",
+      "title": "【模型接入】智谱 GLM",
+      "url": "https://doc.iocoder.cn/ai/glm/",
+      "bytes": 2620
+    },
+    {
+      "route": "/iot/product/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/10.产品管理.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\10.产品管理.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/10.产品管理.html",
+      "title": "产品管理",
+      "url": "https://doc.iocoder.cn/iot/product/",
+      "bytes": 6337
+    },
+    {
+      "route": "/iot/thing-model/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/12.物模型配置.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\12.物模型配置.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/12.物模型配置.html",
+      "title": "物模型配置",
+      "url": "https://doc.iocoder.cn/iot/thing-model/",
+      "bytes": 6014
+    },
+    {
+      "route": "/iot/device/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/11.设备管理.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\11.设备管理.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/11.设备管理.html",
+      "title": "设备管理",
+      "url": "https://doc.iocoder.cn/iot/device/",
+      "bytes": 11353
+    },
+    {
+      "route": "/iot/device-register/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/14.设备动态注册.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\14.设备动态注册.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/14.设备动态注册.html",
+      "title": "设备动态注册",
+      "url": "https://doc.iocoder.cn/iot/device-register/",
+      "bytes": 9292
+    },
+    {
+      "route": "/iot/gateway-sub-device/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/13.设备网关与子设备.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\13.设备网关与子设备.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/13.设备网关与子设备.html",
+      "title": "设备网关与子设备",
+      "url": "https://doc.iocoder.cn/iot/gateway-sub-device/",
+      "bytes": 9405
+    },
+    {
+      "route": "/iot/protocol-mqtt/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/22.设备接入（MQTT 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\22.设备接入（MQTT 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/22.设备接入（MQTT 协议）.html",
+      "title": "设备接入（MQTT 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-mqtt/",
+      "bytes": 6622
+    },
+    {
+      "route": "/iot/protocol-overview/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/20.设备接入（概述）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\20.设备接入（概述）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/20.设备接入（概述）.html",
+      "title": "设备接入（概述）",
+      "url": "https://doc.iocoder.cn/iot/protocol-overview/",
+      "bytes": 19145
+    },
+    {
+      "route": "/iot/protocol-http/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/21.设备接入（HTTP 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\21.设备接入（HTTP 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/21.设备接入（HTTP 协议）.html",
+      "title": "设备接入（HTTP 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-http/",
+      "bytes": 5402
+    },
+    {
+      "route": "/iot/protocol-emqx/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/23.设备接入（EMQX 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\23.设备接入（EMQX 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/23.设备接入（EMQX 协议）.html",
+      "title": "设备接入（EMQX 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-emqx/",
+      "bytes": 12768
+    },
+    {
+      "route": "/iot/protocol-websocket/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/26.设备接入（WebSocket 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\26.设备接入（WebSocket 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/26.设备接入（WebSocket 协议）.html",
+      "title": "设备接入（WebSocket 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-websocket/",
+      "bytes": 6648
+    },
+    {
+      "route": "/iot/protocol-tcp/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/24.设备接入（TCP 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\24.设备接入（TCP 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/24.设备接入（TCP 协议）.html",
+      "title": "设备接入（TCP 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-tcp/",
+      "bytes": 4124
+    },
+    {
+      "route": "/iot/protocol-udp/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/25.设备接入（UDP 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\25.设备接入（UDP 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/25.设备接入（UDP 协议）.html",
+      "title": "设备接入（UDP 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-udp/",
+      "bytes": 4039
+    },
+    {
+      "route": "/iot/scene-rule/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/40.场景联动.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\40.场景联动.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/40.场景联动.html",
+      "title": "场景联动",
+      "url": "https://doc.iocoder.cn/iot/scene-rule/",
+      "bytes": 10620
+    },
+    {
+      "route": "/iot/protocol-modbus-client/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/28.设备接入（Modbus Client）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\28.设备接入（Modbus Client）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/28.设备接入（Modbus Client）.html",
+      "title": "设备接入（Modbus Client 模式）",
+      "url": "https://doc.iocoder.cn/iot/protocol-modbus-client/",
+      "bytes": 14832
+    },
+    {
+      "route": "/iot/protocol-coap/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/27.设备接入（CoAP 协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\27.设备接入（CoAP 协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/27.设备接入（CoAP 协议）.html",
+      "title": "设备接入（CoAP 协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-coap/",
+      "bytes": 3455
+    },
+    {
+      "route": "/iot/protocol-custom/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/30.设备接入（自定义协议）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\30.设备接入（自定义协议）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/30.设备接入（自定义协议）.html",
+      "title": "设备接入（自定义协议）",
+      "url": "https://doc.iocoder.cn/iot/protocol-custom/",
+      "bytes": 13379
+    },
+    {
+      "route": "/iot/alert-config/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/42.告警配置.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\42.告警配置.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/42.告警配置.html",
+      "title": "告警配置",
+      "url": "https://doc.iocoder.cn/iot/alert-config/",
+      "bytes": 9135
+    },
+    {
+      "route": "/iot/data-rule/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/41.数据流转.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\41.数据流转.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/41.数据流转.html",
+      "title": "数据流转",
+      "url": "https://doc.iocoder.cn/iot/data-rule/",
+      "bytes": 10372
+    },
+    {
+      "route": "/iot/protocol-modbus-server/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/29.设备接入（Modbus Server）.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\29.设备接入（Modbus Server）.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/29.设备接入（Modbus Server）.html",
+      "title": "设备接入（Modbus Server 模式）",
+      "url": "https://doc.iocoder.cn/iot/protocol-modbus-server/",
+      "bytes": 15472
+    },
+    {
+      "route": "/mes-preview/",
+      "oldPath": "/01.开发指南/19.MES手册/01.MES 演示.html",
+      "relativePath": "01.开发指南\\19.MES手册\\01.MES 演示.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/01.MES 演示.html",
+      "title": "MES 演示",
+      "url": "https://doc.iocoder.cn/mes-preview/",
+      "bytes": 9076
+    },
+    {
+      "route": "/mes/build/",
+      "oldPath": "/01.开发指南/19.MES手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\19.MES手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/mes/build/",
+      "bytes": 4001
+    },
+    {
+      "route": "/mes/md/product/",
+      "oldPath": "/01.开发指南/19.MES手册/10.【基础】物料产品、分类、计量单位.html",
+      "relativePath": "01.开发指南\\19.MES手册\\10.【基础】物料产品、分类、计量单位.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/10.【基础】物料产品、分类、计量单位.html",
+      "title": "【基础】物料产品、分类、计量单位",
+      "url": "https://doc.iocoder.cn/mes/md/product/",
+      "bytes": 16859
+    },
+    {
+      "route": "/iot/ota/",
+      "oldPath": "/01.开发指南/18.IoT物联网手册/43.OTA 固件升级.html",
+      "relativePath": "01.开发指南\\18.IoT物联网手册\\43.OTA 固件升级.md",
+      "category": [
+        "01.开发指南",
+        "18.IoT物联网手册"
+      ],
+      "officialPath": "/01.开发指南/18.IoT物联网手册/43.OTA 固件升级.html",
+      "title": "OTA 固件升级",
+      "url": "https://doc.iocoder.cn/iot/ota/",
+      "bytes": 11475
+    },
+    {
+      "route": "/mes/md/client-vendor/",
+      "oldPath": "/01.开发指南/19.MES手册/11.【基础】客户管理、供应商管理.html",
+      "relativePath": "01.开发指南\\19.MES手册\\11.【基础】客户管理、供应商管理.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/11.【基础】客户管理、供应商管理.html",
+      "title": "【基础】客户管理、供应商管理",
+      "url": "https://doc.iocoder.cn/mes/md/client-vendor/",
+      "bytes": 9269
+    },
+    {
+      "route": "/mes/mobile/",
+      "oldPath": "/01.开发指南/19.MES手册/100.移动端MES.html",
+      "relativePath": "01.开发指南\\19.MES手册\\100.移动端MES.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/100.移动端MES.html",
+      "title": "移动端 MES",
+      "url": "https://doc.iocoder.cn/mes/mobile/",
+      "bytes": 1386
+    },
+    {
+      "route": "/mes/md/workshop/",
+      "oldPath": "/01.开发指南/19.MES手册/12.【基础】车间设置、工作站设置.html",
+      "relativePath": "01.开发指南\\19.MES手册\\12.【基础】车间设置、工作站设置.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/12.【基础】车间设置、工作站设置.html",
+      "title": "【基础】车间设置、工作站设置",
+      "url": "https://doc.iocoder.cn/mes/md/workshop/",
+      "bytes": 10970
+    },
+    {
+      "route": "/mes/md/autocode/",
+      "oldPath": "/01.开发指南/19.MES手册/13.【基础】编码规则.html",
+      "relativePath": "01.开发指南\\19.MES手册\\13.【基础】编码规则.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/13.【基础】编码规则.html",
+      "title": "【基础】编码规则",
+      "url": "https://doc.iocoder.cn/mes/md/autocode/",
+      "bytes": 16639
+    },
+    {
+      "route": "/mes/pro/process-route/",
+      "oldPath": "/01.开发指南/19.MES手册/20.【生产】工序设置、工艺流程.html",
+      "relativePath": "01.开发指南\\19.MES手册\\20.【生产】工序设置、工艺流程.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/20.【生产】工序设置、工艺流程.html",
+      "title": "【生产】工序设置、工艺流程",
+      "url": "https://doc.iocoder.cn/mes/pro/process-route/",
+      "bytes": 17890
+    },
+    {
+      "route": "/mes/pro/work-order/",
+      "oldPath": "/01.开发指南/19.MES手册/21.【生产】生产工单.html",
+      "relativePath": "01.开发指南\\19.MES手册\\21.【生产】生产工单.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/21.【生产】生产工单.html",
+      "title": "【生产】生产工单",
+      "url": "https://doc.iocoder.cn/mes/pro/work-order/",
+      "bytes": 13797
+    },
+    {
+      "route": "/mes/pro/feedback/",
+      "oldPath": "/01.开发指南/19.MES手册/23.【生产】生产报工.html",
+      "relativePath": "01.开发指南\\19.MES手册\\23.【生产】生产报工.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/23.【生产】生产报工.html",
+      "title": "【生产】生产报工",
+      "url": "https://doc.iocoder.cn/mes/pro/feedback/",
+      "bytes": 19604
+    },
+    {
+      "route": "/mes/pro/schedule-card/",
+      "oldPath": "/01.开发指南/19.MES手册/22.【生产】生产排产、工序流转卡.html",
+      "relativePath": "01.开发指南\\19.MES手册\\22.【生产】生产排产、工序流转卡.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/22.【生产】生产排产、工序流转卡.html",
+      "title": "【生产】生产排产、工序流转卡",
+      "url": "https://doc.iocoder.cn/mes/pro/schedule-card/",
+      "bytes": 20264
+    },
+    {
+      "route": "/mes/pro/andon/",
+      "oldPath": "/01.开发指南/19.MES手册/24.【生产】安灯配置、安灯呼叫.html",
+      "relativePath": "01.开发指南\\19.MES手册\\24.【生产】安灯配置、安灯呼叫.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/24.【生产】安灯配置、安灯呼叫.html",
+      "title": "【生产】安灯配置、安灯呼叫",
+      "url": "https://doc.iocoder.cn/mes/pro/andon/",
+      "bytes": 8303
+    },
+    {
+      "route": "/mes/wm/warehouse-setup/",
+      "oldPath": "/01.开发指南/19.MES手册/30.【仓库】仓库与库区库位、条码赋码、SN码.html",
+      "relativePath": "01.开发指南\\19.MES手册\\30.【仓库】仓库与库区库位、条码赋码、SN码.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/30.【仓库】仓库与库区库位、条码赋码、SN码.html",
+      "title": "【仓库】仓库与库区库位、条码赋码、SN码",
+      "url": "https://doc.iocoder.cn/mes/wm/warehouse-setup/",
+      "bytes": 16658
+    },
+    {
+      "route": "/mes/pro/work-record/",
+      "oldPath": "/01.开发指南/19.MES手册/25.【生产】工作记录.html",
+      "relativePath": "01.开发指南\\19.MES手册\\25.【生产】工作记录.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/25.【生产】工作记录.html",
+      "title": "【生产】工作记录",
+      "url": "https://doc.iocoder.cn/mes/pro/work-record/",
+      "bytes": 6522
+    },
+    {
+      "route": "/mes/wm/stock/",
+      "oldPath": "/01.开发指南/19.MES手册/31.【仓库】批次管理、库存现有量、库存事务.html",
+      "relativePath": "01.开发指南\\19.MES手册\\31.【仓库】批次管理、库存现有量、库存事务.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/31.【仓库】批次管理、库存现有量、库存事务.html",
+      "title": "【仓库】批次管理、库存现有量、库存事务",
+      "url": "https://doc.iocoder.cn/mes/wm/stock/",
+      "bytes": 16235
+    },
+    {
+      "route": "/mes/wm/product-in/",
+      "oldPath": "/01.开发指南/19.MES手册/34.【仓库】产品产出、产品入库.html",
+      "relativePath": "01.开发指南\\19.MES手册\\34.【仓库】产品产出、产品入库.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/34.【仓库】产品产出、产品入库.html",
+      "title": "【仓库】产品产出、产品入库",
+      "url": "https://doc.iocoder.cn/mes/wm/product-in/",
+      "bytes": 18114
+    },
+    {
+      "route": "/mes/wm/purchase-in/",
+      "oldPath": "/01.开发指南/19.MES手册/32.【仓库】到货通知、采购入库、采购退货.html",
+      "relativePath": "01.开发指南\\19.MES手册\\32.【仓库】到货通知、采购入库、采购退货.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/32.【仓库】到货通知、采购入库、采购退货.html",
+      "title": "【仓库】到货通知、采购入库、采购退货",
+      "url": "https://doc.iocoder.cn/mes/wm/purchase-in/",
+      "bytes": 27523
+    },
+    {
+      "route": "/mes/wm/misc/",
+      "oldPath": "/01.开发指南/19.MES手册/37.【仓库】其他入库、其他出库.html",
+      "relativePath": "01.开发指南\\19.MES手册\\37.【仓库】其他入库、其他出库.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/37.【仓库】其他入库、其他出库.html",
+      "title": "【仓库】其他入库、其他出库",
+      "url": "https://doc.iocoder.cn/mes/wm/misc/",
+      "bytes": 14745
+    },
+    {
+      "route": "/mes/wm/issue-return/",
+      "oldPath": "/01.开发指南/19.MES手册/33.【仓库】生产领料、生产退料、物料消耗.html",
+      "relativePath": "01.开发指南\\19.MES手册\\33.【仓库】生产领料、生产退料、物料消耗.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/33.【仓库】生产领料、生产退料、物料消耗.html",
+      "title": "【仓库】生产领料、生产退料、物料消耗",
+      "url": "https://doc.iocoder.cn/mes/wm/issue-return/",
+      "bytes": 27849
+    },
+    {
+      "route": "/mes/wm/outsource/",
+      "oldPath": "/01.开发指南/19.MES手册/36.【仓库】外协发料、外协入库.html",
+      "relativePath": "01.开发指南\\19.MES手册\\36.【仓库】外协发料、外协入库.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/36.【仓库】外协发料、外协入库.html",
+      "title": "【仓库】外协发料、外协入库",
+      "url": "https://doc.iocoder.cn/mes/wm/outsource/",
+      "bytes": 21137
+    },
+    {
+      "route": "/mes/wm/sales-out/",
+      "oldPath": "/01.开发指南/19.MES手册/35.【仓库】发货通知、销售出库、销售退货.html",
+      "relativePath": "01.开发指南\\19.MES手册\\35.【仓库】发货通知、销售出库、销售退货.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/35.【仓库】发货通知、销售出库、销售退货.html",
+      "title": "【仓库】发货通知、销售出库、销售退货",
+      "url": "https://doc.iocoder.cn/mes/wm/sales-out/",
+      "bytes": 31053
+    },
+    {
+      "route": "/mes/wm/stocktaking/",
+      "oldPath": "/01.开发指南/19.MES手册/39.【仓库】库存盘点.html",
+      "relativePath": "01.开发指南\\19.MES手册\\39.【仓库】库存盘点.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/39.【仓库】库存盘点.html",
+      "title": "【仓库】库存盘点",
+      "url": "https://doc.iocoder.cn/mes/wm/stocktaking/",
+      "bytes": 19400
+    },
+    {
+      "route": "/mes/qc/template/",
+      "oldPath": "/01.开发指南/19.MES手册/41.【质量】质检方案.html",
+      "relativePath": "01.开发指南\\19.MES手册\\41.【质量】质检方案.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/41.【质量】质检方案.html",
+      "title": "【质量】质检方案",
+      "url": "https://doc.iocoder.cn/mes/qc/template/",
+      "bytes": 7546
+    },
+    {
+      "route": "/mes/qc/base/",
+      "oldPath": "/01.开发指南/19.MES手册/40.【质量】检测项设置、常见缺陷.html",
+      "relativePath": "01.开发指南\\19.MES手册\\40.【质量】检测项设置、常见缺陷.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/40.【质量】检测项设置、常见缺陷.html",
+      "title": "【质量】检测项设置、常见缺陷",
+      "url": "https://doc.iocoder.cn/mes/qc/base/",
+      "bytes": 6310
+    },
+    {
+      "route": "/mes/qc/iqc/",
+      "oldPath": "/01.开发指南/19.MES手册/42.【质量】来料检验（IQC）.html",
+      "relativePath": "01.开发指南\\19.MES手册\\42.【质量】来料检验（IQC）.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/42.【质量】来料检验（IQC）.html",
+      "title": "【质量】来料检验（IQC）",
+      "url": "https://doc.iocoder.cn/mes/qc/iqc/",
+      "bytes": 12200
+    },
+    {
+      "route": "/mes/wm/transfer/",
+      "oldPath": "/01.开发指南/19.MES手册/38.【仓库】调拨单、装箱管理.html",
+      "relativePath": "01.开发指南\\19.MES手册\\38.【仓库】调拨单、装箱管理.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/38.【仓库】调拨单、装箱管理.html",
+      "title": "【仓库】调拨单、装箱管理",
+      "url": "https://doc.iocoder.cn/mes/wm/transfer/",
+      "bytes": 16860
+    },
+    {
+      "route": "/mes/qc/oqc/",
+      "oldPath": "/01.开发指南/19.MES手册/44.【质量】出货检验（OQC）.html",
+      "relativePath": "01.开发指南\\19.MES手册\\44.【质量】出货检验（OQC）.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/44.【质量】出货检验（OQC）.html",
+      "title": "【质量】出货检验（OQC）",
+      "url": "https://doc.iocoder.cn/mes/qc/oqc/",
+      "bytes": 12422
+    },
+    {
+      "route": "/mes/qc/rqc/",
+      "oldPath": "/01.开发指南/19.MES手册/45.【质量】退货检验（RQC）.html",
+      "relativePath": "01.开发指南\\19.MES手册\\45.【质量】退货检验（RQC）.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/45.【质量】退货检验（RQC）.html",
+      "title": "【质量】退货检验（RQC）",
+      "url": "https://doc.iocoder.cn/mes/qc/rqc/",
+      "bytes": 12126
+    },
+    {
+      "route": "/mes/qc/ipqc/",
+      "oldPath": "/01.开发指南/19.MES手册/43.【质量】过程检验（IPQC）.html",
+      "relativePath": "01.开发指南\\19.MES手册\\43.【质量】过程检验（IPQC）.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/43.【质量】过程检验（IPQC）.html",
+      "title": "【质量】过程检验（IPQC）",
+      "url": "https://doc.iocoder.cn/mes/qc/ipqc/",
+      "bytes": 13464
+    },
+    {
+      "route": "/mes/qc/pending-inspect/",
+      "oldPath": "/01.开发指南/19.MES手册/46.【质量】待检任务、检验结果、缺陷记录.html",
+      "relativePath": "01.开发指南\\19.MES手册\\46.【质量】待检任务、检验结果、缺陷记录.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/46.【质量】待检任务、检验结果、缺陷记录.html",
+      "title": "【质量】待检任务、检验结果、缺陷记录",
+      "url": "https://doc.iocoder.cn/mes/qc/pending-inspect/",
+      "bytes": 9615
+    },
+    {
+      "route": "/mes/dv/device/",
+      "oldPath": "/01.开发指南/19.MES手册/50.【设备】设备类型、设备台账.html",
+      "relativePath": "01.开发指南\\19.MES手册\\50.【设备】设备类型、设备台账.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/50.【设备】设备类型、设备台账.html",
+      "title": "【设备】设备类型、设备台账",
+      "url": "https://doc.iocoder.cn/mes/dv/device/",
+      "bytes": 6144
+    },
+    {
+      "route": "/mes/dv/check-plan/",
+      "oldPath": "/01.开发指南/19.MES手册/51.【设备】点检保养项目、点检保养方案.html",
+      "relativePath": "01.开发指南\\19.MES手册\\51.【设备】点检保养项目、点检保养方案.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/51.【设备】点检保养项目、点检保养方案.html",
+      "title": "【设备】点检保养项目、点检保养方案",
+      "url": "https://doc.iocoder.cn/mes/dv/check-plan/",
+      "bytes": 8890
+    },
+    {
+      "route": "/mes/dv/check-record/",
+      "oldPath": "/01.开发指南/19.MES手册/52.【设备】点检记录、保养记录、维修单.html",
+      "relativePath": "01.开发指南\\19.MES手册\\52.【设备】点检记录、保养记录、维修单.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/52.【设备】点检记录、保养记录、维修单.html",
+      "title": "【设备】点检记录、保养记录、维修单",
+      "url": "https://doc.iocoder.cn/mes/dv/check-record/",
+      "bytes": 16958
+    },
+    {
+      "route": "/wms-preview/",
+      "oldPath": "/01.开发指南/20.WMS手册/01.WMS 演示.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\01.WMS 演示.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/01.WMS 演示.html",
+      "title": "WMS 演示",
+      "url": "https://doc.iocoder.cn/wms-preview/",
+      "bytes": 4457
+    },
+    {
+      "route": "/mes/tm/tool/",
+      "oldPath": "/01.开发指南/19.MES手册/53.【工具】工具类型、工装夹具台账.html",
+      "relativePath": "01.开发指南\\19.MES手册\\53.【工具】工具类型、工装夹具台账.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/53.【工具】工具类型、工装夹具台账.html",
+      "title": "【工具】工具类型、工装夹具台账",
+      "url": "https://doc.iocoder.cn/mes/tm/tool/",
+      "bytes": 6671
+    },
+    {
+      "route": "/mes/cal/team/",
+      "oldPath": "/01.开发指南/19.MES手册/54.【排班】班组设置、节假日设置.html",
+      "relativePath": "01.开发指南\\19.MES手册\\54.【排班】班组设置、节假日设置.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/54.【排班】班组设置、节假日设置.html",
+      "title": "【排班】班组设置、节假日设置",
+      "url": "https://doc.iocoder.cn/mes/cal/team/",
+      "bytes": 5345
+    },
+    {
+      "route": "/wms/build/",
+      "oldPath": "/01.开发指南/20.WMS手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/wms/build/",
+      "bytes": 3912
+    },
+    {
+      "route": "/wms/mobile/",
+      "oldPath": "/01.开发指南/20.WMS手册/100.移动端WMS.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\100.移动端WMS.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/100.移动端WMS.html",
+      "title": "移动端 WMS",
+      "url": "https://doc.iocoder.cn/wms/mobile/",
+      "bytes": 1285
+    },
+    {
+      "route": "/wms/md/warehouse/",
+      "oldPath": "/01.开发指南/20.WMS手册/10.【基础】仓库.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\10.【基础】仓库.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/10.【基础】仓库.html",
+      "title": "【基础】仓库",
+      "url": "https://doc.iocoder.cn/wms/md/warehouse/",
+      "bytes": 2962
+    },
+    {
+      "route": "/mes/cal/calendar/",
+      "oldPath": "/01.开发指南/19.MES手册/55.【排班】排班计划、排班日历.html",
+      "relativePath": "01.开发指南\\19.MES手册\\55.【排班】排班计划、排班日历.md",
+      "category": [
+        "01.开发指南",
+        "19.MES手册"
+      ],
+      "officialPath": "/01.开发指南/19.MES手册/55.【排班】排班计划、排班日历.html",
+      "title": "【排班】排班计划、排班日历",
+      "url": "https://doc.iocoder.cn/mes/cal/calendar/",
+      "bytes": 8843
+    },
+    {
+      "route": "/wms/md/merchant/",
+      "oldPath": "/01.开发指南/20.WMS手册/12.【基础】往来企业（供应商、客户）.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\12.【基础】往来企业（供应商、客户）.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/12.【基础】往来企业（供应商、客户）.html",
+      "title": "【基础】往来企业（供应商、客户）",
+      "url": "https://doc.iocoder.cn/wms/md/merchant/",
+      "bytes": 4394
+    },
+    {
+      "route": "/wms/md/item/",
+      "oldPath": "/01.开发指南/20.WMS手册/11.【基础】商品、SKU、分类、品牌.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\11.【基础】商品、SKU、分类、品牌.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/11.【基础】商品、SKU、分类、品牌.html",
+      "title": "【基础】商品、SKU、分类、品牌",
+      "url": "https://doc.iocoder.cn/wms/md/item/",
+      "bytes": 10888
+    },
+    {
+      "route": "/wms/inventory/",
+      "oldPath": "/01.开发指南/20.WMS手册/20.【库存】库存记录、流水、统计.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\20.【库存】库存记录、流水、统计.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/20.【库存】库存记录、流水、统计.html",
+      "title": "【库存】库存记录、流水、统计",
+      "url": "https://doc.iocoder.cn/wms/inventory/",
+      "bytes": 10497
+    },
+    {
+      "route": "/wms/order/receipt/",
+      "oldPath": "/01.开发指南/20.WMS手册/30.【单据】入库.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\30.【单据】入库.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/30.【单据】入库.html",
+      "title": "【单据】入库",
+      "url": "https://doc.iocoder.cn/wms/order/receipt/",
+      "bytes": 9987
+    },
+    {
+      "route": "/wms/order/shipment/",
+      "oldPath": "/01.开发指南/20.WMS手册/40.【单据】出库.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\40.【单据】出库.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/40.【单据】出库.html",
+      "title": "【单据】出库",
+      "url": "https://doc.iocoder.cn/wms/order/shipment/",
+      "bytes": 8599
+    },
+    {
+      "route": "/wms/order/movement/",
+      "oldPath": "/01.开发指南/20.WMS手册/50.【单据】移库.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\50.【单据】移库.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/50.【单据】移库.html",
+      "title": "【单据】移库",
+      "url": "https://doc.iocoder.cn/wms/order/movement/",
+      "bytes": 7802
+    },
+    {
+      "route": "/wms/order/check/",
+      "oldPath": "/01.开发指南/20.WMS手册/51.【单据】盘库.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\51.【单据】盘库.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/51.【单据】盘库.html",
+      "title": "【单据】盘库",
+      "url": "https://doc.iocoder.cn/wms/order/check/",
+      "bytes": 9526
+    },
+    {
+      "route": "/wms/compare/",
+      "oldPath": "/01.开发指南/20.WMS手册/90.【其它】WMS、MES、ERP 对比.html",
+      "relativePath": "01.开发指南\\20.WMS手册\\90.【其它】WMS、MES、ERP 对比.md",
+      "category": [
+        "01.开发指南",
+        "20.WMS手册"
+      ],
+      "officialPath": "/01.开发指南/20.WMS手册/90.【其它】WMS、MES、ERP 对比.html",
+      "title": "【其它】WMS、MES、ERP 对比",
+      "url": "https://doc.iocoder.cn/wms/compare/",
+      "bytes": 9843
+    },
+    {
+      "route": "/hrm-preview/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/01.HRM 演示.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\01.HRM 演示.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/01.HRM 演示.html",
+      "title": "HRM 演示",
+      "url": "https://doc.iocoder.cn/hrm-preview/",
+      "bytes": 6698
+    },
+    {
+      "route": "/hrm/build/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/02.功能开启.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/hrm/build/",
+      "bytes": 4556
+    },
+    {
+      "route": "/hrm/organization/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/10.【组织】工作台、组织架构.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\10.【组织】工作台、组织架构.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/10.【组织】工作台、组织架构.html",
+      "title": "【组织】工作台、组织架构",
+      "url": "https://doc.iocoder.cn/hrm/organization/",
+      "bytes": 9016
+    },
+    {
+      "route": "/hrm/mobile/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/100.移动端HRM.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\100.移动端HRM.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/100.移动端HRM.html",
+      "title": "移动端 HRM",
+      "url": "https://doc.iocoder.cn/hrm/mobile/",
+      "bytes": 4667
+    },
+    {
+      "route": "/hrm/recruit/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/20.【招聘】招聘管理.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\20.【招聘】招聘管理.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/20.【招聘】招聘管理.html",
+      "title": "【招聘】招聘管理",
+      "url": "https://doc.iocoder.cn/hrm/recruit/",
+      "bytes": 22140
+    },
+    {
+      "route": "/hrm/insurance/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/40.【社保】社保管理.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\40.【社保】社保管理.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/40.【社保】社保管理.html",
+      "title": "【社保】社保管理",
+      "url": "https://doc.iocoder.cn/hrm/insurance/",
+      "bytes": 18950
+    },
+    {
+      "route": "/hrm/employee/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/11.【员工】员工管理.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\11.【员工】员工管理.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/11.【员工】员工管理.html",
+      "title": "【员工】员工管理",
+      "url": "https://doc.iocoder.cn/hrm/employee/",
+      "bytes": 33395
+    },
+    {
+      "route": "/hrm/attendance/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/30.【考勤】考勤管理.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\30.【考勤】考勤管理.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/30.【考勤】考勤管理.html",
+      "title": "【考勤】考勤管理",
+      "url": "https://doc.iocoder.cn/hrm/attendance/",
+      "bytes": 22880
+    },
+    {
+      "route": "/hrm/salary/config/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/50.【薪资】计薪设置、薪资档案.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\50.【薪资】计薪设置、薪资档案.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/50.【薪资】计薪设置、薪资档案.html",
+      "title": "【薪资】计薪设置、薪资档案",
+      "url": "https://doc.iocoder.cn/hrm/salary/config/",
+      "bytes": 24587
+    },
+    {
+      "route": "/hrm/salary/payroll/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/51.【薪资】月度工资、工资条.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\51.【薪资】月度工资、工资条.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/51.【薪资】月度工资、工资条.html",
+      "title": "【薪资】月度工资、工资条",
+      "url": "https://doc.iocoder.cn/hrm/salary/payroll/",
+      "bytes": 24652
+    },
+    {
+      "route": "/hrm/performance/template-plan/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/60.【绩效】绩效模板、绩效计划.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\60.【绩效】绩效模板、绩效计划.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/60.【绩效】绩效模板、绩效计划.html",
+      "title": "【绩效】绩效模板、绩效计划",
+      "url": "https://doc.iocoder.cn/hrm/performance/template-plan/",
+      "bytes": 24889
+    },
+    {
+      "route": "/im-preview/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/01.IM 演示.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\01.IM 演示.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/01.IM 演示.html",
+      "title": "IM 演示",
+      "url": "https://doc.iocoder.cn/im-preview/",
+      "bytes": 6148
+    },
+    {
+      "route": "/im/build/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/02.功能开启.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\02.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/02.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/im/build/",
+      "bytes": 5148
+    },
+    {
+      "route": "/hrm/performance/assessment/",
+      "oldPath": "/01.开发指南/21.HRM人力资源/61.【绩效】绩效考核、绩效档案.html",
+      "relativePath": "01.开发指南\\21.HRM人力资源\\61.【绩效】绩效考核、绩效档案.md",
+      "category": [
+        "01.开发指南",
+        "21.HRM人力资源"
+      ],
+      "officialPath": "/01.开发指南/21.HRM人力资源/61.【绩效】绩效考核、绩效档案.html",
+      "title": "【绩效】绩效考核、绩效档案",
+      "url": "https://doc.iocoder.cn/hrm/performance/assessment/",
+      "bytes": 33373
+    },
+    {
+      "route": "/im/friend/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/10.【好友】好友关系、好友申请.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\10.【好友】好友关系、好友申请.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/10.【好友】好友关系、好友申请.html",
+      "title": "【好友】好友关系、好友申请",
+      "url": "https://doc.iocoder.cn/im/friend/",
+      "bytes": 11333
+    },
+    {
+      "route": "/im/group/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/20.【群聊】群组、群成员、入群申请.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\20.【群聊】群组、群成员、入群申请.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/20.【群聊】群组、群成员、入群申请.html",
+      "title": "【群聊】群组、群成员、入群申请",
+      "url": "https://doc.iocoder.cn/im/group/",
+      "bytes": 12861
+    },
+    {
+      "route": "/im/mobile/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/100.移动端IM即时通讯.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\100.移动端IM即时通讯.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/100.移动端IM即时通讯.html",
+      "title": "移动端 IM 即时通讯",
+      "url": "https://doc.iocoder.cn/im/mobile/",
+      "bytes": 1407
+    },
+    {
+      "route": "/im/channel/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/40.【频道】频道、频道素材.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\40.【频道】频道、频道素材.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/40.【频道】频道、频道素材.html",
+      "title": "【频道】频道、频道素材",
+      "url": "https://doc.iocoder.cn/im/channel/",
+      "bytes": 6826
+    },
+    {
+      "route": "/im/face/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/50.【内容】表情、敏感词.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\50.【内容】表情、敏感词.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/50.【内容】表情、敏感词.html",
+      "title": "【内容】表情、敏感词",
+      "url": "https://doc.iocoder.cn/im/face/",
+      "bytes": 7199
+    },
+    {
+      "route": "/im/message/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/30.【消息】私聊、群聊、频道消息.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\30.【消息】私聊、群聊、频道消息.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/30.【消息】私聊、群聊、频道消息.html",
+      "title": "【消息】私聊、群聊、频道消息",
+      "url": "https://doc.iocoder.cn/im/message/",
+      "bytes": 17688
+    },
+    {
+      "route": "/im/rtc/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/60.【通话】语音通话、视频通话、共享屏幕.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\60.【通话】语音通话、视频通话、共享屏幕.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/60.【通话】语音通话、视频通话、共享屏幕.html",
+      "title": "【通话】语音通话、视频通话、共享屏幕",
+      "url": "https://doc.iocoder.cn/im/rtc/",
+      "bytes": 9965
+    },
+    {
+      "route": "/mp/account/",
+      "oldPath": "/01.开发指南/23.公众号手册/02.公众号接入.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\02.公众号接入.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/02.公众号接入.html",
+      "title": "公众号接入",
+      "url": "https://doc.iocoder.cn/mp/account/",
+      "bytes": 5957
+    },
+    {
+      "route": "/im/websocket/",
+      "oldPath": "/01.开发指南/22.IM即时通讯手册/70.【WebSocket】实时推送与离线消息.html",
+      "relativePath": "01.开发指南\\22.IM即时通讯手册\\70.【WebSocket】实时推送与离线消息.md",
+      "category": [
+        "01.开发指南",
+        "22.IM即时通讯手册"
+      ],
+      "officialPath": "/01.开发指南/22.IM即时通讯手册/70.【WebSocket】实时推送与离线消息.html",
+      "title": "【WebSocket】实时推送与离线消息",
+      "url": "https://doc.iocoder.cn/im/websocket/",
+      "bytes": 13122
+    },
+    {
+      "route": "/mp/build/",
+      "oldPath": "/01.开发指南/23.公众号手册/01.功能开启.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\01.功能开启.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/01.功能开启.html",
+      "title": "功能开启",
+      "url": "https://doc.iocoder.cn/mp/build/",
+      "bytes": 3864
+    },
+    {
+      "route": "/mp/user/",
+      "oldPath": "/01.开发指南/23.公众号手册/03.公众号粉丝.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\03.公众号粉丝.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/03.公众号粉丝.html",
+      "title": "公众号粉丝",
+      "url": "https://doc.iocoder.cn/mp/user/",
+      "bytes": 2967
+    },
+    {
+      "route": "/mp/tag/",
+      "oldPath": "/01.开发指南/23.公众号手册/04.公众号标签.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\04.公众号标签.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/04.公众号标签.html",
+      "title": "公众号标签",
+      "url": "https://doc.iocoder.cn/mp/tag/",
+      "bytes": 1584
+    },
+    {
+      "route": "/mp/message/",
+      "oldPath": "/01.开发指南/23.公众号手册/05.公众号消息.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\05.公众号消息.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/05.公众号消息.html",
+      "title": "公众号消息",
+      "url": "https://doc.iocoder.cn/mp/message/",
+      "bytes": 5368
+    },
+    {
+      "route": "/mp/message-template/",
+      "oldPath": "/01.开发指南/23.公众号手册/06.模版消息.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\06.模版消息.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/06.模版消息.html",
+      "title": "模版消息",
+      "url": "https://doc.iocoder.cn/mp/message-template/",
+      "bytes": 2377
+    },
+    {
+      "route": "/mp/menu/",
+      "oldPath": "/01.开发指南/23.公众号手册/08.公众号菜单.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\08.公众号菜单.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/08.公众号菜单.html",
+      "title": "公众号菜单",
+      "url": "https://doc.iocoder.cn/mp/menu/",
+      "bytes": 1872
+    },
+    {
+      "route": "/mp/material/",
+      "oldPath": "/01.开发指南/23.公众号手册/09.公众号素材.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\09.公众号素材.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/09.公众号素材.html",
+      "title": "公众号素材",
+      "url": "https://doc.iocoder.cn/mp/material/",
+      "bytes": 4442
+    },
+    {
+      "route": "/mp/auto-reply/",
+      "oldPath": "/01.开发指南/23.公众号手册/07.自动回复.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\07.自动回复.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/07.自动回复.html",
+      "title": "自动回复",
+      "url": "https://doc.iocoder.cn/mp/auto-reply/",
+      "bytes": 2997
+    },
+    {
+      "route": "/mp/mobile/",
+      "oldPath": "/01.开发指南/23.公众号手册/100.移动端公众号管理.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\100.移动端公众号管理.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/100.移动端公众号管理.html",
+      "title": "移动端公众号管理",
+      "url": "https://doc.iocoder.cn/mp/mobile/",
+      "bytes": 1329
+    },
+    {
+      "route": "/mp/article/",
+      "oldPath": "/01.开发指南/23.公众号手册/10.公众号图文.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\10.公众号图文.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/10.公众号图文.html",
+      "title": "公众号图文",
+      "url": "https://doc.iocoder.cn/mp/article/",
+      "bytes": 1886
+    },
+    {
+      "route": "/mp/statistics/",
+      "oldPath": "/01.开发指南/23.公众号手册/11.公众号统计.html",
+      "relativePath": "01.开发指南\\23.公众号手册\\11.公众号统计.md",
+      "category": [
+        "01.开发指南",
+        "23.公众号手册"
+      ],
+      "officialPath": "/01.开发指南/23.公众号手册/11.公众号统计.html",
+      "title": "公众号统计",
+      "url": "https://doc.iocoder.cn/mp/statistics/",
+      "bytes": 1280
+    },
+    {
+      "route": "/sms/",
+      "oldPath": "/01.开发指南/24.系统手册/40.短信配置.html",
+      "relativePath": "01.开发指南\\24.系统手册\\40.短信配置.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/40.短信配置.html",
+      "title": "短信配置",
+      "url": "https://doc.iocoder.cn/sms/",
+      "bytes": 13300
+    },
+    {
+      "route": "/notify/",
+      "oldPath": "/01.开发指南/24.系统手册/42.站内信配置.html",
+      "relativePath": "01.开发指南\\24.系统手册\\42.站内信配置.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/42.站内信配置.html",
+      "title": "站内信配置",
+      "url": "https://doc.iocoder.cn/notify/",
+      "bytes": 5799
+    },
+    {
+      "route": "/mail/",
+      "oldPath": "/01.开发指南/24.系统手册/41.邮件配置.html",
+      "relativePath": "01.开发指南\\24.系统手册\\41.邮件配置.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/41.邮件配置.html",
+      "title": "邮件配置",
+      "url": "https://doc.iocoder.cn/mail/",
+      "bytes": 8006
+    },
+    {
+      "route": "/webhook/",
+      "oldPath": "/01.开发指南/24.系统手册/43.Webhook（钉钉、飞书、企微）.html",
+      "relativePath": "01.开发指南\\24.系统手册\\43.Webhook（钉钉、飞书、企微）.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/43.Webhook（钉钉、飞书、企微）.html",
+      "title": "Webhook（钉钉、飞书、企微）",
+      "url": "https://doc.iocoder.cn/webhook/",
+      "bytes": 1557
+    },
+    {
+      "route": "/desensitize/",
+      "oldPath": "/01.开发指南/24.系统手册/45.数据脱敏.html",
+      "relativePath": "01.开发指南\\24.系统手册\\45.数据脱敏.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/45.数据脱敏.html",
+      "title": "数据脱敏、字段权限",
+      "url": "https://doc.iocoder.cn/desensitize/",
+      "bytes": 7451
+    },
+    {
+      "route": "/sensitive-word/",
+      "oldPath": "/01.开发指南/24.系统手册/46.敏感词.html",
+      "relativePath": "01.开发指南\\24.系统手册\\46.敏感词.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/46.敏感词.html",
+      "title": "敏感词",
+      "url": "https://doc.iocoder.cn/sensitive-word/",
+      "bytes": 3926
+    },
+    {
+      "route": "/area-and-ip/",
+      "oldPath": "/01.开发指南/24.系统手册/48.地区 & IP.html",
+      "relativePath": "01.开发指南\\24.系统手册\\48.地区 & IP.md",
+      "category": [
+        "01.开发指南",
+        "24.系统手册"
+      ],
+      "officialPath": "/01.开发指南/24.系统手册/48.地区 & IP.html",
+      "title": "地区 & IP 库",
+      "url": "https://doc.iocoder.cn/area-and-ip/",
+      "bytes": 5267
+    },
+    {
+      "route": "/dev-env/",
+      "oldPath": "/01.开发指南/25.运维手册/01.开发环境.html",
+      "relativePath": "01.开发指南\\25.运维手册\\01.开发环境.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/01.开发环境.html",
+      "title": "开发环境",
+      "url": "https://doc.iocoder.cn/dev-env/",
+      "bytes": 3790
+    },
+    {
+      "route": "/deployment-linux/",
+      "oldPath": "/01.开发指南/25.运维手册/02.Linux 部署.html",
+      "relativePath": "01.开发指南\\25.运维手册\\02.Linux 部署.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/02.Linux 部署.html",
+      "title": "Linux 部署",
+      "url": "https://doc.iocoder.cn/deployment-linux/",
+      "bytes": 23232
+    },
+    {
+      "route": "/deployment-jenkins/",
+      "oldPath": "/01.开发指南/25.运维手册/04.Jenkins 部署.html",
+      "relativePath": "01.开发指南\\25.运维手册\\04.Jenkins 部署.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/04.Jenkins 部署.html",
+      "title": "Jenkins 部署",
+      "url": "https://doc.iocoder.cn/deployment-jenkins/",
+      "bytes": 1139
+    },
+    {
+      "route": "/deployment-docker/",
+      "oldPath": "/01.开发指南/25.运维手册/03.Docker 部署.html",
+      "relativePath": "01.开发指南\\25.运维手册\\03.Docker 部署.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/03.Docker 部署.html",
+      "title": "Docker 部署",
+      "url": "https://doc.iocoder.cn/deployment-docker/",
+      "bytes": 22558
+    },
+    {
+      "route": "/deployment-baota/",
+      "oldPath": "/01.开发指南/25.运维手册/05.宝塔部署.html",
+      "relativePath": "01.开发指南\\25.运维手册\\05.宝塔部署.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/05.宝塔部署.html",
+      "title": "宝塔部署",
+      "url": "https://doc.iocoder.cn/deployment-baota/",
+      "bytes": 22309
+    },
+    {
+      "route": "/https/",
+      "oldPath": "/01.开发指南/25.运维手册/10.HTTPS 证书.html",
+      "relativePath": "01.开发指南\\25.运维手册\\10.HTTPS 证书.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/10.HTTPS 证书.html",
+      "title": "HTTPS 证书",
+      "url": "https://doc.iocoder.cn/https/",
+      "bytes": 2485
+    },
+    {
+      "route": "/deployment-1panel/",
+      "oldPath": "/01.开发指南/25.运维手册/06.1Panel 部署.html",
+      "relativePath": "01.开发指南\\25.运维手册\\06.1Panel 部署.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/06.1Panel 部署.html",
+      "title": "1Panel 部署",
+      "url": "https://doc.iocoder.cn/deployment-1panel/",
+      "bytes": 22587
+    },
+    {
+      "route": "/server-monitor/",
+      "oldPath": "/01.开发指南/25.运维手册/11.服务监控.html",
+      "relativePath": "01.开发指南\\25.运维手册\\11.服务监控.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/11.服务监控.html",
+      "title": "服务监控",
+      "url": "https://doc.iocoder.cn/server-monitor/",
+      "bytes": 8496
+    },
+    {
+      "route": "/deployment-war/",
+      "oldPath": "/01.开发指南/25.运维手册/99.Tomcat WAR 部署.html",
+      "relativePath": "01.开发指南\\25.运维手册\\99.Tomcat WAR 部署.md",
+      "category": [
+        "01.开发指南",
+        "25.运维手册"
+      ],
+      "officialPath": "/01.开发指南/25.运维手册/99.Tomcat WAR 部署.html",
+      "title": "Tomcat WAR 部署",
+      "url": "https://doc.iocoder.cn/deployment-war/",
+      "bytes": 2289
+    },
+    {
+      "route": "/vue3/dev-spec/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/01.开发规范.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\01.开发规范.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/01.开发规范.html",
+      "title": "开发规范",
+      "url": "https://doc.iocoder.cn/vue3/dev-spec/",
+      "bytes": 16074
+    },
+    {
+      "route": "/vue3/icon/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/03.Icon 图标.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\03.Icon 图标.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/03.Icon 图标.html",
+      "title": "Icon 图标",
+      "url": "https://doc.iocoder.cn/vue3/icon/",
+      "bytes": 2551
+    },
+    {
+      "route": "/vue3/dict/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/04.字典数据.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\04.字典数据.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/04.字典数据.html",
+      "title": "字典数据",
+      "url": "https://doc.iocoder.cn/vue3/dict/",
+      "bytes": 3412
+    },
+    {
+      "route": "/vue3/components/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/05.系统组件.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\05.系统组件.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/05.系统组件.html",
+      "title": "系统组件",
+      "url": "https://doc.iocoder.cn/vue3/components/",
+      "bytes": 13259
+    },
+    {
+      "route": "/vue3/route/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/02.菜单路由.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\02.菜单路由.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/02.菜单路由.html",
+      "title": "菜单路由",
+      "url": "https://doc.iocoder.cn/vue3/route/",
+      "bytes": 12925
+    },
+    {
+      "route": "/vue3/config-center/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/07.配置读取.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\07.配置读取.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/07.配置读取.html",
+      "title": "配置读取",
+      "url": "https://doc.iocoder.cn/vue3/config-center/",
+      "bytes": 1082
+    },
+    {
+      "route": "/vue3/util/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/06.通用方法.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\06.通用方法.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/06.通用方法.html",
+      "title": "通用方法",
+      "url": "https://doc.iocoder.cn/vue3/util/",
+      "bytes": 2262
+    },
+    {
+      "route": "/vue3/i18n/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/09.国际化.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\09.国际化.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/09.国际化.html",
+      "title": "国际化",
+      "url": "https://doc.iocoder.cn/vue3/i18n/",
+      "bytes": 5780
+    },
+    {
+      "route": "/vue3/debugger/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/10.IDE 调试.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\10.IDE 调试.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/10.IDE 调试.html",
+      "title": "IDE 调试",
+      "url": "https://doc.iocoder.cn/vue3/debugger/",
+      "bytes": 1745
+    },
+    {
+      "route": "/vben5/dev-spec/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/01.开发规范.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\01.开发规范.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/01.开发规范.html",
+      "title": "开发规范",
+      "url": "https://doc.iocoder.cn/vben5/dev-spec/",
+      "bytes": 9510
+    },
+    {
+      "route": "/vue3/crud-schema/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/08.CRUD 组件.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\08.CRUD 组件.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/08.CRUD 组件.html",
+      "title": "CRUD 组件",
+      "url": "https://doc.iocoder.cn/vue3/crud-schema/",
+      "bytes": 5923
+    },
+    {
+      "route": "/vue3/format/",
+      "oldPath": "/01.开发指南/30.前端手册 Vue 3.x/11.代码格式化.html",
+      "relativePath": "01.开发指南\\30.前端手册 Vue 3.x\\11.代码格式化.md",
+      "category": [
+        "01.开发指南",
+        "30.前端手册 Vue 3.x"
+      ],
+      "officialPath": "/01.开发指南/30.前端手册 Vue 3.x/11.代码格式化.html",
+      "title": "代码格式化",
+      "url": "https://doc.iocoder.cn/vue3/format/",
+      "bytes": 2011
+    },
+    {
+      "route": "/vben5/icon-theme/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/03.图标、主题、国际化.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\03.图标、主题、国际化.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/03.图标、主题、国际化.html",
+      "title": "图标、主题、国际化",
+      "url": "https://doc.iocoder.cn/vben5/icon-theme/",
+      "bytes": 745
+    },
+    {
+      "route": "/vben5/route/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/02.菜单路由.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\02.菜单路由.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/02.菜单路由.html",
+      "title": "菜单路由",
+      "url": "https://doc.iocoder.cn/vben5/route/",
+      "bytes": 9201
+    },
+    {
+      "route": "/vben5/config-center/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/07.配置读取.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\07.配置读取.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/07.配置读取.html",
+      "title": "配置读取",
+      "url": "https://doc.iocoder.cn/vben5/config-center/",
+      "bytes": 1152
+    },
+    {
+      "route": "/vben5/util/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/06.通用方法.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\06.通用方法.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/06.通用方法.html",
+      "title": "通用方法",
+      "url": "https://doc.iocoder.cn/vben5/util/",
+      "bytes": 4484
+    },
+    {
+      "route": "/vben5/dict/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/04.字典数据.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\04.字典数据.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/04.字典数据.html",
+      "title": "字典数据",
+      "url": "https://doc.iocoder.cn/vben5/dict/",
+      "bytes": 4153
+    },
+    {
+      "route": "/vben5/debugger/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/10.IDE 调试.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\10.IDE 调试.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/10.IDE 调试.html",
+      "title": "IDE 调试",
+      "url": "https://doc.iocoder.cn/vben5/debugger/",
+      "bytes": 1918
+    },
+    {
+      "route": "/vben5/components/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/05.系统组件.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\05.系统组件.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/05.系统组件.html",
+      "title": "系统组件",
+      "url": "https://doc.iocoder.cn/vben5/components/",
+      "bytes": 26910
+    },
+    {
+      "route": "/vue2/dev-spec/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/01.开发规范.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\01.开发规范.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/01.开发规范.html",
+      "title": "开发规范",
+      "url": "https://doc.iocoder.cn/vue2/dev-spec/",
+      "bytes": 7747
+    },
+    {
+      "route": "/vue2/icon/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/03.Icon 图标.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\03.Icon 图标.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/03.Icon 图标.html",
+      "title": "Icon 图标",
+      "url": "https://doc.iocoder.cn/vue2/icon/",
+      "bytes": 1801
+    },
+    {
+      "route": "/vben5/format/",
+      "oldPath": "/01.开发指南/31.前端手册 Vben 5.x/11.代码格式化.html",
+      "relativePath": "01.开发指南\\31.前端手册 Vben 5.x\\11.代码格式化.md",
+      "category": [
+        "01.开发指南",
+        "31.前端手册 Vben 5.x"
+      ],
+      "officialPath": "/01.开发指南/31.前端手册 Vben 5.x/11.代码格式化.html",
+      "title": "代码格式化",
+      "url": "https://doc.iocoder.cn/vben5/format/",
+      "bytes": 2287
+    },
+    {
+      "route": "/vue2/route/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/02.菜单路由.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\02.菜单路由.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/02.菜单路由.html",
+      "title": "菜单路由",
+      "url": "https://doc.iocoder.cn/vue2/route/",
+      "bytes": 9584
+    },
+    {
+      "route": "/vue2/dict/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/04.字典数据.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\04.字典数据.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/04.字典数据.html",
+      "title": "字典数据",
+      "url": "https://doc.iocoder.cn/vue2/dict/",
+      "bytes": 2507
+    },
+    {
+      "route": "/vue2/config-center/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/07.配置读取.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\07.配置读取.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/07.配置读取.html",
+      "title": "配置读取",
+      "url": "https://doc.iocoder.cn/vue2/config-center/",
+      "bytes": 1038
+    },
+    {
+      "route": "/vue2/util/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/06.通用方法.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\06.通用方法.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/06.通用方法.html",
+      "title": "通用方法",
+      "url": "https://doc.iocoder.cn/vue2/util/",
+      "bytes": 6055
+    },
+    {
+      "route": "/vue2/components/",
+      "oldPath": "/01.开发指南/32.前端手册 Vue 2.x/05.系统组件.html",
+      "relativePath": "01.开发指南\\32.前端手册 Vue 2.x\\05.系统组件.md",
+      "category": [
+        "01.开发指南",
+        "32.前端手册 Vue 2.x"
+      ],
+      "officialPath": "/01.开发指南/32.前端手册 Vue 2.x/05.系统组件.html",
+      "title": "系统组件",
+      "url": "https://doc.iocoder.cn/vue2/components/",
+      "bytes": 11493
+    },
+    {
+      "route": "/admin-uniapp/route/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/02.菜单路由.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\02.菜单路由.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/02.菜单路由.html",
+      "title": "菜单路由",
+      "url": "https://doc.iocoder.cn/admin-uniapp/route/",
+      "bytes": 9456
+    },
+    {
+      "route": "/admin-uniapp/dev-spec/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/01.开发规范.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\01.开发规范.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/01.开发规范.html",
+      "title": "开发规范",
+      "url": "https://doc.iocoder.cn/admin-uniapp/dev-spec/",
+      "bytes": 7664
+    },
+    {
+      "route": "/admin-uniapp/icon-theme/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/03.图标、主题、国际化.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\03.图标、主题、国际化.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/03.图标、主题、国际化.html",
+      "title": "图标、主题、国际化",
+      "url": "https://doc.iocoder.cn/admin-uniapp/icon-theme/",
+      "bytes": 1017
+    },
+    {
+      "route": "/admin-uniapp/dict/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/04.字典数据.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\04.字典数据.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/04.字典数据.html",
+      "title": "字典数据",
+      "url": "https://doc.iocoder.cn/admin-uniapp/dict/",
+      "bytes": 5227
+    },
+    {
+      "route": "/admin-uniapp/debugger/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/10.IDE 调试.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\10.IDE 调试.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/10.IDE 调试.html",
+      "title": "IDE 调试",
+      "url": "https://doc.iocoder.cn/admin-uniapp/debugger/",
+      "bytes": 1942
+    },
+    {
+      "route": "/admin-uniapp/components/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/05.系统组件.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\05.系统组件.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/05.系统组件.html",
+      "title": "系统组件",
+      "url": "https://doc.iocoder.cn/admin-uniapp/components/",
+      "bytes": 3102
+    },
+    {
+      "route": "/admin-uniapp/format/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/11.代码格式化.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\11.代码格式化.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/11.代码格式化.html",
+      "title": "代码格式化",
+      "url": "https://doc.iocoder.cn/admin-uniapp/format/",
+      "bytes": 1895
+    },
+    {
+      "route": "/admin-uniapp/util/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/06.通用方法.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\06.通用方法.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/06.通用方法.html",
+      "title": "通用方法",
+      "url": "https://doc.iocoder.cn/admin-uniapp/util/",
+      "bytes": 3188
+    },
+    {
+      "route": "/admin-uniapp/deploy/",
+      "oldPath": "/01.开发指南/33.前端手册 Admin Uniapp/20.运行发布.html",
+      "relativePath": "01.开发指南\\33.前端手册 Admin Uniapp\\20.运行发布.md",
+      "category": [
+        "01.开发指南",
+        "33.前端手册 Admin Uniapp"
+      ],
+      "officialPath": "/01.开发指南/33.前端手册 Admin Uniapp/20.运行发布.html",
+      "title": "运行发布",
+      "url": "https://doc.iocoder.cn/admin-uniapp/deploy/",
+      "bytes": 261
+    },
+    {
+      "route": "/changelog/2026-07/",
+      "oldPath": "/01.开发指南/40.更新日志/55.【v2026-07】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\55.【v2026-07】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/55.【v2026-07】.html",
+      "title": "【v2026-07】",
+      "url": "https://doc.iocoder.cn/changelog/2026-07/",
+      "bytes": 10670
+    },
+    {
+      "route": "/changelog/2026-03/",
+      "oldPath": "/01.开发指南/40.更新日志/59.【v2026-03】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\59.【v2026-03】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/59.【v2026-03】.html",
+      "title": "【v2026-03】",
+      "url": "https://doc.iocoder.cn/changelog/2026-03/",
+      "bytes": 3835
+    },
+    {
+      "route": "/changelog/2026-05/",
+      "oldPath": "/01.开发指南/40.更新日志/57.【v2026-05】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\57.【v2026-05】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/57.【v2026-05】.html",
+      "title": "【v2026-05】",
+      "url": "https://doc.iocoder.cn/changelog/2026-05/",
+      "bytes": 17220
+    },
+    {
+      "route": "/changelog/2026-04/",
+      "oldPath": "/01.开发指南/40.更新日志/58.【v2026-04】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\58.【v2026-04】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/58.【v2026-04】.html",
+      "title": "【v2026-04】",
+      "url": "https://doc.iocoder.cn/changelog/2026-04/",
+      "bytes": 19263
+    },
+    {
+      "route": "/changelog/2026-06/",
+      "oldPath": "/01.开发指南/40.更新日志/56.【v2026-06】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\56.【v2026-06】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/56.【v2026-06】.html",
+      "title": "【v2026-06】",
+      "url": "https://doc.iocoder.cn/changelog/2026-06/",
+      "bytes": 36665
+    },
+    {
+      "route": "/changelog/2026-01/",
+      "oldPath": "/01.开发指南/40.更新日志/60.【v2026-01】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\60.【v2026-01】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/60.【v2026-01】.html",
+      "title": "【v2026-01】",
+      "url": "https://doc.iocoder.cn/changelog/2026-01/",
+      "bytes": 8126
+    },
+    {
+      "route": "/changelog/2025-12/",
+      "oldPath": "/01.开发指南/40.更新日志/61.【v2025-12】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\61.【v2025-12】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/61.【v2025-12】.html",
+      "title": "【v2025-12】",
+      "url": "https://doc.iocoder.cn/changelog/2025-12/",
+      "bytes": 10583
+    },
+    {
+      "route": "/changelog/2025-10/",
+      "oldPath": "/01.开发指南/40.更新日志/63.【v2025-10】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\63.【v2025-10】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/63.【v2025-10】.html",
+      "title": "【v2025-10】",
+      "url": "https://doc.iocoder.cn/changelog/2025-10/",
+      "bytes": 10973
+    },
+    {
+      "route": "/changelog/2025-11/",
+      "oldPath": "/01.开发指南/40.更新日志/62.【v2025-11】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\62.【v2025-11】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/62.【v2025-11】.html",
+      "title": "【v2025-11】",
+      "url": "https://doc.iocoder.cn/changelog/2025-11/",
+      "bytes": 15004
+    },
+    {
+      "route": "/changelog/2025-08/",
+      "oldPath": "/01.开发指南/40.更新日志/65.【v2025-08】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\65.【v2025-08】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/65.【v2025-08】.html",
+      "title": "【v2025-08】",
+      "url": "https://doc.iocoder.cn/changelog/2025-08/",
+      "bytes": 12898
+    },
+    {
+      "route": "/changelog/2.6.0/",
+      "oldPath": "/01.开发指南/40.更新日志/67.【v2-6-0】2025-06-07.html",
+      "relativePath": "01.开发指南\\40.更新日志\\67.【v2-6-0】2025-06-07.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/67.【v2-6-0】2025-06-07.html",
+      "title": "【v2-6-0】2025-06-07",
+      "url": "https://doc.iocoder.cn/changelog/2.6.0/",
+      "bytes": 3125
+    },
+    {
+      "route": "/changelog/2025-09/",
+      "oldPath": "/01.开发指南/40.更新日志/64.【v2025-09】.html",
+      "relativePath": "01.开发指南\\40.更新日志\\64.【v2025-09】.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/64.【v2025-09】.html",
+      "title": "【v2025-09】",
+      "url": "https://doc.iocoder.cn/changelog/2025-09/",
+      "bytes": 16124
+    },
+    {
+      "route": "/changelog/2.6.1/",
+      "oldPath": "/01.开发指南/40.更新日志/66.【v2-6-1】2025-07-19.html",
+      "relativePath": "01.开发指南\\40.更新日志\\66.【v2-6-1】2025-07-19.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/66.【v2-6-1】2025-07-19.html",
+      "title": "【v2-6-1】2025-07-19",
+      "url": "https://doc.iocoder.cn/changelog/2.6.1/",
+      "bytes": 13927
+    },
+    {
+      "route": "/changelog/2.5.0/",
+      "oldPath": "/01.开发指南/40.更新日志/68.【v2-5-0】2025-05-13.html",
+      "relativePath": "01.开发指南\\40.更新日志\\68.【v2-5-0】2025-05-13.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/68.【v2-5-0】2025-05-13.html",
+      "title": "【v2.5.0】2025-05-13",
+      "url": "https://doc.iocoder.cn/changelog/2.5.0/",
+      "bytes": 12784
+    },
+    {
+      "route": "/changelog/2.4.2/",
+      "oldPath": "/01.开发指南/40.更新日志/69.【v2-4-2】2025-04-12.html",
+      "relativePath": "01.开发指南\\40.更新日志\\69.【v2-4-2】2025-04-12.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/69.【v2-4-2】2025-04-12.html",
+      "title": "【v2.4.2】2025-04-12",
+      "url": "https://doc.iocoder.cn/changelog/2.4.2/",
+      "bytes": 13643
+    },
+    {
+      "route": "/changelog/2.0.1/",
+      "oldPath": "/01.开发指南/40.更新日志/75.【v2-0-1】2024-03-01.html",
+      "relativePath": "01.开发指南\\40.更新日志\\75.【v2-0-1】2024-03-01.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/75.【v2-0-1】2024-03-01.html",
+      "title": "【v2.0.1】2024-03-01",
+      "url": "https://doc.iocoder.cn/changelog/2.0.1/",
+      "bytes": 10317
+    },
+    {
+      "route": "/changelog/2.4.1/",
+      "oldPath": "/01.开发指南/40.更新日志/70.【v2-4-1】2025-02-09.html",
+      "relativePath": "01.开发指南\\40.更新日志\\70.【v2-4-1】2025-02-09.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/70.【v2-4-1】2025-02-09.html",
+      "title": "【v2.4.1】2025-02-09",
+      "url": "https://doc.iocoder.cn/changelog/2.4.1/",
+      "bytes": 11023
+    },
+    {
+      "route": "/changelog/2.3.0/",
+      "oldPath": "/01.开发指南/40.更新日志/72.【v2-3-0】2024-10-07.html",
+      "relativePath": "01.开发指南\\40.更新日志\\72.【v2-3-0】2024-10-07.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/72.【v2-3-0】2024-10-07.html",
+      "title": "【v2.3.0】2024-10-07",
+      "url": "https://doc.iocoder.cn/changelog/2.3.0/",
+      "bytes": 25662
+    },
+    {
+      "route": "/changelog/2.1.0/",
+      "oldPath": "/01.开发指南/40.更新日志/74.【v2-1-0】2024-05-05.html",
+      "relativePath": "01.开发指南\\40.更新日志\\74.【v2-1-0】2024-05-05.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/74.【v2-1-0】2024-05-05.html",
+      "title": "【v2.1.0】2024-05-05",
+      "url": "https://doc.iocoder.cn/changelog/2.1.0/",
+      "bytes": 23654
+    },
+    {
+      "route": "/changelog/2.4.0/",
+      "oldPath": "/01.开发指南/40.更新日志/71.【v2-4-0】2024-12-31.html",
+      "relativePath": "01.开发指南\\40.更新日志\\71.【v2-4-0】2024-12-31.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/71.【v2-4-0】2024-12-31.html",
+      "title": "【v2.4.0】2024-12-31",
+      "url": "https://doc.iocoder.cn/changelog/2.4.0/",
+      "bytes": 19143
+    },
+    {
+      "route": "/changelog/2.0.0/",
+      "oldPath": "/01.开发指南/40.更新日志/76.【v2-0-0】2024-01-26.html",
+      "relativePath": "01.开发指南\\40.更新日志\\76.【v2-0-0】2024-01-26.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/76.【v2-0-0】2024-01-26.html",
+      "title": "【v2.0.0】2024-01-26",
+      "url": "https://doc.iocoder.cn/changelog/2.0.0/",
+      "bytes": 14419
+    },
+    {
+      "route": "/changelog/2.2.0/",
+      "oldPath": "/01.开发指南/40.更新日志/73.【v2-2-0】2024-08-02.html",
+      "relativePath": "01.开发指南\\40.更新日志\\73.【v2-2-0】2024-08-02.md",
+      "category": [
+        "01.开发指南",
+        "40.更新日志"
+      ],
+      "officialPath": "/01.开发指南/40.更新日志/73.【v2-2-0】2024-08-02.html",
+      "title": "【v2.2.0】2024-08-02",
+      "url": "https://doc.iocoder.cn/changelog/2.2.0/",
+      "bytes": 26659
+    },
+    {
+      "route": "/changelog/1.8.3/",
+      "oldPath": "/99.更新日志/78.【v1-8-3】2023-10-24.html",
+      "relativePath": "99.更新日志\\78.【v1-8-3】2023-10-24.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/78.【v1-8-3】2023-10-24.html",
+      "title": "【v1.8.3】2023-10-24",
+      "url": "https://doc.iocoder.cn/changelog/1.8.3/",
+      "bytes": 9802
+    },
+    {
+      "route": "/changelog/1.8.2/",
+      "oldPath": "/99.更新日志/79.【v1-8-2】2023-09-24.html",
+      "relativePath": "99.更新日志\\79.【v1-8-2】2023-09-24.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/79.【v1-8-2】2023-09-24.html",
+      "title": "【v1.8.2】2023-09-24",
+      "url": "https://doc.iocoder.cn/changelog/1.8.2/",
+      "bytes": 5092
+    },
+    {
+      "route": "/changelog/1.9.0/",
+      "oldPath": "/99.更新日志/77.【v1-9-0】2023-11-30.html",
+      "relativePath": "99.更新日志\\77.【v1-9-0】2023-11-30.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/77.【v1-9-0】2023-11-30.html",
+      "title": "【v1.9.0】2023-12-01",
+      "url": "https://doc.iocoder.cn/changelog/1.9.0/",
+      "bytes": 12848
+    },
+    {
+      "route": "/changelog/1.8.1/",
+      "oldPath": "/99.更新日志/80.【v1-8-1】2023-09-04.html",
+      "relativePath": "99.更新日志\\80.【v1-8-1】2023-09-04.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/80.【v1-8-1】2023-09-04.html",
+      "title": "【v1.8.1】2023-09-04",
+      "url": "https://doc.iocoder.cn/changelog/1.8.1/",
+      "bytes": 11229
+    },
+    {
+      "route": "/changelog/1.8.0/",
+      "oldPath": "/99.更新日志/81.【v1-8-0】2023-07-27.html",
+      "relativePath": "99.更新日志\\81.【v1-8-0】2023-07-27.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/81.【v1-8-0】2023-07-27.html",
+      "title": "【v1.8.0】2023-07-27",
+      "url": "https://doc.iocoder.cn/changelog/1.8.0/",
+      "bytes": 8047
+    },
+    {
+      "route": "/changelog/1.7.3/",
+      "oldPath": "/99.更新日志/82.【v1-7-3】2023-05-29.html",
+      "relativePath": "99.更新日志\\82.【v1-7-3】2023-05-29.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/82.【v1-7-3】2023-05-29.html",
+      "title": "【v1.7.3】2023-05-29",
+      "url": "https://doc.iocoder.cn/changelog/1.7.3/",
+      "bytes": 6157
+    },
+    {
+      "route": "/changelog/1.7.1/",
+      "oldPath": "/99.更新日志/84.【v1-7-1】2023-03-05.html",
+      "relativePath": "99.更新日志\\84.【v1-7-1】2023-03-05.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/84.【v1-7-1】2023-03-05.html",
+      "title": "【v1.7.1】2023-03-05",
+      "url": "https://doc.iocoder.cn/changelog/1.7.1/",
+      "bytes": 7556
+    },
+    {
+      "route": "/changelog/1.6.6/",
+      "oldPath": "/99.更新日志/86.【v-1-6-6】2023-01-05.html",
+      "relativePath": "99.更新日志\\86.【v-1-6-6】2023-01-05.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/86.【v-1-6-6】2023-01-05.html",
+      "title": "【v1.6.6】2023-01-05",
+      "url": "https://doc.iocoder.cn/changelog/1.6.6/",
+      "bytes": 5724
+    },
+    {
+      "route": "/changelog/1.7.0/",
+      "oldPath": "/99.更新日志/85.【v1-7-0】2023-01-30.html",
+      "relativePath": "99.更新日志\\85.【v1-7-0】2023-01-30.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/85.【v1-7-0】2023-01-30.html",
+      "title": "【v1.7.0】2023-01-30",
+      "url": "https://doc.iocoder.cn/changelog/1.7.0/",
+      "bytes": 5851
+    },
+    {
+      "route": "/changelog/1.7.2/",
+      "oldPath": "/99.更新日志/83.【v1-7-2】2023-04-19.html",
+      "relativePath": "99.更新日志\\83.【v1-7-2】2023-04-19.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/83.【v1-7-2】2023-04-19.html",
+      "title": "【v1.7.2】2023-04-19",
+      "url": "https://doc.iocoder.cn/changelog/1.7.2/",
+      "bytes": 19390
+    },
+    {
+      "route": "/changelog/1.6.4/",
+      "oldPath": "/99.更新日志/88.【v1-6-4】2022-08-22.html",
+      "relativePath": "99.更新日志\\88.【v1-6-4】2022-08-22.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/88.【v1-6-4】2022-08-22.html",
+      "title": "【v1.6.4】2022-08-22",
+      "url": "https://doc.iocoder.cn/changelog/1.6.4/",
+      "bytes": 2431
+    },
+    {
+      "route": "/changelog/1.6.5/",
+      "oldPath": "/99.更新日志/87.【v1-6-5】2022-12-01.html",
+      "relativePath": "99.更新日志\\87.【v1-6-5】2022-12-01.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/87.【v1-6-5】2022-12-01.html",
+      "title": "【v1.6.5】2022-12-01",
+      "url": "https://doc.iocoder.cn/changelog/1.6.5/",
+      "bytes": 6207
+    },
+    {
+      "route": "/changelog/1.6.3/",
+      "oldPath": "/99.更新日志/89.【v1-6-3】2022-07-29.html",
+      "relativePath": "99.更新日志\\89.【v1-6-3】2022-07-29.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/89.【v1-6-3】2022-07-29.html",
+      "title": "【v1.6.3】2022-07-29",
+      "url": "https://doc.iocoder.cn/changelog/1.6.3/",
+      "bytes": 4081
+    },
+    {
+      "route": "/changelog/1.6.2/",
+      "oldPath": "/99.更新日志/90.【v1-6-2】2022-06-05.html",
+      "relativePath": "99.更新日志\\90.【v1-6-2】2022-06-05.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/90.【v1-6-2】2022-06-05.html",
+      "title": "【v1.6.2】2022-06-05",
+      "url": "https://doc.iocoder.cn/changelog/1.6.2/",
+      "bytes": 8395
+    },
+    {
+      "route": "/changelog/1.6.0/",
+      "oldPath": "/99.更新日志/92.【v1-6-0】2022-03-10.html",
+      "relativePath": "99.更新日志\\92.【v1-6-0】2022-03-10.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/92.【v1-6-0】2022-03-10.html",
+      "title": "【v1.6.0】2022-03-10",
+      "url": "https://doc.iocoder.cn/changelog/1.6.0/",
+      "bytes": 1409
+    },
+    {
+      "route": "/changelog/1.6.1/",
+      "oldPath": "/99.更新日志/91.【v1-6-1】2022-03-21.html",
+      "relativePath": "99.更新日志\\91.【v1-6-1】2022-03-21.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/91.【v1-6-1】2022-03-21.html",
+      "title": "【v1.6.1】2022-03-21",
+      "url": "https://doc.iocoder.cn/changelog/1.6.1/",
+      "bytes": 2576
+    },
+    {
+      "route": "/changelog/1.5.1/",
+      "oldPath": "/99.更新日志/93.【v1-5-1】2022-02-28.html",
+      "relativePath": "99.更新日志\\93.【v1-5-1】2022-02-28.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/93.【v1-5-1】2022-02-28.html",
+      "title": "【v1.5.1】2022-02-28",
+      "url": "https://doc.iocoder.cn/changelog/1.5.1/",
+      "bytes": 2601
+    },
+    {
+      "route": "/changelog/1.4.0/",
+      "oldPath": "/99.更新日志/95.【v1-4-0】2022-02-04.html",
+      "relativePath": "99.更新日志\\95.【v1-4-0】2022-02-04.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/95.【v1-4-0】2022-02-04.html",
+      "title": "【v1.4.0】2022-02-04",
+      "url": "https://doc.iocoder.cn/changelog/1.4.0/",
+      "bytes": 2081
+    },
+    {
+      "route": "/changelog/1.5.0/",
+      "oldPath": "/99.更新日志/94.【v1-5-0】2022-02-17.html",
+      "relativePath": "99.更新日志\\94.【v1-5-0】2022-02-17.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/94.【v1-5-0】2022-02-17.html",
+      "title": "【v1.5.0】2022-02-17",
+      "url": "https://doc.iocoder.cn/changelog/1.5.0/",
+      "bytes": 3546
+    },
+    {
+      "route": "/changelog/1.2.0/",
+      "oldPath": "/99.更新日志/97.【v1-2-0】2021-12-15.html",
+      "relativePath": "99.更新日志\\97.【v1-2-0】2021-12-15.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/97.【v1-2-0】2021-12-15.html",
+      "title": "【v1.2.0】2021.12.15",
+      "url": "https://doc.iocoder.cn/changelog/1.2.0/",
+      "bytes": 1078
+    },
+    {
+      "route": "/changelog/1.3.0/",
+      "oldPath": "/99.更新日志/96.【v1-3-0】2022-01-24.html",
+      "relativePath": "99.更新日志\\96.【v1-3-0】2022-01-24.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/96.【v1-3-0】2022-01-24.html",
+      "title": "【v1.3.0】2022.01.24",
+      "url": "https://doc.iocoder.cn/changelog/1.3.0/",
+      "bytes": 2126
+    },
+    {
+      "route": "/changelog/1.1.0/",
+      "oldPath": "/99.更新日志/98.【v1-1-0】2021-10-25.html",
+      "relativePath": "99.更新日志\\98.【v1-1-0】2021-10-25.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/98.【v1-1-0】2021-10-25.html",
+      "title": "【v1.1.0】2021.10.25",
+      "url": "https://doc.iocoder.cn/changelog/1.1.0/",
+      "bytes": 713
+    },
+    {
+      "route": "/hello/",
+      "oldPath": "/@pages/01.hello.html",
+      "relativePath": "@pages\\01.hello.md",
+      "category": [
+        "@pages"
+      ],
+      "officialPath": "/@pages/01.hello.html",
+      "title": "hello",
+      "url": "https://doc.iocoder.cn/hello/",
+      "bytes": 25
+    },
+    {
+      "route": "/changelog/1.0.0/",
+      "oldPath": "/99.更新日志/99.【v1-0-0】2021-05-03.html",
+      "relativePath": "99.更新日志\\99.【v1-0-0】2021-05-03.md",
+      "category": [
+        "99.更新日志"
+      ],
+      "officialPath": "/99.更新日志/99.【v1-0-0】2021-05-03.html",
+      "title": "【v1.0.0】2021.05.03",
+      "url": "https://doc.iocoder.cn/changelog/1.0.0/",
+      "bytes": 8147
+    },
+    {
+      "route": "/user-project/",
+      "oldPath": "/@pages/02.项目案例.html",
+      "relativePath": "@pages\\02.项目案例.md",
+      "category": [
+        "@pages"
+      ],
+      "officialPath": "/@pages/02.项目案例.html",
+      "title": "项目案例",
+      "url": "https://doc.iocoder.cn/user-project/",
+      "bytes": 1805
+    },
+    {
+      "route": "/quick-start-front/",
+      "oldPath": "/01.开发指南/01.萌新必读/06.快速启动【前端】.html",
+      "relativePath": "01.开发指南\\01.萌新必读\\06.快速启动【前端】.md",
+      "category": [
+        "01.开发指南",
+        "01.萌新必读"
+      ],
+      "officialPath": "/01.开发指南/01.萌新必读/06.快速启动【前端】.html",
+      "title": "快速启动（前端项目）",
+      "url": "https://doc.iocoder.cn/quick-start-front/",
+      "bytes": 10060
+    }
+  ],
+  "failures": []
+}
