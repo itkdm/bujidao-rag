@@ -1,19 +1,19 @@
 ---
 # 知识库导航基础设施文件
-id: KB-NAV-ruoyi-vue-pro-INDEX
-scope: app-specific
+id: KB-NAV-RUOYI-VUE-PRO-INDEX
+scope: ruoyi-vue-pro
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 3
 updatedAt: 2026-08-17
 verifiedAt: 2026-08-17
 tags:
 - navigation
 - ruoyi-vue-pro
 anchors:
-- ruoyi-vue-pro:INDEX
+- RUOYI-VUE-PRO:INDEX
 ---
 
 # ruoyi-vue-pro 知识索引
