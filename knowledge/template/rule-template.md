@@ -76,8 +76,8 @@ evidence:
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `domain/base/` | {相关事实入口（仅应用级 rule）} |
-| `domain/feature/` | {相关功能流程（仅应用级 rule）} |
+| `base/` | {相关事实入口（仅应用级 rule）} |
+| `feature/` | {相关功能流程（仅应用级 rule）} |
 | `tech/` | {相关实现约束（仅应用级 rule）} |
 | `main/` | {相关全局知识（仅 cross-app rule）} |
 

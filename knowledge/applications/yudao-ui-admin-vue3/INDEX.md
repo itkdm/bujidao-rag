@@ -27,15 +27,15 @@ anchors:
 
 | 子域 | 路径 | 用途 |
 | --- | --- | --- |
-| feature | `domain/feature/README.md` | 管理后台功能能力与页面流程；当前仅有空状态说明 |
-| rule | `domain/rule/README.md` | 后台权限、审核、展示、操作约束等规则；当前仅有空状态说明 |
-| base | `domain/base/README.md` | 路由、API、组件、权限菜单等基础索引；当前仅有空状态说明 |
+| feature | `feature/README.md` | 管理后台功能能力与页面流程；当前仅有空状态说明 |
+| rule | `rule/README.md` | 后台权限、审核、展示、操作约束等规则；当前仅有空状态说明 |
+| base | `base/README.md` | 路由、API、组件、权限菜单等基础索引；当前仅有空状态说明 |
 | tech | `tech/README.md` | Vue3、Element Plus、Vite、权限与前端工程约束 |
 
 ## 路由提示
 
 - 查后台职责和边界：先读 `yudao-ui-admin-vue3.md`
-- 查页面、路由、API：先读 `domain/base/README.md`
-- 查后台功能能力和页面流程：先读 `domain/feature/README.md`
-- 查后台权限、审核、展示、操作约束：先读 `domain/rule/README.md`
+- 查页面、路由、API：先读 `base/README.md`
+- 查后台功能能力和页面流程：先读 `feature/README.md`
+- 查后台权限、审核、展示、操作约束：先读 `rule/README.md`
 - 查前端实现约束：先读 `tech/README.md`

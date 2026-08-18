@@ -30,14 +30,14 @@ evidence:
 
 # {appCode} 规则知识索引
 
-本文档是 `{appCode}` 的 `domain/rule/` 入口。AI 或开发者进入本目录时，应先读本文件，再按任务类型选择具体规则知识。
+本文档是 `{appCode}` 的 `rule/` 入口。AI 或开发者进入本目录时，应先读本文件，再按任务类型选择具体规则知识。
 
 ## 使用规则
 
 1. `rule/` 只记录稳定规则和约束，不记录事实入口，也不展开实现方案。
-2. 需要定位对象在哪，转到 `domain/base/`。
+2. 需要定位对象在哪，转到 `base/`。
 3. 需要了解怎么实现，转到 `tech/`。
-4. 需要了解完整业务流程，转到 `domain/feature/`。
+4. 需要了解完整业务流程，转到 `feature/`。
 5. 未确认规则先进入 `candidate/`，不要直接进入正式 `rule/`。
 6. 新增规则知识必须使用 `knowledge/template/rule-template.md`。
 

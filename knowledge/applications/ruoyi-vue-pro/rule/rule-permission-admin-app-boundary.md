@@ -89,9 +89,9 @@ anchors:
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `domain/base/` | API 和权限入口见 `base-api-index.md`、`base-permission-index.md` |
+| `base/` | API 和权限入口见 `base-api-index.md`、`base-permission-index.md` |
 | `tech/` | 权限实现约束见 `tech-security-permission.md` |
-| `domain/feature/` | 具体功能流程后续引用对应权限规则 |
+| `feature/` | 具体功能流程后续引用对应权限规则 |
 
 ## 待确认问题
 

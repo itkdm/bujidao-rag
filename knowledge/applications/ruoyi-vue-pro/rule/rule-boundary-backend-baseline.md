@@ -20,7 +20,7 @@ evidence:
 - type: doc
   ref: knowledge/applications/ruoyi-vue-pro/ruoyi-vue-pro.md
 - type: doc
-  ref: knowledge/applications/ruoyi-vue-pro/domain/base/base-module-index.md
+  ref: knowledge/applications/ruoyi-vue-pro/base/base-module-index.md
 - type: human
   ref: 布吉岛确认当前尚未进行夸友业务改造，2026-08-09
 tags:
@@ -83,9 +83,9 @@ anchors:
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `domain/base/` | 模块启用事实见 `base-module-index.md` |
+| `base/` | 模块启用事实见 `base-module-index.md` |
 | `tech/` | 模块边界和启用约束见 `tech-architecture-module-boundary.md` |
-| `domain/feature/` | 当前不写夸友业务 feature，避免把未来规划写成现状 |
+| `feature/` | 当前不写夸友业务 feature，避免把未来规划写成现状 |
 
 ## 待确认问题
 

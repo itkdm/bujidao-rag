@@ -1,51 +1,44 @@
 ---
-# 知识库导航基础设施文件
-id: KB-INFRA-YUDAO-UI-ADMIN-VUE3-TECH-README
-scope: app
-appCode: yudao-ui-admin-vue3
+id: KB-INFRA-YUDAO-TECH-README
+scope: global
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
+version: 1
 updatedAt: 2026-08-18
-verifiedAt: 2026-08-17
+verifiedAt: 2026-08-18
 tags:
-- navigation
-- yudao-ui-admin-vue3
+- infrastructure
+- readme
 anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
-- TECH:INDEX
+- GLOBAL:YUDAO-TECH-README
 ---
 
-# yudao-ui-admin-vue3 技术知识索引
+# tech/
 
-本文档是 `yudao-ui-admin-vue3` 的 `tech/` 入口。AI 或开发者进入本目录时，应先读本文件，再按任务类型选择具体技术知识。
+## 本目录负责什么
 
-## 使用规则
+`tech/` 回答：**在当前应用和技术栈中应该怎么实现？**
 
-1. 修改管理后台代码前，先判断任务属于哪个技术分类。
-2. 只读取与当前任务相关的技术文档，避免全量加载。
-3. 没有正式知识时，先查 `candidate/`，仍无法确认时回到代码事实。
-4. 新增技术知识必须使用 `knowledge/template/tech-template.md`。
+沉淀技术实现约束，核心表达 **How we implement it**。
 
-## 技术分类路由
+## 什么内容应该放这里
 
-| 分类 | 适用问题 | 推荐文件命名 |
-| --- | --- | --- |
-| architecture | 前端架构约束、页面/模块边界、后台能力拆分 | `tech-architecture-{topic}.md` |
-| framework | Vue3、Element Plus、Vite、Pinia、路由、目录约定 | `tech-framework-{topic}.md` |
-| api-integration | Axios、API 封装、接口错误处理、后端联调约束 | `tech-api-{topic}.md` |
-| data-transaction | 前端缓存、状态管理、表单状态、一致性展示 | `tech-data-{topic}.md` |
-| async-job | 异步请求、轮询、WebSocket、后台任务前端展示 | `tech-async-{topic}.md` |
-| error-observability | 前端异常、日志、埋点、提示、排障入口 | `tech-error-{topic}.md` |
-| security-permission | 登录态、路由权限、按钮权限、数据可见性 | `tech-security-{topic}.md` |
-| build-env | pnpm、Vite、环境变量、构建发布、本地启动 | `tech-build-{topic}.md` |
-| testing-quality | 组件测试、类型检查、Lint、代码质量 | `tech-test-{topic}.md` |
-| troubleshooting | 管理后台常见问题、构建失败、接口联调问题排查 | `tech-troubleshooting-{topic}.md` |
+- 架构约束
+- 模块边界
+- 框架用法
+- Controller / Service 等工程约定
+- 事务、缓存、MQ、异常处理、安全实现
+- 测试等技术知识
 
-## 当前技术知识
+## 什么内容不应该放这里，以及应该去哪里
 
-| 主题 | 文件 | 状态 | 说明 |
-| --- | --- | --- | --- |
-| 暂无 | - | - | 后续按实际管理后台改造逐步补充 |
+- 模块、API、表、配置等事实入口 → `base/`
+- 业务规则、权限、状态约束 → `rule/`
+- 功能能力与业务流程 → `feature/`
+- 具体业务角色与产品权限矩阵 → `rule/` 或正式产品文档
+
+## 新增本类知识时需要遵守的最基本归属原则
+
+只描述实现方式与技术约束；不定义业务规则，不记录事实入口，不解释业务流程。

@@ -48,9 +48,9 @@ AI 在读取 `ROUTING.md` 后，应通过本文档定位相关知识域、应用
 - `template/`：知识写作模板和结构约束。
   - `template/application-template.md`：应用级知识模板。
   - `template/base-template.md`：基础事实索引模板。
-  - `template/base-index-template.md`：应用内 `domain/base/` 索引模板。
+  - `template/base-index-template.md`：应用内 `base/` 索引模板。
   - `template/rule-template.md`：规则知识模板。
-  - `template/rule-index-template.md`：应用内 `domain/rule/` 索引模板。
+  - `template/rule-index-template.md`：应用内 `rule/` 索引模板。
   - `template/tech-template.md`：技术知识模板。
   - `template/tech-index-template.md`：应用内 `tech/` 索引模板。
 

@@ -94,8 +94,8 @@ anchors:
 | 知识类型 | 关系 |
 | --- | --- |
 | `tech/` | API 返回、校验和 Controller 约束见 `tech-framework-web-api.md` |
-| `domain/feature/` | 后续具体功能流程会引用对应 Controller |
-| `domain/rule/` | 权限、展示、状态等规则会影响 API 行为 |
+| `feature/` | 后续具体功能流程会引用对应 Controller |
+| `rule/` | 权限、展示、状态等规则会影响 API 行为 |
 
 ## 变更影响
 

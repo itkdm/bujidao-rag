@@ -95,8 +95,8 @@ anchors:
 | 知识类型 | 关系 |
 | --- | --- |
 | `tech/` | 模块边界和启用约束见 `tech-architecture-module-boundary.md` |
-| `domain/feature/` | 后续夸友业务流程落地后，应反向标记所属模块 |
-| `domain/rule/` | 业务角色和权限规则确定后，会影响模块划分 |
+| `feature/` | 后续夸友业务流程落地后，应反向标记所属模块 |
+| `rule/` | 业务角色和权限规则确定后，会影响模块划分 |
 
 ## 变更影响
 

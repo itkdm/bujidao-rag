@@ -1,0 +1,42 @@
+---
+id: KB-INFRA-YUDAO-FEATURE-README
+scope: global
+status: OFFICIAL
+owner: bujidao
+maintainers:
+- bujidao
+version: 1
+updatedAt: 2026-08-18
+verifiedAt: 2026-08-18
+tags:
+- infrastructure
+- readme
+anchors:
+- GLOBAL:YUDAO-FEATURE-README
+---
+
+# feature/
+
+## 本目录负责什么
+
+`feature/` 回答：**这个应用现在能做什么？**
+
+沉淀已经确认存在的应用功能能力，关注用户可感知的业务能力和业务流程本身。
+
+## 什么内容应该放这里
+
+- 已确认存在的功能能力
+- 功能边界（能做什么、不能做什么）
+- 主要业务流程
+- 用户可感知的业务能力描述
+
+## 什么内容不应该放这里，以及应该去哪里
+
+- API、DTO、表、代码路径等事实定位 → `base/`
+- 技术实现细节、框架用法、工程约定 → `tech/`
+- 业务规则、权限、状态约束、数据边界 → `rule/`
+- 未来规划或尚未确认的能力 → 不要写入正式 `feature/`，回到 `candidate/` 或对应事实来源确认
+
+## 新增本类知识时需要遵守的最基本归属原则
+
+只记录已经确认存在的、用户可感知的功能与流程；不展开实现，不定义规则，不写事实入口。

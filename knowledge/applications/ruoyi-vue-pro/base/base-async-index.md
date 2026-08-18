@@ -102,8 +102,8 @@ anchors:
 | 知识类型 | 关系 |
 | --- | --- |
 | `tech/` | 异步任务可靠性和幂等约束见 `tech-async-job-mq.md` |
-| `domain/feature/` | 业务流程会引用具体消息或任务 |
-| `domain/rule/` | 重试、补偿、通知规则应进入 rule |
+| `feature/` | 业务流程会引用具体消息或任务 |
+| `rule/` | 重试、补偿、通知规则应进入 rule |
 
 ## 变更影响
 

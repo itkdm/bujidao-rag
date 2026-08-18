@@ -98,8 +98,8 @@ anchors:
 | 知识类型 | 关系 |
 | --- | --- |
 | `tech/` | VO/DO/DTO 使用约束见 Web API 和 MyBatis tech 文档 |
-| `domain/feature/` | 功能流程会引用对应 ReqVO/RespVO |
-| `domain/rule/` | 状态枚举和错误码通常反映业务规则 |
+| `feature/` | 功能流程会引用对应 ReqVO/RespVO |
+| `rule/` | 状态枚举和错误码通常反映业务规则 |
 
 ## 变更影响
 
