@@ -1,49 +1,36 @@
 ---
-# ==================== 必填字段（所有 rule 通用） ====================
-id: KB-RULE-{DOMAIN}-{APP}-{TOPIC}
+# ==================== 全局必填字段（所有 rule 通用） ====================
+id: KB-RULE-{TOPIC}
 type: rule
-scope: {cross-app / {appCode}}
+# scope 仅允许 global / app / cross-app（系统封闭枚举）
+# 当 scope: app 时，必须填写 appCode；cross-app / global 禁止填写 appCode
+scope: {app / cross-app / global}
+appCode: {registered-app-code}  # 仅当 scope: app 时填写；否则删除本行
 status: DRAFT
-authorship: {human/ai-assisted/mixed}
-owner: {team-name}
+owner: {registered-owner}
 maintainers:
-  - {userId}
+  - {registered-user}
 version: 1
 updatedAt: YYYY-MM-DD
 verifiedAt: YYYY-MM-DD
+tags:
+  - {tag1}
+  - {tag2}
+anchors:
+  - RULE:{TOPIC}
+  - APP:{APP-CODE}  # 仅当 scope: app 时添加；否则删除本行
+
+# ==================== 知识字段 ====================
 confidence: medium
 stability: evolving
-
-# ==================== 条件字段（仅当 scope != cross-app 时填写） ====================
-# 当 scope: cross-app 时，以下字段不填写，也不应填写 global/none/N/A 等伪值。
-# 当 scope: {appCode} 时，根据规则实际需要填写，其中 application 应与 scope 对应。
-# domain: {domain}
-# application: {appCode}
-# appType: {前端应用/后端应用}
-
-# 规则分类
-ruleArea: {development/collaboration/delivery/security/compliance/boundary/permission/status/data-visibility/config/knowledge-management}
-topic: {topicCode}
-
-# 证据
 evidence:
   - type: code
     ref: {相关代码路径}
-    verifiedAt: YYYY-MM-DD
   - type: doc
     ref: {相关文档路径}
   - type: human
     ref: {确认人/时间}
 
-# 标签与锚点
-tags:
-  - {tag1}
-  - {tag2}
-anchors:
-  - RULE_AREA:{ruleArea}
-  - RULE_TOPIC:{topicCode}
-  # 仅当 scope != cross-app 时添加：
-  # - APPLICATION:{appCode}
 ---
 
 # {规则主题名称}

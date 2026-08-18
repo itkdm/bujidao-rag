@@ -1,3 +1,33 @@
+---
+# ==================== 全局必填字段 ====================
+id: KB-BASE-INDEX-{APP-CODE}
+type: base
+scope: app
+appCode: {registered-app-code}
+status: DRAFT
+owner: {registered-owner}
+maintainers:
+  - {registered-user}
+version: 1
+updatedAt: YYYY-MM-DD
+verifiedAt: YYYY-MM-DD
+tags:
+  - {tag1}
+  - {tag2}
+anchors:
+  - APP:{APP-CODE}
+  - BASE:INDEX
+
+# ==================== 知识字段 ====================
+confidence: medium
+stability: evolving
+evidence:
+  - type: doc
+    ref: {base 索引维护说明}
+  - type: human
+    ref: {确认人/时间}
+---
+
 # {appCode} 基础事实索引
 
 本文档是 `{appCode}` 的 `domain/base/` 入口。AI 或开发者进入本目录时，应先读本文件，再按任务类型选择具体事实索引。
@@ -6,7 +36,7 @@
 
 1. `base/` 只记录事实入口，不解释实现方案。
 2. 修改代码前，如果需要定位模块、接口、模型、表、配置、权限、消息或任务，先读本文件。
-3. 需要了解“怎么实现、为什么这样实现”，转到 `tech/`。
+3. 需要了解"怎么实现、为什么这样实现"，转到 `tech/`。
 4. 需要了解业务流程，转到 `domain/feature/`。
 5. 需要了解业务规则，转到 `domain/rule/`。
 6. 新增基础事实索引必须使用 `knowledge/template/base-template.md`。

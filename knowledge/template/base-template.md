@@ -1,48 +1,33 @@
 ---
-# ==================== 必填字段 ====================
-id: KB-BASE-{DOMAIN}-{APP}-{TOPIC}
+# ==================== 全局必填字段 ====================
+id: KB-BASE-{TOPIC}
 type: base
-scope: {appCode}
-
-# 业务归属
-domain: {domain}
-application: {appCode}
-appType: {前端应用/后端应用}
-
-# 基础索引分类
-baseArea: {module/api/model/database/config/permission/async}
-topic: {topicCode}
-
-# 状态管理
+scope: app
+appCode: {registered-app-code}
 status: DRAFT
-authorship: {human/ai-assisted/mixed}
-owner: {team-name}
+owner: {registered-owner}
 maintainers:
-  - {userId}
+  - {registered-user}
 version: 1
 updatedAt: YYYY-MM-DD
 verifiedAt: YYYY-MM-DD
-confidence: medium
-stability: evolving
-
-# 证据
-evidence:
-  - type: code
-    ref: {相关代码路径}
-    verifiedAt: YYYY-MM-DD
-  - type: doc
-    ref: {相关文档路径}
-  - type: human
-    ref: {确认人/时间}
-
-# 标签与锚点
 tags:
   - {tag1}
   - {tag2}
 anchors:
-  - APPLICATION:{appCode}
-  - BASE_AREA:{baseArea}
-  - BASE_TOPIC:{topicCode}
+  - APP:{APP-CODE}
+  - BASE:{TOPIC}
+
+# ==================== 知识字段 ====================
+confidence: medium
+stability: evolving
+evidence:
+  - type: code
+    ref: {相关代码路径}
+  - type: doc
+    ref: {相关文档路径}
+  - type: human
+    ref: {确认人/时间}
 ---
 
 # {基础索引主题名称}

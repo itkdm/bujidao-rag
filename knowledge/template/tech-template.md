@@ -1,48 +1,36 @@
 ---
-# ==================== 必填字段 ====================
-id: KB-TECH-{DOMAIN}-{APP}-{TOPIC}
+# ==================== 全局必填字段 ====================
+id: KB-TECH-{TOPIC}
 type: tech
-scope: {cross-app/appCode}
-
-# 业务归属
-domain: {domain}
-application: {appCode}
-appType: {前端应用/后端应用}
-
-# 技术分类
-techArea: {architecture/framework/api-integration/data-transaction/async-job/error-observability/security-permission/build-env/testing-quality/troubleshooting}
-topic: {topicCode}
-
-# 状态管理
+# scope 仅允许 global / app / cross-app（系统封闭枚举）
+# 当 scope: app 时，必须填写 appCode；cross-app / global 禁止填写 appCode
+scope: {app / cross-app / global}
+appCode: {registered-app-code}  # 仅当 scope: app 时填写；否则删除本行
 status: DRAFT
-authorship: {human/ai-assisted/mixed}
-owner: {team-name}
+owner: {registered-owner}
 maintainers:
-  - {userId}
+  - {registered-user}
 version: 1
 updatedAt: YYYY-MM-DD
 verifiedAt: YYYY-MM-DD
+tags:
+  - {tag1}
+  - {tag2}
+anchors:
+  - TECH:{TOPIC}
+  - APP:{APP-CODE}  # 仅当 scope: app 时添加；否则删除本行
+
+# ==================== 知识字段 ====================
 confidence: medium
 stability: evolving
-
-# 证据
 evidence:
   - type: code
     ref: {相关代码路径}
-    verifiedAt: YYYY-MM-DD
   - type: doc
     ref: {相关文档路径}
   - type: human
     ref: {确认人/时间}
 
-# 标签与锚点
-tags:
-  - {tag1}
-  - {tag2}
-anchors:
-  - APPLICATION:{appCode}
-  - TECH_AREA:{techArea}
-  - TECH_TOPIC:{topicCode}
 ---
 
 # {技术主题名称}

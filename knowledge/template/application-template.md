@@ -1,46 +1,32 @@
 ---
-# ==================== 必填字段 ====================
-id: KB-APPLICATION-{DOMAIN}-{SEQ}
+# ==================== 全局必填字段 ====================
+id: KB-APPLICATION-{TOPIC}
 type: application
-scope: {appCode}
-
-# 业务归属
-domain: {domain}
-application: {appCode}
-
-# 应用类型：供 AI 工具自动识别，如 code-review 据此触发端面安全检查
-appType: 后端应用
-
-# 状态管理
+scope: app
+appCode: {registered-app-code}
 status: DRAFT
-authorship: {human/ai-assisted/mixed}
-owner: {team-name}
+owner: {registered-owner}
 maintainers:
-  - {userId}
+  - {registered-user}
 version: 1
 updatedAt: YYYY-MM-DD
 verifiedAt: YYYY-MM-DD
-confidence: medium
-stability: evolving
-
-# 证据
-evidence:
-  - type: code
-    ref: {核心模块或仓库路径}
-    verifiedAt: YYYY-MM-DD
-  - type: doc
-    ref: {应用文档或系统说明}
-  - type: human
-    ref: {确认人/时间}
-
-# 标签与锚点
 tags:
   - {tag1}
   - {tag2}
 anchors:
-  - APPLICATION:{appCode}
-  - BIZ_IDENTITY:{identity1}
-  - BIZ_IDENTITY:{identity2}
+  - APP:{APP-CODE}
+
+# ==================== 知识字段 ====================
+confidence: medium
+stability: evolving
+evidence:
+  - type: code
+    ref: {核心模块或仓库路径}
+  - type: doc
+    ref: {应用文档或系统说明}
+  - type: human
+    ref: {确认人/时间}
 ---
 
 # {应用名称}
