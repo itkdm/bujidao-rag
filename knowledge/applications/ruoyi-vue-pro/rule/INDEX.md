@@ -7,7 +7,7 @@ status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
+version: 1
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
