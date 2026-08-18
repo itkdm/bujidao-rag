@@ -2,7 +2,7 @@
 """Knowledge Front Matter metadata validation script (read-only).
 
 Validates Knowledge Markdown files against the rules defined in
-``knowledge/KNOWWLEDGE-METADATA-RULES.md``. This script NEVER modifies any file.
+``knowledge/KNOWLEDGE-METADATA-RULES.md``. This script NEVER modifies any file.
 
 Usage:
     python knowledge/scripts/validate_metadata.py [--verbose]

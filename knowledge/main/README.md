@@ -11,7 +11,7 @@ updatedAt: 2026-08-18
 verifiedAt: 2026-08-17
 tags:
 - navigation
-- GLOBAL
+- global
 anchors:
 - GLOBAL:README
 ---
