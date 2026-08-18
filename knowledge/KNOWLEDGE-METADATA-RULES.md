@@ -16,11 +16,9 @@ anchors:
 - GLOBAL:KNOWLEDGE-RULES
 ---
 
-# 知识库全局规则（KNOWLEDGE-RULES）
+# 知识库元数据字段规范
 
-> 本文件是 `knowledge/` 的全局规则文件。
->
-> 当前阶段仅定义 **Front Matter 字段体系及其机器校验规则**。
+> 本文件是 `knowledge/` 的元数据字段规范文件。
 ---
 
 ## 一、Front Matter 设计原则
