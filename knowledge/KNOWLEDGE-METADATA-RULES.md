@@ -1,5 +1,5 @@
 ---
-id: KB-INFRA-KNOWLEDGE-RULES
+id: KB-INFRA-GLOBAL-METADATA-RULES
 scope: global
 status: OFFICIAL
 owner: backend-platform
@@ -13,7 +13,7 @@ tags:
 - governance
 - front-matter
 anchors:
-- GLOBAL:KNOWLEDGE-RULES
+- GLOBAL:METADATA-RULES
 ---
 
 # 知识库元数据字段规范
@@ -989,7 +989,9 @@ evidence.ref
 <!-- KB-REGISTRY:APP-CODE:BEGIN -->
 
 ```yaml
-appCodes: []
+appCodes:
+- ruoyi-vue-pro
+- yudao-ui-admin-vue3
 ```
 
 <!-- KB-REGISTRY:APP-CODE:END -->
@@ -1037,7 +1039,9 @@ Agent 只能向 `customTypes` 追加经过确认的新类型，不得修改 `bui
 <!-- KB-REGISTRY:OWNER:BEGIN -->
 
 ```yaml
-owners: []
+owners:
+- bujidao
+- backend-platform
 ```
 
 <!-- KB-REGISTRY:OWNER:END -->
@@ -1054,7 +1058,8 @@ owners: []
 <!-- KB-REGISTRY:USER:BEGIN -->
 
 ```yaml
-users: []
+users:
+- bujidao
 ```
 
 <!-- KB-REGISTRY:USER:END -->

@@ -1,55 +1,36 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-TECH-KUAYOU-RUOYI-VUE-PRO-SECURITY-PERMISSION
+id: KB-TECH-RUOYI-VUE-PRO-SECURITY-PERMISSION
 type: tech
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 技术分类
-techArea: security-permission
-topic: permission
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 1
-updatedAt: 2026-08-09
+- bujidao
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java
+- type: code
+  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
 tags:
-  - backend
-  - security
-  - permission
-  - data-permission
+- backend
+- security
+- permission
+- data-permission
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - TECH_AREA:security-permission
-  - TECH_TOPIC:permission
+- APP:RUOYI-VUE-PRO
+- TECH:SECURITY-PERMISSION
 ---
 
 # 权限、登录态与数据权限约束

@@ -1,25 +1,14 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-TECH-KUAYOU-RUOYI-VUE-PRO-ASYNC-JOB-MQ
+id: KB-TECH-RUOYI-VUE-PRO-ASYNC-JOB-MQ
 type: tech
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 技术分类
-techArea: async-job
-topic: job-mq
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
   - bujidao
-version: 1
-updatedAt: 2026-08-09
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -28,16 +17,12 @@ stability: evolving
 evidence:
   - type: code
     ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/core/handler/JobHandler.java
-    verifiedAt: 2026-08-09
   - type: code
     ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/RedisMQTemplate.java
-    verifiedAt: 2026-08-09
   - type: code
     ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/stream/AbstractRedisStreamMessageListener.java
-    verifiedAt: 2026-08-09
   - type: code
     ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/token/TokenCleanJob.java
-    verifiedAt: 2026-08-09
   - type: doc
     ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/30.异步任务.md
   - type: doc
@@ -53,9 +38,8 @@ tags:
   - mq
   - redis-stream
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - TECH_AREA:async-job
-  - TECH_TOPIC:job-mq
+  - APP:RUOYI-VUE-PRO
+  - TECH:ASYNC-JOB-MQ
 ---
 
 # 异步任务、定时任务与 Redis MQ 约束

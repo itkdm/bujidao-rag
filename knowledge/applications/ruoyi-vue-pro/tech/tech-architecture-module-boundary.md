@@ -1,57 +1,38 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-TECH-KUAYOU-RUOYI-VUE-PRO-MODULE-BOUNDARY
+id: KB-TECH-RUOYI-VUE-PRO-MODULE-BOUNDARY
 type: tech
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 技术分类
-techArea: architecture
-topic: module-boundary
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 1
-updatedAt: 2026-08-09
+- bujidao
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/pom.xml
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md
-  - type: human
-    ref: 布吉岛确认当前尚未进行夸友业务改造，2026-08-09
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/pom.xml
+- type: code
+  ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md
+- type: human
+  ref: 布吉岛确认当前尚未进行夸友业务改造，2026-08-09
 tags:
-  - backend
-  - architecture
-  - module-boundary
-  - ruoyi-vue-pro
+- backend
+- architecture
+- module-boundary
+- ruoyi-vue-pro
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - TECH_AREA:architecture
-  - TECH_TOPIC:module-boundary
+- APP:RUOYI-VUE-PRO
+- TECH:ARCHITECTURE
 ---
 
 # 后端模块边界与目录约束

@@ -1,61 +1,41 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-TECH-KUAYOU-RUOYI-VUE-PRO-BUILD-ENV
+id: KB-TECH-RUOYI-VUE-PRO-BUILD-ENV
 type: tech
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 技术分类
-techArea: build-env
-topic: local-build
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 1
-updatedAt: 2026-08-09
+- bujidao
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/pom.xml
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md
-  - type: doc
-    ref: docs/06-tech/02-上游源码版本记录.md
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/pom.xml
+- type: code
+  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml
+- type: code
+  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml
+- type: code
+  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md
+- type: doc
+  ref: docs/06-tech/02-上游源码版本记录.md
 tags:
-  - backend
-  - build
-  - maven
-  - jdk17
-  - local-env
+- backend
+- build
+- maven
+- jdk17
+- local-env
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - TECH_AREA:build-env
-  - TECH_TOPIC:local-build
+- APP:RUOYI-VUE-PRO
+- TECH:BUILD-ENV
 ---
 
 # 本地构建与环境配置约束

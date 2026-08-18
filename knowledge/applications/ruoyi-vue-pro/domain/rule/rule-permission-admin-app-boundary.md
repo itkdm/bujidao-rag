@@ -1,56 +1,37 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-RULE-KUAYOU-RUOYI-VUE-PRO-ADMIN-APP-PERMISSION
+id: KB-RULE-RUOYI-VUE-PRO-ADMIN-APP-PERMISSION
 type: rule
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 规则分类
-ruleArea: permission
-topic: admin-app-boundary
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 1
-updatedAt: 2026-08-09
+- bujidao
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/app/
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/app/
+- type: code
+  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
 tags:
-  - backend
-  - permission
-  - admin
-  - app
-  - data-permission
+- backend
+- permission
+- admin
+- app
+- data-permission
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - RULE_AREA:permission
-  - RULE_TOPIC:admin-app-boundary
+- APP:RUOYI-VUE-PRO
+- RULE:ADMIN-APP-PERMISSION
 ---
 
 # 后台与用户端权限边界规则

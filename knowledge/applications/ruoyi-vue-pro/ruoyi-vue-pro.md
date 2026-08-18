@@ -1,54 +1,36 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-APPLICATION-KUAYOU-001
+id: KB-APP-RUOYI-VUE-PRO
 type: application
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-
-# 应用类型：供 AI 工具自动识别，如 code-review 据此触发端面安全检查
-appType: 后端应用
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 3
-updatedAt: 2026-08-09
+- bujidao
+version: 4
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/pom.xml
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: docs/06-tech/02-上游源码版本记录.md
-  - type: human
-    ref: 布吉岛确认当前尚未进行业务改造，2026-08-09
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/
+- type: code
+  ref: ruoyi-vue-pro/pom.xml
+- type: code
+  ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
+- type: doc
+  ref: docs/06-tech/02-上游源码版本记录.md
+- type: human
+  ref: 布吉岛确认当前尚未进行业务改造，2026-08-09
 tags:
-  - backend
-  - java17
-  - spring-boot
-  - ruoyi-vue-pro
-  - yudao
+- backend
+- java17
+- spring-boot
+- ruoyi-vue-pro
+- yudao
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - CODEBASE:ruoyi-vue-pro
-  - UPSTREAM:YunaiV/ruoyi-vue-pro
+- APP:RUOYI-VUE-PRO
 ---
 
 # ruoyi-vue-pro 后端开源基线

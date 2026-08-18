@@ -1,56 +1,37 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-TECH-KUAYOU-RUOYI-VUE-PRO-MYBATIS-CACHE
+id: KB-TECH-RUOYI-VUE-PRO-MYBATIS-CACHE
 type: tech
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 技术分类
-techArea: data-transaction
-topic: mybatis-cache
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 1
-updatedAt: 2026-08-09
+- bujidao
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dict/DictTypeMapper.java
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dict/DictTypeDO.java
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mybatis/
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/28.Redis 缓存.md
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dict/DictTypeMapper.java
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dict/DictTypeDO.java
+- type: code
+  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mybatis/
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/28.Redis 缓存.md
 tags:
-  - backend
-  - mybatis
-  - database
-  - redis
-  - cache
+- backend
+- mybatis
+- database
+- redis
+- cache
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - TECH_AREA:data-transaction
-  - TECH_TOPIC:mybatis-cache
+- APP:RUOYI-VUE-PRO
+- TECH:MYBATIS-CACHE
 ---
 
 # MyBatis 数据访问与缓存约束

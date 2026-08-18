@@ -1,3 +1,28 @@
+---
+id: KB-TECH-GLOBAL-GIT-BRANCH
+type: tech
+scope: global
+status: OFFICIAL
+owner: backend-platform
+maintainers:
+- bujidao
+version: 1
+updatedAt: 2026-08-18
+verifiedAt: 2026-08-18
+confidence: high
+stability: stable
+evidence:
+- type: doc
+  ref: knowledge/main/tech/Git Branch 全局分支规范.md
+tags:
+- git
+- branch
+- convention
+anchors:
+- GLOBAL:GIT-BRANCH
+- TECH:GIT
+---
+
 # Git Branch 全局分支规范
 
 本规范用于统一 Git 分支的基本命名、使用和管理原则，适用于开发者、团队协作以及 Coding Agent 等开发场景。

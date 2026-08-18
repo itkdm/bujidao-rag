@@ -1,19 +1,21 @@
 ---
 # 知识库导航基础设施文件
-id: KB-NAV-yudao-ui-admin-vue3-README
-scope: app-specific
+id: KB-INFRA-YUDAO-UI-ADMIN-VUE3-BASE-README
+scope: app
+appCode: yudao-ui-admin-vue3
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-17
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-17
 tags:
 - navigation
 - yudao-ui-admin-vue3
 anchors:
-- yudao-ui-admin-vue3:BASE-README
+- APP:YUDAO-UI-ADMIN-VUE3
+- BASE:INDEX
 ---
 
 # yudao-ui-admin-vue3 基础事实索引

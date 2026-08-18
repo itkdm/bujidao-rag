@@ -1,3 +1,28 @@
+---
+id: KB-TECH-GLOBAL-PULL-REQUEST
+type: tech
+scope: global
+status: OFFICIAL
+owner: backend-platform
+maintainers:
+- bujidao
+version: 1
+updatedAt: 2026-08-18
+verifiedAt: 2026-08-18
+confidence: high
+stability: stable
+evidence:
+- type: doc
+  ref: knowledge/main/tech/Pull Request 全局规范.md
+tags:
+- git
+- pull-request
+- convention
+anchors:
+- GLOBAL:PULL-REQUEST
+- TECH:GIT
+---
+
 # Pull Request 全局规范
 
 本规范用于统一 Pull Request（以下简称 PR）的创建、描述、Review 和合并要求，适用于开发者、团队协作以及 Coding Agent 等开发场景。

@@ -1,3 +1,28 @@
+---
+id: KB-TECH-GLOBAL-GIT-COMMIT
+type: tech
+scope: global
+status: OFFICIAL
+owner: backend-platform
+maintainers:
+- bujidao
+version: 1
+updatedAt: 2026-08-18
+verifiedAt: 2026-08-18
+confidence: high
+stability: stable
+evidence:
+- type: doc
+  ref: knowledge/main/tech/Git Commit 全局提交规范.md
+tags:
+- git
+- commit
+- convention
+anchors:
+- GLOBAL:GIT-COMMIT
+- TECH:GIT
+---
+
 # Git Commit 全局提交规范
 
 本规范用于统一 Git Commit Message 的基本格式与提交原则，适用于开发者、团队协作以及 Coding Agent 等开发场景。

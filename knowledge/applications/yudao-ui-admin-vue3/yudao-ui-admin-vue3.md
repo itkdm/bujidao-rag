@@ -1,52 +1,35 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-APPLICATION-KUAYOU-002
+id: KB-APP-YUDAO-UI-ADMIN-VUE3
 type: application
-scope: yudao-ui-admin-vue3
-# 业务归属
-domain: kuayou
-application: yudao-ui-admin-vue3
-
-# 应用类型：供 AI 工具自动识别，如 code-review 据此触发端面安全检查
-appType: 前端应用
-
-# 状态管理
+scope: app
+appCode: yudao-ui-admin-vue3
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 2
-updatedAt: 2026-08-09
+- bujidao
+version: 3
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: yudao-ui-admin-vue3/
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: yudao-ui-admin-vue3/package.json
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: docs/06-tech/01-技术底座与仓库结构.md
-  - type: doc
-    ref: docs/06-tech/02-上游源码版本记录.md
-  - type: human
-    ref: 布吉岛确认当前尚未进行业务改造，2026-08-09
-
-# 标签与锚点
+- type: code
+  ref: yudao-ui-admin-vue3/
+- type: code
+  ref: yudao-ui-admin-vue3/package.json
+- type: doc
+  ref: docs/06-tech/01-技术底座与仓库结构.md
+- type: doc
+  ref: docs/06-tech/02-上游源码版本记录.md
+- type: human
+  ref: 布吉岛确认当前尚未进行业务改造，2026-08-09
 tags:
-  - admin
-  - vue3
-  - element-plus
-  - pc
+- admin
+- vue3
+- element-plus
+- pc
 anchors:
-  - APPLICATION:yudao-ui-admin-vue3
-  - BIZ_IDENTITY:平台运营
-  - BIZ_IDENTITY:系统管理员
+- APP:YUDAO-UI-ADMIN-VUE3
 ---
 
 # yudao-ui-admin-vue3

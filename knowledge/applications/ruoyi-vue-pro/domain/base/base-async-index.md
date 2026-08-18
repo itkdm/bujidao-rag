@@ -1,58 +1,38 @@
 ﻿---
-# ==================== 必填字段 ====================
-id: KB-BASE-KUAYOU-RUOYI-VUE-PRO-ASYNC
+id: KB-BASE-RUOYI-VUE-PRO-ASYNC
 type: base
-scope: ruoyi-vue-pro
-# 业务归属
-domain: kuayou
-application: ruoyi-vue-pro
-appType: 后端应用
-
-# 基础索引分类
-baseArea: async
-topic: async-index
-
-# 状态管理
+scope: app
+appCode: ruoyi-vue-pro
 status: DRAFT
-authorship: human
 owner: bujidao
 maintainers:
-  - bujidao
-version: 1
-updatedAt: 2026-08-09
+- bujidao
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
-
-# 证据
 evidence:
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/mq/
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/
-    verifiedAt: 2026-08-09
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/
-    verifiedAt: 2026-08-09
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md
-
-# 标签与锚点
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/mq/
+- type: code
+  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/
+- type: code
+  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/
+- type: code
+  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md
+- type: doc
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md
 tags:
-  - backend
-  - async
-  - mq
-  - job
+- backend
+- async
+- mq
+- job
 anchors:
-  - APPLICATION:ruoyi-vue-pro
-  - BASE_AREA:async
-  - BASE_TOPIC:async-index
+- APP:RUOYI-VUE-PRO
+- BASE:ASYNC
 ---
 
 # 异步与任务索引

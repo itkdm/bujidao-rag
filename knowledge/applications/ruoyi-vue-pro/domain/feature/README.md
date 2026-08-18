@@ -1,19 +1,21 @@
 ---
 # 知识库导航基础设施文件
-id: KB-NAV-ruoyi-vue-pro-README
-scope: app-specific
+id: KB-INFRA-RUOYI-VUE-PRO-FEATURE-README
+scope: app
+appCode: ruoyi-vue-pro
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-17
+version: 2
+updatedAt: 2026-08-18
 verifiedAt: 2026-08-17
 tags:
 - navigation
 - ruoyi-vue-pro
 anchors:
-- ruoyi-vue-pro:FEATURE-README
+- APP:RUOYI-VUE-PRO
+- FEATURE:INDEX
 ---
 
 # ruoyi-vue-pro 功能知识索引
