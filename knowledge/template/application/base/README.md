@@ -1,17 +1,22 @@
 ---
-# 知识库导航基础设施文件（全局目录契约，与具体应用无关）
-id: KB-INFRA-APP-RUOYI-VUE-PRO-BASE-README
+# 应用四类固定目录契约标准源：Base
+# 本文件是 application 下 base/ 目录 README 的唯一正文标准源。
+# 所有 knowledge/applications/{appCode}/base/README.md 的正文必须与此完全一致。
+# 本文件不绑定任何 appCode，不允许 application 自行改写目录职责。
+id: KB-INFRA-TEMPLATE-APP-BASE-README
 scope: global
 status: OFFICIAL
-owner: bujidao
+owner: backend-platform
 maintainers:
 - bujidao
 version: 1
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
-- navigation
+- infrastructure
+- template
 - contract
+- base
 anchors:
 - GLOBAL:BASE-CONTRACT
 ---
