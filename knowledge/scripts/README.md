@@ -56,3 +56,53 @@ python knowledge/scripts/validate_metadata.py --verbose
 - `1`：存在任意 ERROR
 
 适合未来接入 GitHub Actions：ERROR 即失败。
+
+# metadata_report.py
+
+基于已通过 `validate_metadata.py` 校验的数据，读取 `knowledge/**/*.md` 的 Front Matter，
+生成**只读统计报告**。本脚本**绝不修改任何 Markdown 文件**，也**不写回报告文件**。
+
+## 前置条件
+
+运行前会自动调用 `validate_metadata.py` 的校验逻辑：
+
+- 若存在任意 metadata ERROR：停止生成报告，提示先运行 validator，退出码 `1`
+- 仅有 WARNING：仍可生成报告
+
+## 安装依赖
+
+与 `validate_metadata.py` 相同（仅 `PyYAML`）。公共辅助逻辑位于 `metadata_utils.py`，
+由以上两个脚本共享。
+
+## 基本运行
+
+```bash
+python knowledge/scripts/metadata_report.py
+```
+
+输出总览、By Scope / AppCode / Type / Status / Owner / Maintainer / Confidence /
+Stability、Evidence Type Usage、Verification Age 分桶，以及交叉统计
+AppCode x Type、Status x Confidence。
+
+## 过滤参数
+
+```bash
+# 仅统计某个 appCode 的文档（不含 global / cross-app）
+python knowledge/scripts/metadata_report.py --app ruoyi-vue-pro
+
+# 仅统计某个知识 type
+python knowledge/scripts/metadata_report.py --type tech
+
+# 组合过滤
+python knowledge/scripts/metadata_report.py --app ruoyi-vue-pro --type tech
+```
+
+`--app` 必须来自 AppCode 注册表，`--type` 必须来自 `builtInTypes + customTypes`，
+未知值退出码 `2` 并列出可用值。`--today YYYY-MM-DD` 可覆盖「今天」用于验证年龄分桶。
+
+## 退出码
+
+- `0`：报告生成成功
+- `1`：metadata 校验存在 ERROR，报告未生成
+- `2`：CLI 参数错误（未知 appCode / type）
+
