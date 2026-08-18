@@ -1,599 +1,1205 @@
 ---
-# ==================== 知识库控制文件（基础设施） ====================
-# 本文件属于知识库基础设施，不受"知识文件必须套模板"约束。
-# 基础设施文件清单：KNOWLEDGE-RULES.md / ROUTING.md / README.md / INDEX.md / template/
 id: KB-INFRA-KNOWLEDGE-RULES
-scope: cross-app
+scope: global
 status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-17
-verifiedAt: 2026-08-17
+version: 2
+updatedAt: 2026-08-18
+verifiedAt: 2026-08-18
 tags:
-- global
-- convention
 - knowledge-base
+- governance
+- front-matter
 anchors:
 - GLOBAL:KNOWLEDGE-RULES
 ---
 
-# 知识库全局维护规则（KNOWLEDGE-RULES）
+# 知识库全局规则（KNOWLEDGE-RULES）
 
-> **⚠️ 团队规定：此文件为必选文件，且为最高优先级规范。**
-> 所有写入、读取、修改 `knowledge/` 目录下知识的行为（无论开发者还是 AI），都必须遵守本文件。
-> 当本文件与各类型模板（template/）发生冲突时，**以本文件为准**。
+> 本文件是 `knowledge/` 的全局规则文件。
+>
+> 当前阶段仅定义 **Front Matter 字段体系及其机器校验规则**。
+---
+
+## 一、Front Matter 设计原则
+
+Front Matter 是知识库的结构化元数据层，主要服务于：
+
+- 脚本统一校验与维护
+- AI Agent / Skill 自动读取和写入
+- 文档检索、分类和统计
+- 生命周期管理
+- 应用归属统计
+- 知识可信度判断
+- 后续批量迁移和自动化治理
+
+字段分为三类：
+
+### 1. 全局字段
+
+所有受知识库管理的 Markdown 文件统一使用。
+
+### 2. 知识字段
+
+仅真正承载知识内容的文件使用。
+
+### 3. 类型专属字段
+
+仅特定 `type` 确有机器管理需求时增加。
+
+类型专属字段不在本版统一定义，后续按实际需求逐类补充。
 
 ---
 
-## 一、文件定位
+# 二、字段总览
 
-| 维度 | 说明 |
-|------|------|
-| 本文件是什么 | 知识库的全局规则文件，定义公共字段规范、目录归属规则、流转机制、AI 读取约束 |
-| 本文件不是什么 | 不是某个应用的知识文档，不是业务说明，不是 ROUTING 路由表 |
-| 谁必须遵守 | 所有团队成员 + 所有 Coding Agent + 所有 AI 辅助工具 |
-| 与其他文件的关系 | `template/` 下的模板是"类型级强约束"，本文件是"全局级强约束"；模板不得违反本文件 |
+## 2.1 全局必填字段（10)
 
----
-
-## 二、文件分类：知识文件 vs 基础设施文件
-
-知识库中的文件分为两类，适用不同的规则体系。
-
-### 2.1 知识文件
-
-知识文件是知识库的核心内容，**必须严格遵守 Front Matter + 模板规范**。
-
-| 目录 | 说明 |
-|------|------|
-| `main/` | 跨应用通用知识 |
-| `applications/` | 应用级知识 |
-| `candidate/` | 候选知识 |
-| `personal/` | 个人知识 |
-
-### 2.2 基础设施文件
-
-基础设施文件是知识库的运行框架，**不受"知识文件必须套模板"约束**，采用本文件定义的元规则。分为两类：
-
-#### 2.2.1 规则基础设施
-
-| 文件 | 说明 |
-|------|------|
-| `KNOWLEDGE-RULES.md` | 全局规则（本文件） |
-| `ROUTING.md` | 知识检索路由表 |
-| `template/` | 写作模板目录 |
-
-#### 2.2.2 导航基础设施（Navigation Infrastructure）
-
-**定义**：所有职责纯粹为**目录说明 + 路由导航**的 `README.md` 和 `INDEX.md` 文件，无论位于哪个目录层级，均属于导航基础设施文件。
-
-**判定标准**：满足以下任一条件即为导航基础设施：
-- 文件名为 `README.md` 或 `INDEX.md`
-- 内容仅为目录结构说明、文件列表、路由指引、使用规则
-- 不包含具体知识内容（接口定义、业务规则、技术约束等）
-
-**覆盖范围**（不限于此）：
-
-| 路径模式 | 示例 |
-|----------|------|
-| `knowledge/README.md` | 知识库定位说明 |
-| `knowledge/INDEX.md` | 全局索引 |
-| `main/README.md` | main 目录说明 |
-| `applications/{app}/README.md` | 应用目录说明 |
-| `applications/{app}/INDEX.md` | 应用知识索引 |
-| `applications/{app}/domain/base/README.md` | base 子域入口 |
-| `applications/{app}/domain/rule/README.md` | rule 子域入口 |
-| `applications/{app}/domain/feature/README.md` | feature 子域入口 |
-| `applications/{app}/tech/README.md` | tech 子域入口 |
-| `candidate/README.md` | 候选知识说明 |
-| `personal/README.md` | 个人笔记说明 |
-| `reference/README.md` | 参考资料说明 |
-
-**Front Matter 规范**：
-
-导航基础设施文件使用简化 Front Matter，不使用 `type` 字段，不套知识模板：
+所有受管理文件统一包含：
 
 ```yaml
----
-# 知识库导航基础设施文件
-id: KB-NAV-{APP}-{TYPE}
-scope: {app-specific | cross-app}
-status: OFFICIAL
-owner: {owner}
+id:
+scope:
+status:
+owner:
 maintainers:
-- {maintainer}
-version: 1
-updatedAt: {date}
-verifiedAt: {date}
+version:
+updatedAt:
+verifiedAt:
 tags:
-- navigation
-- {app}
 anchors:
-- {APP}:{TYPE}
----
 ```
 
-**关键区别**：
+---
 
-| 维度 | 知识文件 | 导航基础设施文件 |
-|------|----------|------------------|
-| 是否使用模板 | 是 | 否 |
-| 是否有 `type` 字段 | 是（base/tech/rule/application） | 否 |
-| 是否进入 ROUTING | 是 | 否 |
-| status 取值 | OFFICIAL / DEPRECATED / DRAFT / CANDIDATE | 仅 OFFICIAL |
-| 内容性质 | 具体知识 | 目录说明 + 路由导航 |
+## 2.2 全局条件字段(1)
 
-> **注意**：如果某个 `README.md` 或 `INDEX.md` 中包含了具体知识内容（如接口定义、业务规则），应将其拆分为独立的知识文件，导航文件仅保留路由指引。
+```yaml
+appCode:
+```
 
-### 2.3 为什么这样区分
-
-如果所有文件都要求套模板，会产生自举悖论：
-
-- `KNOWLEDGE-RULES.md` 用哪个模板？
-- `template/` 下的模板自己套哪个模板？
-- 最终必然出现 `template-template` 这种套娃问题。
-
-明确区分两类文件后，规则体系干净且无循环依赖。
+`appCode` 是否出现由 `scope` 决定。
 
 ---
 
-## 三、公共 Front Matter 字段规范
+## 2.3 知识文件必填字段(4)
 
-### 3.1 知识文件必填字段
+真正承载知识内容的文件，在全局字段基础上增加：
 
-| 字段 | 类型 | 必填 | 取值范围 / 格式 | 说明 |
-|------|------|------|----------------|------|
-| `id` | string | ✅ | `KB-{TYPE}-{DOMAIN}-{SEQ}` | 知识唯一编号，全局不重复 |
-| `type` | string | ✅ | 见 3.2 | 知识对象类型，对应 `template/` 下模板 |
-| `scope` | string | ✅ | `cross-app` / `{appCode}` | 适用范围：全局或指定应用 |
-| `status` | enum | ✅ | `DRAFT` / `CANDIDATE` / `OFFICIAL` / `DEPRECATED` | 知识生命周期状态 |
-| `authorship` | enum | ✅ | `human` / `ai-assisted` / `mixed` | 生成方式（见 3.3） |
-| `owner` | string | ✅ | 团队名或 userId | 长期责任主体（见 3.4） |
-| `maintainers` | list | ❌ | userId 列表 | 当前维护人列表 |
-| `version` | integer | ✅ | 从 1 开始 | 版本号（见 3.5） |
-| `updatedAt` | date | ✅ | `YYYY-MM-DD` | 文件最后编辑时间 |
-| `verifiedAt` | date | ✅ | `YYYY-MM-DD` | 内容最后与真实来源核对的时间（见 3.6） |
-| `confidence` | enum | ✅ | `high` / `medium` / `low` | 置信度 |
-| `stability` | enum | ✅ | `stable` / `evolving` / `volatile` | 稳定性 |
-| `evidence` | list | ✅ | 见 3.7 | 证据来源 |
-| `tags` | list | ✅ | 自由标签，至少 1 个 | 检索分类用 |
-| `anchors` | list | ❌ | `{TYPE}:{value}` 格式 | 锚点，供 ROUTING 路由匹配（见 3.8） |
+```yaml
+type:
+confidence:
+stability:
+evidence:
+```
 
-### 3.2 type 取值对照表
+固定基础设施文件不强制使用这些知识字段。
 
-| type 值 | 对应模板 | 存放目录 |
-|---------|----------|----------|
-| `application` | `template/application-template.md` | `applications/{app}/` |
-| `tech` | `template/tech-template.md` | `main/tech/` 或 `applications/{app}/tech/` |
-| `rule` | `template/rule-template.md` | `main/rules/` 或 `applications/{app}/domain/rule/` |
-| `flow` | `template/tech-template.md` | `applications/{app}/domain/feature/` |
-| `state` | `template/tech-template.md` | `applications/{app}/domain/feature/` 或 `main/states/` |
-| `base` | `template/base-template.md` | `applications/{app}/domain/base/` |
-| `glossary` | `template/tech-template.md` | `main/glossary/` |
+---
 
-> **注意**：`type` 只描述知识内容类型，不描述文件位置或状态。基础设施文件（见 2.2）不需要 `type` 字段。
->
-> **`rule` 类型说明**：`rule` 同时支持跨应用全局规则和应用级规则。`scope: cross-app` 时不要求填写 `application` / `domain` / `appType` 等应用专属字段；应用级 rule 根据模板要求填写对应应用信息。详见 `template/rule-template.md`。
+# 三、全局字段规范
 
-### 3.3 authorship：生成方式
+## 3.1 id
 
-`authorship` 描述知识内容的生成方式，与 `status` 正交：
+### 作用
+
+`id` 是文件在知识库中的**永久唯一身份**。
+
+### 格式
+
+统一：
+
+```text
+KB-{CATEGORY}-{KEY}
+```
+
+例如：
+
+```yaml
+id: KB-INFRA-ROUTING
+id: KB-RULE-GIT-COMMIT
+id: KB-FEATURE-USER-MANAGEMENT
+id: KB-TECH-SPRING-TRANSACTION
+```
+
+### CATEGORY
+
+基础设施文件：
+
+```text
+INFRA
+```
+
+知识文件原则上使用对应 `type` 的规范化大写值。
+
+例如：
+
+```text
+rule    → RULE
+feature → FEATURE
+tech    → TECH
+```
+
+### KEY
+
+`KEY` 是稳定的语义标识。
+
+规则：
+
+- 仅允许 `A-Z`、`0-9`、`-`
+- 必须全大写
+- 多个单词使用 `-`
+- 不使用中文
+- 不使用空格或 `_`
+
+正确：
+
+```text
+GIT-COMMIT
+USER-MANAGEMENT
+SPRING-TRANSACTION
+```
+
+### 唯一性
+
+`id` 必须在整个 `knowledge/` 范围内全局唯一。
+
+### 稳定性
+
+`id` 创建后原则上不得修改。
+
+以下变化均不应导致 `id` 改变：
+
+- 文件重命名
+- 文件移动
+- `scope` 变化
+- `appCode` 变化
+- `owner` 变化
+- `status` 变化
+- 内容版本变化
+
+只有 ID 重复、初始 ID 明显错误等特殊迁移场景才允许修改。
+
+### appCode 与 id
+
+`appCode` **不强制进入 `id`**。
+
+只有发生全局 ID 重名时，才可以在 `KEY` 中加入稳定的区分信息。
+
+---
+
+## 3.2 scope
+
+### 作用
+
+`scope` 表示内容的**适用范围**，不表示文件归属于哪个应用。
+
+### 系统封闭枚举
+
+只允许：
+
+```text
+global
+app
+cross-app
+```
+
+含义：
 
 | 值 | 含义 |
-|----|------|
-| `human` | 完全由人工编写 |
-| `ai-assisted` | AI 辅助生成，人工审核确认 |
-| `mixed` | 人工与 AI 协作编写 |
+|---|---|
+| `global` | 整个知识库 / 团队全局适用 |
+| `app` | 仅适用于单一应用 |
+| `cross-app` | 同时涉及多个应用，但不是全局规则 |
 
-**关键原则**：`authorship` 与 `status` 相互独立。一篇 `authorship: ai-assisted` 的知识经过 owner 审核后，`status` 可以是 `OFFICIAL`。`OFFICIAL` 表示"当前正式有效"，不表示"纯人工编写"。
+这三个值属于**系统封闭枚举**，项目初始化时不得增加、删除或修改。
 
-### 3.4 owner 与 maintainers
+---
 
-| 字段 | 含义 | 示例 |
-|------|------|------|
-| `owner` | 长期责任主体，通常是团队名 | `backend-platform` / `order-team` |
-| `maintainers` | 当前具体维护人列表 | `[user123, user456]` |
+## 3.3 appCode
 
-**为什么区分**：全局规范（如 Git Commit 规范、知识库规则）是团队资产，不是某个人的资产。使用团队名作为 owner 可以避免人员转岗时大量文档需要修改 owner。
+### 作用
 
-### 3.5 version 递增规则
+`appCode` 表示文档主要归属的**单一应用机器标识**。
 
-**统一原则：所有语义变更 version +1，纯格式变更 version 不变。**
+主要用于：
 
-| 操作 | version | updatedAt | verifiedAt |
-|------|---------|-----------|------------|
-| 正文实质修改 | +1 | 更新 | 视情况更新 |
-| 证据更新 | +1 | 更新 | 更新 |
-| 状态流转（任何方向） | +1 | 更新 | 视情况更新 |
-| owner / maintainers 变更 | +1 | 更新 | 不变 |
-| 仅修正错别字、空格、换行 | 不变 | 更新 | 不变 |
-| Markdown 排版调整 | 不变 | 更新 | 不变 |
+- 按应用统计知识数量
+- 应用级筛选
+- Skill 自动管理
+- 路径与 Front Matter 一致性校验
 
-**没有例外**：`OFFICIAL → DEPRECATED` 也是状态变化，必须 `version +1`。
+### 条件规则
 
-### 3.6 updatedAt vs verifiedAt
+#### scope: app
 
-| 字段 | 含义 | 更新时机 |
-|------|------|----------|
-| `updatedAt` | 文件最后编辑时间 | 任何编辑操作后 |
-| `verifiedAt` | 内容最后与真实来源（代码/需求/系统）核对的时间 | 仅在与真实来源核对后 |
+必须填写：
 
-**为什么区分**：假设代码最后核对是 2026-07-01，8 月 17 日只是修了个标点。如果只有 `updatedAt: 2026-08-17`，Agent 可能误以为 8 月 17 日刚和代码核对过。`verifiedAt` 明确区分"编辑时间"和"验证时间"。
+```yaml
+scope: app
+appCode: ruoyi-vue-pro
+```
 
-### 3.7 evidence 结构规范
+#### scope: global
+
+禁止填写 `appCode`。
+
+#### scope: cross-app
+
+禁止填写单一 `appCode`。
+
+如果未来确实需要描述多个应用，需单独设计，不在本版扩展 `appCode` 语义。
+
+### 格式
+
+`appCode`：
+
+- string
+- 全小写
+- 使用 kebab-case
+- 仅允许 `a-z`、`0-9`、`-`
+
+例如：
+
+```text
+ruoyi-vue-pro
+yudao-ui-admin-vue3
+order-service
+```
+
+### 注册要求
+
+`appCode` 属于**项目可扩展注册值**。
+
+所有合法 `appCode` 必须先登记在本文的「项目可扩展注册区」。
+
+禁止文档临时创造未注册的 `appCode`。
+
+禁止使用：
+
+```text
+global
+none
+n/a
+unknown
+```
+
+等占位值。
+
+---
+
+## 3.4 status
+
+### 作用
+
+`status` 只表示文件的生命周期状态。
+
+### 系统封闭枚举
+
+固定为：
+
+```text
+DRAFT
+CANDIDATE
+OFFICIAL
+DEPRECATED
+```
+
+| 值 | 含义 |
+|---|---|
+| `DRAFT` | 正在编写，内容尚不完整 |
+| `CANDIDATE` | 内容基本完整，等待确认 |
+| `OFFICIAL` | 已确认，可作为正式内容使用 |
+| `DEPRECATED` | 曾经有效，但当前已经过期或不再推荐 |
+
+项目不得自行增加：
+
+```text
+REVIEWING
+PUBLISHED
+ARCHIVED
+```
+
+等新状态。
+
+### 常规状态流转
+
+允许：
+
+```text
+DRAFT → CANDIDATE
+CANDIDATE → DRAFT
+CANDIDATE → OFFICIAL
+OFFICIAL → CANDIDATE
+OFFICIAL → DEPRECATED
+DEPRECATED → CANDIDATE
+```
+
+不使用：
+
+```text
+OFFICIAL → DRAFT
+```
+
+需要重新确认时退回 `CANDIDATE`。
+
+---
+
+## 3.5 owner
+
+### 作用
+
+`owner` 表示文件的**最终责任主体**。
+
+它不表示：
+
+- 谁创建了文件
+- 谁最后编辑了文件
+- 当前由谁执行维护工作
+
+### 规则
+
+- 必填
+- string
+- 只能有一个
+- 可以是团队，也可以是个人
+- 必须来自项目已注册的 owner 列表
+- 只有最终责任归属真正变化时才修改
+
+例如：
+
+```yaml
+owner: backend-platform
+```
+
+或：
+
+```yaml
+owner: bujidao
+```
+
+---
+
+## 3.6 maintainers
+
+### 作用
+
+`maintainers` 表示当前实际负责维护、更新和核验该文件的人员。
+
+### 规则
+
+- 必填
+- `list<string>`
+- 至少 1 个
+- 只能填写具体用户
+- 必须来自项目已注册的用户列表
+- 即使与 `owner` 相同，也不能省略
+
+例如：
+
+```yaml
+owner: bujidao
+maintainers:
+- bujidao
+```
+
+或者：
+
+```yaml
+owner: backend-platform
+maintainers:
+- zhangsan
+- lisi
+```
+
+禁止简写为：
+
+```yaml
+maintainers: zhangsan
+```
+
+---
+
+## 3.7 version
+
+### 作用
+
+`version` 表示当前文件的**语义版本号**。
+
+### 格式
+
+```yaml
+version: 1
+```
+
+规则：
+
+- integer
+- 最小值为 `1`
+- 新文件从 `1` 开始
+- 只增不减
+- 不允许复用历史版本号
+
+### 需要 +1
+
+发生语义变化时：
+
+- 正文含义变化
+- `scope` 变化
+- `appCode` 变化
+- `status` 变化
+- `owner` / `maintainers` 变化
+- `tags` / `anchors` 实质变化
+- `type` 变化
+- `confidence` / `stability` 变化
+- `evidence` 实质变化
+
+统一：
+
+```text
+version +1
+```
+
+包括：
+
+```text
+OFFICIAL → DEPRECATED
+```
+
+### 不需要 +1
+
+纯非语义修改：
+
+- 错别字
+- 空格
+- 换行
+- Markdown 排版
+- 标点
+- 不改变身份的文件重命名
+- 不改变知识语义的目录移动
+- 仅重新验证并更新 `verifiedAt`
+
+---
+
+## 3.8 updatedAt
+
+### 作用
+
+表示文件最后一次发生修改的日期。
+
+格式固定：
+
+```yaml
+updatedAt: YYYY-MM-DD
+```
+
+例如：
+
+```yaml
+updatedAt: 2026-08-18
+```
+
+任何文件修改都必须更新 `updatedAt`，包括：
+
+- 正文
+- Front Matter
+- 格式
+- 错别字
+
+不记录具体时分秒，精确提交时间由 Git 管理。
+
+---
+
+## 3.9 verifiedAt
+
+### 作用
+
+表示文件内容最后一次被确认仍然正确、有效的日期。
+
+格式：
+
+```yaml
+verifiedAt: YYYY-MM-DD
+```
+
+### 核心规则
+
+普通编辑：
+
+```text
+更新 updatedAt
+不自动更新 verifiedAt
+```
+
+只有实际重新核对了真实来源、当前代码、正式文档或负责人确认后，才更新 `verifiedAt`。
+
+必须满足：
+
+```text
+verifiedAt <= updatedAt
+```
+
+重新验证但内容无需修改时，可以只更新 `verifiedAt`，此操作不要求 `version +1`。
+
+---
+
+## 3.10 tags
+
+### 作用
+
+用于：
+
+- 宽泛检索
+- 分类
+- 统计
+- RAG 召回
+
+### 规则
+
+- 必填
+- `list<string>`
+- 至少 1 个
+- 允许多个
+- 值开放，不要求提前注册
+
+格式：
+
+- 全小写
+- kebab-case
+- 仅允许 `a-z`、`0-9`、`-`
+
+例如：
+
+```yaml
+tags:
+- git
+- code-review
+- spring-boot
+```
+
+禁止同一概念使用多种不同格式。
+
+---
+
+## 3.11 anchors
+
+### 作用
+
+`anchors` 用于机器路由、精确关联和稳定匹配。
+
+它与 `tags` 的职责不同：
+
+```text
+tags    → 宽泛搜索
+anchors → 精确机器语义
+id      → 唯一身份
+```
+
+### 格式
+
+```text
+{NAMESPACE}:{VALUE}
+```
+
+例如：
+
+```yaml
+anchors:
+- GLOBAL:GIT-COMMIT
+- APP:RUOYI-VUE-PRO
+- FEATURE:USER-MANAGEMENT
+```
+
+规则：
+
+- 必填
+- `list<string>`
+- 至少 1 个
+- `NAMESPACE` 全大写
+- `VALUE` 全大写
+- 多词使用 `-`
+
+### 唯一性
+
+anchor 不要求全局唯一。
+
+多个文件可以共享：
+
+```text
+APP:RUOYI-VUE-PRO
+```
+
+真正承担全局唯一身份的是 `id`。
+
+### Namespace
+
+Anchor Namespace 使用：
+
+> 系统内置值 + 项目注册扩展值
+
+内置值见「项目可扩展注册区」。
+
+未注册 Namespace 不允许直接使用。
+
+---
+
+# 四、知识文件字段规范
+
+以下字段只用于真正承载知识内容的文件。
+
+固定基础设施文件不要求填写。
+
+---
+
+## 4.1 type
+
+### 作用
+
+`type` 表示知识内容的结构类别。
+
+它不表示：
+
+- 文件所在目录
+- 业务领域
+- 生命周期状态
+- 应用归属
+
+### 格式
+
+- string
+- 全小写
+- kebab-case
+- 仅允许 `a-z`、`0-9`、`-`
+
+### 合法值
+
+合法 `type`：
+
+```text
+系统内置 type
++
+项目注册 custom type
+```
+
+未注册的值禁止使用。
+
+### 内置 type
+
+当前固定：
+
+```text
+application
+feature
+rule
+tech
+base
+flow
+state
+glossary
+```
+
+项目可以扩展新的 type，但必须先在「项目可扩展注册区」登记。
+
+新增 type 前，应先确认现有 type 无法合理表达该知识。
+
+---
+
+## 4.2 confidence
+
+### 作用
+
+表示：
+
+> 我们有多确定这份知识**当前是正确的**。
+
+### 系统封闭枚举
+
+固定：
+
+```text
+high
+medium
+low
+```
+
+| 值 | 含义 |
+|---|---|
+| `high` | 有明确强证据，可以较高信任 |
+| `medium` | 有一定依据，但仍存在未完全确认的信息 |
+| `low` | 主要依赖推断或证据不足 |
+
+`confidence` 不允许项目自定义扩展。
+
+### Agent 使用规则
+
+```text
+low
+→ 不应直接作为最终事实，必须继续核验
+
+medium
+→ 可以作为辅助上下文，关键结论应再次确认
+
+high
+→ 可以正常使用，但仍需结合 stability 和 verifiedAt 判断
+```
+
+---
+
+## 4.3 stability
+
+### 作用
+
+表示：
+
+> 即使这份知识当前正确，它未来有多容易发生变化。
+
+### 系统封闭枚举
+
+固定：
+
+```text
+stable
+evolving
+volatile
+```
+
+| 值 | 含义 |
+|---|---|
+| `stable` | 长期相对稳定 |
+| `evolving` | 正在持续演进，可能随着需求或版本调整 |
+| `volatile` | 很容易变化，使用前应重新核对真实来源 |
+
+`stability` 不允许项目自定义扩展。
+
+### Agent 使用规则
+
+```text
+volatile
+→ 执行相关修改前必须重新核对真实来源
+
+evolving
+→ 涉及实际修改时优先重新核验
+
+stable
+→ 可以作为稳定上下文使用
+```
+
+### 与 confidence 的关系
+
+两者完全独立。
+
+例如：
+
+```yaml
+confidence: high
+stability: volatile
+```
+
+表示：
+
+> 当前非常确定是正确的，但未来非常容易变化。
+
+---
+
+## 4.4 evidence
+
+### 作用
+
+表示支撑该知识成立的证据来源。
+
+### 结构
+
+必须使用：
 
 ```yaml
 evidence:
 - type: code
-  ref: "com.xxx.service.OrderService#createOrder"
-  verifiedAt: 2026-08-17
+  ref: path/to/code
 - type: doc
-  ref: "内部 Wiki 链接"
+  ref: path/or/url
 - type: human
-  ref: "张三/2026-08-15/需求评审会议"
+  ref: user-code
 ```
 
-| type | 含义 |
-|------|------|
-| `code` | 代码路径或核心模块路径，必须有具体路径 |
-| `doc` | 文档链接（内部 Wiki / RFC / ADR） |
-| `human` | 人工确认记录（确认人/时间/方式） |
+规则：
 
-### 3.8 anchors 唯一性规则
+- 必填
+- `list<object>`
+- 至少 1 条
+- 每条必须包含 `type`
+- 每条必须包含 `ref`
+- 允许同一种 type 出现多次
 
-`anchors` 用于 ROUTING 路由匹配。规则如下：
+禁止：
 
-- **允许**多个知识文件拥有相同 anchor（一个业务概念可能关联多个知识文件）
-- **必须**由 `ROUTING.md` 明确优先级，避免 Agent 不知道该读哪个
-- 如果两个文件 anchor 相同且优先级相同，ROUTING 必须列出两者并说明适用场景
+```yaml
+evidence:
+- "OrderService.java"
+```
+
+### evidence.type
+
+属于**系统封闭枚举**。
+
+固定：
+
+```text
+code
+doc
+human
+```
+
+不允许项目初始化时自行扩展。
+
+#### code
+
+来自当前代码、配置、迁移脚本等实现事实。
+
+`ref` 必须尽可能精确、可定位。
+
+#### doc
+
+来自正式文档、RFC、ADR、需求文档、官方文档、内部文档等。
+
+`ref` 必须能定位到具体文档。
+
+#### human
+
+来自明确人员确认。
+
+`ref` 应使用可追溯的人员标识。
+
+### evidence 与 confidence
+
+`confidence` 必须结合 evidence 判断。
+
+证据数量不等于证据质量，不允许通过简单统计 evidence 数量自动确定 `confidence`。
 
 ---
 
-## 四、目录职责与内容归属规则
+# 五、系统固定值与项目可扩展值
 
-### 4.1 核心目录归属判定
+所有字段必须明确属于以下三类之一。
 
-| 目录 | 放什么 | 不放什么 | 归属判定标准 |
-|------|--------|----------|--------------|
-| `main/` | 跨应用、跨系统、跨业务线的通用知识 | 单应用内部实现细节 | 放到某个应用目录下会导致其他应用检索时漏掉 → 进 main |
-| `applications/` | 应用范围内的知识 | 全局通用概念 | 只服务于单个应用 → 进 applications |
-| `candidate/` | 待确认候选知识 | 已确认的正式知识 | AI 分析出的推断、未经 owner 确认的内容 |
-| `personal/` | 个人经验和踩坑记录 | 团队正式结论 | 个人工作区，验证后可转 candidate |
-| `template/` | 各类文档的写作模板 | 实际知识内容 | 只放模板，不放数据 |
-| `archive/` | 已废弃或过期知识的归档副本 | 活跃知识 | 仅用于历史追溯，不进入正常路由 |
+## 5.1 系统封闭值
 
-### 4.2 main/rules/ vs main/tech/ 的明确区分
+这些值属于知识库协议本身。
 
-| 目录 | 放什么 | 示例 |
-|------|--------|------|
-| `main/rules/` | 开发、协作、交付、知识管理等**强制规范** | Git Commit 规范、分支规范、Code Review 规范、版本发布规范、知识库规范、安全红线 |
-| `main/tech/` | 跨应用共享的**技术知识和技术约束** | Java 编码约定、Spring Boot 通用实践、Redis 使用规范、MQ 通用约束、异常处理技术约定 |
+后续开发者或Agent初始化项目时**禁止修改**。
 
-**判断标准**：
-- 是"必须遵守的协作/流程规范" → `main/rules/`
-- 是"技术实现层面的通用约束" → `main/tech/`
+### scope
 
-> **`main/rules/` 与 `rule-template.md` 的关系**：`main/rules/` 下的全局规则使用 `scope: cross-app`，套用 `template/rule-template.md` 时不填写 `domain` / `application` / `appType` 等应用专属字段。应用级业务规则使用 `scope: {appCode}`，填写对应应用信息。
-
-### 4.3 applications/ 内部结构规则
-
-```
-applications/{app}/
-├── application-{app}.md    # 应用总览（必须有）
-├── INDEX.md                # 应用内导航（必须有）
-├── domain/
-│   ├── feature/            # 功能能力与主要业务流程
-│   ├── rule/               # 应用级业务规则
-│   └── base/               # 接口/消息/模型/Repository 索引
-└── tech/                   # 应用级技术约束
+```text
+global
+app
+cross-app
 ```
 
-**feature/ 定义**：
+### status
 
-`feature/` 用于沉淀应用当前已经存在且经过确认的功能能力、功能边界和主要业务流程等稳定知识。
-
-**feature/ 不是万能目录**，以下内容应归入对应目录：
-
-| 内容类型 | 归属目录 |
-|----------|----------|
-| 具体 API、DTO、表、字段、代码位置 | `base/` |
-| 权限、状态约束、业务条件、数据边界 | `rule/` |
-| 框架用法、事务、缓存、异常、工程实现约束 | `tech/` |
-
-**强制约束**：
-- `base/` 只做索引（指向代码路径），不展开实现细节
-- AI 读取顺序：应用总览 → INDEX → 按需求选择 feature / rule / base / tech → 回到代码
-- 不要求 Agent 每次依次读取所有四类知识，应按需求渐进加载
-
-### 4.4 candidate/ 目录结构
-
-`candidate/` 镜像正式目录结构，便于晋升时自然迁移：
-
-```
-candidate/
-├── main/
-│   ├── rules/
-│   └── tech/
-└── applications/
-    ├── {app1}/
-    └── {app2}/
+```text
+DRAFT
+CANDIDATE
+OFFICIAL
+DEPRECATED
 ```
 
-晋升路径示例：`candidate/applications/order/domain/feature/xxx.md` → `applications/order/domain/feature/xxx.md`
+### confidence
+
+```text
+high
+medium
+low
+```
+
+### stability
+
+```text
+stable
+evolving
+volatile
+```
+
+### evidence.type
+
+```text
+code
+doc
+human
+```
 
 ---
 
-## 五、status 流转规则
+## 5.2 系统内置 + 项目扩展值
 
-### 5.1 状态定义
+系统提供基础值，项目初始化时允许追加，但不得随意修改系统内置值。
 
-| 状态 | 含义 |
-|------|------|
-| `DRAFT` | 草稿，内容不完整或未经过初步验证 |
-| `CANDIDATE` | 候选，内容完整，有初步证据，等待 owner review |
-| `OFFICIAL` | 正式，经 owner 确认，可作为稳定上下文使用 |
-| `DEPRECATED` | 已废弃，内容过期或错误，保留历史但不进入正常路由 |
+包括：
 
-### 5.2 流转路径
-
-```
-DRAFT ──→ CANDIDATE ──→ OFFICIAL ──→ DEPRECATED
-  ↑                        │
-  └────────────────────────┘ (发现错误，重新确认)
+```text
+type
+anchor namespace
 ```
 
-| 流转 | 条件 | 操作人 |
-|------|------|--------|
-| DRAFT → CANDIDATE | 知识内容完整，有初步证据，准备提交 review | 作者 |
-| CANDIDATE → OFFICIAL | owner 确认内容准确、稳定、证据充分 | owner |
-| OFFICIAL → DEPRECATED | 代码或业务变化导致知识过期/错误 | owner 或需求负责人 |
-| OFFICIAL → DRAFT | 发现重大错误需重写（极少发生，优先 DEPRECATED + 新建） | owner |
-
-### 5.3 目录与 status 的匹配规则
-
-| 目录 | 允许的状态 |
-|------|-----------|
-| `main/` | `OFFICIAL` / `DEPRECATED` |
-| `applications/` | `OFFICIAL` / `DEPRECATED` |
-| `candidate/` | `DRAFT` / `CANDIDATE` |
-| `personal/` | `DRAFT` / `CANDIDATE` |
-
-**关键设计**：
-- `main/` 和 `applications/` **允许 DEPRECATED**，原地标记，不移动到 `archive/`。原因：移动文件会导致大量链接失效。
-- `candidate/` **允许 DRAFT**。团队成员准备写新的团队级知识时，第一版 DRAFT 可以直接放 `candidate/`，不必先放 `personal/`。
-- `personal/` 只表达"这是个人知识，不代表团队结论"，与生命周期状态（DRAFT/CANDIDATE）正交。
-
-### 5.4 DEPRECATED 的处理规则
-
-- DEPRECATED 文件**原地保留**，`status: DEPRECATED`，不移动目录
-- ROUTING 默认**只索引 OFFICIAL**，DEPRECATED 不进入 Agent 正常检索结果
-- 需要追溯历史时，可显式指定读取 DEPRECATED 文件
-- 文件顶部必须添加醒目提示：`> ⚠️ 本文档已废弃，请勿作为事实引用`
-- 禁止删除 DEPRECATED 文件（除非极端情况且经 owner 确认）
-
 ---
 
-## 六、知识流转与回补规则
+## 5.3 项目注册值
 
-### 6.1 正向流转路径
+完全取决于当前项目或工作区，由 Agent 自动发现、确认并维护。
 
-```
-personal/ 个人经验
-    ↓ （验证后）
-candidate/ 候选知识（状态 DRAFT → CANDIDATE）
-    ↓ （owner review + 确认稳定性）
-main/ 或 applications/ 正式知识（状态 OFFICIAL）
+包括：
+
+```text
+appCode
+owner
+maintainers/user
 ```
 
-### 6.2 需求执行中的回补路径
-
-```
-需求执行 → AI 分析出有价值信息 → 写入 candidate/（标清来源、可信度、待确认项）
-    ↓ （需求发布后）
-owner/研发同学 review candidate/ → 确认稳定 → 合并到 main/ 或 applications/ → 状态改为 OFFICIAL
-```
-
-### 6.3 禁止事项
-
-| 禁止行为 | 原因 |
-|----------|------|
-| AI 直接将未确认内容写入 `main/` 或 `applications/` | 错误知识比没有知识更危险 |
-| AI 将 personal 经验直接当作团队结论引用 | personal 未经验证，不代表团队共识 |
-| 人工跳过 candidate 直接写 OFFICIAL | 缺少证据追溯，后续难维护 |
-| 删除 DEPRECATED 文件 | 删除会丢失历史变更记录 |
+这些值不得直接写死在知识库通用规则逻辑中，需由Agent自行判断或询问用户。
 
 ---
 
-## 七、模板使用规范
+## 5.4 开放但格式受控
 
-### 7.1 强制约束
+无需提前注册，但必须遵守格式规范。
 
-- `template/` 下的模板是**强约束，不是建议格式**
-- AI 在 `knowledge/` 下写入**知识文件**时，**必须套用对应类型的模板**
-- 禁止 AI 自行发明新的文档结构或省略 Front Matter 字段
-- 当某个类型没有对应模板时，AI 必须**先创建模板**（放入 `template/` 并经 owner 确认），再写入知识
+包括：
 
-### 7.2 模板与公共字段的关系
-
-- 各类型模板的 Front Matter **必须包含本文件第三章定义的所有公共字段**
-- 各类型模板可以**追加本类型特有字段**（如 `application` 类型追加 `domain`、`appType`）
-- 模板中公共字段的取值说明可以引用本文件，不需要在模板中重复定义
-
-### 7.3 基础设施文件不受模板约束
-
-`KNOWLEDGE-RULES.md`、`ROUTING.md`、`README.md`、`INDEX.md` 和 `template/` 下的文件属于基础设施，不要求套用模板。
-
----
-
-## 八、易变信息处理规则（核心原则）
-
-> **KB 提供稳定上下文，当前代码仍然是实现事实。**
-
-### 8.1 只做定位入口的信息类型
-
-以下内容即使在知识库中被提及，也**只作为定位入口**（指向代码路径），AI 在编码前**必须回到当前仓库核对真实代码**：
-
-| 信息类型 | 示例 |
-|----------|------|
-| 接口签名 | 方法名、参数列表、返回值类型 |
-| DTO 字段 | 请求/响应对象的字段定义 |
-| Topic 配置 | MQ 的 Topic 名称、Tag、Group |
-| feature key / 开关值 | 功能开关的 key 和默认值 |
-| 状态枚举 | 具体的枚举值和含义 |
-| 表结构字段 | 数据库表的列名、类型 |
-
-### 8.2 定位入口的写法规范
-
-在知识文件中提及上述易变信息时，必须包含：
-1. **代码路径**（如 `com.xxx.service.OrderService#createOrder`）
-2. **说明这是定位入口**（如用 `(定位入口，编码前请核对代码)` 标注）
-3. **最后核对时间**（在 `verifiedAt` 字段中体现）
-
----
-
-## 九、AI 读取与路由规范
-
-### 9.1 两个入口，两种场景
-
-知识库有两个入口文件，分别服务于不同场景：
-
-| 场景 | 入口文件 | 说明 |
-|------|----------|------|
-| **会话级初始化** | `KNOWLEDGE-RULES.md` | 首次接触知识库时读取，理解全局规则 |
-| **需求级检索** | `ROUTING.md` | 每个具体需求开始时读取，定位目标知识 |
-
-**关键区别**：
-- `KNOWLEDGE-RULES.md` 是"规则入口"——告诉 AI 知识库怎么用
-- `ROUTING.md` 是"知识检索入口"——告诉 AI 具体需求该读哪些知识
-
-### 9.2 渐进式加载顺序
-
-```
-会话首次接触知识库：
-  1. 读取 KNOWLEDGE-RULES.md（理解规则）
-
-每个具体需求：
-  1. 读取 ROUTING.md（定位）
-  2. 按路由结果进入 main/ 或 applications/ 下的具体文件
-  3. 如需了解知识库整体结构 → 读 README.md
-  4. 最后 → 回到当前应用仓库核对代码
+```text
+id
+tags
+anchor value
+evidence.ref
 ```
 
-### 9.3 复用规则
-
-如果 Agent 已在当前会话中加载过 `KNOWLEDGE-RULES.md` 的当前版本，无需重复读取。每个需求只需读取 `ROUTING.md` 进行定位。
-
-### 9.4 上下文窗口管理
-
-- AI 不应一次性加载超过需求所需的上下文
-- 优先加载：应用总览 → 相关 flow → 相关 state → 相关 rule
-- 延迟加载：跨应用流程、全局术语（仅在涉及时才读取）
-
 ---
 
-## 十、变更同步规则
+# 六、项目可扩展注册区
 
-### 10.1 触发条件
-
-当发生以下任一情况时，相关知识的负责人必须在**需求发布后 3 个工作日内**更新知识：
-
-| 触发事件 | 需要更新的知识 |
-|----------|----------------|
-| 接口签名变更 | `applications/{app}/domain/base/api.md` + 引用该接口的 feature |
-| 新增/修改状态 | 对应 `state-*.md` |
-| 功能能力、主要业务流程变化 | 对应 `feature/` 目录 |
-| 业务规则、权限、状态约束、数据边界变化 | 对应 `rule/` 目录 |
-| API、模型、表、消息等定位入口变化 | 对应 `base/` 目录 |
-| 全局规则变更 | `main/rules/` |
-| 全局技术约束变更 | `main/tech/` |
-| 应用职责调整 | `application-{app}.md` |
-
-### 10.2 更新操作
-
-1. 更新正文内容
-2. `version` +1（如涉及语义变更）
-3. 更新 `updatedAt`
-4. 如与真实来源核对，更新 `verifiedAt`
-5. 更新 `evidence` 中的代码路径或文档链接
-6. 在文件末尾的"变更历史"表格中追加记录
-
-### 10.3 过时知识处理
-
-- 发现知识与当前代码不一致时，首先标记 `status: DEPRECATED`
-- `version +1`，`updatedAt` 更新
-- 在文件顶部添加 `> ⚠️ 本文档已废弃，请勿作为事实引用` 的醒目提示
-- 后续由 owner 决定是否重写（新建 DRAFT）或直接删除（极端情况）
-
----
-
-## 十一、敏感信息与数据边界
-
-> 原文强调："只让 Agent 读取当前需求需要的仓库和知识目录；敏感文档、线上数据、密钥、客户信息不进入 prompt。"
-
-### 11.1 禁止进入知识库的内容
-
-| 禁止内容 | 原因 |
-|----------|------|
-| 密钥、Token、数据库连接串 | 安全风险 |
-| 生产环境敏感数据（用户手机号、身份证号等） | 隐私合规 |
-| 客户信息、商家数据 | 数据合规 |
-| 内部未公开的财务/资损数据 | 保密要求 |
-| 未脱敏的线上日志（含真实用户数据） | 隐私合规 |
-
-### 11.2 脱敏规范
-
-- 知识库中所有示例、代码片段、日志片段**必须脱敏**
-- **对外分享**必须脱敏应用名、类名、字段名、配置 key
-- **跨团队分享**依据数据权限和信息密级处理，不强制全部脱敏
-- 内部链接（如需求链接、Wiki 链接）在知识库中保留，但 AI 读取时应注意权限控制
-
----
-
-## 十二、confidence 与 stability 的维护策略
-
-`confidence` 和 `stability` 不是装饰字段，必须真正影响维护策略：
-
-| stability | 维护策略 |
-|-----------|----------|
-| `stable` | 可作为稳定上下文使用，无需每次回代码确认 |
-| `evolving` | 优先核对，编码前建议回代码确认 |
-| `volatile` | AI 每次编码**必须**回代码确认，知识库仅作为定位入口 |
-
-| confidence | 使用策略 |
-|------------|----------|
-| `high` | 可直接引用 |
-| `medium` | 引用时建议交叉验证 |
-| `low` | 仅作为线索，必须回到代码或人工确认 |
-
----
-
-## 十三、违规处理
-
-| 违规情况 | 处理方式 |
-|----------|----------|
-| AI 写入了不符合模板结构的知识 | 人工在 review 时要求修正，或 AI 自动回滚 |
-| AI 将 CANDIDATE 内容直接引用为事实 | 在 validate 阶段拦截，要求回到代码核对 |
-| 发现 OFFICIAL 知识但实际已过期 | 立即标记 DEPRECATED，通知 owner 更新 |
-| 有人绕过了 candidate 直接写 OFFICIAL | 团队 review 时指出，补充 evidence 和 owner 确认 |
-
----
-
-## 附录：AI 使用指引（给 Coding Agent 看的）
-
-> 当你需要使用或写入知识库时，请遵守以下流程：
+> **本节是 Agent / 初始化脚本维护项目级可扩展值的固定区域。**
 >
-> **首次接触知识库时**：
-> 1. 读取本文件（`KNOWLEDGE-RULES.md`），理解全局规则
+> 初始化或同步项目时，只修改本节对应注册项。
 >
-> **每个具体需求**：
-> 1. 读取 `ROUTING.md`，根据需求定位到候选知识文件
-> 2. 按路由结果读取目标知识文件
-> 3. **编码前，回到当前仓库核对代码**——知识库只提供定位入口和稳定上下文
->
-> **写入新知识时**：
-> 1. 先确定 `type`，找到 `template/` 下对应模板
-> 2. 套用模板，填写完整的 Front Matter（含本文件定义的所有公共字段）
-> 3. 根据内容归属判定，放入正确的目录
-> 4. 如果是新发现的知识，先放 `candidate/`，状态设为 `DRAFT` 或 `CANDIDATE`
+> 不得为了适配项目而修改前文定义的系统封闭枚举。
+
+---
+
+## 6.1 AppCode Registry
+
+<!-- KB-REGISTRY:APP-CODE:BEGIN -->
+
+```yaml
+appCodes: []
+```
+
+<!-- KB-REGISTRY:APP-CODE:END -->
+
+规则：
+
+- Agent 初始化时，必须先根据当前实际工作区识别应用
+- 新应用必须先注册，再允许知识文件引用
+- 已注册 appCode 应保持长期稳定
+
+---
+
+## 6.2 Custom Type Registry
+
+系统内置：
+
+```yaml
+builtInTypes:
+- application
+- feature
+- rule
+- tech
+- base
+- flow
+- state
+- glossary
+```
+
+项目扩展区：
+
+<!-- KB-REGISTRY:CUSTOM-TYPE:BEGIN -->
+
+```yaml
+customTypes: []
+```
+
+<!-- KB-REGISTRY:CUSTOM-TYPE:END -->
+
+Agent 只能向 `customTypes` 追加经过确认的新类型，不得修改 `builtInTypes`。
+
+---
+
+## 6.3 Owner Registry
+
+<!-- KB-REGISTRY:OWNER:BEGIN -->
+
+```yaml
+owners: []
+```
+
+<!-- KB-REGISTRY:OWNER:END -->
+
+`owner` 可以注册：
+
+- 团队 Code
+- 用户 Code
+
+---
+
+## 6.4 User Registry
+
+<!-- KB-REGISTRY:USER:BEGIN -->
+
+```yaml
+users: []
+```
+
+<!-- KB-REGISTRY:USER:END -->
+
+`maintainers` 中的所有值必须来自此注册表。
+
+---
+
+## 6.5 Anchor Namespace Registry
+
+系统内置：
+
+```yaml
+builtInAnchorNamespaces:
+- GLOBAL
+- APP
+- FEATURE
+- RULE
+- TECH
+- BASE
+- FLOW
+- STATE
+```
+
+项目扩展区：
+
+<!-- KB-REGISTRY:ANCHOR-NAMESPACE:BEGIN -->
+
+```yaml
+customAnchorNamespaces: []
+```
+
+<!-- KB-REGISTRY:ANCHOR-NAMESPACE:END -->
+
+Skill 可以根据项目实际需要增加 Namespace，但必须先注册再使用。
+
+---
+
+# 七、标准 Front Matter
+
+## 7.1 基础设施文件
+
+```yaml
+---
+id: KB-INFRA-{KEY}
+scope: global
+status: OFFICIAL
+owner: {registered-owner}
+maintainers:
+- {registered-user}
+version: 1
+updatedAt: YYYY-MM-DD
+verifiedAt: YYYY-MM-DD
+tags:
+- infrastructure
+anchors:
+- GLOBAL:{KEY}
+---
+```
+
+---
+
+## 7.2 单应用知识文件
+
+```yaml
+---
+id: KB-{CATEGORY}-{KEY}
+type: {registered-type}
+scope: app
+appCode: {registered-app-code}
+status: DRAFT
+owner: {registered-owner}
+maintainers:
+- {registered-user}
+version: 1
+updatedAt: YYYY-MM-DD
+verifiedAt: YYYY-MM-DD
+confidence: low
+stability: evolving
+evidence:
+- type: code
+  ref: {traceable-reference}
+tags:
+- {tag}
+anchors:
+- APP:{APP-CODE}
+---
+```
+
+---
+
+## 7.3 全局知识文件
+
+```yaml
+---
+id: KB-{CATEGORY}-{KEY}
+type: {registered-type}
+scope: global
+status: DRAFT
+owner: {registered-owner}
+maintainers:
+- {registered-user}
+version: 1
+updatedAt: YYYY-MM-DD
+verifiedAt: YYYY-MM-DD
+confidence: low
+stability: evolving
+evidence:
+- type: doc
+  ref: {traceable-reference}
+tags:
+- {tag}
+anchors:
+- GLOBAL:{KEY}
+---
+```
+
+---
+
+## 7.4 跨应用知识文件
+
+```yaml
+---
+id: KB-{CATEGORY}-{KEY}
+type: {registered-type}
+scope: cross-app
+status: DRAFT
+owner: {registered-owner}
+maintainers:
+- {registered-user}
+version: 1
+updatedAt: YYYY-MM-DD
+verifiedAt: YYYY-MM-DD
+confidence: low
+stability: evolving
+evidence:
+- type: doc
+  ref: {traceable-reference}
+tags:
+- {tag}
+anchors:
+- {NAMESPACE}:{VALUE}
+---
+```
+
+`scope: cross-app` 不填写单一 `appCode`。
