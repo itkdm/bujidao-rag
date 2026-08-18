@@ -269,53 +269,50 @@ def print_report(
     print(f"Maintainers represented: {len(maint_counter)}")
     print()
 
-    # By Confidence (knowledge files only)
-    if type_filter is None:
-        print("By Confidence")
-        print("-------------")
-        conf_counter = Counter(fm.get("confidence") for _, fm in knowledge_docs)
-        for key in CONFIDENCE_ORDER:
-            if key in conf_counter:
-                cnt = conf_counter[key]
-                print(f"{key:<10}{cnt:<5}{fmt_pct(cnt, n_knowledge)}")
-        for key, cnt in sorted_by_count(
-            [(k, c) for k, c in conf_counter.items() if k not in CONFIDENCE_ORDER]
-        ):
+    # By Confidence (knowledge files only; always shown, uses filtered set)
+    print("By Confidence")
+    print("-------------")
+    conf_counter = Counter(fm.get("confidence") for _, fm in knowledge_docs)
+    for key in CONFIDENCE_ORDER:
+        if key in conf_counter:
+            cnt = conf_counter[key]
             print(f"{key:<10}{cnt:<5}{fmt_pct(cnt, n_knowledge)}")
-        print()
+    for key, cnt in sorted_by_count(
+        [(k, c) for k, c in conf_counter.items() if k not in CONFIDENCE_ORDER]
+    ):
+        print(f"{key:<10}{cnt:<5}{fmt_pct(cnt, n_knowledge)}")
+    print()
 
-    # By Stability (knowledge files only)
-    if type_filter is None:
-        print("By Stability")
-        print("------------")
-        stab_counter = Counter(fm.get("stability") for _, fm in knowledge_docs)
-        for key in STABILITY_ORDER:
-            if key in stab_counter:
-                cnt = stab_counter[key]
-                print(f"{key:<10}{cnt:<5}{fmt_pct(cnt, n_knowledge)}")
-        for key, cnt in sorted_by_count(
-            [(k, c) for k, c in stab_counter.items() if k not in STABILITY_ORDER]
-        ):
+    # By Stability (knowledge files only; always shown, uses filtered set)
+    print("By Stability")
+    print("------------")
+    stab_counter = Counter(fm.get("stability") for _, fm in knowledge_docs)
+    for key in STABILITY_ORDER:
+        if key in stab_counter:
+            cnt = stab_counter[key]
             print(f"{key:<10}{cnt:<5}{fmt_pct(cnt, n_knowledge)}")
-        print()
+    for key, cnt in sorted_by_count(
+        [(k, c) for k, c in stab_counter.items() if k not in STABILITY_ORDER]
+    ):
+        print(f"{key:<10}{cnt:<5}{fmt_pct(cnt, n_knowledge)}")
+    print()
 
-    # Evidence Type Usage (knowledge files only)
-    if type_filter is None:
-        print("Evidence Type Usage")
-        print("-------------------")
-        entry_counter = Counter()
-        doc_using = defaultdict(set)
-        for p, fm in knowledge_docs:
-            for item in fm.get("evidence", []) or []:
-                if isinstance(item, dict):
-                    et = item.get("type")
-                    if et in EVIDENCE_TYPE_VALUES:
-                        entry_counter[et] += 1
-                        doc_using[et].add(p)
-        for key in EVIDENCE_ORDER:
-            if key in entry_counter:
-                print(f"{key:<8}{entry_counter[key]:<5}entries   {len(doc_using[key])} docs")
-        print()
+    # Evidence Type Usage (knowledge files only; always shown, uses filtered set)
+    print("Evidence Type Usage")
+    print("-------------------")
+    entry_counter = Counter()
+    doc_using = defaultdict(set)
+    for p, fm in knowledge_docs:
+        for item in fm.get("evidence", []) or []:
+            if isinstance(item, dict):
+                et = item.get("type")
+                if et in EVIDENCE_TYPE_VALUES:
+                    entry_counter[et] += 1
+                    doc_using[et].add(p)
+    for key in EVIDENCE_ORDER:
+        if key in entry_counter:
+            print(f"{key:<8}{entry_counter[key]:<5}entries   {len(doc_using[key])} docs")
+    print()
 
     # Verification Age
     print("Verification Age")
