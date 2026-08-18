@@ -1,28 +1,28 @@
 ---
-# 知识库导航基础设施文件
+# 知识库导航基础设施文件（全局目录契约，与具体应用无关）
 id: KB-INFRA-YUDAO-FEATURE-README
-scope: app
-appCode: yudao-ui-admin-vue3
+scope: global
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
+version: 1
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
 - navigation
-- application
+- contract
 anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
-- FEATURE:YUDAO-UI-ADMIN-VUE3
+- GLOBAL:FEATURE-CONTRACT
 ---
 
 # feature/
 
 ## 目录定位
 
-`feature/` 记录 yudao-ui-admin-vue3 应用**当前已确认的功能能力**与主要业务流程，描述系统「能做什么」。
+`feature/` 是应用知识目录下记录**当前已确认的功能能力**与主要业务流程的目录，描述系统「能做什么」。
+
+本契约与具体 appCode 无关，所有应用目录下的 `feature/` 共享同一套职责定义。
 
 ## 应包含的内容
 

@@ -1,28 +1,28 @@
 ---
-# 知识库导航基础设施文件
+# 知识库导航基础设施文件（全局目录契约，与具体应用无关）
 id: KB-INFRA-APP-RUOYI-VUE-PRO-BASE-README
-scope: app
-appCode: ruoyi-vue-pro
+scope: global
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
+version: 1
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
 - navigation
-- application
+- contract
 anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:RUOYI-VUE-PRO
+- GLOBAL:BASE-CONTRACT
 ---
 
 # base/
 
 ## 目录定位
 
-`base/` 存放 RuoYi-Vue-Pro 应用中**稳定、可定位的基础事实**，是其他知识的共同事实底座。例如运行环境、依赖库版本、部署方式、基础配置项等不易变化、可作为定位入口的信息。
+`base/` 是应用知识目录下存放**稳定、可定位的基础事实**的目录，是其他知识的共同事实底座。例如运行环境、依赖库版本、部署方式、基础配置项等不易变化、可作为定位入口的信息。
+
+本契约与具体 appCode 无关，所有应用目录下的 `base/` 共享同一套职责定义。
 
 ## 应包含的内容
 

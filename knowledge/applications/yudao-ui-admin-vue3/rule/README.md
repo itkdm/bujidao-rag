@@ -1,28 +1,28 @@
 ---
-# 知识库导航基础设施文件
+# 知识库导航基础设施文件（全局目录契约，与具体应用无关）
 id: KB-INFRA-YUDAO-RULE-README
-scope: app
-appCode: yudao-ui-admin-vue3
+scope: global
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
+version: 1
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
 - navigation
-- application
+- contract
 anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
-- RULE:YUDAO-UI-ADMIN-VUE3
+- GLOBAL:RULE-CONTRACT
 ---
 
 # rule/
 
 ## 目录定位
 
-`rule/` 存放 yudao-ui-admin-vue3 应用范围内的**业务规则与研发规范**，约束「应该怎么做」。
+`rule/` 是应用知识目录下存放**业务规则与研发规范**的目录，约束「应该怎么做」。
+
+本契约与具体 appCode 无关，所有应用目录下的 `rule/` 共享同一套职责定义。
 
 ## 应包含的内容
 

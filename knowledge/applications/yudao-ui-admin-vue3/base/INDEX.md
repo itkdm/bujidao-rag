@@ -1,21 +1,19 @@
 ---
 # 知识库导航基础设施文件
 id: KB-INFRA-YUDAO-BASE-INDEX
-scope: app
-appCode: yudao-ui-admin-vue3
+scope: global
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
 - navigation
 - index
 anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
-- BASE:YUDAO-UI-ADMIN-VUE3
+- GLOBAL:BASE-INDEX
 ---
 
 # base/索引

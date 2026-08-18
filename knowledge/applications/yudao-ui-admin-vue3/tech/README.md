@@ -1,28 +1,28 @@
 ---
-# 知识库导航基础设施文件
+# 知识库导航基础设施文件（全局目录契约，与具体应用无关）
 id: KB-INFRA-YUDAO-TECH-README
-scope: app
-appCode: yudao-ui-admin-vue3
+scope: global
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
+version: 1
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
 - navigation
-- application
+- contract
 anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
-- TECH:YUDAO-UI-ADMIN-VUE3
+- GLOBAL:TECH-CONTRACT
 ---
 
 # tech/
 
 ## 目录定位
 
-`tech/` 存放 yudao-ui-admin-vue3 应用级的**技术约束与部署架构**，描述系统「技术层面如何构建与运行」。
+`tech/` 是应用知识目录下存放**技术约束与部署架构**的目录，描述系统「技术层面如何构建与运行」。
+
+本契约与具体 appCode 无关，所有应用目录下的 `tech/` 共享同一套职责定义。
 
 ## 应包含的内容
 

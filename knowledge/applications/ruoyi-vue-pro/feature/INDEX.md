@@ -7,7 +7,7 @@ status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
@@ -25,5 +25,3 @@ anchors:
 | 名称 | 类型 | 说明 |
 |------|------|------|
 | [`README.md`](./README.md) | 文件 | feature/ 的职责、包含边界与维护规则 |
-| [`已确认功能.md`](./已确认功能.md) | 文件 | 该应用已确认存在的功能能力 |
-| [`待确认功能.md`](./待确认功能.md) | 文件 | 该应用待确认、尚未作为事实记录的功能 |

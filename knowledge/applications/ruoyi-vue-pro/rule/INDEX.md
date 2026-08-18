@@ -7,7 +7,7 @@ status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
@@ -25,6 +25,5 @@ anchors:
 | 名称 | 类型 | 说明 |
 |------|------|------|
 | [`README.md`](./README.md) | 文件 | rule/ 的职责、包含边界与维护规则 |
-| [`代码提交规范.md`](./代码提交规范.md) | 文件 | 该应用的代码提交与分支规范 |
-| [`编码规范.md`](./编码规范.md) | 文件 | 该应用的编码风格与约定 |
-| [`业务规则.md`](./业务规则.md) | 文件 | 该应用范围内的业务规则与约束 |
+| [`rule-boundary-backend-baseline.md`](./rule-boundary-backend-baseline.md) | 文件 | 后端能力边界基线规则 |
+| [`rule-permission-admin-app-boundary.md`](./rule-permission-admin-app-boundary.md) | 文件 | 管理后台与应用权限边界规则 |
