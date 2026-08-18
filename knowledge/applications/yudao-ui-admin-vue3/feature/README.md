@@ -1,42 +1,44 @@
 ---
+# 知识库导航基础设施文件
 id: KB-INFRA-YUDAO-FEATURE-README
-scope: global
+scope: app
+appCode: yudao-ui-admin-vue3
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
-- infrastructure
-- readme
+- navigation
+- application
 anchors:
-- GLOBAL:YUDAO-FEATURE-README
+- APP:YUDAO-UI-ADMIN-VUE3
+- FEATURE:YUDAO-UI-ADMIN-VUE3
 ---
 
 # feature/
 
-## 本目录负责什么
+## 目录定位
 
-`feature/` 回答：**这个应用现在能做什么？**
+`feature/` 记录 yudao-ui-admin-vue3 应用**当前已确认的功能能力**与主要业务流程，描述系统「能做什么」。
 
-沉淀已经确认存在的应用功能能力，关注用户可感知的业务能力和业务流程本身。
+## 应包含的内容
 
-## 什么内容应该放这里
+- 已确认存在的功能能力。
+- 功能边界与范围。
+- 主要业务流程与关键路径。
 
-- 已确认存在的功能能力
-- 功能边界（能做什么、不能做什么）
-- 主要业务流程
-- 用户可感知的业务能力描述
+## 不应包含的内容
 
-## 什么内容不应该放这里，以及应该去哪里
+- 运行环境与基础配置事实：应放入 `base/`。
+- 业务规则与研发规范：应放入 `rule/`。
+- 技术约束与部署架构：应放入 `tech/`。
+- 规划中、未确认的功能：先放入 `candidate/`，确认后再迁入本目录。
 
-- API、DTO、表、代码路径等事实定位 → `base/`
-- 技术实现细节、框架用法、工程约定 → `tech/`
-- 业务规则、权限、状态约束、数据边界 → `rule/`
-- 未来规划或尚未确认的能力 → 不要写入正式 `feature/`，回到 `candidate/` 或对应事实来源确认
+## 维护规则
 
-## 新增本类知识时需要遵守的最基本归属原则
-
-只记录已经确认存在的、用户可感知的功能与流程；不展开实现，不定义规则，不写事实入口。
+- 只记录当前已确认存在的功能，不把规划能力当事实。
+- 功能新增、变更后，必须回到当前应用代码核对，并同步更新 `verifiedAt`。
+- 功能描述聚焦能力与流程边界，不复制实现细节。

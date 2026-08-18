@@ -1,44 +1,44 @@
 ---
-id: KB-INFRA-RUOYI-TECH-README
-scope: global
+# 知识库导航基础设施文件
+id: KB-INFRA-APP-RUOYI-VUE-PRO-TECH-README
+scope: app
+appCode: ruoyi-vue-pro
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
-- infrastructure
-- readme
+- navigation
+- application
 anchors:
-- GLOBAL:RUOYI-TECH-README
+- APP:RUOYI-VUE-PRO
+- TECH:RUOYI-VUE-PRO
 ---
 
 # tech/
 
-## 本目录负责什么
+## 目录定位
 
-`tech/` 回答：**在当前应用和技术栈中应该怎么实现？**
+`tech/` 存放 RuoYi-Vue-Pro 应用级的**技术约束与部署架构**，描述系统「技术层面如何构建与运行」。
 
-沉淀技术实现约束，核心表达 **How we implement it**。
+## 应包含的内容
 
-## 什么内容应该放这里
+- 应用级技术约束（框架使用约定、关键技术选型约束）。
+- 部署架构与运行拓扑。
+- 需要团队遵守、与应用强相关的技术约定。
 
-- 架构约束
-- 模块边界
-- 框架用法
-- Controller / Service 等工程约定
-- 事务、缓存、MQ、异常处理、安全实现
-- 测试等技术知识
+## 不应包含的内容
 
-## 什么内容不应该放这里，以及应该去哪里
+- 基础事实与配置项：应放入 `base/`。
+- 功能能力与业务流程：应放入 `feature/`。
+- 业务规则与研发规范：应放入 `rule/`。
+- 跨应用共享的全局技术约束：应放入 `main/tech/`。
 
-- 模块、API、表、配置等事实入口 → `base/`
-- 业务规则、权限、状态约束 → `rule/`
-- 功能能力与业务流程 → `feature/`
-- 具体业务角色与产品权限矩阵 → `rule/` 或正式产品文档
+## 维护规则
 
-## 新增本类知识时需要遵守的最基本归属原则
-
-只描述实现方式与技术约束；不定义业务规则，不记录事实入口，不解释业务流程。
+- 只记录当前已确认的技术约束与架构事实，不把规划当事实。
+- 架构或技术约束变化后，必须回到真实代码 / 部署核对并更新 `verifiedAt`。
+- 易变内容只提供定位入口，真正改动前回到当前仓库核对真实实现。

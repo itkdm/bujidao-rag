@@ -1,48 +1,44 @@
 ---
+# 知识库导航基础设施文件
 id: KB-INFRA-YUDAO-BASE-README
-scope: global
+scope: app
+appCode: yudao-ui-admin-vue3
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
-- infrastructure
-- readme
+- navigation
+- application
 anchors:
-- GLOBAL:YUDAO-BASE-README
+- APP:YUDAO-UI-ADMIN-VUE3
+- BASE:YUDAO-UI-ADMIN-VUE3
 ---
 
 # base/
 
-## 本目录负责什么
+## 目录定位
 
-`base/` 回答：**当前真实事实和代码入口在哪里？**
+`base/` 存放 yudao-ui-admin-vue3 应用中**稳定、可定位的基础事实**，是其他知识的共同事实底座。例如运行环境、依赖库版本、部署方式、基础配置项等不易变化、可作为定位入口的信息。
 
-沉淀可验证的事实定位，是事实定位层。
+## 应包含的内容
 
-## 什么内容应该放这里
+- 应用运行环境、依赖库与框架版本。
+- 部署方式与基础配置项（如端口、数据源、中间件连接）。
+- 稳定、可定位、可作为其他知识引用锚点的基础事实。
 
-- 模块
-- API
-- DTO / Model
-- Repository
-- 数据库表
-- 配置
-- MQ
-- 权限入口
-- 关键代码路径
-- 其他可验证事实定位
+## 不应包含的内容
 
-## 什么内容不应该放这里，以及应该去哪里
+- 功能能力与业务流程：应放入 `feature/`。
+- 业务规则与研发规范：应放入 `rule/`。
+- 易变的技术约束与架构细节：应放入 `tech/`。
+- 动态内容摘要、当前文件清单：应放入本目录 `INDEX.md`。
 
-- 为什么这样设计、业务流程解释 → `feature/`
-- 技术方案展开 → `tech/`
-- 业务规则定义 → `rule/`
-- 主观推断或未经确认的事实 → 回到代码与证据确认，不要写成事实
+## 维护规则
 
-## 新增本类知识时需要遵守的最基本归属原则
-
-只记录可验证的事实与代码入口；不做设计解释，不展开技术方案，不定义业务规则。
+- 只记录当前已确认、稳定存在的基础事实，不把规划或推断当作事实。
+- 基础事实变化（如版本升级、配置调整）后，必须回到真实代码 / 配置核对并更新，同时更新 `verifiedAt`。
+- 只提供定位入口，不复制大段易变配置细节。

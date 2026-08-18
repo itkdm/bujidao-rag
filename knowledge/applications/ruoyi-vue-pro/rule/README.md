@@ -1,44 +1,44 @@
 ---
-id: KB-INFRA-RUOYI-RULE-README
-scope: global
+# 知识库导航基础设施文件
+id: KB-INFRA-APP-RUOYI-VUE-PRO-RULE-README
+scope: app
+appCode: ruoyi-vue-pro
 status: OFFICIAL
 owner: bujidao
 maintainers:
 - bujidao
-version: 1
+version: 2
 updatedAt: 2026-08-18
 verifiedAt: 2026-08-18
 tags:
-- infrastructure
-- readme
+- navigation
+- application
 anchors:
-- GLOBAL:RUOYI-RULE-README
+- APP:RUOYI-VUE-PRO
+- RULE:RUOYI-VUE-PRO
 ---
 
 # rule/
 
-## 本目录负责什么
+## 目录定位
 
-`rule/` 回答：**做这件事必须满足什么规则和边界？**
+`rule/` 存放 RuoYi-Vue-Pro 应用范围内的**业务规则与研发规范**，约束「应该怎么做」。
 
-沉淀应用级的规则与约束，核心表达 **What must be true**。
+## 应包含的内容
 
-## 什么内容应该放这里
+- 该应用范围内的业务规则与约束。
+- 研发规范（编码规范、代码提交规范、分支与评审规范等）。
+- 团队在该应用中约定遵守的强制性规则。
 
-- 业务规则
-- 权限规则
-- 状态约束
-- 数据边界
-- 安全边界
-- 必须遵守的应用级约束
+## 不应包含的内容
 
-## 什么内容不应该放这里，以及应该去哪里
+- 基础事实与配置：应放入 `base/`。
+- 功能能力与业务流程：应放入 `feature/`。
+- 技术约束与部署架构细节：应放入 `tech/`。
+- 跨应用统一的全局规则：应放入 `main/rules/`。
 
-- 具体代码对象、API、表在哪里 → `base/`
-- 如何实现、框架用法、工程约定 → `tech/`
-- 业务流程或功能能力描述 → `feature/`
-- 技术实现方式本身 → `rule/` 只定义规则，不展开实现
+## 维护规则
 
-## 新增本类知识时需要遵守的最基本归属原则
-
-只定义必须为真（must be true）的规则与边界；不写事实入口，不展开实现方案，不把业务流程当规则。
+- 只记录当前已确认、团队约定遵守的规则，不把临时约定当正式规则。
+- 规则变更需经确认后更新，并同步 `verifiedAt`。
+- 规则描述聚焦约束本身，不复制实现代码。
