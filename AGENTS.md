@@ -6,7 +6,7 @@
 - **项目目标**：基于芋道（ruoyi-vue-pro）精简版脚手架，构建 RAG（检索增强生成）模块。
 - **当前主要形态**：前后端分离的单体应用，后端为 Spring Boot 多模块架构，前端为 Vue3 管理后台。
 - **应用组成**：
-  - `yudao-boot-mini/`：后端服务（精简版，仅含系统功能 + 基础设施模块）
+  - `yudao-boot-mini/`：后端服务（精简版，仅含系统功能 + 基础设施模块），后续逐步完善。
   - `yudao-ui-admin-vue3/`：前端管理后台（Vue3 + Element Plus）
   - `knowledge/`：项目知识库，存放跨应用共享的规范、技术文档与参考资料
 
@@ -217,13 +217,14 @@ Views（页面）
 
 - 分支规范：`knowledge/main/tech/Git Branch 全局分支规范.md`
 - 提交规范：`knowledge/main/tech/Git Commit 全局提交规范.md`
+- Pull Request 规范：`knowledge/main/tech/Pull Request 全局规范.md`
 
 核心要点：
 
 - 分支命名：`<type>/<description>`，如 `feat/user-login`、`fix/token-expiration`
 - 提交格式：Conventional Commits，`<type>(<scope>): <description>`
 - 一个分支聚焦一个主要任务，一个 Commit 对应一个逻辑修改
-- description为英文
+- description 默认使用英文
 
 ---
 
