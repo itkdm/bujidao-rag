@@ -150,9 +150,9 @@ proposed/feature/
 
 ---
 
-## 8. Supplemental Documents 的创建条件
+## 8. 补充文档（Supplemental Documents）的创建条件
 
-当某个 Change 需要专项文档承载时，按需拆出（即 Supplemental Documents）。判断标准是文档是否「有必要存在」，而非篇幅大小：
+当某个 Change 需要专项文档承载时，按需拆出补充文档。判断标准是文档是否「有必要存在」，而非篇幅大小：
 
 - `spec.md`：行为、业务规则、状态或验收场景复杂，需要独立描述。
 - `research.md`：存在影响决策的重要未知，需要调查、实验或验证。
@@ -170,15 +170,15 @@ proposed/feature/
 
 - 同一事实只应在**最合适的一篇文档**中作为权威来源。
 - 其他文档引用它，而不是复制它。例如：`design.md` 引用 `spec.md` 的需求编号，而非重写需求。
-- 状态流转（proposed → implemented 等）时，更新文档语义（如 Proposal → Decision），而非在多处追加历史说明。
+- 状态流转（proposed → implemented 等）时，更新文档语义（如 方案 → 最终决策），而非在多处追加历史说明。
 
 ---
 
 ## 10. Change 完成 / 拒绝 / 归档的处理
 
 - **实现完成**：将目录从 `proposed/` 移至 `implemented/`；`change.md` 语义从「计划」转为「实际决策」
-  （Proposal → Decision，Acceptance → Verification，Risks → Consequences）。
-- **拒绝**：移至 `rejected/`；保留原方案并记录 Rejection 原因。
+  （方案 → 最终决策，验收标准 → 验证结果，风险与约束 → 影响与后果）。
+- **拒绝**：移至 `rejected/`；保留原方案并记录拒绝原因。
 - **归档**：移至 `archived/`；记录为何归档、被哪个新 Change 替代（若存在）。
 
 所有移动为显式操作，由用户或 Coding Agent 决定，无自动触发机制。
