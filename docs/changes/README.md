@@ -35,6 +35,8 @@
 - 需要记录取舍与验收依据，供后续回溯。
 - 简化/重构既有结构，且存在被质疑或回退的可能。
 
+> Change 的类型与状态不写在 `change.md` 内，而以目录路径（`proposed/feature/` 等）为唯一事实源。提交 Change 时把它放进对应目录即可，无需在文件里标 Type / Status。
+
 ---
 
 ## 3. 哪些简单修改通常不需要
@@ -112,6 +114,25 @@ docs/changes/proposed/<type>/<date>-<slug>/
 只有 `change.md` 是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。
 不需要为保留目录而批量制造 `.gitkeep`。
 
+### 类型与状态的唯一事实源
+
+**Change 的类型与生命周期状态以目录路径为唯一事实源，不在 `change.md` 中重复维护。**
+
+```text
+proposed/feature/
+         │       │
+         │       └── 类型（Type）
+         └────────── 状态（Status）
+```
+
+文件在 `proposed/ → implemented/ → archived/` 或 `proposed/ → rejected/` 之间移动时，状态自然改变，无需修改 `change.md` 内的字段。
+
+### 文档语言约定
+
+- **面向人的文档标题与说明默认使用中文**。
+- **文件名、目录名、枚举值、标准协议术语保留英文**：如 `change.md`、`spec.md`、`proposed`、`feature`、`REQ-001`、`API`、`Given / When / Then`、`Benchmark` 等。
+- 描述具体文件类型时保留英文标识（如 `Spec / Research / Design / Plan`）；普通自然语言描述可写中文（规格、调研、设计、实施计划）。
+
 ---
 
 ## 7. 五种文档各自职责
@@ -122,7 +143,7 @@ docs/changes/proposed/<type>/<date>-<slug>/
 | `spec.md` | 系统必须表现出的行为，以及如何验证行为正确 | 代码结构、具体实现设计、实施任务 |
 | `research.md` | 解决影响设计的重要技术未知，为 Design 提供可靠输入 | 最终技术设计本身 |
 | `design.md` | 为满足 Change/Spec 最终采用的技术方案 | 复制 Spec、任务清单、未收敛的调研过程 |
-| `plan.md` | 把已确定的设计转成有顺序、有依赖、有验证方式的实施路径（兼 Task Breakdown） | — |
+| `plan.md` | 把已确定的设计转成有顺序、有依赖、有验证方式的实施路径（兼任务拆分 Task Breakdown） | — |
 
 > Change 是中心；Spec / Research / Design / Plan 都是**按需附件**，不是固定流水线。
 > 简单变更可能只有 `change.md` 即可。

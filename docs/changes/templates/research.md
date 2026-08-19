@@ -2,36 +2,36 @@
 
 为解决影响设计的重要技术未知，为 Design 提供可靠输入。
 
-## Research Question
+## 调研问题
 
 - 需要回答的核心技术问题是什么？
 
-## Candidates / Options
+## 候选方案
 
 - **Option A**: <候选方案>
 - **Option B**: <候选方案>
 
-## Evidence
+## 证据
 
 - 文档、源码、官方说明等依据
 
-## Experiments / Benchmark (按需)
+## 实验 / Benchmark（按需）
 
 - 实验设计、环境、数据与结论
 
-## Findings
+## 调研发现
 
 - 调研得到的事实与权衡
 
-## Conclusion
+## 结论
 
 - 调研得出的结论
 
-## Recommendation (按需)
+## 建议（按需）
 
 - 对设计的建议
 
-## Unresolved Questions (按需)
+## 未解决问题（按需）
 
 - 仍未解决的问题
 

@@ -1,51 +1,51 @@
 # Change: <简短标题>
 
-- **Type**: feature | bug-fix | architecture | simplification | process | testing
-- **Status**: proposed | implemented | rejected | archived
-- **Date**: YYYY-MM-DD
-- **Author**: <作者 / Agent>
+- 创建日期：YYYY-MM-DD
+- 作者：<作者 / Agent>
 
-## Summary
+> 类型与状态以目录路径为唯一事实源，不在本文件重复维护。例如 `proposed/feature/` 中 `proposed` 即状态、`feature` 即类型；文件移动后状态自然改变。
+
+## 概要
 
 一句话说明这次变更是什么。
 
-## Problem
+## 问题
 
 为什么需要这次变更？描述现状痛点、触发条件或背景。
 
-## Goal / Scope
+## 目标与范围
 
-### In Scope
+### 范围内
 
 - 本次变更覆盖的内容
 
-### Out of Scope
+### 范围外
 
 - 明确不属于本次变更的内容
 
-## Proposal
+## 方案
 
 总体改变什么、怎么做的高层描述。
 
-> 当 Status 为 `implemented` 时，本节改为 **Decision**，记录最终实际采用的方案。
+> 当 Change 处于 `implemented` 时，本节改为 **最终决策**，记录最终实际采用的方案。
 
-## Acceptance
+## 验收标准
 
 如何判断变更完成且正确（验收标准）。
 
-> 当 Status 为 `implemented` 时，本节改为 **Verification**，记录实际验证结果与证据。
+> 当 Change 处于 `implemented` 时，本节改为 **验证结果**，记录实际验证结果与证据。
 
-## Alternatives (按需)
+## 备选方案（按需）
 
 - 备选方案及其被否原因
 
-## Risks / Constraints (按需)
+## 风险与约束（按需）
 
 - 风险、约束、前提条件
 
-> 当 Status 为 `implemented` 时，本节改为 **Consequences**，记录实际带来的后果。
+> 当 Change 处于 `implemented` 时，本节改为 **影响与后果**，记录实际带来的后果。
 
-## Related / Supplemental Documents (按需)
+## 相关文档（按需）
 
 - `spec.md` — 行为与验收
 - `research.md` — 技术调研
@@ -54,18 +54,18 @@
 
 ---
 
-## Rejected 专用
+## 拒绝状态补充
 
-### Rejection
+### 拒绝原因
 
 - 未采用的原因
 
-## Archived 专用
+## 归档状态补充
 
-### Why Archived
+### 归档原因
 
 - 为何归档
 
-### Replaced By
+### 替代 Change
 
 - 替代本 Change 的新 Change 路径（若存在）

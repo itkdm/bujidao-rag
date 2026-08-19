@@ -4,51 +4,51 @@
 
 > 以下章节均按实际设计需要保留；不存在对应设计内容时直接删除该章节，**不要求补齐所有章节**，避免模板垃圾。
 
-## Design Context
+## 设计背景
 
 - 设计背景与约束
 
-## Architecture / Components
+## 架构与组件
 
 - 关键组件及其职责
 
-## Data Flow
+## 数据流
 
 - 主要数据流
 
-## Data Model
+## 数据模型
 
 - 关键数据模型
 
-## API / Interface / Contract
+## API / 接口 / 契约
 
 - 对外契约（API、配置、事件等）
 
-## State / Lifecycle
+## 状态与生命周期
 
 - 状态与生命周期
 
-## Error Handling
+## 错误处理
 
 - 错误处理策略
 
-## Concurrency / Consistency
+## 并发与一致性
 
 - 并发与一致性考量
 
-## Security / Performance
+## 安全与性能
 
 - 安全与性能考量
 
-## Key Decisions
+## 关键决策
 
 - 关键决策点
 
-## Trade-offs / Consequences
+## 取舍与影响
 
 - 取舍与后果
 
-## Migration / Compatibility
+## 迁移与兼容性
 
 - 迁移与兼容性处理
 
