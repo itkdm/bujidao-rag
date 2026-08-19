@@ -4,16 +4,31 @@
 
 ## Requirements
 
-- **R1**: <需求描述>
-- **R2**: <需求描述>
+### REQ-001: <需求名称>
 
-## Scenarios
+<需求描述>
 
-### Scenario: <场景名> (对应 R1)
+#### Scenario: <正常场景>
 
 - **Given** <前置条件>
 - **When** <触发动作>
 - **Then** <预期结果>
+
+#### Scenario: <异常/边界场景>
+
+- **Given** <前置条件>
+- **When** <触发动作>
+- **Then** <预期结果>
+
+### REQ-002: <需求名称>
+
+<需求描述>
+
+#### Scenario: <场景名>
+
+- **Given** ...
+- **When** ...
+- **Then** ...
 
 ## Business Rules
 
