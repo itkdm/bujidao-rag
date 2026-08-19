@@ -127,7 +127,7 @@ mvn spring-boot:run -DskipTests
 
 - 默认仅启用 `system` 与 `infra` 模块；其他模块（含 `ai`）在根 `pom.xml` 中注释，按需开启。
 - 配置文件位于 `yudao-server/src/main/resources/`，按环境区分（如 `application-local.yaml`、`application-dev.yaml` 等）。
-- 本机 `application-local.yaml` 已配：MySQL `127.0.0.1:3307/ruoyi-vue-pro`（密码 `123456`）、Redis `127.0.0.1:6379`（密码 `123456`）。
+- 本机 `application-local.yaml` 已配：MySQL `127.0.0.1:3307/ruoyi-vue-pro-rag`（密码 `123456`）、Redis `127.0.0.1:6379`（密码 `123456`）。原库 `ruoyi-vue-pro` 保留不动，新库 `ruoyi-vue-pro-rag` 由前者整库迁移而来（含全部表与数据）。
 - 数据库初始化脚本位于 `ruoyi-vue-pro/sql/`，**未纳入版本库**（含官方示例凭据），本地初始化时手动执行。
 
 ### 前端（pnpm）
