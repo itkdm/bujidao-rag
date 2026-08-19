@@ -34,3 +34,6 @@ Thumbs.db
 *.jar
 *.war
 *.ear
+
+# SQL init scripts not committed (contain official sample secrets); managed locally
+ruoyi-vue-pro/sql/

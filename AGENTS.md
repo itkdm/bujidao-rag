@@ -6,7 +6,7 @@
 - **项目目标**：基于芋道（ruoyi-vue-pro）精简版脚手架，构建 RAG（检索增强生成）模块。
 - **当前主要形态**：前后端分离的单体应用，后端为 Spring Boot 多模块架构，前端为 Vue3 管理后台。
 - **应用组成**：
-  - `yudao-boot-mini/`：后端服务（精简版，仅含系统功能 + 基础设施模块），后续逐步完善。
+  - `ruoyi-vue-pro/`：后端服务（基于芋道官方 `master-jdk17` 全量基线，Spring Boot 3.5.15 / JDK 17）。
   - `yudao-ui-admin-vue3/`：前端管理后台（Vue3 + Element Plus）
   - `knowledge/`：项目知识库，存放跨应用共享的规范、技术文档与参考资料
 
@@ -14,22 +14,24 @@
 
 ## 技术栈
 
-### 后端（yudao-boot-mini）
+### 后端（ruoyi-vue-pro）
 
 | 技术 | 版本 | 说明 |
 |------|------|------|
-| JDK | 1.8 | 编译与运行版本 |
-| Spring Boot | 2.7.18 | 应用开发框架 |
+| JDK | 17 | 编译与运行版本（基于芋道 `master-jdk17` 分支） |
+| Spring Boot | 3.5.15 | 应用开发框架 |
 | Maven | - | 构建工具，多模块聚合 |
 | MyBatis Plus | 3.5.16 | ORM 框架 |
 | MySQL | 5.7 / 8.0+ | 关系数据库 |
 | Redis | 5.0 / 6.0 / 7.0 | 缓存与消息队列 |
 | Redisson | 4.6.1 | Redis 客户端 |
-| Spring Security | 5.8.16 | 安全认证 |
+| Spring Security | 6.x | 安全认证（随 Spring Boot 3 升级） |
 | Lombok | 1.18.42 | 代码简化 |
 | MapStruct | 1.6.3 | Bean 转换 |
 | Druid | 1.2.28 | 数据库连接池 |
 | JUnit 5 + Mockito | - | 单元测试 |
+
+> 其余组件精确版本以 `ruoyi-vue-pro/yudao-dependencies/pom.xml` 为准。Spring Boot 3.x 已切换为 `jakarta.*` 命名空间（非 `javax.*`）。
 
 ### 前端（yudao-ui-admin-vue3）
 
@@ -56,11 +58,11 @@
 bujidao-rag/
 ├── AGENTS.md                  # 本文件，项目级上下文与规则
 ├── knowledge/                 # 项目知识库（规范、技术文档、参考资料）
-├── yudao-boot-mini/           # 后端服务
+├── ruoyi-vue-pro/           # 后端服务
 └── yudao-ui-admin-vue3/       # 前端管理后台
 ```
 
-### 后端模块（yudao-boot-mini）
+### 后端模块（ruoyi-vue-pro）
 
 | 模块 | 职责 |
 |------|------|
@@ -69,8 +71,12 @@ bujidao-rag/
 | `yudao-server/` | 应用启动入口，聚合各业务模块 |
 | `yudao-module-system/` | 系统功能模块：用户、角色、菜单、部门、租户、字典、短信、邮件、操作日志等 |
 | `yudao-module-infra/` | 基础设施模块：代码生成、文件服务、配置管理、定时任务、API 日志、数据库文档等 |
+| `yudao-module-ai/` | AI 模块：对话模型、知识库（RAG）、绘图、音乐等。默认在根 `pom.xml` 中**被注释**，启用 RAG 前需取消注释并参考 `doc.iocoder.cn/ai/build/` |
+| `yudao-module-*` | 其他业务模块（member/bpm/pay/mall/crm/erp/...）默认在根 `pom.xml` 中注释，按需启用 |
 | `sql/` | 数据库初始化脚本 |
 | `script/` | 部署脚本、Docker 配置、Jenkins 配置等 |
+
+> 根 `pom.xml` 默认仅编译 `system` 与 `infra` 两个模块，其余模块（含 `ai`）均注释。本仓库基于芋道官方 `master-jdk17` 全量基线（非精简版），新增模块只需取消对应 `module` 注释即可。
 
 > 当前精简版仅启用 `system` 和 `infra` 两个业务模块，其他模块（member、bpm、pay、mall 等）已注释。
 
@@ -108,7 +114,7 @@ bujidao-rag/
 
 ```bash
 # 进入后端目录
-cd yudao-boot-mini
+cd ruoyi-vue-pro
 
 # 安装依赖并编译
 mvn clean install -DskipTests
@@ -176,7 +182,7 @@ pnpm build:local
 
 ## 项目特有规则
 
-1. **后端模块扩展**：当前精简版仅启用 `system` 和 `infra` 模块。如需新增业务模块，参考芋道迁移文档，从完整版按需迁移，不要直接复制未使用的模块。
+1. **后端模块扩展**：后端基于芋道官方 `master-jdk17` 全量基线（Spring Boot 3.5.15 / JDK 17）。根 `pom.xml` 默认仅启用 `system` 和 `infra` 模块，新增模块（如 `ai`）只需取消对应 `module` 注释。不要从外部复制未声明的模块。
 2. **前端包管理器**：强制使用 `pnpm`，禁止使用 `npm` 或 `yarn` 安装依赖。
 3. **知识库维护**：`knowledge/` 目录中的规范文档是项目长期约束的来源。修改规范时，应同步更新对应文档。AI 推断的未确认内容不得直接写入 `knowledge/main/`，应先放入 `candidate/`。
 4. **代码生成**：后端代码生成模板位于 `yudao-module-infra/src/main/resources/codegen/`，前端代码生成通过管理后台界面操作。生成代码后需人工审查，不要直接合并。
@@ -253,7 +259,7 @@ Views（页面）
 2. **前端构建内存**：构建和类型检查命令已设置 `--max_old_space_size=8192`，低内存环境可能构建失败。
 3. **多环境配置差异**：后端和前端均有多环境配置，开发、测试、生产环境配置可能不同，切换环境时需确认配置正确。
 4. **知识库文档同步**：修改项目规范时，需同步更新 `knowledge/` 中的对应文档，避免规范与实际代码脱节。
-5. **精简版与完整版差异**：当前后端为精简版，部分功能模块未启用。如需新增功能，需从完整版迁移或自行开发。
+5. **基线版本差异**：后端已从 JDK8 精简版切换为芋道官方 `master-jdk17` 全量基线（Spring Boot 3.5.15 / JDK 17，命名空间 `jakarta.*`）。新增功能优先复用官方已有模块（如 `yudao-module-ai` 用于 RAG），而非自行开发等价能力。
 
 ---
 
