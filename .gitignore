@@ -38,9 +38,5 @@ Thumbs.db
 # SQL init scripts not committed (contain official sample secrets); managed locally
 ruoyi-vue-pro/sql/
 
-# Local debug artifacts (logs/scripts generated during dev runs)
-*.log
-_boot*.log
-_fe_*.log
-_boot*.ps1
-_fe_*.ps1
+# Local debug artifacts (logs/scripts generated during dev runs); kept out of VCS
+.dev-tmp/
