@@ -110,42 +110,50 @@ bujidao-rag/
 
 ## 运行与开发方式
 
-### 后端
+### 后端（JDK 17 强约束）
+
+> **必须使用 JDK 17**（本机路径 `D:\jdk\jdk17\jdk-17.0.12`）。项目基于芋道官方 `master-jdk17` 基线（Spring Boot 3.5.15），**禁止用 JDK 8 编译/运行**，否则依赖不兼容。
 
 ```bash
-# 进入后端目录
+# 1) 编译（首次或依赖变更时；后续仅改动代码可跳过）
 cd ruoyi-vue-pro
-
-# 安装依赖并编译
 mvn clean install -DskipTests
 
-# 本地启动（通过 yudao-server 模块）
-cd yudao-server
-mvn spring-boot:run
+# 2) 本地启动（通过 yudao-server 模块）
+cd ruoyi-vue-pro/yudao-server
+mvn spring-boot:run -DskipTests
+# 启动后监听 http://localhost:48080
 ```
 
+- 默认仅启用 `system` 与 `infra` 模块；其他模块（含 `ai`）在根 `pom.xml` 中注释，按需开启。
 - 配置文件位于 `yudao-server/src/main/resources/`，按环境区分（如 `application-local.yaml`、`application-dev.yaml` 等）。
-- 数据库初始化脚本位于 `sql/` 目录。
-- 环境变量与配置管理：优先使用项目内配置文件，敏感信息通过环境变量注入。
+- 本机 `application-local.yaml` 已配：MySQL `127.0.0.1:3307/ruoyi-vue-pro`（密码 `123456`）、Redis `127.0.0.1:6379`（密码 `123456`）。
+- 数据库初始化脚本位于 `ruoyi-vue-pro/sql/`，**未纳入版本库**（含官方示例凭据），本地初始化时手动执行。
 
-### 前端
+### 前端（pnpm）
+
+> 首次拉取需先 `pnpm install`；本地开发统一用 `pnpm dev`（即 `vite --mode env.local`）。
 
 ```bash
 # 进入前端目录
 cd yudao-ui-admin-vue3
 
-# 安装依赖
+# 首次安装依赖（仅一次；之后跳过）
 pnpm install
 
 # 本地开发启动
 pnpm dev
-
-# 构建
-pnpm build:local
+# 启动后监听 http://localhost:80 ，并通过 VITE_BASE_URL=http://localhost:48080 调用后端
 ```
 
 - 前端使用 `pnpm` 作为包管理器，**禁止使用 npm 或 yarn**。
 - 多环境构建：`build:local` / `build:dev` / `build:test` / `build:stage` / `build:prod`。
+
+### 标准联调流程（前后端同时启动）
+
+1. 终端 A：按「后端」步骤编译并 `mvn spring-boot:run -DskipTests`，等待日志 `Started YudaoServerApplication` 且端口 48080。
+2. 终端 B：按「前端」步骤 `pnpm install`（首次）后 `pnpm dev`，等待 Vite 输出 `Local: http://localhost:80`。
+3. 浏览器访问 `http://localhost:80` 即可联调。前端经 `/admin-api` 代理到后端 48080。
 
 ---
 
