@@ -1,22 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-APP-YUDAO-UI-ADMIN-VUE3-README
-scope: app
-appCode: yudao-ui-admin-vue3
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- application
-anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
-- GLOBAL:APPLICATION-README
----
 
 # yudao-ui-admin-vue3/
 
@@ -43,4 +24,4 @@ anchors:
 
 - 本目录只描述「应用知识如何组织与维护」，不承载应用实际业务信息。
 - 新增、修改、删除本目录内容时，遵守各子目录 README 的局部维护规则。
-- 所有知识文件必须遵守 `KNOWLEDGE-METADATA-RULES.md`，并通过 `scripts/validate_metadata.py` 校验。
+- 正式知识必须在正文中保留必要的事实来源，未确认结论进入 `candidate/`。

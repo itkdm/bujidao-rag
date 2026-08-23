@@ -1,37 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-PERMISSION
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
-tags:
-- backend
-- permission
-- rbac
-- data-permission
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:PERMISSION
----
 
 # 权限事实索引
 
@@ -47,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `controller/admin/permission/` | 菜单、角色、权限分配接口入口 |
-| code | `SecurityFrameworkServiceImpl.java` | `@ss` 权限判断实现 |
-| code | `DataPermission.java` | 数据权限注解 |
-| doc | `07.功能权限.md` | 官方功能权限说明 |
-| doc | `08.数据权限.md` | 官方数据权限说明 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/permission/) | 菜单、角色、权限分配接口入口 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java) | `@ss` 权限判断实现 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java) | 数据权限注解 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md>) | 官方功能权限说明 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md>) | 官方数据权限说明 |
 
 ## 索引范围
 

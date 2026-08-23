@@ -1,44 +1,10 @@
----
-id: KB-APP-RUOYI-VUE-PRO
-type: application
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 5
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-23
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/
-- type: code
-  ref: ruoyi-vue-pro/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
-tags:
-- backend
-- java17
-- spring-boot
-- ruoyi-vue-pro
-- yudao
-anchors:
-- APP:RUOYI-VUE-PRO
----
 
 # ruoyi-vue-pro 单体后端基线示例
 
 ## AI 使用摘要
 
 - 适用场景：了解本模板仓库选取的芋道单体后端形态、当前版本、启用模块和代码边界时
-- 关键入口：`ruoyi-vue-pro/pom.xml`、`ruoyi-vue-pro/yudao-server/pom.xml`、`YudaoServerApplication.java`
+- 关键入口：`ruoyi-vue-pro/pom.xml`、`ruoyi-vue-pro/yudao-server/pom.xml`、`ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java`
 - 关键规则：目录存在不等于模块已启用；上游提供的模块能力不等于目标项目已经采用的能力
 - 关联知识：[INDEX.md](./INDEX.md)
 - 初始化要求：复制本体系到目标项目时，必须按目标工作区重新识别后端形态、版本和模块，不得沿用本文件结论
@@ -47,10 +13,10 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/pom.xml` | Java 版本、工程版本和根工程模块 |
-| code | `ruoyi-vue-pro/yudao-server/pom.xml` | 启动模块实际装配的业务模块 |
-| code | `YudaoServerApplication.java` | 单体后端启动入口 |
-| doc | `knowledge/reference/.../09.项目结构.md` | 芋道官方项目结构说明 |
+| code | [`ruoyi-vue-pro/pom.xml`](../../../ruoyi-vue-pro/pom.xml) | Java 版本、工程版本和根工程模块 |
+| code | [`ruoyi-vue-pro/yudao-server/pom.xml`](../../../ruoyi-vue-pro/yudao-server/pom.xml) | 启动模块实际装配的业务模块 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java`](../../../ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java) | 单体后端启动入口 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md`](<../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md>) | 芋道官方项目结构说明 |
 
 ## 概述
 

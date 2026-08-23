@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件（全局目录契约，与具体应用无关）
-id: KB-INFRA-APP-RUOYI-VUE-PRO-RULE-README
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- contract
-anchors:
-- GLOBAL:RULE-CONTRACT
----
 
 # Rule
 

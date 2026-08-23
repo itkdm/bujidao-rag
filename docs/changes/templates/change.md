@@ -1,10 +1,10 @@
-# Change: <简短标题>
+# Change: {{初始化:简短标题}}
 
-- 创建日期：YYYY-MM-DD
-- 作者：<作者 / Agent>
+- 创建日期：{{初始化:YYYY-MM-DD}}
+- 作者：{{初始化:作者 / Agent}}
 
-> 类型与状态以目录路径为唯一事实源（`<status>/<type>/<date>-<slug>/`），不在本文件重复维护。
-> Change 内部主文档始终位于 `<date>-<slug>/change.md`；生命周期流转只改变外层状态目录，不会因增加 Supplemental Documents 改变 Change 内部结构。
+> 类型与状态以目录路径为唯一事实源（`{{初始化:status}}/{{初始化:type}}/{{初始化:date}}-{{初始化:slug}}/`），不在本文件重复维护。
+> Change 内部主文档始终位于 `{{初始化:date}}-{{初始化:slug}}/change.md`；生命周期流转只改变外层状态目录，不会因增加 Supplemental Documents 改变 Change 内部结构。
 > 当 Change 从 `proposed` 移至 `implemented`，本文三处语义自动转换：**方案 → 最终决策**、**验收标准 → 验证结果**、**风险与约束 → 影响与后果**（见对应章节标注）。
 
 ## 概要
@@ -12,7 +12,7 @@
 一句话说明这次变更是什么、为什么值得做。
 
 - **写什么**：变更对象 + 核心动作 + 一句话价值。
-- **怎么写**：`<动作> <对象>，以 <达到的效果>`。例：「为配置更新增加幂等控制，避免重复提交产生重复写入」。
+- **怎么写**：`{{初始化:动作}} {{初始化:对象}}，以 {{初始化:达到的效果}}`。例：「为配置更新增加幂等控制，避免重复提交产生重复写入」。
 - **反例**：「修复了一些问题」（无对象、无效果）；「优化代码」（无具体变更）。
 
 ## 问题
@@ -71,7 +71,7 @@
 - [Research](./research.md) — 技术调研
 - [Design](./design.md) — 技术方案
 - [Plan](./plan.md) — 实施路径
-- [Postmortem](../../../../postmortem/<date>-<slug>.md) — 若本 Change 由 Postmortem 催生（路径需从 `<status>/<type>/<date>-<slug>/` 退出四层至 `docs/`）
+- [Postmortem](../../../../postmortem/{{初始化:date}}-{{初始化:slug}}.md) — 若本 Change 由 Postmortem 催生（路径需从 `{{初始化:status}}/{{初始化:type}}/{{初始化:date}}-{{初始化:slug}}/` 退出四层至 `docs/`）
 
 ---
 
@@ -89,7 +89,7 @@
 
 ### 替代 Change（Superseded By）
 
-- 替代本 Change 的新 Change 链接（若存在），如 `[新 Change](../../../implemented/<type>/<date>-<slug>/change.md)`。archived Change 不再视作当前权威，请尽量链接到取代它的 Change。
+- 替代本 Change 的新 Change 链接（若存在），如 `[新 Change](../../../implemented/{{初始化:type}}/{{初始化:date}}-{{初始化:slug}}/change.md)`。archived Change 不再视作当前权威，请尽量链接到取代它的 Change。
 
 ### 本 Change 取代（Supersedes）
 

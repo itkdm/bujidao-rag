@@ -1,37 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-CONFIG
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml
-- type: code
-  ref: ruoyi-vue-pro/pom.xml
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md
-tags:
-- backend
-- config
-- profile
-- yaml
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:CONFIG
----
 
 # 配置入口索引
 
@@ -47,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `application.yaml` | 全局默认配置 |
-| code | `application-local.yaml` | 本地环境配置 |
-| code | `application-dev.yaml` | dev 环境配置 |
-| code | `pom.xml` | Java、Spring Boot、Maven 配置入口 |
-| doc | `05.快速启动【后端】.md` | 官方后端启动说明 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml) | 全局默认配置 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml) | 本地环境配置 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml) | dev 环境配置 |
+| code | [`ruoyi-vue-pro/pom.xml`](../../../../ruoyi-vue-pro/pom.xml) | Java、Spring Boot、Maven 配置入口 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md>) | 官方后端启动说明 |
 
 ## 索引范围
 

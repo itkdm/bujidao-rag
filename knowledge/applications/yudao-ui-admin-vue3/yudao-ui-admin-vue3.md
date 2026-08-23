@@ -1,34 +1,3 @@
----
-id: KB-APP-YUDAO-UI-ADMIN-VUE3
-type: application
-scope: app
-appCode: yudao-ui-admin-vue3
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 4
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-23
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: yudao-ui-admin-vue3/
-- type: code
-  ref: yudao-ui-admin-vue3/package.json
-- type: code
-  ref: yudao-ui-admin-vue3/src/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/30.前端手册 Vue 3.x/01.开发规范.md
-tags:
-- admin
-- vue3
-- element-plus
-- pc
-anchors:
-- APP:YUDAO-UI-ADMIN-VUE3
----
 
 # yudao-ui-admin-vue3 管理后台基线示例
 
@@ -44,9 +13,9 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `yudao-ui-admin-vue3/package.json` | 工程名称、版本和依赖 |
-| code | `yudao-ui-admin-vue3/src/` | API、页面、路由、状态管理和组件入口 |
-| doc | `knowledge/reference/.../30.前端手册 Vue 3.x/01.开发规范.md` | 芋道 Vue3 官方开发说明 |
+| code | [`yudao-ui-admin-vue3/package.json`](../../../yudao-ui-admin-vue3/package.json) | 工程名称、版本和依赖 |
+| code | [`yudao-ui-admin-vue3/src/`](../../../yudao-ui-admin-vue3/src/) | API、页面、路由、状态管理和组件入口 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/30.前端手册 Vue 3.x/01.开发规范.md`](<../../reference/ruoyi-vue-pro官方文档/01.开发指南/30.前端手册 Vue 3.x/01.开发规范.md>) | 芋道 Vue3 官方开发说明 |
 
 ## 概述
 

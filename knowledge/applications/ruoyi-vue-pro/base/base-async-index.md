@@ -1,39 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-ASYNC
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/mq/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md
-tags:
-- backend
-- async
-- mq
-- job
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:ASYNC
----
 
 # 异步与任务索引
 
@@ -49,12 +13,12 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `yudao-module-system/.../mq/` | 当前 MQ 示例入口 |
-| code | `yudao-module-system/.../job/` | 当前 Job 示例入口 |
-| code | `yudao-spring-boot-starter-mq/` | Redis MQ framework |
-| code | `yudao-spring-boot-starter-job/` | Quartz Job framework |
-| doc | `06.定时任务.md` | 官方 Job 说明 |
-| doc | `12.消息队列（Redis）.md` | 官方 Redis MQ 说明 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/mq/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/mq/) | 当前 MQ 示例入口 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/) | 当前 Job 示例入口 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/) | Redis MQ framework |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/) | Quartz Job framework |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md>) | 官方 Job 说明 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md>) | 官方 Redis MQ 说明 |
 
 ## 索引范围
 

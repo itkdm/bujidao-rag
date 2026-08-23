@@ -1,37 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-SECURITY-PERMISSION
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
-tags:
-- backend
-- security
-- permission
-- data-permission
-anchors:
-- APP:RUOYI-VUE-PRO
-- TECH:SECURITY-PERMISSION
----
 
 # 权限、登录态与数据权限约束
 
@@ -47,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `DictTypeController.java` | 管理后台接口使用 `@PreAuthorize("@ss.hasPermission(...)")` |
-| code | `SecurityFrameworkServiceImpl.java` | `@ss` 权限判断最终委托权限 API |
-| code | `DataPermission.java` | 数据权限默认开启，可通过注解控制 |
-| doc | `07.功能权限.md` | 官方说明 RBAC、Token、`@PreAuthorize` |
-| doc | `08.数据权限.md` | 官方说明数据权限实现和 `@DataPermission` |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java) | 管理后台接口使用 `@PreAuthorize("@ss.hasPermission(...)")` |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-security/src/main/java/cn/iocoder/yudao/framework/security/core/service/SecurityFrameworkServiceImpl.java) | `@ss` 权限判断最终委托权限 API |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java) | 数据权限默认开启，可通过注解控制 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md>) | 官方说明 RBAC、Token、`@PreAuthorize` |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md>) | 官方说明数据权限实现和 `@DataPermission` |
 
 ## 适用范围
 

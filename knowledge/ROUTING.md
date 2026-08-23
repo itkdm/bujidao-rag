@@ -1,26 +1,9 @@
----
-# 知识库基础设施文件
-id: KB-INFRA-GLOBAL-ROUTING
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-17
-tags:
-- global
-- routing
-anchors:
-- GLOBAL:ROUTING
----
 
 # 路由规则
 
 本文档是知识库的**需求级检索入口**。AI 在每个具体需求开始时，必须先读本文档进行定位。
 
-> **注意**：首次接触知识库时先读取 `README.md` 和 `KNOWLEDGE-METADATA-RULES.md`；每个具体需求开始时，再读取本文档进行任务路由。
+> **注意**：首次接触知识库时先读取 `README.md`；每个具体需求开始时，再读取本文档进行任务路由。
 
 ## 路由顺序
 
@@ -35,7 +18,7 @@ anchors:
    - 写作结构约束模板 → `template/`
 4. 只加载当前任务需要的最小知识文件集合。
 5. 如果知识缺失或结论不确定，先写入 `candidate/`，不要直接创造稳定知识。
-6. 如果 `feature/README.md` 标注当前无正式功能知识，不得自行脑补功能流程，应回到当前代码、对应 Change 或向 owner 确认。
+6. 如果 `feature/README.md` 标注当前无正式功能知识，不得自行脑补功能流程，应回到当前代码、对应 Change 或向项目负责人确认。
 7. **编码前必须回到当前仓库核对代码**。
 
 ## 路由提示
@@ -59,7 +42,7 @@ anchors:
 | 判断上游模块能否直接复用 | `applications/{appCode}/INDEX.md` → `{appCode}.md` → `rule/rule-boundary-backend-baseline.md` → 必要时读取 `reference/` 对应证据 | 已确认模块启用状态、基线边界和待确认项 |
 | 修改前端管理后台 | `applications/{appCode}/INDEX.md` → 对应 `base/README.md` 或 `rule/README.md` → `tech/README.md` | 已确认当前是否已有正式知识；没有则回到代码和候选知识 |
 | 梳理功能或运行流程 | 对应应用 `feature/README.md` → 当前代码 → 相关 `docs/changes/` | 已确认功能事实来自当前实现、已落地 Change 或人工确认，不把空 feature 当事实 |
-| 写入新知识 | `KNOWLEDGE-METADATA-RULES.md` → `template/` 对应模板 → 目标目录 README | 已确认知识类型、状态、owner、证据来源和目标路径 |
+| 写入新知识 | `template/` 对应模板 → 目标目录 README | 已确认知识类型、事实来源和目标路径；未确认内容进入 `candidate/` |
 
 ## 应用关键词路由
 
@@ -101,4 +84,4 @@ anchors:
 2. 不在未 review 的情况下晋升候选知识。
 3. 不把功能流程、业务规则、事实索引和技术约束混在同一个知识文件里。
 4. 不把项目正式决策混进知识文件；已确认决策应进入 `docs/`。
-5. 不将 DEPRECATED 知识作为正常路由结果返回（除非显式追溯历史）。
+5. 不将 `archive/` 中的知识作为正常路由结果返回（除非显式追溯历史）。

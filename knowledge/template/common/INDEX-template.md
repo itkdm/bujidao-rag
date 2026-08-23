@@ -1,24 +1,5 @@
----
-# 知识库 INDEX 全局通用模板
-# 本文件只定义 INDEX 的通用正文结构，不承载任何具体业务、技术栈或当前文件。
-id: KB-INFRA-COMMON-INDEX-TEMPLATE
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-tags:
-- infrastructure
-- template
-- index
-anchors:
-- GLOBAL:INDEX-TEMPLATE
----
 
-# {目录名称}索引
+# {{初始化:目录名称}}索引
 
 > 本文件是某个 Knowledge 受管理目录的 `INDEX.md`。
 > 职责边界一句话：**INDEX = 这个目录现在有什么**（动态内容索引）。

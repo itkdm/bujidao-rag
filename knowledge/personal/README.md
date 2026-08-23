@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-PERSONAL-README
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:PERSONAL-README
----
 
 # personal/
 

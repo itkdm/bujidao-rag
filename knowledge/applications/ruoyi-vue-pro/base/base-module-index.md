@@ -1,36 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-MODULE
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
-tags:
-- backend
-- module
-- package
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:MODULE
----
 
 # 模块与包结构索引
 
@@ -46,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/pom.xml` | 当前 Maven 模块聚合状态 |
-| code | `yudao-server/pom.xml` | 启动模块实际依赖和装配状态 |
-| code | `YudaoServerApplication.java` | 启动扫描范围 |
-| code | `yudao-module-system/src/main/java/.../system/` | 当前启用模块的标准包结构 |
-| doc | `09.项目结构.md` | 官方模块结构说明 |
+| code | [`ruoyi-vue-pro/pom.xml`](../../../../ruoyi-vue-pro/pom.xml) | 当前 Maven 模块聚合状态 |
+| code | [`ruoyi-vue-pro/yudao-server/pom.xml`](../../../../ruoyi-vue-pro/yudao-server/pom.xml) | 启动模块实际依赖和装配状态 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java`](../../../../ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java) | 启动扫描范围 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/) | 当前启用模块的标准包结构 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md>) | 官方模块结构说明 |
 
 ## 索引范围
 

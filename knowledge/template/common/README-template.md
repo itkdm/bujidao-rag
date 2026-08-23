@@ -1,24 +1,5 @@
----
-# 知识库 README 全局通用模板
-# 本文件只定义 README 的通用正文结构，不承载任何具体业务、技术栈或当前文件。
-id: KB-INFRA-COMMON-README-TEMPLATE
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- infrastructure
-- template
-- readme
-anchors:
-- GLOBAL:README-TEMPLATE
----
 
-# {目录名称}
+# {{初始化:目录名称}}
 
 > 本文件是某个 Knowledge 受管理目录的 `README.md`。
 > 职责边界一句话：**README = 这个目录应该是什么**（稳定职责与维护契约）。
@@ -75,4 +56,4 @@ anchors:
 
 - README 应尽量稳定，新增一个普通知识文件不应导致 README 必须修改。
 - 禁止在 README 中维护：当前具体文件、文件数量、动态知识清单、完整内容索引、详细任务路由、具体 Agent 读取链、当前业务实现摘要、某应用临时状态、模板使用说明、全局 Metadata 规范重复内容。
-- 上述禁止内容分别由 `INDEX.md` / `ROUTING.md` / 具体知识文件 / `KNOWLEDGE-METADATA-RULES.md` 承担。
+- 上述禁止内容分别由 `INDEX.md`、`ROUTING.md`、具体知识文件或目标目录职责说明承担。

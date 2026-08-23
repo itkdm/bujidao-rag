@@ -1,4 +1,4 @@
-# Design: <对应 Change 标题>
+# Design: {{初始化:对应 Change 标题}}
 
 为满足 Change / Spec，最终采用的技术方案。
 

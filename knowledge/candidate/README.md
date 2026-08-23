@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-CANDIDATE-README
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:CANDIDATE-README
----
 
 # candidate/
 
@@ -30,13 +13,13 @@ anchors:
 
 ## 不应包含的内容
 
-- 已经 owner review 确认的正式知识：应迁移到 `main/` 或 `applications/` 的合适位置。
+- 已经用户或项目负责人确认的正式知识：应迁移到 `main/` 或 `applications/` 的合适位置。
 - 个人经验或碎片素材：应放入 `personal/`，确认后再进入本目录或正式目录。
 - 已证明不适用的内容：应标记为废弃或迁移到 `archive/`，不继续作为 AI 读取入口。
 
 ## 维护规则
 
-- 只要结论没有经过 owner 确认，先放入 `candidate/`，不要直接写入 `main/` 或 `applications/`。
+- 只要结论没有经过用户或项目负责人确认，先放入 `candidate/`，不要直接写入 `main/` 或 `applications/`。
 - 候选知识必须写明来源、证据、可信度和待确认问题。
 - 候选知识被确认后，再迁移到 `main/` 或 `applications/` 的合适位置。
 - 被证明不适用的候选知识，应标记为废弃或迁移到归档，不继续作为 AI 读取入口。

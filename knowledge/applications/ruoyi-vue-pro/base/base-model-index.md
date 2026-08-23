@@ -1,38 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-MODEL
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/api/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/enums/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
-tags:
-- backend
-- model
-- vo
-- dto
-- do
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:MODEL
----
 
 # 模型对象索引
 
@@ -48,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `controller/admin/**/vo/` | ReqVO、RespVO 示例 |
-| code | `dal/dataobject/` | DO 示例 |
-| code | `api/**/dto/` | 模块间 DTO 示例 |
-| code | `enums/` | 枚举和错误码入口 |
-| doc | `09.项目结构.md` | 官方模型分层说明 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/) | ReqVO、RespVO 示例 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/) | DO 示例 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/api/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/api/) | 模块间 DTO 示例 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/enums/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/enums/) | 枚举和错误码入口 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md>) | 官方模型分层说明 |
 
 ## 索引范围
 

@@ -1,27 +1,3 @@
----
-id: KB-RULE-GLOBAL-AGENTS
-type: rule
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-confidence: high
-stability: stable
-evidence:
-- type: doc
-  ref: knowledge/main/rules/AGENTSmd 全局规范.md
-tags:
-- agents
-- convention
-- global
-anchors:
-- GLOBAL:AGENTS
-- RULE:AGENTS
----
 
 # AGENTS.md 全局规范
 

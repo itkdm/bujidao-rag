@@ -1,38 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-MYBATIS-CACHE
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dict/DictTypeMapper.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dict/DictTypeDO.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mybatis/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/28.Redis 缓存.md
-tags:
-- backend
-- mybatis
-- database
-- redis
-- cache
-anchors:
-- APP:RUOYI-VUE-PRO
-- TECH:MYBATIS-CACHE
----
 
 # MyBatis 数据访问与缓存约束
 
@@ -48,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `DictTypeDO.java` | DO 使用 `@TableName`、`@TableId`、继承 `BaseDO` |
-| code | `DictTypeMapper.java` | Mapper 继承 `BaseMapperX` 并使用 `LambdaQueryWrapperX` |
-| code | `yudao-spring-boot-starter-mybatis/` | MyBatis 增强封装 |
-| doc | `25.MyBatis 数据库.md` | 官方数据访问规范 |
-| doc | `28.Redis 缓存.md` | 官方 Redis Key 与 RedisDAO 约定 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dict/DictTypeDO.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/dict/DictTypeDO.java) | DO 使用 `@TableName`、`@TableId`、继承 `BaseDO` |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dict/DictTypeMapper.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/dict/DictTypeMapper.java) | Mapper 继承 `BaseMapperX` 并使用 `LambdaQueryWrapperX` |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mybatis/`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mybatis/) | MyBatis 增强封装 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md>) | 官方数据访问规范 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/28.Redis 缓存.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/28.Redis 缓存.md>) | 官方 Redis Key 与 RedisDAO 约定 |
 
 ## 适用范围
 

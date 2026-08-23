@@ -1,37 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-DATABASE
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/sql/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/44.数据库文档.md
-tags:
-- backend
-- database
-- sql
-- mybatis
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:DATABASE
----
 
 # 数据库与 SQL 索引
 
@@ -47,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/sql/` | 多数据库 SQL 脚本目录 |
-| code | `dal/dataobject/` | 表映射 DO |
-| code | `dal/mysql/` | Mapper 入口 |
-| doc | `25.MyBatis 数据库.md` | 官方 MyBatis 与数据库规范 |
-| doc | `44.数据库文档.md` | 官方数据库文档入口说明 |
+| code | [`ruoyi-vue-pro/sql/`](../../../../ruoyi-vue-pro/sql/) | 多数据库 SQL 脚本目录 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/dataobject/) | 表映射 DO |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/dal/mysql/) | Mapper 入口 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/25.MyBatis 数据库.md>) | 官方 MyBatis 与数据库规范 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/44.数据库文档.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/44.数据库文档.md>) | 官方数据库文档入口说明 |
 
 ## 索引范围
 

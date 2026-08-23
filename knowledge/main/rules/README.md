@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-MAIN-RULES-README
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:MAIN-RULES-README
----
 
 # rules/
 
@@ -37,5 +20,5 @@ anchors:
 ## 维护规则
 
 - 只有「跨应用强制统一」的规范才放入本目录，单一应用相关的规则不放入。
-- 规则变更需经确认后更新，并同步 `verifiedAt`。
+- 规则变更需经确认，并重新核对真实来源。
 - 规则描述聚焦约束本身，不复制实现代码。

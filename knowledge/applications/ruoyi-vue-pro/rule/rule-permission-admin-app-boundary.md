@@ -1,38 +1,3 @@
-﻿---
-id: KB-RULE-RUOYI-VUE-PRO-ADMIN-APP-PERMISSION
-type: rule
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/app/
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md
-tags:
-- backend
-- permission
-- admin
-- app
-- data-permission
-anchors:
-- APP:RUOYI-VUE-PRO
-- RULE:ADMIN-APP-PERMISSION
----
 
 # 后台与用户端权限边界规则
 
@@ -47,11 +12,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `DictTypeController.java` | 管理后台接口使用 `@PreAuthorize` 示例 |
-| code | `controller/app/` | app 端 Controller 单独放置 |
-| code | `DataPermission.java` | 数据权限默认开启，可通过注解控制 |
-| doc | `07.功能权限.md` | 官方说明管理后台接口通常使用 `@PreAuthorize` |
-| doc | `08.数据权限.md` | 官方说明数据权限默认开启 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java) | 管理后台接口使用 `@PreAuthorize` 示例 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/app/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/app/) | app 端 Controller 单独放置 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-biz-data-permission/src/main/java/cn/iocoder/yudao/framework/datapermission/core/annotation/DataPermission.java) | 数据权限默认开启，可通过注解控制 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/07.功能权限.md>) | 官方说明管理后台接口通常使用 `@PreAuthorize` |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/08.数据权限.md>) | 官方说明数据权限默认开启 |
 
 ## 规则范围
 

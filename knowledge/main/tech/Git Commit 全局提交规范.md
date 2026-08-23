@@ -1,27 +1,3 @@
----
-id: KB-TECH-GLOBAL-GIT-COMMIT
-type: tech
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-confidence: high
-stability: stable
-evidence:
-- type: doc
-  ref: knowledge/main/tech/Git Commit 全局提交规范.md
-tags:
-- git
-- commit
-- convention
-anchors:
-- GLOBAL:GIT-COMMIT
-- TECH:GIT
----
 
 # Git Commit 全局提交规范
 

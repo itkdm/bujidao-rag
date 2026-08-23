@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-MAIN-RULES-INDEX
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:MAIN-RULES-INDEX
----
 
 # rules/索引
 

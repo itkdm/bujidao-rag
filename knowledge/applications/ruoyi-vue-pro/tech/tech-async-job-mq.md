@@ -1,46 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-ASYNC-JOB-MQ
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-  - bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-
-# 证据
-evidence:
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/core/handler/JobHandler.java
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/RedisMQTemplate.java
-  - type: code
-    ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/stream/AbstractRedisStreamMessageListener.java
-  - type: code
-    ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/token/TokenCleanJob.java
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/30.异步任务.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md
-  - type: doc
-    ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md
-
-# 标签与锚点
-tags:
-  - backend
-  - async
-  - job
-  - mq
-  - redis-stream
-anchors:
-  - APP:RUOYI-VUE-PRO
-  - TECH:ASYNC-JOB-MQ
----
 
 # 异步任务、定时任务与 Redis MQ 约束
 
@@ -56,13 +13,13 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `JobHandler.java` | Quartz Job 接入接口 |
-| code | `TokenCleanJob.java` | 系统模块定时任务示例 |
-| code | `RedisMQTemplate.java` | Redis pub/sub 与 Stream 发送入口 |
-| code | `AbstractRedisStreamMessageListener.java` | Redis Stream 集群消费监听器，包含失败重试/幂等等 TODO |
-| doc | `30.异步任务.md` | 官方 Spring Async 说明 |
-| doc | `06.定时任务.md` | 官方 Quartz Job 说明 |
-| doc | `12.消息队列（Redis）.md` | 官方 Redis MQ 集群/广播消费说明 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/core/handler/JobHandler.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-job/src/main/java/cn/iocoder/yudao/framework/quartz/core/handler/JobHandler.java) | Quartz Job 接入接口 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/token/TokenCleanJob.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/job/token/TokenCleanJob.java) | 系统模块定时任务示例 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/RedisMQTemplate.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/RedisMQTemplate.java) | Redis pub/sub 与 Stream 发送入口 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/stream/AbstractRedisStreamMessageListener.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-mq/src/main/java/cn/iocoder/yudao/framework/mq/redis/core/stream/AbstractRedisStreamMessageListener.java) | Redis Stream 集群消费监听器，包含失败重试/幂等等 TODO |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/30.异步任务.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/30.异步任务.md>) | 官方 Spring Async 说明 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/06.定时任务.md>) | 官方 Quartz Job 说明 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/03.中间件手册/12.消息队列（Redis）.md>) | 官方 Redis MQ 集群/广播消费说明 |
 
 ## 适用范围
 

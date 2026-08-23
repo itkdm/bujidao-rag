@@ -1,37 +1,3 @@
-﻿---
-id: KB-BASE-RUOYI-VUE-PRO-API
-type: base
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/api/
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/07.接口文档.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
-tags:
-- backend
-- api
-- controller
-- openapi
-anchors:
-- APP:RUOYI-VUE-PRO
-- BASE:API
----
 
 # API 入口索引
 
@@ -47,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `yudao-module-system/.../controller/` | 当前 Controller 入口 |
-| code | `yudao-module-system/.../api/` | 当前模块间 API 入口 |
-| code | `application.yaml` | 全局 API 相关配置入口 |
-| doc | `07.接口文档.md` | 官方接口文档说明 |
-| doc | `09.项目结构.md` | 官方 admin/app Controller 分层说明 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/) | 当前 Controller 入口 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/api/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/api/) | 当前模块间 API 入口 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml) | 全局 API 相关配置入口 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/07.接口文档.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/07.接口文档.md>) | 官方接口文档说明 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md>) | 官方 admin/app Controller 分层说明 |
 
 ## 索引范围
 

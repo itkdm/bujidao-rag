@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-APPLICATIONS-INDEX
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:APPLICATIONS-INDEX
----
 
 # applications/索引
 

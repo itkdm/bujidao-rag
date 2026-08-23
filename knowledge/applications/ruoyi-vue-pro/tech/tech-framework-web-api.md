@@ -1,37 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-WEB-API
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/CommonResult.java
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/15.异常处理.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/16.参数校验.md
-tags:
-- backend
-- controller
-- api
-- validation
-anchors:
-- APP:RUOYI-VUE-PRO
-- TECH:WEB-API
----
 
 # Web API 与参数校验约束
 
@@ -47,11 +13,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `DictTypeController.java` | 典型 CRUD Controller，包含 `@Validated`、`@Valid`、`CommonResult`、`@PreAuthorize` |
-| code | `CommonResult.java` | 统一响应对象 |
-| doc | `01.新建模块.md` | 官方新建 RESTful API 示例 |
-| doc | `15.异常处理.md` | 官方说明为什么显式返回 `CommonResult` |
-| doc | `16.参数校验.md` | 官方说明 `@Validated`、`@Valid` 和校验注解用法 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/controller/admin/dict/DictTypeController.java) | 典型 CRUD Controller，包含 `@Validated`、`@Valid`、`CommonResult`、`@PreAuthorize` |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/CommonResult.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/pojo/CommonResult.java) | 统一响应对象 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md>) | 官方新建 RESTful API 示例 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/15.异常处理.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/15.异常处理.md>) | 官方说明为什么显式返回 `CommonResult` |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/16.参数校验.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/16.参数校验.md>) | 官方说明 `@Validated`、`@Valid` 和校验注解用法 |
 
 ## 适用范围
 

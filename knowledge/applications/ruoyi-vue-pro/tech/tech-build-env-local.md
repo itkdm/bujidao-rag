@@ -1,42 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-BUILD-ENV
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md
-tags:
-- backend
-- build
-- maven
-- jdk17
-- local-env
-anchors:
-- APP:RUOYI-VUE-PRO
-- TECH:BUILD-ENV
----
 
 # 本地构建与环境配置约束
 
@@ -52,13 +13,13 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/pom.xml` | Java 17、Spring Boot 3.5.15、聚合模块 |
-| code | `yudao-server/pom.xml` | 启动模块实际依赖 |
-| code | `application.yaml` | 全局配置、base-package、MyBatis、WebSocket 等 |
-| code | `application-local.yaml` | 本地环境端口、数据源、Redis、Quartz、MQ |
-| code | `application-dev.yaml` | 开发环境配置 |
-| doc | `05.快速启动【后端】.md` | 官方后端快速启动说明 |
-| doc | `08.技术选型.md` | 官方技术栈说明 |
+| code | [`ruoyi-vue-pro/pom.xml`](../../../../ruoyi-vue-pro/pom.xml) | Java 17、Spring Boot 3.5.15、聚合模块 |
+| code | [`ruoyi-vue-pro/yudao-server/pom.xml`](../../../../ruoyi-vue-pro/yudao-server/pom.xml) | 启动模块实际依赖 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml) | 全局配置、base-package、MyBatis、WebSocket 等 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml) | 本地环境端口、数据源、Redis、Quartz、MQ |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml) | 开发环境配置 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md>) | 官方后端快速启动说明 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md>) | 官方技术栈说明 |
 
 ## 适用范围
 

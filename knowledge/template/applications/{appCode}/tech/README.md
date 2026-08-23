@@ -1,25 +1,3 @@
----
-# 应用四类固定目录契约标准源：Tech
-# 本文件是 application 下 tech/ 目录 README 的唯一正文标准源。
-# 所有 knowledge/applications/{appCode}/tech/README.md 的正文必须与此完全一致。
-# 本文件不绑定任何 appCode，不允许 application 自行改写目录职责。
-id: KB-INFRA-TEMPLATE-APP-TECH-README
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- infrastructure
-- template
-- contract
-- tech
-anchors:
-- GLOBAL:TECH-CONTRACT
----
 
 # Tech
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""校验初始化后的 knowledge/ 与 docs/ 结构。"""
+"""校验初始化后的 knowledge/ 与 docs/ 轻量目录结构。"""
 
 from __future__ import annotations
 
@@ -14,21 +14,13 @@ for stream in (sys.stdout, sys.stderr):
     if hasattr(stream, "reconfigure"):
         stream.reconfigure(encoding="utf-8")
 
-try:
-    import yaml
-except ImportError as exc:  # pragma: no cover - environment failure
-    raise SystemExit("缺少 PyYAML，请先执行：python -m pip install pyyaml") from exc
 
-
-REGISTRY_MARKERS = {
-    "appCodes": "APP-CODE",
-    "owners": "OWNER",
-    "users": "USER",
-}
-LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
-INDEX_LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
+APP_CODE_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+FRONT_MATTER_RE = re.compile(r"\A\ufeff?---\s*\r?\n.*?\r?\n---\s*(?:\r?\n|\Z)", re.DOTALL)
 REFERENCE_DEFINITION_RE = re.compile(r"^\s*\[(?!\^)[^\]]+\]:\s*(<[^>]+>|\S+)", re.MULTILINE)
-PLACEHOLDER_TOKEN_RE = re.compile(r"\{[^{}\r\n]+\}|<[^<>\r\n]+>")
+EVIDENCE_ROW_RE = re.compile(r"^\|\s*(?:code|doc)\s*\|\s*(.*?)\s*\|", re.MULTILINE)
+INITIALIZATION_PLACEHOLDER_RE = re.compile(r"\{\{初始化:[^{}\r\n]+\}\}")
+FULL_MARKDOWN_LINK_RE = re.compile(r"^\[[^\]\r\n]+\]\((.+)\)$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -46,29 +38,26 @@ def is_template(path: Path) -> bool:
     )
 
 
-def is_raw_reference(relative: Path, filename: str) -> bool:
-    return relative.parts[:2] == ("knowledge", "reference") and filename != "README.md"
+def is_raw_reference(relative: Path) -> bool:
+    return relative.parts[:3] == ("knowledge", "reference", "ruoyi-vue-pro官方文档")
 
 
-def without_code_fences(text: str) -> str:
+def without_code_fences(text: str, *, strip_inline: bool = True) -> str:
     lines: list[str] = []
-    in_fence = False
+    fence_marker: str | None = None
     for line in text.splitlines():
-        if line.lstrip().startswith("```"):
-            in_fence = not in_fence
+        stripped = line.lstrip()
+        marker = stripped[:3] if stripped[:3] in {"```", "~~~"} else None
+        if marker and fence_marker is None:
+            fence_marker = marker
             continue
-        if not in_fence:
+        if marker and marker == fence_marker:
+            fence_marker = None
+            continue
+        if fence_marker is None:
             lines.append(line)
-    return "\n".join(lines)
-
-
-def front_matter(path: Path) -> dict | None:
-    text = path.read_text(encoding="utf-8-sig")
-    match = re.match(r"\A---\s*\r?\n(.*?)\r?\n---\s*(?:\r?\n|\Z)", text, re.DOTALL)
-    if not match:
-        return None
-    data = yaml.safe_load(match.group(1))
-    return data if isinstance(data, dict) else None
+    result = "\n".join(lines)
+    return re.sub(r"`[^`\r\n]*`", "", result) if strip_inline else result
 
 
 def managed_markdown(workspace: Path) -> list[Path]:
@@ -80,35 +69,43 @@ def managed_markdown(workspace: Path) -> list[Path]:
     return sorted(paths)
 
 
-def template_placeholders(workspace: Path) -> set[str]:
-    placeholders: set[str] = {"YYYY-MM-DD"}
-    template_roots = (
-        workspace / "knowledge" / "template",
-        workspace / "docs" / "changes" / "templates",
-        workspace / "docs" / "postmortem" / "templates",
-    )
-    for root in template_roots:
-        if not root.exists():
-            continue
-        for path in root.rglob("*.md"):
-            placeholders.update(PLACEHOLDER_TOKEN_RE.findall(path.read_text(encoding="utf-8-sig")))
-    return placeholders
-
-
-def extract_registry(text: str, key: str, marker: str) -> list[str]:
-    pattern = re.compile(
-        rf"<!-- KB-REGISTRY:{marker}:BEGIN -->\s*```yaml\s*(.*?)\s*```\s*"
-        rf"<!-- KB-REGISTRY:{marker}:END -->",
-        re.DOTALL,
-    )
-    match = pattern.search(text)
-    if not match:
-        raise ValueError(f"缺少注册表区块：{marker}")
-    data = yaml.safe_load(match.group(1)) or {}
-    values = data.get(key)
-    if not isinstance(values, list) or not all(isinstance(value, str) for value in values):
-        raise ValueError(f"注册表 {key} 必须是字符串列表")
-    return values
+def inline_link_targets(text: str, *, include_images: bool = True) -> list[str]:
+    targets: list[str] = []
+    cursor = 0
+    while True:
+        opening = text.find("](", cursor)
+        if opening < 0:
+            break
+        start = opening + 2
+        depth = 1
+        index = start
+        while index < len(text):
+            char = text[index]
+            if char == "\\":
+                index += 2
+                continue
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth -= 1
+                if depth == 0:
+                    label_start = text.rfind("[", cursor, opening)
+                    label = text[label_start + 1 : opening] if label_start >= 0 else ""
+                    is_image = label_start > 0 and text[label_start - 1] == "!"
+                    is_escaped = label_start > 0 and text[label_start - 1] == "\\"
+                    if (
+                        label_start >= 0
+                        and "\n" not in label
+                        and not is_escaped
+                        and (include_images or not is_image)
+                    ):
+                        targets.append(text[start:index])
+                    cursor = index + 1
+                    break
+            index += 1
+        else:
+            cursor = start
+    return targets
 
 
 def local_target(raw: str) -> str | None:
@@ -131,18 +128,27 @@ def is_within_workspace(path: Path, workspace: Path) -> bool:
     return True
 
 
+def validate_no_frontmatter(workspace: Path, paths: list[Path], errors: list[str]) -> None:
+    for path in paths:
+        relative = path.relative_to(workspace)
+        if is_raw_reference(relative):
+            continue
+        if FRONT_MATTER_RE.match(path.read_text(encoding="utf-8-sig")):
+            errors.append(f"YAML 头：{relative.as_posix()} 不应包含自定义 Front Matter")
+
+
 def validate_links(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_raw_reference(relative, path.name):
+        if is_raw_reference(relative):
             continue
         template_path = is_template(relative)
         if template_path and relative.parts[0] == "knowledge":
             continue
         text = without_code_fences(path.read_text(encoding="utf-8-sig"))
-        link_targets = [match.group(1) for match in LINK_RE.finditer(text)]
-        link_targets.extend(match.group(1) for match in REFERENCE_DEFINITION_RE.finditer(text))
-        for raw_target in link_targets:
+        targets = inline_link_targets(text)
+        targets.extend(match.group(1) for match in REFERENCE_DEFINITION_RE.finditer(text))
+        for raw_target in targets:
             target = local_target(raw_target)
             if target is None:
                 continue
@@ -158,56 +164,46 @@ def validate_links(workspace: Path, paths: list[Path], errors: list[str]) -> Non
                 errors.append(f"链接目标不存在：{relative.as_posix()} -> {raw_target}")
 
 
-def validate_metadata_refs(
-    workspace: Path,
-    paths: list[Path],
-    registries: dict[str, set[str]],
-    errors: list[str],
-) -> None:
+def validate_evidence_rows(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_template(relative) or is_raw_reference(relative, path.name):
+        if is_template(relative) or is_raw_reference(relative):
             continue
-        data = front_matter(path)
-        if data is None:
+        text = without_code_fences(
+            path.read_text(encoding="utf-8-sig"), strip_inline=False
+        )
+        is_application_knowledge = (
+            len(relative.parts) >= 4
+            and relative.parts[:2] == ("knowledge", "applications")
+            and path.name not in {"README.md", "INDEX.md"}
+        )
+        if not is_application_knowledge:
             continue
-        app_code = data.get("appCode")
-        owner = data.get("owner")
-        maintainers = data.get("maintainers", [])
-        if app_code is not None and app_code not in registries["appCodes"]:
-            errors.append(f"注册表：{relative.as_posix()} 使用了未注册的 appCode {app_code!r}")
-        if owner is not None and owner not in registries["owners"]:
-            errors.append(f"注册表：{relative.as_posix()} 使用了未注册的 owner {owner!r}")
-        for maintainer in maintainers if isinstance(maintainers, list) else []:
-            if maintainer not in registries["users"]:
+        heading = re.search(r"^##\s+证据来源\s*$", text, re.MULTILINE)
+        if heading is None:
+            errors.append(f"证据来源：{relative.as_posix()} 缺少“## 证据来源”章节")
+            continue
+        section_start = heading.end()
+        next_heading = re.search(r"^##\s+", text[section_start:], re.MULTILINE)
+        section_end = section_start + next_heading.start() if next_heading else len(text)
+        section = text[section_start:section_end]
+        rows = list(EVIDENCE_ROW_RE.finditer(section))
+        if not rows:
+            errors.append(f"证据来源：{relative.as_posix()} 的证据章节没有 code/doc 记录")
+            continue
+        for match in rows:
+            source = match.group(1).strip()
+            if not FULL_MARKDOWN_LINK_RE.fullmatch(source):
                 errors.append(
-                    f"注册表：{relative.as_posix()} 使用了未注册的 maintainer {maintainer!r}"
+                    f"证据来源：{relative.as_posix()} 必须使用完整 Markdown 链接：{source}"
                 )
-        evidence = data.get("evidence", [])
-        if not isinstance(evidence, list):
-            continue
-        for item in evidence:
-            if not isinstance(item, dict) or item.get("type") not in {"code", "doc"}:
-                continue
-            ref = item.get("ref")
-            if not isinstance(ref, str) or not ref or re.match(r"^https?://", ref):
-                continue
-            if any(token in ref for token in ("{", "}", "<", ">")):
-                errors.append(f"证据路径包含占位符：{relative.as_posix()} -> {ref}")
-                continue
-            ref_path = Path(unquote(ref))
-            resolved = (workspace / ref_path).resolve()
-            if ref_path.is_absolute() or not is_within_workspace(resolved, workspace):
-                errors.append(f"证据路径越出工作区：{relative.as_posix()} -> {ref}")
-            elif not resolved.exists():
-                errors.append(f"证据路径不存在：{relative.as_posix()} -> {ref}")
 
 
 def index_targets(index_path: Path) -> set[Path]:
     text = without_code_fences(index_path.read_text(encoding="utf-8-sig"))
     targets: set[Path] = set()
-    for match in INDEX_LINK_RE.finditer(text):
-        target = local_target(match.group(1))
+    for raw_target in inline_link_targets(text, include_images=False):
+        target = local_target(raw_target)
         if target is not None and "{" not in target and "}" not in target:
             targets.add((index_path.parent / target).resolve())
     return targets
@@ -220,54 +216,74 @@ def validate_indexes(workspace: Path, errors: list[str]) -> None:
         if is_template(relative) or "reference" in relative.parts:
             continue
         targets = index_targets(index_path)
-        expected: list[Path] = [
-            path.resolve()
-            for path in index_path.parent.glob("*.md")
-            if path.name != "INDEX.md"
+        expected = [
+            path.resolve() for path in index_path.parent.glob("*.md") if path.name != "INDEX.md"
         ]
         expected.extend(
             path.resolve()
             for path in index_path.parent.iterdir()
-            if path.is_dir() and not path.name.startswith(".")
+            if path.is_dir() and not path.name.startswith(".") and any(path.iterdir())
         )
-        allowed: set[Path] = set()
+        allowed: set[Path] = set(expected)
         for item in expected:
-            allowed.add(item)
             if item.is_dir() and (item / "INDEX.md").exists():
                 allowed.add((item / "INDEX.md").resolve())
         for target in targets:
             if target == index_path.resolve():
                 errors.append(f"索引：{relative.as_posix()} 索引了自身")
             elif target not in allowed:
-                try:
-                    display = target.relative_to(workspace).as_posix()
-                except ValueError:
-                    display = str(target)
+                display = target.relative_to(workspace).as_posix() if is_within_workspace(target, workspace) else str(target)
                 errors.append(f"索引：{relative.as_posix()} 包含非直接子项 {display}")
         for item in expected:
             candidates = {item}
             if item.is_dir():
                 candidates.add((item / "INDEX.md").resolve())
             if targets.isdisjoint(candidates):
-                errors.append(
-                    f"索引：{relative.as_posix()} 未覆盖 {item.relative_to(workspace).as_posix()}"
-                )
+                errors.append(f"索引：{relative.as_posix()} 未覆盖 {item.relative_to(workspace).as_posix()}")
+
+
+def application_codes(workspace: Path, errors: list[str]) -> set[str]:
+    root = workspace / "knowledge" / "applications"
+    if not root.exists():
+        errors.append("应用目录：缺少 knowledge/applications")
+        return set()
+    codes = {path.name for path in root.iterdir() if path.is_dir()}
+    for code in sorted(codes):
+        if not APP_CODE_RE.fullmatch(code):
+            errors.append(f"应用目录：appCode 必须使用小写 kebab-case：{code}")
+    return codes
 
 
 def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[str]) -> None:
-    required_paths = [
+    required = [
         "knowledge/README.md",
         "knowledge/INDEX.md",
         "knowledge/ROUTING.md",
-        "knowledge/KNOWLEDGE-METADATA-RULES.md",
-        "knowledge/main",
-        "knowledge/applications",
-        "knowledge/candidate",
-        "knowledge/personal",
-        "knowledge/archive",
-        "knowledge/reference",
-        "knowledge/template",
-        "knowledge/scripts",
+        "knowledge/main/README.md",
+        "knowledge/main/INDEX.md",
+        "knowledge/applications/README.md",
+        "knowledge/applications/INDEX.md",
+        "knowledge/candidate/README.md",
+        "knowledge/candidate/INDEX.md",
+        "knowledge/personal/README.md",
+        "knowledge/personal/INDEX.md",
+        "knowledge/archive/README.md",
+        "knowledge/archive/INDEX.md",
+        "knowledge/reference/README.md",
+        "knowledge/template/common/README-template.md",
+        "knowledge/template/common/INDEX-template.md",
+        "knowledge/template/applications/{appCode}/application-README-template.md",
+        "knowledge/template/applications/{appCode}/application-INDEX-template.md",
+        "knowledge/template/applications/{appCode}/application-overview-template.md",
+        "knowledge/template/applications/{appCode}/category-INDEX-template.md",
+        "knowledge/template/applications/{appCode}/base/README.md",
+        "knowledge/template/applications/{appCode}/base/template.md",
+        "knowledge/template/applications/{appCode}/feature/README.md",
+        "knowledge/template/applications/{appCode}/feature/template.md",
+        "knowledge/template/applications/{appCode}/rule/README.md",
+        "knowledge/template/applications/{appCode}/rule/template.md",
+        "knowledge/template/applications/{appCode}/tech/README.md",
+        "knowledge/template/applications/{appCode}/tech/template.md",
         "docs/changes/README.md",
         "docs/changes/templates/change.md",
         "docs/changes/templates/design.md",
@@ -277,113 +293,56 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         "docs/postmortem/README.md",
         "docs/postmortem/templates/postmortem.md",
     ]
-    for state in ("proposed", "implemented", "rejected", "archived"):
-        required_paths.append(f"docs/changes/{state}/README.md")
-    for app_code in app_codes:
-        app_root = f"knowledge/applications/{app_code}"
-        required_paths.extend(
-            [f"{app_root}/README.md", f"{app_root}/INDEX.md", f"{app_root}/{app_code}.md"]
-        )
+    required.extend(f"docs/changes/{state}/README.md" for state in ("proposed", "implemented", "rejected", "archived"))
+    for code in app_codes:
+        root = f"knowledge/applications/{code}"
+        required.extend((f"{root}/README.md", f"{root}/INDEX.md", f"{root}/{code}.md"))
         for category in ("base", "feature", "rule", "tech"):
-            required_paths.extend(
-                [f"{app_root}/{category}/README.md", f"{app_root}/{category}/INDEX.md"]
-            )
-    for relative in required_paths:
+            required.extend((f"{root}/{category}/README.md", f"{root}/{category}/INDEX.md"))
+    for relative in required:
         if not (workspace / relative).exists():
             errors.append(f"目录骨架：缺少 {relative}")
 
 
-def archived_app_codes(workspace: Path) -> set[str]:
-    result: set[str] = set()
-    archive = workspace / "knowledge" / "archive"
-    if not archive.exists():
-        return result
-    for path in archive.rglob("*.md"):
-        data = front_matter(path)
-        if data and isinstance(data.get("appCode"), str):
-            result.add(data["appCode"])
-    return result
-
-
-def validate_application_registry(
-    workspace: Path, app_codes: set[str], errors: list[str]
-) -> set[str]:
-    root = workspace / "knowledge" / "applications"
-    if not root.exists():
-        errors.append("注册表：缺少 knowledge/applications 目录")
-        return set()
-    directories = {path.name for path in root.iterdir() if path.is_dir()}
-    historical = archived_app_codes(workspace)
-    orphaned = sorted(app_codes - directories - historical)
-    extra = sorted(directories - app_codes)
-    if orphaned:
-        errors.append(
-            "注册表：以下 appCode 既没有当前应用目录，也没有归档引用："
-            + ", ".join(orphaned)
-        )
-    if extra:
-        errors.append(f"注册表：存在未注册的应用目录：{', '.join(extra)}")
-    return directories
-
-
-def validate_placeholders(
-    workspace: Path, paths: list[Path], placeholders: set[str], errors: list[str]
-) -> None:
+def validate_placeholders(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_template(relative):
+        if is_template(relative) or is_raw_reference(relative):
             continue
-        is_application_output = (
-            len(relative.parts) >= 4
-            and relative.parts[:2] == ("knowledge", "applications")
-        )
-        is_change_output = (
+        application_output = len(relative.parts) >= 4 and relative.parts[:2] == ("knowledge", "applications")
+        change_output = (
             len(relative.parts) >= 3
             and relative.parts[:2] == ("docs", "changes")
             and relative.parts[2] in {"proposed", "implemented", "rejected", "archived"}
             and path.name != "README.md"
         )
-        is_postmortem_output = (
-            len(relative.parts) >= 2
-            and relative.parts[:2] == ("docs", "postmortem")
-            and path.name != "README.md"
+        postmortem_output = relative.parts[:2] == ("docs", "postmortem") and path.name != "README.md"
+        text = without_code_fences(
+            path.read_text(encoding="utf-8-sig"), strip_inline=False
         )
-        if not (is_application_output or is_change_output or is_postmortem_output):
-            continue
-        text = without_code_fences(path.read_text(encoding="utf-8-sig"))
-        found = sorted(token for token in placeholders if token in text)
-        todo_match = re.search(r"\[TODO\]|TODO:", text, re.IGNORECASE)
+        found = sorted(set(INITIALIZATION_PLACEHOLDER_RE.findall(text)))
+        todo = (
+            re.search(r"\[TODO\]|TODO:", text, re.IGNORECASE)
+            if application_output or change_output or postmortem_output
+            else None
+        )
         if found:
             errors.append(f"占位符：{relative.as_posix()} 包含 {', '.join(found)}")
-        if todo_match:
-            errors.append(f"占位符：{relative.as_posix()} 包含 {todo_match.group(0)!r}")
+        if todo:
+            errors.append(f"占位符：{relative.as_posix()} 包含 {todo.group(0)!r}")
 
 
 def main() -> int:
     workspace = Path(parse_args().workspace).resolve()
-    rules_path = workspace / "knowledge" / "KNOWLEDGE-METADATA-RULES.md"
-    if not rules_path.is_file():
-        print(f"错误：缺少 {rules_path}")
-        return 2
-
     errors: list[str] = []
-    rules_text = rules_path.read_text(encoding="utf-8-sig")
-    registries: dict[str, set[str]] = {}
-    try:
-        for key, marker in REGISTRY_MARKERS.items():
-            registries[key] = set(extract_registry(rules_text, key, marker))
-    except ValueError as exc:
-        print(f"错误：{exc}")
-        return 2
-
     paths = managed_markdown(workspace)
-    placeholders = template_placeholders(workspace)
+    validate_no_frontmatter(workspace, paths, errors)
     validate_links(workspace, paths, errors)
-    validate_metadata_refs(workspace, paths, registries, errors)
+    validate_evidence_rows(workspace, paths, errors)
     validate_indexes(workspace, errors)
-    active_app_codes = validate_application_registry(workspace, registries["appCodes"], errors)
-    validate_required_layout(workspace, active_app_codes, errors)
-    validate_placeholders(workspace, paths, placeholders, errors)
+    app_codes = application_codes(workspace, errors)
+    validate_required_layout(workspace, app_codes, errors)
+    validate_placeholders(workspace, paths, errors)
 
     if errors:
         print(f"初始化结构校验失败，共 {len(errors)} 个错误：")
@@ -391,9 +350,12 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
+    raw_count = sum(is_raw_reference(path.relative_to(workspace)) for path in paths)
+    managed_count = len(paths) - raw_count
     print(
         "初始化结构校验通过："
-        f"发现 {len(paths)} 个 Markdown 文件；目录骨架、链接、证据、索引、注册表和占位符均已检查。"
+        f"已检查 {managed_count} 个受管理 Markdown 文件，跳过 {raw_count} 个原始导入参考文件；"
+        "YAML 头、目录骨架、链接、正文证据、应用目录、索引和占位符均已检查。"
     )
     return 0
 

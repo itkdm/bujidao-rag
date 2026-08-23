@@ -1,36 +1,3 @@
-﻿---
-id: KB-RULE-RUOYI-VUE-PRO-BACKEND-BASELINE
-type: rule
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
-- type: doc
-  ref: knowledge/applications/ruoyi-vue-pro/ruoyi-vue-pro.md
-- type: doc
-  ref: knowledge/applications/ruoyi-vue-pro/base/base-module-index.md
-tags:
-- backend
-- baseline
-- boundary
-anchors:
-- APP:RUOYI-VUE-PRO
-- RULE:BACKEND-BASELINE
----
 
 # 后端基线边界规则
 
@@ -45,11 +12,11 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/pom.xml` | 当前根工程模块聚合事实 |
-| code | `yudao-server/pom.xml` | 当前启动模块实际依赖事实 |
-| code | `YudaoServerApplication.java` | 后端启动入口和扫描范围 |
-| doc | `ruoyi-vue-pro.md` | 当前后端定位为开源基线 |
-| doc | `base-module-index.md` | 当前启用/未启用模块索引 |
+| code | [`ruoyi-vue-pro/pom.xml`](../../../../ruoyi-vue-pro/pom.xml) | 当前根工程模块聚合事实 |
+| code | [`ruoyi-vue-pro/yudao-server/pom.xml`](../../../../ruoyi-vue-pro/yudao-server/pom.xml) | 当前启动模块实际依赖事实 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java`](../../../../ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java) | 后端启动入口和扫描范围 |
+| doc | [`knowledge/applications/ruoyi-vue-pro/ruoyi-vue-pro.md`](../ruoyi-vue-pro.md) | 当前后端定位为开源基线 |
+| doc | [`knowledge/applications/ruoyi-vue-pro/base/base-module-index.md`](../base/base-module-index.md) | 当前启用/未启用模块索引 |
 
 ## 规则范围
 

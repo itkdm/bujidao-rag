@@ -1,8 +1,8 @@
-# Postmortem: <简短标题>
+# Postmortem: {{初始化:简短标题}}
 
-- 创建日期：YYYY-MM-DD
-- 作者：<作者 / Agent>
-- 关联 Change：<若已产生整改 Change，填路径；否则写「待定」>
+- 创建日期：{{初始化:YYYY-MM-DD}}
+- 作者：{{初始化:作者 / Agent}}
+- 关联 Change：{{初始化:若已产生整改 Change，填路径；否则写「待定」}}
 
 > 模板依据 [`../../changes/README.md`](../../changes/README.md) 第 11 节。Postmortem 不是 Change，不写「怎么修」，只写「为什么逃过防线 + 以后怎么让同类问题更早失败」。本模板独立于 Change 模板，置于 `docs/postmortem/templates/`。
 
@@ -10,7 +10,7 @@
 
 一句话结论 + 影响范围。
 
-- **怎么写**：`<问题> 因 <机制性根因> 逃过 <哪道/哪些防线>，影响 <范围>，将通过 <Guardrail 概要> 防止复发`。
+- **怎么写**：`{{初始化:问题}} 因 {{初始化:机制性根因}} 逃过 {{初始化:哪道/哪些防线}}，影响 {{初始化:范围}}，将通过 {{初始化:Guardrail 概要}} 防止复发`。
 - **反例**：「修复了一个 Bug」（这是 Change 的写法，不是 Postmortem）。
 
 ## 影响与发生了什么
@@ -56,14 +56,14 @@
 > 不要写「以后要更细心 / 加强测试 / 提高责任心」——这类等于没写。
 > 核心思想：**不要依赖人记住事故，要让工程系统记住事故。** 每条 Guardrail 必须可落地、可验证、链接到具体 Change。
 
-- **Guardrail 1（Test）**：<新增/修改什么测试，验证什么机制>
-- **Guardrail 2（CI）**：<CI 如何强制运行该测试 / 检查>
-- **Guardrail 3（Rule）**：<AGENTS.md / 规范需补充什么具体约束>
-- **Guardrail 4（Tooling）**：<脚本 / 静态检查 / lint 规则>
+- **Guardrail 1（Test）**：{{初始化:新增/修改什么测试，验证什么机制}}
+- **Guardrail 2（CI）**：{{初始化:CI 如何强制运行该测试 / 检查}}
+- **Guardrail 3（Rule）**：{{初始化:AGENTS.md / 规范需补充什么具体约束}}
+- **Guardrail 4（Tooling）**：{{初始化:脚本 / 静态检查 / lint 规则}}
 
 - **怎么写**：每条标注类型（Test/CI/Rule/Tooling）+ 具体动作 + 对应 Change 路径。
 - **反例**：「增加更多测试」（无对象、无验证、无人负责）。
 
 ## 关联变更
 
-- `<path/to/change.md>` — <该 Change 落地的哪条 Guardrail>
+- `{{初始化:path/to/change.md}}` — {{初始化:该 Change 落地的哪条 Guardrail}}

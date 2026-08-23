@@ -1,27 +1,3 @@
----
-id: KB-TECH-GLOBAL-PULL-REQUEST
-type: tech
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-confidence: high
-stability: stable
-evidence:
-- type: doc
-  ref: knowledge/main/tech/Pull Request 全局规范.md
-tags:
-- git
-- pull-request
-- convention
-anchors:
-- GLOBAL:PULL-REQUEST
-- TECH:GIT
----
 
 # Pull Request 全局规范
 

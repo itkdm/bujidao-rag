@@ -1,35 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-EXCEPTION-LOG
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/web/core/handler/GlobalExceptionHandler.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/exception/util/ServiceExceptionUtil.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/enums/ErrorCodeConstants.java
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/15.异常处理.md
-tags:
-- backend
-- exception
-- error-code
-- log
-anchors:
-- APP:RUOYI-VUE-PRO
-- TECH:EXCEPTION-LOG
----
 
 # 异常处理、错误码与日志约束
 
@@ -45,10 +13,10 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `GlobalExceptionHandler.java` | 将 MVC、校验、权限、业务、系统异常转换成 `CommonResult` |
-| code | `ServiceExceptionUtil.java` | 业务异常构造工具 |
-| code | `system/enums/ErrorCodeConstants.java` | 系统模块错误码集中定义 |
-| doc | `15.异常处理.md` | 官方说明统一响应、业务异常和错误码设计 |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/web/core/handler/GlobalExceptionHandler.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-spring-boot-starter-web/src/main/java/cn/iocoder/yudao/framework/web/core/handler/GlobalExceptionHandler.java) | 将 MVC、校验、权限、业务、系统异常转换成 `CommonResult` |
+| code | [`ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/exception/util/ServiceExceptionUtil.java`](../../../../ruoyi-vue-pro/yudao-framework/yudao-common/src/main/java/cn/iocoder/yudao/framework/common/exception/util/ServiceExceptionUtil.java) | 业务异常构造工具 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/enums/ErrorCodeConstants.java`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/enums/ErrorCodeConstants.java) | 系统模块错误码集中定义 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/15.异常处理.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/15.异常处理.md>) | 官方说明统一响应、业务异常和错误码设计 |
 
 ## 适用范围
 

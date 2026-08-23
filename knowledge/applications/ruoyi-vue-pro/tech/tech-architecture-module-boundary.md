@@ -1,39 +1,3 @@
-﻿---
-id: KB-TECH-RUOYI-VUE-PRO-MODULE-BOUNDARY
-type: tech
-scope: app
-appCode: ruoyi-vue-pro
-status: DRAFT
-owner: bujidao
-maintainers:
-- bujidao
-version: 3
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-09
-confidence: high
-stability: evolving
-evidence:
-- type: code
-  ref: ruoyi-vue-pro/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/pom.xml
-- type: code
-  ref: ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java
-- type: code
-  ref: ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md
-- type: doc
-  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md
-tags:
-- backend
-- architecture
-- module-boundary
-- ruoyi-vue-pro
-anchors:
-- APP:RUOYI-VUE-PRO
-- TECH:ARCHITECTURE
----
 
 # 后端模块边界与目录约束
 
@@ -49,12 +13,12 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/pom.xml` | 确认当前 Maven 根工程聚合模块 |
-| code | `yudao-server/pom.xml` | 确认当前启动模块实际依赖 |
-| code | `YudaoServerApplication.java` | 确认启动类通过 `${yudao.info.base-package}.server` 和 `.module` 扫描 |
-| code | `yudao-module-system/src/main/java/.../system/` | 确认实际模块内分层结构 |
-| doc | `09.项目结构.md` | 官方说明 `yudao-dependencies`、`yudao-framework`、`yudao-module-xxx`、`yudao-server` 的职责 |
-| doc | `01.新建模块.md` | 官方说明新建模块、添加依赖、接入 RESTful API 的流程 |
+| code | [`ruoyi-vue-pro/pom.xml`](../../../../ruoyi-vue-pro/pom.xml) | 确认当前 Maven 根工程聚合模块 |
+| code | [`ruoyi-vue-pro/yudao-server/pom.xml`](../../../../ruoyi-vue-pro/yudao-server/pom.xml) | 确认当前启动模块实际依赖 |
+| code | [`ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java`](../../../../ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java) | 确认启动类通过 `${yudao.info.base-package}.server` 和 `.module` 扫描 |
+| code | [`ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/`](../../../../ruoyi-vue-pro/yudao-module-system/src/main/java/cn/iocoder/yudao/module/system/) | 确认实际模块内分层结构 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md>) | 官方说明 `yudao-dependencies`、`yudao-framework`、`yudao-module-xxx`、`yudao-server` 的职责 |
+| doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/02.后端手册/01.新建模块.md>) | 官方说明新建模块、添加依赖、接入 RESTful API 的流程 |
 
 ## 适用范围
 

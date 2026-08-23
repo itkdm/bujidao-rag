@@ -1,27 +1,3 @@
----
-id: KB-TECH-GLOBAL-GIT-BRANCH
-type: tech
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-confidence: high
-stability: stable
-evidence:
-- type: doc
-  ref: knowledge/main/tech/Git Branch 全局分支规范.md
-tags:
-- git
-- branch
-- convention
-anchors:
-- GLOBAL:GIT-BRANCH
-- TECH:GIT
----
 
 # Git Branch 全局分支规范
 

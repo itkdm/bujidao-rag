@@ -1,22 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-APP-RUOYI-VUE-PRO-RULE-INDEX
-scope: app
-appCode: ruoyi-vue-pro
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- index
-anchors:
-- APP:RUOYI-VUE-PRO
-- RULE:RUOYI-VUE-PRO
----
 
 # rule/索引
 

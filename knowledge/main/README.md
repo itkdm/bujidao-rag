@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-MAIN-README
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 1
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-18
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:MAIN-README
----
 
 # main/
 
@@ -38,6 +21,6 @@ anchors:
 
 - 能否放入 `main/` 的核心标准是「是否跨应用强制统一」，单一应用相关的知识不放入本目录。
 - AI 在需求执行中分析出的推断，**先放 `candidate/`**。
-- 经 owner 明确说明并确认且具备稳定性后，才合并到 `main/`。
+- 经用户或项目负责人明确确认且具备稳定性后，才合并到 `main/`。
 - **禁止** AI 直接将未确认内容写入 `main/`；**禁止**所有自动化流程自行判断是否合并到 `main/`。
 - **禁止** AI 将个人经验直接当作团队结论引用。

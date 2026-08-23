@@ -1,20 +1,3 @@
----
-# 知识库导航基础设施文件
-id: KB-INFRA-GLOBAL-REFERENCE-README
-scope: global
-status: OFFICIAL
-owner: bujidao
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-17
-tags:
-- navigation
-- global
-anchors:
-- GLOBAL:REFERENCE-README
----
 
 # 参考资料索引
 
@@ -31,3 +14,7 @@ anchors:
 1. AI 不应把本目录内容直接当成目标项目已经确认的功能、规则或技术结论。
 2. 需要核对上游能力、官方约定或证据来源时，才读取本目录。
 3. 从参考资料提炼出的稳定知识，应写入 `candidate/` 或对应正式知识文件，并保留证据路径。
+
+## 原始资料来源头
+
+`ruoyi-vue-pro官方文档/` 是抓取后原样保存的上游资料。文件开头的 `title`、`source_url`、`official_path`、`crawled_at` 只用于来源追溯，不属于团队知识字段，也不要求人工维护。其他 `reference/` 子目录不会自动获得这一豁免。

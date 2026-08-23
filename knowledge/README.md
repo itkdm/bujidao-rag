@@ -1,20 +1,3 @@
----
-# 知识库基础设施文件
-id: KB-INFRA-GLOBAL-README
-scope: global
-status: OFFICIAL
-owner: backend-platform
-maintainers:
-- bujidao
-version: 2
-updatedAt: 2026-08-23
-verifiedAt: 2026-08-18
-tags:
-- global
-- overview
-anchors:
-- GLOBAL:README
----
 
 # 知识库
 
@@ -28,7 +11,7 @@ anchors:
 
 - `main/`：跨应用、跨系统、跨业务线的通用知识（核心术语、跨应用流程、通用状态定义、全局技术约束、多应用都要遵守的业务规则）。
 - `applications/`：应用或模块范围内的知识（应用总览、功能、规则、技术约束、基础事实等）。
-- `candidate/`：候选知识暂存区，AI 分析出的推断结论先放这里，经 owner review 后才转正式。
+- `candidate/`：候选知识暂存区，AI 分析出的推断结论先放这里，经用户或项目负责人确认后才转正式。
 - `personal/`：个人研发经验和踩坑记录，验证后可转为 candidate 再进正式知识库。
 - `template/`：强约束的知识写作模板与导航模板基础设施。
 - `reference/`：上游官方文档、外部文章、开源项目说明等证据材料（本次不强制纳入双文件协议）。
@@ -39,26 +22,29 @@ anchors:
 
 新项目采用本体系时，应使用 `.agents/skills/knowledge-docs-initializer/`。初始化时按目标工作区重新识别应用、技术栈、芋道形态（如适用）、前端版本和启用模块，不得直接继承本仓库示例应用的 appCode、模块状态、版本或证据路径。
 
+当前主分支采用轻量 Markdown：知识身份、类别和生命周期由目录表达，不为受管理文档维护 YAML Front Matter。需要继续研究结构化字段时，使用 `feat/structured-metadata` 分支；首个结构化基线为 `structured-metadata-v0.1` 标签。
+
+这一约束适用于团队自维护的 `knowledge/` 与 `docs/` 文档。`reference/` 中原样导入的外部资料可以保留抓取工具生成的来源追溯头；它们是只读证据，不纳入知识字段维护。
+
 ## 应包含的内容
 
 - 各层目录的稳定职责说明与维护契约。
-- 跨应用 / 应用内 / 候选 / 个人的结构化知识文件（feature、rule、tech、base、flow、state、glossary 等类型）。
-- 基础设施文件：`README.md`、`INDEX.md`、`ROUTING.md`、`KNOWLEDGE-METADATA-RULES.md`、`template/`、辅助脚本。
+- 跨应用 / 应用内 / 候选 / 个人知识文件（feature、rule、tech、base 等类型）。
+- 基础设施文件：`README.md`、`INDEX.md`、`ROUTING.md` 和 `template/`。
 
 ## 不应包含的内容
 
 - 动态文件清单与内容索引：应放在各目录的 `INDEX.md`。
 - 用户具体任务路由与 Agent 读取链：应放在 `ROUTING.md`。
-- 全局 Metadata 字段规范：应放在 `KNOWLEDGE-METADATA-RULES.md`。
 - 真实代码实现、未确认的业务推断：推断先入 `candidate/`，不要直接写入正式目录。
 
 ## 维护规则
 
 - AI 应通过 `ROUTING.md` 先定位，再按需求关键词、业务身份、状态码、接口名等线索逐步加载正确粒度的上下文，不全量读取。
 - 禁止 AI 直接将未确认内容写入 `main/` 或 `applications/`；禁止将个人经验直接当作团队结论引用。
-- 知识流转：`personal/` → `candidate/` →（owner review）→ `main/` 或 `applications/`；代码 / 业务变化后原地标记 `DEPRECATED` 保留历史。
-- 所有受管理 Markdown 文件必须遵守 `KNOWLEDGE-METADATA-RULES.md`，并通过 `scripts/validate_metadata.py` 校验。
+- 知识流转：`personal/` → `candidate/` →（确认）→ `main/` 或 `applications/`；失效知识移入 `archive/`。
+- 正式知识必须在正文中写明必要的事实来源，并在修改代码前回到当前实现复核。
 
 ## 补充说明
 
-`archive/` 用于归档已废弃或过期知识，不再作为正式引用来源，仅用于历史追溯（本次未纳入受管理目录双文件协议范围）。
+`archive/` 用于归档已废弃或过期知识，不再作为正式引用来源，仅用于历史追溯。
