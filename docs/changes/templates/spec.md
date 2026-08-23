@@ -5,7 +5,7 @@
 > 结构原则：**Scenario 内嵌于对应 Requirement 之下**，而非把所有 Scenario 集中放在文件末尾。
 > 这样业务规则、正常路径、异常路径天然聚在一起，Agent 无需通过「(对应 R1)」二次映射。
 
-## Requirements
+## 需求
 
 ### REQ-001: <需求名称>
 
@@ -63,4 +63,4 @@
 
 > 本文件禁止写：Controller / Service 等代码结构、Redis / MQ 等具体实现设计、实施任务、技术调研过程。
 > 若 Change 的验收标准已能说明需求，可不创建本文件。
-> Scenario 跟随其所属 Requirement，不要在文件末尾单独开一个 Scenarios 章节。
+> Scenario 跟随其所属需求（Requirement），不要在文件末尾单独开一个 Scenarios 章节。
