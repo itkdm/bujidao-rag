@@ -440,7 +440,7 @@ docs/
 
 ```markdown
 详见 [文档版本设计](./design.md)
-由 [wrong-session-validation Postmortem](../../../postmortem/2026-08-23-wrong-session-validation.md) 触发。
+由 [wrong-session-validation Postmortem](../../../../postmortem/2026-08-23-wrong-session-validation.md) 触发。
 ```
 
 应可被机械校验的链接关系（不准断链）：

@@ -2,11 +2,9 @@
 
 - 创建日期：YYYY-MM-DD
 - 作者：<作者 / Agent>
-- 类型：<由所在 `<type>/` 目录决定，不在此重复>
-- 状态：<由所在 `proposed/implemented/rejected/archived` 目录决定，不在此重复>
 
-> 类型与状态以目录路径为唯一事实源，不在本文件重复维护。文件移动后状态自然改变。
-> 本文件始终位于 `.../<date>-<slug>/change.md`，从创建到归档路径不变；补充文档按需加入同目录。
+> 类型与状态以目录路径为唯一事实源（`<status>/<type>/<date>-<slug>/`），不在本文件重复维护。
+> Change 内部主文档始终位于 `<date>-<slug>/change.md`；生命周期流转只改变外层状态目录，不会因增加 Supplemental Documents 改变 Change 内部结构。
 > 当 Change 从 `proposed` 移至 `implemented`，本文三处语义自动转换：**方案 → 最终决策**、**验收标准 → 验证结果**、**风险与约束 → 影响与后果**（见对应章节标注）。
 
 ## 概要
@@ -67,13 +65,13 @@
 - 风险、约束、前提条件（依赖的版本、配置、其他 Change）。
 - **implemented 时**：本节改为 **影响与后果** —— 记录实际带来的副作用、回归影响、下游依赖变化。
 
-## 相关文档（按需）
+## 相关文档（按需，必须用真实相对链接）
 
-- `spec.md` — 行为与验收
-- `research.md` — 技术调研
-- `design.md` — 技术方案
-- `plan.md` — 实施路径
-- `../postmortem/<date>-<slug>.md` — 若本 Change 由 Postmortem 催生
+- [Spec](./spec.md) — 行为与验收
+- [Research](./research.md) — 技术调研
+- [Design](./design.md) — 技术方案
+- [Plan](./plan.md) — 实施路径
+- [Postmortem](../../../../postmortem/<date>-<slug>.md) — 若本 Change 由 Postmortem 催生（路径需从 `<status>/<type>/<date>-<slug>/` 退出四层至 `docs/`）
 
 ---
 
@@ -91,8 +89,8 @@
 
 ### 替代 Change（Superseded By）
 
-- 替代本 Change 的新 Change 路径（若存在）。archived Change 不再视作当前权威，请尽量链接到取代它的 Change。
+- 替代本 Change 的新 Change 链接（若存在），如 `[新 Change](../implemented/<type>/<date>-<slug>/change.md)`。archived Change 不再视作当前权威，请尽量链接到取代它的 Change。
 
 ### 本 Change 取代（Supersedes）
 
-- 若本 Change 推翻了某份旧决策，填被取代的旧 Change 路径（与 13.1 治理规则呼应）。
+- 若本 Change 推翻了某份旧决策，填被取代的旧 Change 链接（与 13.1 治理规则呼应）。
