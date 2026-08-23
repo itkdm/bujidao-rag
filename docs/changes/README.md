@@ -89,14 +89,28 @@ proposed → rejected
 ```text
 docs/changes/
 ├── README.md
-├── proposed/      # 按类型再分子目录，子目录在实际产生 Change 时创建
+├── proposed/      # 按类型再分；单文件或目录形态，实际产生 Change 时创建
 ├── implemented/
 ├── rejected/
 ├── archived/
 └── templates/     # 模板，非实际 Change
 ```
 
-实际 Change 推荐路径：
+实际 Change 有两种形态，按复杂度自动升级：
+
+### 形态 A：轻量单文件（默认）
+
+简单变更直接用一个文件即可，不强制建目录：
+
+```text
+docs/changes/proposed/<type>/<date>-<slug>.md
+```
+
+例如 `proposed/bug-fix/2026-08-23-fix-xxx.md`。仅含 `change.md` 的内容（标题、概要、问题、方案、验收）。
+
+### 形态 B：目录 + 补充文档（需要时升级）
+
+当某个 Change 需要 Supplemental Documents（Spec / Research / Design / Plan）时，升级为目录：
 
 ```text
 docs/changes/proposed/<type>/<date>-<slug>/
@@ -107,11 +121,13 @@ docs/changes/proposed/<type>/<date>-<slug>/
 └── plan.md            # 按需
 ```
 
+从形态 A 升级到 B 时，把原 `<date>-<slug>.md` 重命名为 `change.md` 并移入同名目录即可。
+
 - `<type>`：见第 4 节六种类型之一。
 - `<date>`：创建日期，格式 `YYYY-MM-DD`。
 - `<slug>`：短横线分隔的小写英文短语，描述变更主题，如 `add-cache-layer`。
 
-只有 `change.md` 是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。
+只有 `change.md`（或单文件形态下的 `<date>-<slug>.md`）是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。
 不需要为保留目录而批量制造 `.gitkeep`。
 
 ### 类型与状态的唯一事实源
@@ -176,7 +192,7 @@ proposed/feature/
 
 ## 10. Change 完成 / 拒绝 / 归档的处理
 
-- **实现完成**：将目录从 `proposed/` 移至 `implemented/`；`change.md` 语义从「计划」转为「实际决策」
+- **实现完成**：将 Change 从 `proposed/` 移至 `implemented/`（单文件形态移动 `.md` 文件，目录形态移动整个目录）；核心文件语义从「计划」转为「实际决策」
   （方案 → 最终决策，验收标准 → 验证结果，风险与约束 → 影响与后果）。
 - **拒绝**：移至 `rejected/`；保留原方案并记录拒绝原因。
 - **归档**：移至 `archived/`；记录为何归档、被哪个新 Change 替代（若存在）。
@@ -213,24 +229,34 @@ proposed/feature/
 
 ### 11.2 比 Change 更「克制」——不写「每修一个 Bug 就写复盘」
 
-Postmortem 的触发**不单纯看事故严重度**，而看三个维度是否同时满足（至少满足其一即建议写）：
+Postmortem 的触发**不单纯看事故严重度**，而是看问题是否同时具备三个特征。默认需要**同时满足**才创建：
 
 | 维度 | 含义 | 信号示例 |
 |------|------|----------|
-| 隐蔽性 | 原因不容易想到、根因反直觉 | 调试数小时才定位；看似正确的验证对象其实是错的 |
-| 系统性 | 防线存在缺口、机制导致隐蔽故障 | 测试覆盖了「看起来相同」的场景却测错对象；CI 存在却没发现 |
-| 复现成本 | 下次重新踩坑代价高 | 同类问题反复出现；安全 / 数据一致性 / 发布流程类故障；Agent 极易再次犯同类错误 |
+| ① 隐蔽性 | 根因具有隐蔽性、不容易想到、反直觉 | 调试数小时才定位；看似正确的验证对象其实是错的 |
+| ② 系统性 | 存在系统性防线缺口、机制导致隐蔽故障 | 测试覆盖了「看起来相同」的场景却测错对象；CI 存在却没发现 |
+| ③ 复现成本 | 未来重新发现成本较高 | 同类问题反复出现；Agent 极易再次犯同类错误 |
 
-**应该写**（典型场景）：
+```text
+① 隐蔽性
+② 系统性防线缺口
+③ 重新发现成本高
+        │
+   默认需同时满足
+        │
+        ▼
+  创建 Postmortem
+```
 
-- Bug 已进入生产环境 / 已合并到主分支或发布版本
-- CI 明明存在却没有发现
-- 测试覆盖了「看起来相同」的场景，却测试错对象
-- 某架构 / 工具机制导致隐蔽故障
-- 同类问题反复出现
-- 调试了很久、根因极其反直觉
-- 安全、数据一致性、发布流程等系统性故障
-- Agent 非常容易以后再次犯同类错误
+**直接创建（豁免三维度同时满足）**：严重生产事故、安全漏洞、数据一致性故障、发布流程故障——这类即使某一维度不显眼，也直接写。
+
+**典型应写场景**（同时满足三维度时）：
+
+- 已合并到主分支 / 发布版本，且根因反直觉、同类易再犯
+- CI 存在却没发现，且暴露的是系统性验证缺口
+- 测试覆盖了「看起来相同」的场景却测错对象，且机制性易复发
+- 某架构 / 工具机制导致隐蔽故障，且以后排查代价高
+- 同类问题反复出现，且每次定位都困难
 
 **不应该写**（工程防线已正常工作，无需复盘）：
 
@@ -238,8 +264,9 @@ Postmortem 的触发**不单纯看事故严重度**，而看三个维度是否�
 - 变量写错、普通接口返回字段错误
 - 依赖版本升级导致的简单兼容问题（修掉即可）
 - 测试已经正常失败并阻止合并
+- 仅满足三维度中「某一两个」、但问题本身普通且一次修好、未来不易再犯
 
-> 经验法则：Postmortem 关心的是**「为什么防线没有工作」**，而不是「Bug 怎么修」。如果防线正常工作，通常不写。
+> 经验法则：Postmortem 关心的是**「为什么防线没有工作」**，而不是「Bug 怎么修」。如果防线正常工作，通常不写；即便防线失效，单一普通 Bug 也优先用 bug-fix Change，而非 Postmortem。
 
 ### 11.3 与 bug-fix Change 的关系
 
@@ -309,11 +336,13 @@ Postmortem 描述的是**已经发生过的历史事实**，本身不需要 `pro
 ```text
 docs/postmortem/
 ├── README.md
+├── templates/
+│   └── postmortem.md
 ├── 2026-08-23-wrong-session-validation.md
 └── 2026-08-24-lock-failure-in-multi-instance.md
 ```
 
-命名沿用 Change 的 `日期 + slug` 风格；序号（如 `0001-`）可选，默认用日期更利于追溯。
+命名沿用 Change 的 `日期 + slug` 风格；序号（如 `0001-`）可选，默认用日期更利于追溯。Postmortem 是独立于 Change 的文档类型，模板自置于本目录 `templates/`。
 
 ---
 
@@ -361,13 +390,15 @@ docs/postmortem/
 ```text
 docs/changes/
 ├── README.md                 # ④⑤⑥ 总规范（本文件）
-├── proposed/      <type>/<date>-<slug>/   # 讨论/实施中 Change
-├── implemented/   <type>/<date>-<slug>/   # 已验证 Change
-├── rejected/      <type>/<date>-<slug>/   # 未采用
-├── archived/      <type>/<date>-<slug>/   # 已失效/被替代
+├── proposed/      <type>/<date>-<slug>.md | <date>-<slug>/   # 轻量单文件 或 目录升级
+├── implemented/   <type>/<date>-<slug>.md | <date>-<slug>/
+├── rejected/      <type>/<date>-<slug>.md | <date>-<slug>/
+├── archived/      <type>/<date>-<slug>.md | <date>-<slug>/
 ├── templates/                     # Change/Spec/Research/Design/Plan 模板
 └── docs/postmortem/               # ⑥ 事后分析（无生命周期目录）
     ├── README.md
+    ├── templates/
+    │   └── postmortem.md
     └── <date>-<slug>.md
 ```
 
@@ -380,7 +411,7 @@ docs/changes/
 | `research.md` | 可选 | 存在影响决策的重要未知，需调查 / 实验 / 验证 | ⑤ Research |
 | `design.md` | 可选 | 存在值得显式记录的重要技术设计或取舍 | ⑤ Design |
 | `plan.md` | 可选 | 实施涉及多步骤 / 阶段 / 模块 / 迁移 / 前后依赖 | ⑤ Plan |
-| `postmortem.md` | **必选**（每篇 Postmortem 一个） | 问题已发生且逃过防线，且满足隐蔽性 / 系统性 / 复现成本任一维度 | ⑥ Postmortem |
+| `postmortem.md` | **必选**（每篇 Postmortem 一个） | 问题已发生且逃过防线，默认需同时满足隐蔽性 / 系统性 / 复现成本三维度；严重生产 / 安全 / 数据一致性 / 发布流程事故直接创建 | ⑥ Postmortem |
 
 > 类型与状态以**目录路径为唯一事实源**（Change）；Postmortem 无状态流转，仅按日期归档。
 

@@ -4,7 +4,7 @@
 - 作者：<作者 / Agent>
 - 关联 Change：<若已产生整改 Change，填路径；否则写「待定」>
 
-> 模板依据 `docs/changes/README.md` 第 11 节。Postmortem 不是 Change，不写「怎么修」，只写「为什么逃过防线 + 以后怎么让同类问题更早失败」。
+> 模板依据 `../changes/README.md` 第 11 节。Postmortem 不是 Change，不写「怎么修」，只写「为什么逃过防线 + 以后怎么让同类问题更早失败」。本模板独立于 Change 模板，置于 `docs/postmortem/templates/`。
 
 ## Executive Summary
 

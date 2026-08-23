@@ -16,15 +16,17 @@ Postmortem 解释：
 
 ## 触发条件（比 Change 更克制）
 
-满足以下任一维度即建议写：
+默认需**同时满足**三个维度才创建：
 
 | 维度 | 含义 |
 |------|------|
-| 隐蔽性 | 原因不容易想到、根因反直觉 |
-| 系统性 | 防线存在缺口、架构 / 工具机制导致隐蔽故障 |
-| 复现成本 | 下次重新踩坑代价高（同类反复、安全 / 数据一致性 / 发布流程类、Agent 易再犯） |
+| 隐蔽性 | 根因具有隐蔽性、反直觉 |
+| 系统性 | 存在系统性防线缺口、架构 / 工具机制导致隐蔽故障 |
+| 复现成本 | 未来重新发现成本较高（同类反复、Agent 易再犯） |
 
-**不写**：普通 NullPointerException（忘记判空）、变量写错、普通字段错误、简单兼容问题、测试已正常失败并阻止合并——这些说明工程防线已正常工作。
+**直接创建（豁免三维度同时满足）**：严重生产事故、安全漏洞、数据一致性故障、发布流程故障。
+
+**不写**：普通 NullPointerException（忘记判空）、变量写错、普通字段错误、简单兼容问题、测试已正常失败并阻止合并——这些说明工程防线已正常工作；仅满足三维度中个别项、但问题普通且一次修好、未来不易再犯的，也优先用 bug-fix Change 而非 Postmortem。
 
 ## 命名
 
@@ -52,4 +54,4 @@ docs/postmortem/
 | Related Changes | 可选 | 关联的 Change 路径（Postmortem 通常催生新 Change） |
 
 > 最重要三块：**Root Cause + Why It Escaped + Guardrails**。
-> 模板见 `templates/postmortem.md`（位于 `docs/changes/templates/`）。
+> 模板见 `templates/postmortem.md`（本目录 `docs/postmortem/templates/`）。
