@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识库与研发文档初始化"
+  short_description: "根据真实项目结构初始化知识库、研发文档与应用索引"
+  default_prompt: "使用 $knowledge-docs-initializer，根据当前工作区可验证事实初始化知识库与研发文档。"

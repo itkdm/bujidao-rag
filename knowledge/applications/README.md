@@ -6,8 +6,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 tags:
 - navigation
@@ -21,6 +21,8 @@ anchors:
 ## 目录定位
 
 `knowledge/applications/` 按应用或模块组织知识，是「应用层」知识的统一容器。每个子目录对应一个已注册的应用（appCode），承载该应用范围内的知识。
+
+模板仓库中的应用目录只用于展示组织方式。初始化到目标项目时，必须根据真实构建、运行或部署边界重建应用清单；不得把示例应用、版本或模块选择当作默认值。
 
 ## 应包含的内容
 

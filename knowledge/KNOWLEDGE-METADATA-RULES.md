@@ -5,8 +5,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 tags:
 - knowledge-base
@@ -264,7 +264,7 @@ appCode: ruoyi-vue-pro
 ```text
 ruoyi-vue-pro
 yudao-ui-admin-vue3
-order-service
+api-service
 ```
 
 ### 注册要求
@@ -552,7 +552,7 @@ verifiedAt <= updatedAt
 - 宽泛检索
 - 分类
 - 统计
-- RAG 召回
+- 全文检索
 
 ### 规则
 
@@ -834,7 +834,7 @@ evidence:
 
 ```yaml
 evidence:
-- "OrderService.java"
+- "path/to/source.file"
 ```
 
 ### evidence.type
@@ -978,7 +978,7 @@ evidence.ref
 
 > **本节是 Agent / 初始化脚本维护项目级可扩展值的固定区域。**
 >
-> 初始化或同步项目时，只修改本节对应注册项。
+> 初始化或同步项目时，注册集合只在本节维护；各受管理文件的 `owner`、`maintainers` 等 Front Matter 仍须随目标注册表同步更新。
 >
 > 不得为了适配项目而修改前文定义的系统封闭枚举。
 

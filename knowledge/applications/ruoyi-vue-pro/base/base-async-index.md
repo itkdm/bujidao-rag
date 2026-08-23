@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -42,7 +42,7 @@ anchors:
 - 适用场景：定位 MQ 消息、生产者、消费者、Quartz Job、异步 starter 时
 - 关键入口：`yudao-module-system/src/main/java/.../mq/`、`job/`
 - 关键事实：system 模块已有邮件/短信 MQ 链路；Job 实现 `JobHandler`；Redis MQ 和 Quartz starter 位于 `yudao-framework`
-- 关联知识：[tech-async-job-mq.md](../../tech/tech-async-job-mq.md)
+- 关联知识：[tech-async-job-mq.md](../tech/tech-async-job-mq.md)
 - 使用前必须核对：当前功能是否启用、消息模式、Job 配置、是否需要幂等和重试
 
 ## 证据来源
@@ -113,7 +113,7 @@ MQ 或 Job 入口变化会影响异步处理、后台任务、消息可靠性、
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友订单/库存是否使用 MQ | 待确认 | 影响消息索引扩展 |
+| 目标项目是否启用或扩展 MQ | 待初始化 | 影响消息入口和运维边界 |
 | 本地开发是否默认运行 Job | 待确认 | 影响调试和数据安全 |
 
 ## 变更历史
@@ -121,3 +121,4 @@ MQ 或 Job 入口变化会影响异步处理、后台任务、消息可靠性、
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

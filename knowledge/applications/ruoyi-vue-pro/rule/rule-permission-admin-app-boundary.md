@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -40,7 +40,7 @@ anchors:
 
 - 适用场景：新增 Controller、判断接口是否加 `@PreAuthorize`、判断是否能关闭数据权限、区分后台和用户端接口时
 - 关键规则：admin/app 接口分开；管理后台接口通常需要功能权限；数据权限默认开启，关闭必须有明确理由
-- 关联知识：[base-api-index.md](../base/base-api-index.md)、[base-permission-index.md](../base/base-permission-index.md)、[tech-security-permission.md](../../tech/tech-security-permission.md)
+- 关联知识：[base-api-index.md](../base/base-api-index.md)、[base-permission-index.md](../base/base-permission-index.md)、[tech-security-permission.md](../tech/tech-security-permission.md)
 - 使用前必须核对：接口端类型、权限编码、数据权限影响范围、是否存在已确认业务例外
 
 ## 证据来源
@@ -59,7 +59,7 @@ anchors:
 
 ## 不适用范围
 
-本文不定义夸友最终角色矩阵，不决定校园站长、楼栋主理人、学生等业务身份的完整权限。
+本文不定义目标项目最终角色矩阵，也不决定任何具体角色的完整权限。
 
 ## 规则正文
 
@@ -76,12 +76,12 @@ anchors:
 
 - 无需登录或公共下拉数据接口，可以不加后台权限，但必须能解释使用场景。
 - 系统自身信息、公共配置、避免查询自身数据被过滤等场景，可以关闭数据权限，但必须有注释或文档依据。
-- 后续夸友若设计独立学生端权限体系，应新增规则文档，不能沿用本规则推断。
+- 目标项目若设计独立 App 端权限体系，应新增规则文档，不能沿用本规则推断。
 
 ## 违反规则的风险
 
 - 后台接口无权限保护，可能导致越权操作。
-- app 接口误套后台菜单权限，可能导致学生端不可用或权限模型混乱。
+- App 接口误套后台菜单权限，可能导致客户端不可用或权限模型混乱。
 - 随意关闭数据权限，可能导致跨组织、跨学校、跨角色数据泄露。
 - 权限编码和菜单不一致，会导致接口 403 或按钮权限失效。
 
@@ -97,12 +97,13 @@ anchors:
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友是否沿用上游 RBAC | 待确认 | 影响后台菜单和权限编码 |
-| 学生端是否建立独立权限体系 | 待确认 | 影响 app 接口鉴权方式 |
-| 校园站长/楼栋主理人数据范围如何实现 | 待确认 | 影响数据权限规则 |
+| 目标项目是否沿用上游 RBAC | 待初始化 | 影响后台菜单和权限编码 |
+| App 端是否建立独立权限体系 | 待初始化 | 影响 app 接口鉴权方式 |
+| 目标项目如何定义数据范围 | 待初始化 | 影响数据权限规则 |
 
 ## 变更历史
 
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

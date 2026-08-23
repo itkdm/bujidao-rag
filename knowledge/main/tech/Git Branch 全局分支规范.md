@@ -6,8 +6,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 confidence: high
 stability: stable
@@ -94,7 +94,7 @@ branch1
 
 ```text
 feat/user-login
-fix/order-validation
+fix/request-validation
 refactor/cache-service
 docs/api-guide
 ```
@@ -286,7 +286,7 @@ feat/user-registration
 feat/document-upload
 
 fix/token-expiration
-fix/order-validation
+fix/request-validation
 
 refactor/search-service
 refactor/cache-layer

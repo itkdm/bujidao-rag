@@ -9,8 +9,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 tags:
 - infrastructure
@@ -38,8 +38,8 @@ Feature 不区分"业务功能"还是"系统功能"。只要是当前应用真�
 本目录适合记录：
 
 - 当前已经确认存在的功能能力
-- 业务功能，例如订单、商品、知识库等能力
-- 系统级功能，例如登录、认证、权限管理、文件上传、消息通知等能力
+- 面向用户或其他系统提供、并且能够被观察和验证的功能能力
+- 系统级功能，例如登录、认证、权限管理、文件处理、消息通知等能力
 - 功能的主要使用或运行流程
 - 功能之间的关系
 - 功能入口和功能边界

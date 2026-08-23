@@ -1,4 +1,4 @@
-﻿---
+---
 id: KB-APP-YUDAO-UI-ADMIN-VUE3
 type: application
 scope: app
@@ -7,9 +7,9 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 3
-updatedAt: 2026-08-18
-verifiedAt: 2026-08-09
+version: 4
+updatedAt: 2026-08-23
+verifiedAt: 2026-08-23
 confidence: high
 stability: evolving
 evidence:
@@ -17,12 +17,10 @@ evidence:
   ref: yudao-ui-admin-vue3/
 - type: code
   ref: yudao-ui-admin-vue3/package.json
+- type: code
+  ref: yudao-ui-admin-vue3/src/
 - type: doc
-  ref: docs/06-tech/01-技术底座与仓库结构.md
-- type: doc
-  ref: docs/06-tech/02-上游源码版本记录.md
-- type: human
-  ref: 布吉岛确认当前尚未进行业务改造，2026-08-09
+  ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/30.前端手册 Vue 3.x/01.开发规范.md
 tags:
 - admin
 - vue3
@@ -32,116 +30,88 @@ anchors:
 - APP:YUDAO-UI-ADMIN-VUE3
 ---
 
-# yudao-ui-admin-vue3
+# yudao-ui-admin-vue3 管理后台基线示例
 
 ## AI 使用摘要
 
-- 适用场景：需要了解夸友当前选定的 PC 管理后台前端基线、来源版本、技术栈和后续改造边界时
-- 关键入口：`yudao-ui-admin-vue3/package.json`
-- 关键规则：当前 `yudao-ui-admin-vue3/` 仍是上游开源项目本体，尚未完成夸友业务改造；不得把上游页面和菜单直接视为夸友已确认后台能力
+- 适用场景：了解本模板仓库选取的芋道 Vue3 管理后台形态、版本、技术栈和代码入口时
+- 关键入口：`yudao-ui-admin-vue3/package.json`、`src/api/`、`src/views/`、`src/router/`
+- 关键规则：上游页面、菜单和接口封装只表示示例基线，不等于目标项目已经采用的功能范围
 - 关联知识：[INDEX.md](./INDEX.md)
-- 使用前必须核对：路由、API 封装、权限菜单、环境配置、夸友业务改造 commit 是否有新增变化
+- 初始化要求：根据目标工作区实际选择的前端版本和代码重新生成应用知识，不得默认使用本示例
 
 ## 证据来源
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `yudao-ui-admin-vue3/package.json` | 确认项目名称、版本、Vue3、Element Plus、Vite 等依赖 |
-| doc | `docs/06-tech/02-上游源码版本记录.md` | 记录上游基线分支与接入 commit |
-| human | 布吉岛确认，2026-08-09 | 当前尚未对 `yudao-ui-admin-vue3` 进行夸友业务改造 |
+| code | `yudao-ui-admin-vue3/package.json` | 工程名称、版本和依赖 |
+| code | `yudao-ui-admin-vue3/src/` | API、页面、路由、状态管理和组件入口 |
+| doc | `knowledge/reference/.../30.前端手册 Vue 3.x/01.开发规范.md` | 芋道 Vue3 官方开发说明 |
 
 ## 概述
 
-`yudao-ui-admin-vue3/` 是夸友主仓库中引入的 PC 管理后台前端基线，来源于上游 `yudaocode/yudao-ui-admin-vue3` 的 `master` 分支。
+`yudao-ui-admin-vue3/` 是本模板仓库采用的芋道 Vue3 + Element Plus 管理后台示例。它用于展示前端应用知识目录如何组织，不定义任何目标项目的行业、业务功能、菜单范围或用户角色。
 
-在当前阶段，它不是已经完成定制的“夸友 PC 管理后台”，而是后续改造后台运营界面的前端底座。本文档只记录当前开源基线的事实、可参考能力和改造边界。
-
----
+芋道系列还可能采用 Vben、Vue2、Admin Uniapp 等其他前端形态；非芋道项目也可能使用完全不同的框架。初始化时必须以目标工作区真实依赖、入口和调用关系为准。
 
 ## 基本信息
 
-| 属性 | 值 |
+| 属性 | 当前示例值 |
 | --- | --- |
 | 应用编码 | `yudao-ui-admin-vue3` |
-| 当前名称 | PC 管理后台开源基线 |
-| 目标角色 | 夸友 PC 管理后台 |
-| 来源仓库 | `https://github.com/yudaocode/yudao-ui-admin-vue3` |
-| 基线分支 | `master` |
-| 接入 commit | `d4b521a169ff430824ec92235dc4a0fec378f253` |
-| 定制状态 | 未改造 |
-| 所属团队 | 夸友 |
-| 负责人 | 布吉岛（bujidao） |
-| 技术栈 | Vue3 / Element Plus / Vite / TypeScript / pnpm |
+| 工程版本 | `2026.07-snapshot` |
+| 应用形态 | PC 管理后台 |
+| 包管理器 | pnpm |
+| 技术栈 | Vue 3.5.34 / Element Plus 2.13.7 / Vite 8.1.4 / TypeScript 6.0.3 |
 
----
+## 当前代码边界
 
-## 系统职责
+- `src/api/`：后端接口封装
+- `src/views/`：页面视图
+- `src/router/`：前端路由
+- `src/store/`：状态管理
+- `src/components/`：公共组件
+- `src/config/`：前端配置
 
-### 当前事实
-
-当前目录保留了上游 PC 管理后台的开源工程结构，尚未记录夸友业务改造。上游已有页面、菜单、权限、接口封装只能作为改造参考，不能直接视为夸友后台的最终功能范围。
-
-### 目标职责
-
-后续可能改造为夸友平台运营和管理员使用的后台管理界面，调用后端 API 完成业务配置、审核、查询和管理。
-
-### 当前不应假设的内容
-
-- 不应假设商品、订单、库存、帖子审核、用户管理等页面已经符合夸友产品规划
-- 不应假设权限菜单、路由和接口路径已经完成夸友业务适配
-- 不应假设当前后台已经可以直接对接后端完成夸友业务闭环
-- 不负责后端业务规则实现，不负责学生端小程序交互，不直接持久化业务数据
-
----
+这些目录仅表示当前示例工程结构。目标项目的页面、路由、权限和 API 必须重新核对。
 
 ## 系统边界
 
-### 当前边界
+### 当前示例边界
 
 ```text
-[上游 yudao-ui-admin-vue3 开源工程]
-            |
-            v
-[夸友主仓库中的 yudao-ui-admin-vue3/ 前端基线]
-            |
-            v
-[待进行夸友业务改造]
+[浏览器用户]
+      |
+      v
+[yudao-ui-admin-vue3]
+      |
+      v
+[ruoyi-vue-pro HTTP API]
 ```
 
-### 目标边界
+### 初始化后的边界
 
-```text
-[平台运营/管理员] --> [yudao-ui-admin-vue3 夸友管理后台] --> [ruoyi-vue-pro 夸友后端]
-```
+目标项目初始化时，应重新确认：
 
-### 上游来源
+- 实际采用的管理后台或客户端版本
+- 路由与菜单来源
+- API 基础地址和请求封装
+- 登录态、权限和状态管理方式
+- 与后端应用的真实调用关系
 
-| 系统 | 依赖内容 | 方式 |
-| --- | --- | --- |
-| `yudaocode/yudao-ui-admin-vue3` | PC 管理后台前端基线 | 源码接入 |
+## 待初始化项
 
-### 后续目标依赖
-
-| 系统 | 目标依赖内容 | 调用方式 |
-| --- | --- | --- |
-| `ruoyi-vue-pro` | 管理后台 API | HTTP |
-
----
-
-## 核心模块
-
-| 模块 | 职责 | 核心类 | 文档 |
-| --- | --- | --- | --- |
-| `src/` | 上游管理后台源码 | 待补充 | - |
-| `src/api/` | 上游 API 请求封装 | 待补充 | - |
-| `src/views/` | 上游页面视图 | 待补充 | - |
-| `package.json` | 项目配置与依赖 | - | - |
-
----
+| 项目 | 为什么不能从模板继承 |
+| --- | --- |
+| 前端版本与框架 | 芋道及其他生态存在多种实现 |
+| 页面和菜单集合 | 只能以目标项目当前代码为准 |
+| API 与鉴权 | 取决于目标后端和部署方式 |
+| 构建与环境配置 | 取决于目标项目脚本和环境文件 |
 
 ## 变更历史
 
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
-| 2 | 2026-08-09 | 改为 PC 管理后台开源基线定位，并按 application 模板原始规则校准知识 ID | 布吉岛 |
+| 2 | 2026-08-09 | 校准应用基线定位和知识 ID | 布吉岛 |
+| 4 | 2026-08-23 | 移除具体业务定位，改为芋道 Vue3 管理后台通用示例 | Codex |

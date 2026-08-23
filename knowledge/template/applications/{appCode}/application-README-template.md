@@ -1,0 +1,45 @@
+---
+id: KB-INFRA-APP-{APP-CODE-UPPER}-README
+scope: app
+appCode: {appCode}
+status: OFFICIAL
+owner: {owner}
+maintainers:
+- {maintainer}
+version: 1
+updatedAt: {YYYY-MM-DD}
+verifiedAt: {YYYY-MM-DD}
+tags:
+- navigation
+- application
+anchors:
+- APP:{APP-CODE-UPPER}
+- GLOBAL:APPLICATION-README
+---
+
+# {appCode}/
+
+## 目录定位
+
+`applications/{appCode}/` 是 `{appCode}` 的应用层知识目录，集中存放该应用范围内的知识，与 `main/` 的跨应用通用知识相互区分。
+
+## 应包含的内容
+
+- 应用总览：根目录的 `{appCode}.md`，描述该应用当前是什么。
+- 基础事实：`base/` 存放稳定、可定位的事实与配置索引。
+- 功能能力：`feature/` 存放已确认的功能能力与主要运行流程。
+- 规则约束：`rule/` 存放该应用必须满足的规则和行为边界。
+- 技术知识：`tech/` 存放该应用实际采用的技术机制与实现约束。
+
+## 不应包含的内容
+
+- 跨应用统一知识：应放入 `main/`。
+- 未确认推断：应放入 `candidate/`。
+- 个人经验与碎片素材：应放入 `personal/`。
+- 应用实际版本、模块和目标：属于 `{appCode}.md`，不写进本目录 README。
+
+## 维护规则
+
+- 本目录只描述应用知识如何组织与维护，不承载动态文件清单。
+- 新增、修改或删除内容时，遵守各子目录 README 的职责边界。
+- 所有受管理知识文件必须遵守 `KNOWLEDGE-METADATA-RULES.md`。

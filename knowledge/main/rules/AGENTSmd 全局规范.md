@@ -6,14 +6,14 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 confidence: high
 stability: stable
 evidence:
 - type: doc
-  ref: knowledge/main/rules/AGENTS.md 全局规范.md
+  ref: knowledge/main/rules/AGENTSmd 全局规范.md
 tags:
 - agents
 - convention

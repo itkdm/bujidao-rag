@@ -7,8 +7,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 tags:
 - infrastructure
@@ -39,7 +39,7 @@ anchors:
 3. `INDEX.md` 自身不得列入内容索引。
 4. 排序固定：先 `README.md`，再按名称字典序升序列出**直接子目录**，最后按名称字典序升序列出**其他直接子文件**。
 5. 子目录项统一链接到其 `INDEX.md`：`[xxx/](./xxx/INDEX.md)`，前提是该目录属于 Knowledge 受管理目录且存在 INDEX。
-6. `说明` 字段只写**用途 / 职责**（purpose），不写动态内容摘要（content summary）。例如「记录应用当前已确认的功能能力与主要业务流程」，而不是「当前包含登录、用户、支付等功能」。
+6. `说明` 字段只写**用途 / 职责**（purpose），不写动态内容摘要（content summary）。例如「记录应用当前已确认的功能能力与主要运行流程」，而不是「当前包含能力 A、能力 B 等内容」。
 
 ## 补充说明
 

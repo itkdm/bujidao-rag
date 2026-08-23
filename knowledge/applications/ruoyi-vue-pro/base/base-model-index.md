@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -41,7 +41,7 @@ anchors:
 - 适用场景：查找 DO、ReqVO、RespVO、DTO、Enum、ErrorCode 的位置和命名时
 - 关键入口：`controller/**/vo`、`dal/dataobject`、`api/**/dto`、`enums`
 - 关键事实：Controller 不直接暴露 DO；DO 在 `dal.dataobject`；错误码集中在模块 `enums/ErrorCodeConstants.java`
-- 关联知识：[tech-framework-web-api.md](../../tech/tech-framework-web-api.md)、[tech-data-mybatis-cache.md](../../tech/tech-data-mybatis-cache.md)
+- 关联知识：[tech-framework-web-api.md](../tech/tech-framework-web-api.md)、[tech-data-mybatis-cache.md](../tech/tech-data-mybatis-cache.md)
 - 使用前必须核对：模型属于接口层、数据层、跨模块 API，还是枚举/错误码
 
 ## 证据来源
@@ -109,7 +109,7 @@ anchors:
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友业务模块是否使用独立模型包 | 待确认 | 影响模型索引扩展 |
+| 目标项目新增模块是否使用独立模型包 | 待初始化 | 影响模型索引扩展 |
 | app 端和 admin 端 VO 是否严格隔离 | 待确认 | 影响接口安全边界 |
 
 ## 变更历史
@@ -117,3 +117,4 @@ anchors:
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

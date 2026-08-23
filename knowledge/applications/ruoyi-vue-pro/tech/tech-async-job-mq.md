@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
   - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -46,7 +46,7 @@ anchors:
 
 ## AI 使用摘要
 
-- 适用场景：新增后台异步处理、定时任务、短信/通知/库存等消息消费链路时
+- 适用场景：新增后台异步处理、定时任务或消息消费链路时
 - 关键入口：`@Async`、`JobHandler`、`RedisMQTemplate`、`AbstractRedisStreamMessageListener`
 - 关键规则：短时非关键异步可用 Spring Async；可管理定时任务用 Quartz `JobHandler`；可靠可堆积消息优先评估 Redis Stream，但失败重试和幂等需单独设计
 - 关联知识：[tech-error-exception-log.md](./tech-error-exception-log.md)、[tech-data-mybatis-cache.md](./tech-data-mybatis-cache.md)
@@ -163,7 +163,7 @@ public class ExampleJob implements JobHandler {
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友订单/库存异步链路使用 Redis Stream 还是外部 MQ | 待确认 | 影响可靠性、重试和运维成本 |
+| 目标项目使用 Redis Stream 还是外部 MQ | 待初始化 | 影响可靠性、重试和运维成本 |
 | 是否需要统一消息幂等表 | 待确认 | 影响消费一致性 |
 | 本地开发是否默认关闭业务 Job | 待确认 | 影响调试和数据安全 |
 
@@ -172,3 +172,4 @@ public class ExampleJob implements JobHandler {
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

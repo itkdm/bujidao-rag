@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -40,7 +40,7 @@ anchors:
 - 适用场景：定位后端 profile、端口、数据源、Redis、Quartz、MQ、base-package 配置时
 - 关键入口：`yudao-server/src/main/resources/application*.yaml`
 - 关键事实：本地/开发端口配置在 profile 文件；`yudao.info.base-package` 影响扫描范围；配置文件可能包含示例密钥但知识库不记录真实值
-- 关联知识：[tech-build-env-local.md](../../tech/tech-build-env-local.md)
+- 关联知识：[tech-build-env-local.md](../tech/tech-build-env-local.md)
 - 使用前必须核对：当前运行 profile、敏感配置是否外部化、目标中间件是否实际启用
 
 ## 证据来源
@@ -106,7 +106,7 @@ anchors:
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友本地 profile 是否固定使用 `local` | 待确认 | 影响启动和排障文档 |
+| 目标项目本地 profile 是否使用 `local` | 待初始化 | 影响启动和排障文档 |
 | 敏感配置是否迁移到外部环境变量 | 待确认 | 影响配置安全 |
 
 ## 变更历史
@@ -114,3 +114,4 @@ anchors:
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

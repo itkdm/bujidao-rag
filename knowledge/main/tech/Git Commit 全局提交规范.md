@@ -6,8 +6,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 confidence: high
 stability: stable
@@ -73,7 +73,7 @@ anchors:
 示例：
 
 ```text
-feat(rag): add document reranking support
+feat(api): add request validation support
 ```
 
 ```text
@@ -127,7 +127,7 @@ chore: remove obsolete configuration
 ```text
 feat(auth): add OAuth login support
 fix(user): validate user status before login
-refactor(storage): simplify file upload flow
+refactor(core): simplify configuration loading
 ```
 
 Scope 应：
@@ -168,7 +168,7 @@ docs: update development guide
 推荐：
 
 ```text
-feat(rag): add hybrid search support
+feat(auth): add session renewal support
 fix(auth): prevent expired token refresh
 refactor(user): simplify permission validation
 ```
@@ -229,12 +229,12 @@ fix(auth): reject expired refresh tokens
 复杂修改可以增加 Body：
 
 ```text
-refactor(rag): separate retrieval from generation
+refactor(web): separate validation from request handling
 
-Move retrieval logic into a dedicated service to reduce coupling
-between document retrieval and response generation.
+Move request validation into a dedicated component to reduce coupling
+between payload parsing and handler execution.
 
-This also allows retrieval to be tested independently.
+This also allows validation to be tested independently.
 ```
 
 Body 主要用于说明：
@@ -363,7 +363,7 @@ feat(user): add password reset support
 例如：
 
 ```text
-feat(rag): add document reranking
+feat(api): add request validation
 ```
 
 应只包含完成该逻辑修改所必要的内容。

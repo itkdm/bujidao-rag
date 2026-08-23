@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -40,7 +40,7 @@ anchors:
 - 适用场景：定位权限 Controller、权限 API、`@PreAuthorize`、`@DataPermission`、角色/菜单/部门相关入口时
 - 关键入口：`controller/admin/permission/`、`SecurityFrameworkServiceImpl`、`DataPermission`
 - 关键事实：管理后台接口通过 `@PreAuthorize` 绑定权限编码；数据权限默认开启；权限相关业务入口集中在 system 模块
-- 关联知识：[tech-security-permission.md](../../tech/tech-security-permission.md)
+- 关联知识：[tech-security-permission.md](../tech/tech-security-permission.md)
 - 使用前必须核对：目标接口是否 admin 端、权限编码是否存在、数据权限是否影响查询
 
 ## 证据来源
@@ -59,7 +59,7 @@ anchors:
 
 ## 不收录范围
 
-本文不定义夸友业务角色和权限矩阵；角色规则应进入 `rule/` 或正式产品文档。
+本文不定义目标项目的角色和权限矩阵；相关规则应进入 `rule/` 或对应 Change。
 
 ## 事实索引
 
@@ -106,11 +106,12 @@ anchors:
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友是否沿用上游 RBAC | 待确认 | 影响权限表和接口注解 |
-| 校园站长/楼栋主理人如何映射数据权限 | 待确认 | 影响数据范围规则 |
+| 目标项目是否沿用上游 RBAC | 待初始化 | 影响权限表和接口注解 |
+| 目标项目如何定义数据权限范围 | 待初始化 | 影响数据范围规则 |
 
 ## 变更历史
 
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

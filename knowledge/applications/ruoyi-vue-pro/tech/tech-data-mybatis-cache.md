@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -142,12 +142,13 @@ default PageResult<DictTypeDO> selectPage(DictTypePageReqVO reqVO) {
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友业务表命名前缀 | 待确认 | 影响 DO、Mapper 和 SQL 规范 |
+| 目标项目表命名前缀 | 待初始化 | 影响 DO、Mapper 和 SQL 规范 |
 | 是否保留上游逻辑删除和租户字段 | 待确认 | 影响所有业务表结构 |
-| 缓存一致性策略 | 待确认 | 影响订单、库存、权限等高频数据 |
+| 缓存一致性策略 | 待初始化 | 影响需要缓存的数据和失效机制 |
 
 ## 变更历史
 
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

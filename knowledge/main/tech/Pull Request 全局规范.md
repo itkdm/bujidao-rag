@@ -6,8 +6,8 @@ status: OFFICIAL
 owner: backend-platform
 maintainers:
 - bujidao
-version: 1
-updatedAt: 2026-08-18
+version: 2
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-18
 confidence: high
 stability: stable
@@ -55,7 +55,7 @@ anchors:
 ```text
 Add password reset support
 Fix expired refresh token handling
-Refactor document retrieval pipeline
+Refactor request validation pipeline
 ```
 
 避免一个 PR 同时包含：
@@ -87,7 +87,7 @@ PR 标题应准确概括本次修改。
 ```text
 feat(auth): add password reset support
 fix(api): reject invalid request parameters
-refactor(search): simplify retrieval pipeline
+refactor(api): simplify validation pipeline
 docs: update deployment guide
 ```
 
@@ -490,7 +490,7 @@ PR 应尽可能做到：
 ```text
 feat(auth): add password reset support
 fix(api): reject invalid request parameters
-refactor(search): simplify retrieval pipeline
+refactor(api): simplify validation pipeline
 docs: update deployment guide
 ```
 

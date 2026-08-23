@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -39,7 +39,7 @@ anchors:
 
 - 适用场景：新增 Controller、调整接口返回、编写 ReqVO/RespVO、处理参数校验时
 - 关键入口：`DictTypeController`、`CommonResult`、`GlobalExceptionHandler`
-- 关键规则：Controller 显式返回 `CommonResult<T>`；入参使用 VO + `@Valid`；管理后台接口使用 `controller.admin`，学生端接口使用 `controller.app`
+- 关键规则：Controller 显式返回 `CommonResult<T>`；入参使用 VO + `@Valid`；管理后台接口使用 `controller.admin`，App 端接口使用 `controller.app`
 - 关联知识：[tech-error-exception-log.md](./tech-error-exception-log.md)、[tech-security-permission.md](./tech-security-permission.md)
 - 使用前必须核对：接口端类型、权限要求、返回 VO、校验注解、是否需要导出或特殊非 JSON 响应
 
@@ -55,7 +55,7 @@ anchors:
 
 ## 适用范围
 
-适用于 `ruoyi-vue-pro` 后端 HTTP API，包括管理后台 API、学生端/小程序 API、导出接口和普通查询接口。
+适用于 `ruoyi-vue-pro` 后端 HTTP API，包括管理后台 API、App 端 API、导出接口和普通查询接口。
 
 ## 不适用范围
 
@@ -148,11 +148,12 @@ VO 使用建议：
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友学生端 API 前缀是否沿用 `app-api` | 待确认 | 影响小程序端接口设计 |
-| 夸友是否需要统一扩展响应字段 | 待确认 | 影响 `CommonResult` 是否保持上游结构 |
+| 目标项目 App 端 API 前缀是否沿用 `app-api` | 待初始化 | 影响客户端接口设计 |
+| 目标项目是否需要统一扩展响应字段 | 待初始化 | 影响 `CommonResult` 是否保持上游结构 |
 
 ## 变更历史
 
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

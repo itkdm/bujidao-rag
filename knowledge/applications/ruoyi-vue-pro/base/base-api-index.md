@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -40,7 +40,7 @@ anchors:
 - 适用场景：查找 Controller、接口前缀、模块间 API、接口文档入口时
 - 关键入口：`yudao-module-system/src/main/java/.../controller/`
 - 关键事实：当前 system 模块同时存在 `controller.admin` 和 `controller.app`；模块间 API 位于 `api/`；Controller 通常返回 `CommonResult`
-- 关联知识：[tech-framework-web-api.md](../../tech/tech-framework-web-api.md)、[base-permission-index.md](./base-permission-index.md)
+- 关联知识：[tech-framework-web-api.md](../tech/tech-framework-web-api.md)、[base-permission-index.md](./base-permission-index.md)
 - 使用前必须核对：接口端类型、Controller 路径、权限注解、OpenAPI 注解
 
 ## 证据来源
@@ -76,7 +76,7 @@ anchors:
 ## 命名与定位规则
 
 - 管理后台接口类通常位于 `controller.admin.{biz}`。
-- app/学生端接口类通常位于 `controller.app.{biz}`，类名常带 `App` 前缀。
+- App 端接口类通常位于 `controller.app.{module}`，类名常带 `App` 前缀。
 - Controller 入参/出参 VO 通常放在同级 `vo` 包下。
 - 模块间调用接口位于 `api/{biz}`，实现类通常命名为 `{Name}ApiImpl`。
 
@@ -105,11 +105,12 @@ Controller 路径、API 前缀、VO 名称变化会影响前端调用、小程�
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友学生端 API 前缀是否沿用上游 app 体系 | 待确认 | 影响小程序接口规划 |
-| 是否新增独立夸友业务 Controller 包 | 待确认 | 影响后续 API 索引细分 |
+| 目标项目的 App API 前缀是否沿用上游体系 | 待初始化 | 影响客户端接口规划 |
+| 目标项目是否新增独立模块 Controller 包 | 待初始化 | 影响后续 API 索引细分 |
 
 ## 变更历史
 
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

@@ -7,8 +7,8 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
@@ -40,7 +40,7 @@ anchors:
 - 适用场景：定位 SQL 脚本、数据库表映射、Mapper、Quartz 表、数据库文档入口时
 - 关键入口：`ruoyi-vue-pro/sql/`、`dal/dataobject`、`dal/mysql`
 - 关键事实：多数据库 SQL 分目录存放；MySQL 主脚本为 `sql/mysql/ruoyi-vue-pro.sql`；Quartz 表脚本为各数据库目录下 `quartz.sql`
-- 关联知识：[tech-data-mybatis-cache.md](../../tech/tech-data-mybatis-cache.md)
+- 关联知识：[tech-data-mybatis-cache.md](../tech/tech-data-mybatis-cache.md)
 - 使用前必须核对：目标数据库类型、模块是否启用、SQL 是否与当前代码版本一致
 
 ## 证据来源
@@ -109,8 +109,8 @@ SQL 脚本、DO、Mapper 或表结构变化会影响本地启动、代码生成�
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友采用的目标数据库 | 待确认 | 影响 SQL 维护主线 |
-| 夸友业务表命名前缀 | 待确认 | 影响后续表结构规范 |
+| 目标项目采用的数据库 | 待初始化 | 影响 SQL 维护主线 |
+| 目标项目的表命名前缀 | 待初始化 | 影响后续表结构规范 |
 | 是否保留上游多租户字段 | 待确认 | 影响所有业务表 |
 
 ## 变更历史
@@ -118,3 +118,4 @@ SQL 脚本、DO、Mapper 或表结构变化会影响本地启动、代码生成�
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合并校准为通用芋道示例 | Codex |

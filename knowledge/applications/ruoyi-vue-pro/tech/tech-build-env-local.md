@@ -7,14 +7,16 @@ status: DRAFT
 owner: bujidao
 maintainers:
 - bujidao
-version: 2
-updatedAt: 2026-08-18
+version: 3
+updatedAt: 2026-08-23
 verifiedAt: 2026-08-09
 confidence: high
 stability: evolving
 evidence:
 - type: code
   ref: ruoyi-vue-pro/pom.xml
+- type: code
+  ref: ruoyi-vue-pro/yudao-server/pom.xml
 - type: code
   ref: ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml
 - type: code
@@ -25,8 +27,6 @@ evidence:
   ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md
 - type: doc
   ref: knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md
-- type: doc
-  ref: docs/06-tech/02-上游源码版本记录.md
 tags:
 - backend
 - build
@@ -44,7 +44,7 @@ anchors:
 
 - 适用场景：启动后端、调整 Maven 模块、修改 profile、排查本地构建失败时
 - 关键入口：根 `pom.xml`、`application.yaml`、`application-local.yaml`、`application-dev.yaml`
-- 关键规则：当前基线是 `master-jdk17`；Java 版本为 17；当前启用模块以根 `pom.xml` 为准
+- 关键规则：当前基线是 `master-jdk17`；Java 版本为 17；模块构建范围看根 `pom.xml`，运行装配还要看 `yudao-server/pom.xml` 和配置
 - 关联知识：[tech-architecture-module-boundary.md](./tech-architecture-module-boundary.md)
 - 使用前必须核对：本地数据库、Redis、Quartz、MQ、敏感配置、启用模块状态
 
@@ -52,13 +52,13 @@ anchors:
 
 | 类型 | 来源 | 说明 |
 | --- | --- | --- |
-| code | `ruoyi-vue-pro/pom.xml` | Java 17、Spring Boot 3.5.15、启用模块 |
+| code | `ruoyi-vue-pro/pom.xml` | Java 17、Spring Boot 3.5.15、聚合模块 |
+| code | `yudao-server/pom.xml` | 启动模块实际依赖 |
 | code | `application.yaml` | 全局配置、base-package、MyBatis、WebSocket 等 |
 | code | `application-local.yaml` | 本地环境端口、数据源、Redis、Quartz、MQ |
 | code | `application-dev.yaml` | 开发环境配置 |
 | doc | `05.快速启动【后端】.md` | 官方后端快速启动说明 |
 | doc | `08.技术选型.md` | 官方技术栈说明 |
-| doc | `docs/06-tech/02-上游源码版本记录.md` | 夸友接入基线分支与 commit |
 
 ## 适用范围
 
@@ -71,7 +71,6 @@ anchors:
 ## 核心结论
 
 - 后端来源基线：`YunaiV/ruoyi-vue-pro` 的 `master-jdk17` 分支。
-- 当前接入 commit：`ec3f7cbf73e88514a70a6b59d365092ee470603d`。
 - 根 `pom.xml` 配置 Java 17、Spring Boot 3.5.15。
 - 本地默认端口在 `application-local.yaml` / `application-dev.yaml` 中为 `48080`。
 - `application.yaml` 中 `yudao.info.base-package` 当前为 `cn.iocoder.yudao`，影响启动类扫描和 MyBatis type aliases。
@@ -79,9 +78,9 @@ anchors:
 
 ## 背景与约束
 
-当前夸友后端尚未改造，仍是上游开源基线。构建和启动问题应先按上游基线排查，再判断是否是夸友改造引入。
+本文件描述当前模板仓库中的上游开源基线。初始化到目标项目后，构建和启动问题必须以目标项目实际分支、模块和配置为准。
 
-根 `pom.xml` 当前只启用少量核心模块，很多业务模块目录存在但未参与构建。启动失败时，不要先去修未启用模块。
+根 `pom.xml` 当前只聚合少量核心模块，`yudao-server` 装配 `system` 与 `infra`。很多可选模块目录存在但未参与当前聚合或启动装配；启动失败时先确认真实构建与运行边界。
 
 ## 标准做法
 
@@ -90,7 +89,7 @@ anchors:
 | 项 | 检查点 |
 | --- | --- |
 | JDK | 使用 Java 17 |
-| Maven 模块 | 根 `pom.xml` 的 `<module>` |
+| Maven 模块 | 根 `pom.xml` 的 `<module>` 与 `yudao-server/pom.xml` 的依赖 |
 | 启动类 | `YudaoServerApplication` |
 | Profile | `application.yaml` 与 `application-local.yaml` / `application-dev.yaml` |
 | 数据库 | URL、账号、库名、初始化 SQL |
@@ -101,7 +100,7 @@ anchors:
 ## 禁止或谨慎做法
 
 - 禁止把真实敏感密钥写入知识库或 docs。
-- 禁止看到配置项就认为对应能力已完成夸友业务接入。
+- 禁止看到配置项就认为目标项目已经启用对应能力。
 - 禁止修改 `base-package` 后不同步包名、启动扫描和 MyBatis 配置。
 - 谨慎开启所有定时任务和 MQ 消费者，尤其在本地环境。
 - 谨慎升级 Spring Boot、JDK、MyBatis Plus 等核心版本，必须先评估上游兼容性。
@@ -115,7 +114,6 @@ anchors:
 | 全局配置 | `application.yaml` | base-package、MyBatis、通用配置 |
 | 本地配置 | `application-local.yaml` | 本地端口、中间件、数据源 |
 | 开发配置 | `application-dev.yaml` | dev 环境配置 |
-| 接入记录 | `docs/06-tech/02-上游源码版本记录.md` | 基线分支和 commit |
 
 ## 变更影响与检查清单
 
@@ -137,7 +135,7 @@ anchors:
 
 | 问题 | 当前状态 | 影响 |
 | --- | --- | --- |
-| 夸友本地开发 profile 标准 | 待确认 | 影响后续启动文档 |
+| 目标项目本地开发 profile 标准 | 待初始化 | 影响后续启动文档 |
 | 是否建立 `.env` 或外部密钥管理方式 | 待确认 | 影响敏感配置安全 |
 | 后端构建命令是否固定为根工程全量构建 | 待确认 | 影响开发效率和 CI |
 
@@ -146,3 +144,4 @@ anchors:
 | 版本 | 日期 | 变更内容 | 变更人 |
 | --- | --- | --- | --- |
 | 1 | 2026-08-09 | 初始版本 | 布吉岛 |
+| 3 | 2026-08-23 | 移除具体业务耦合，并校准构建、装配与版本证据 | Codex |
