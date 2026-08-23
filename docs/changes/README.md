@@ -89,28 +89,14 @@ proposed → rejected
 ```text
 docs/changes/
 ├── README.md
-├── proposed/      # 按类型再分；单文件或目录形态，实际产生 Change 时创建
+├── proposed/      # 按类型再分；每个 Change 一个独立目录，实际产生 Change 时创建
 ├── implemented/
 ├── rejected/
 ├── archived/
 └── templates/     # 模板，非实际 Change
 ```
 
-实际 Change 有两种形态，按复杂度自动升级：
-
-### 形态 A：轻量单文件（默认）
-
-简单变更直接用一个文件即可，不强制建目录：
-
-```text
-docs/changes/proposed/<type>/<date>-<slug>.md
-```
-
-例如 `proposed/bug-fix/2026-08-23-fix-xxx.md`。仅含 `change.md` 的内容（标题、概要、问题、方案、验收）。
-
-### 形态 B：目录 + 补充文档（需要时升级）
-
-当某个 Change 需要 Supplemental Documents（Spec / Research / Design / Plan）时，升级为目录：
+每个 Change 始终以独立目录存在，`change.md` 为唯一必选主文档；`Spec / Research / Design / Plan` 按需作为同目录下的附件加入。不存在「单文件 Change」形态，也不存在后续文件升级目录的迁移动作。
 
 ```text
 docs/changes/proposed/<type>/<date>-<slug>/
@@ -121,13 +107,11 @@ docs/changes/proposed/<type>/<date>-<slug>/
 └── plan.md            # 按需
 ```
 
-从形态 A 升级到 B 时，把原 `<date>-<slug>.md` 重命名为 `change.md` 并移入同名目录即可。
-
 - `<type>`：见第 4 节六种类型之一。
 - `<date>`：创建日期，格式 `YYYY-MM-DD`。
 - `<slug>`：短横线分隔的小写英文短语，描述变更主题，如 `add-cache-layer`。
 
-只有 `change.md`（或单文件形态下的 `<date>-<slug>.md`）是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。
+`change.md` 是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。路径从创建到归档始终保持 `.../<date>-<slug>/change.md` 不变，新增附件不改变已有引用。
 不需要为保留目录而批量制造 `.gitkeep`。
 
 ### 类型与状态的唯一事实源
@@ -192,7 +176,7 @@ proposed/feature/
 
 ## 10. Change 完成 / 拒绝 / 归档的处理
 
-- **实现完成**：将 Change 从 `proposed/` 移至 `implemented/`（单文件形态移动 `.md` 文件，目录形态移动整个目录）；核心文件语义从「计划」转为「实际决策」
+- **实现完成**：将 Change 目录从 `proposed/` 移至 `implemented/`；核心文件 `change.md` 语义从「计划」转为「实际决策」
   （方案 → 最终决策，验收标准 → 验证结果，风险与约束 → 影响与后果）。
 - **拒绝**：移至 `rejected/`；保留原方案并记录拒绝原因。
 - **归档**：移至 `archived/`；记录为何归档、被哪个新 Change 替代（若存在）。
@@ -388,10 +372,10 @@ docs/postmortem/
 ```text
 docs/changes/
 ├── README.md                 # ④⑤⑥ 总规范（本文件）
-├── proposed/      <type>/<date>-<slug>.md | <date>-<slug>/   # 轻量单文件 或 目录升级
-├── implemented/   <type>/<date>-<slug>.md | <date>-<slug>/
-├── rejected/      <type>/<date>-<slug>.md | <date>-<slug>/
-├── archived/      <type>/<date>-<slug>.md | <date>-<slug>/
+├── proposed/      <type>/<date>-<slug>/   # 每个 Change 一个独立目录
+├── implemented/   <type>/<date>-<slug>/
+├── rejected/      <type>/<date>-<slug>/
+├── archived/      <type>/<date>-<slug>/
 ├── templates/                     # Change/Spec/Research/Design/Plan 模板
 └── docs/postmortem/               # ⑥ 事后分析（无生命周期目录）
     ├── README.md
