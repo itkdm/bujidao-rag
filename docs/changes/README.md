@@ -111,7 +111,7 @@ docs/changes/proposed/<type>/<date>-<slug>/
 - `<date>`：创建日期，格式 `YYYY-MM-DD`。
 - `<slug>`：短横线分隔的小写英文短语，描述变更主题，如 `add-cache-layer`。
 
-`change.md` 是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。路径从创建到归档始终保持 `.../<date>-<slug>/change.md` 不变，新增附件不改变已有引用。
+`change.md` 是核心文件，其余（Spec / Research / Design / Plan）全部按需创建。Change 从创建到归档始终保持 `<date>-<slug>/change.md` 这一内部结构；新增 Supplemental Documents 不改变主文档结构，生命周期流转仅改变其所在的状态目录（`proposed/ → implemented/ → archived/`）。
 不需要为保留目录而批量制造 `.gitkeep`。
 
 ### 类型与状态的唯一事实源
@@ -370,14 +370,16 @@ docs/postmortem/
 ### 12.1 最终目录架构
 
 ```text
-docs/changes/
-├── README.md                 # ④⑤⑥ 总规范（本文件）
-├── proposed/      <type>/<date>-<slug>/   # 每个 Change 一个独立目录
-├── implemented/   <type>/<date>-<slug>/
-├── rejected/      <type>/<date>-<slug>/
-├── archived/      <type>/<date>-<slug>/
-├── templates/                     # Change/Spec/Research/Design/Plan 模板
-└── docs/postmortem/               # ⑥ 事后分析（无生命周期目录）
+docs/
+├── changes/                       # ④ Change + ⑤ Supplemental
+│   ├── README.md                  # ④⑤⑥ 总规范
+│   ├── proposed/      <type>/<date>-<slug>/
+│   ├── implemented/   <type>/<date>-<slug>/
+│   ├── rejected/      <type>/<date>-<slug>/
+│   ├── archived/      <type>/<date>-<slug>/
+│   └── templates/                 # Change/Spec/Research/Design/Plan 模板
+│
+└── postmortem/                    # ⑥ 事后分析（无生命周期目录）
     ├── README.md
     ├── templates/
     │   └── postmortem.md
