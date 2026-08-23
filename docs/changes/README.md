@@ -406,3 +406,71 @@ docs/
 - **普通 Bug，防线正常工作** → bug-fix Change 即可，不写 Postmortem。
 - **Bug 逃过防线、且有系统性缺口且具隐蔽性/高复现成本** → Postmortem + 相关 Change。
 - 判断不清时，倾向创建轻量 Change（仅 `change.md`）；Postmortem 则倾向「更克制」，宁可少写。
+
+---
+
+## 13. 治理规则（长期适用，不新增文件）
+
+以下规则让本体系从「文档结构设计得不错」升级为「适合长期给 Coding Agent 使用的知识系统」。它们不引入新文档类型，只约束现有文档的维护与互链方式。
+
+### 13.1 Implemented 是活的当前决策，而非死历史
+
+`implemented/` 下的 Change 是**当前仍然有效的决策事实**，不是归档后即冻结的档案。
+
+- **实现事实变化**（路径、类名、配置名、默认值、关键机制等非决策性变化）→ **同步更新原 implemented Change**，不要靠不断追加历史叙述来记录变化。
+- **原有设计决策被推翻**（决策本身反转）→ **创建新的 Change**，不得把旧 Change 改写成相反意思；新旧 Change **必须相互引用**（旧 Change 标注 `Superseded By`，新 Change 标注 `Supersedes`）。
+- 否则数年后 `implemented/` 会变成「当年对、现在半错」的文档堆。
+
+### 13.2 Research 必须标注证据等级
+
+见 `templates/research.md` 的「证据等级」小节。核心约束：
+
+- 每条影响设计的关键结论标注 `Verified` / `Documented` / `Assumed`。
+- **承重结论**（决定架构、数据格式、兼容性、安全、一致性）不应停留在 `Assumed`；高风险时也不应只停留在 `Documented`（应 Spike / PoC 升级为 `Verified`）。
+- 禁止用本 Research 自身作为自身证据（自引用）。
+
+### 13.3 关键结论须有外部证据
+
+- 会直接决定架构、数据格式、兼容性、安全、一致性的结论，不能只靠二手描述或 AI 自信推断。
+- 高风险承重结论必须落到 `Verified` 级别（源码 / 实验 / 测试 / 实际运行），而非停留在 `Documented` 或 `Assumed`。
+
+### 13.4 文档之间必须使用真实相对链接
+
+所有文档互引用**真实 Markdown 相对链接**，禁止「见 2026-08-19-xxx」「参考之前的 Design」「Change #17」这类口头/裸引用。
+
+```markdown
+详见 [文档版本设计](./design.md)
+由 [wrong-session-validation Postmortem](../../../postmortem/2026-08-23-wrong-session-validation.md) 触发。
+```
+
+应可被机械校验的链接关系（不准断链）：
+
+- Change → Spec / Research / Design / Plan
+- Design → Research（若引用）
+- Postmortem → 由其催生的 Change
+- Archived Change → Superseding Change
+
+### 13.5 proposed → implemented 的完成 Gate
+
+将 Change 从 `proposed/` 移至 `implemented/` 前，必须确认：
+
+1. 实际实现与最终 Decision 一致。
+2. Acceptance 已转换为真实 Verification（有证据）。
+3. Spec 中不存在影响正确性的未决问题。
+4. Research 中影响设计的关键假设已得到处理（或显式记录残留风险）。
+5. Design 描述的是最终实现，而非废弃方案。
+6. Plan 与最终实现存在重要偏差时已更新。
+7. 相关测试 / 构建 / 验证已经通过。
+8. 文档之间不存在明显矛盾或失效链接。
+
+> 满足 Gate 才移动目录；这不是「挪个目录就算完成」。
+
+### 13.6 Archive 冻结且不再是当前权威；备选方案有则必录
+
+- `archived/` = **曾经有效、但已不是当前事实源**的历史决策。原则上不再更新内容；发现问题优先通过当前 Change / `knowledge/` 纠正，而非持续维护历史档案。
+- 每个 archived Change 应尽量链接 `Superseded By: <新 Change>`；Agent 查到旧设计时不会误当作现在架构。
+- **备选方案**（见 `change.md`）：存在真实备选或明显取舍时**必须记录**；没有真实备选时**删除本节**，禁止为模板完整虚构方案。
+
+### 13.7 职责越界优先拆 Supplemental，而非加篇幅
+
+文档只拥有属于自己的事实。发现某份文档持续变长时，先检查是否职责越界（如 Change 写了 Design 细节），应拆出对应 Supplemental 文档，而不是提高篇幅上限。当前阶段不设置机械字数预算；待知识库规模真正起来后再评估。
