@@ -23,6 +23,7 @@ knowledge/
 │   ├── main/
 │   └── applications/
 ├── personal/
+│   └── <存在真实个人内容时建立的 ownerCode>/
 ├── archive/
 │   ├── main/
 │   ├── applications/
@@ -34,6 +35,8 @@ knowledge/
 ├── template/
 │   ├── common/
 │   ├── candidate/
+│   ├── personal/
+│   │   └── {ownerCode}/
 │   └── applications/
 └── scripts/
 
@@ -113,7 +116,7 @@ docs/
 - `main/` 只保留跨应用强制统一、已确认且长期有效的知识。
 - `reference/` 是证据层，不是项目事实层；原始导入资料可以保留其上游来源追溯信息。
 - `candidate/` 接收可能成为长期知识、但证据、范围或确认条件尚未闭环的结论；它不是草稿箱、资料库或任务列表。
-- `personal/` 不作为团队正式结论。
+- `personal/` 不作为团队正式结论，并按稳定 ownerCode 隔离不同所有者的内容。
 - `archive/` 只保存已确认退出当前有效知识路径的内容，并按来源内容域保留原相对路径。
 
 ### 4.5 候选知识
@@ -132,7 +135,18 @@ docs/
 - 正式文档中的局部复核提醒可以保留；形成独立假设、独立证据或跨文件影响时才抽成候选。
 - 目标文件不存在时可用 `git mv` 晋升并重写为正式结构；目标已存在时合入已验证内容，禁止覆盖正式知识。
 
-### 4.6 归档镜像
+### 4.6 个人知识
+
+- 个人内容只能写入 `personal/<ownerCode>/`，不能直接放在 personal 根目录。
+- ownerCode 是当前仓库内唯一且长期不变的小写 kebab-case 标识；姓名、昵称和团队称呼只作为所有者 README 中的显示信息。
+- ownerCode 由仓库分配，冲突时使用稳定后缀；不得直接使用邮箱、手机号、工号等敏感或组织绑定信息。
+- 只有产生真实个人内容时才从 `template/personal/{ownerCode}/` 实例化目录，不为登记人员预造空目录。
+- 每个所有者目录及其主题子目录继续使用 README + INDEX 协议，并至少包含一份非导航的个人 Markdown 内容。
+- personal 不强制建立 main、applications 或知识类型镜像；个人素材形成独立候选结论后，再按 candidate 契约确定拟晋升路径。
+- ownerCode 目录只隔离来源归属，不提供访问控制或隐私隔离。personal 内容进入共享版本库并可能被自动化工具读取；不得存放密码、Token、私密通信、个人隐私或其他不应进入仓库的信息。
+- 归档时保留 ownerCode 和 personal 内原相对路径，映射到 `archive/personal/<ownerCode>/<relative-path>`。
+
+### 4.7 归档镜像
 
 `archive/` 是知识内容目录的微缩镜像，只允许六个根目录：`main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/`。
 
@@ -186,6 +200,7 @@ git diff --check
 - 所有本地 Markdown 链接存在且不越出工作区
 - 每个应用目录名称有效，目录骨架完整
 - candidate 目标镜像完整，候选正文的拟晋升位置与真实相对路径一致
+- personal 内容按稳定 ownerCode 隔离，所有者 README 与目录标识一致，且不存在空所有者或主题目录
 - archive 六个镜像根目录完整，其他位置没有旁路归档目录
 - 显式启用 Git 模式时，归档和恢复操作保持来源内容域与原相对路径，且没有以复制代替移动
 - INDEX 与真实文件系统一致

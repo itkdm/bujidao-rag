@@ -15,7 +15,7 @@
 
 - 只影响单个应用的知识：应进入对应 `applications/{appCode}/` 的相应子目录（feature / rule / tech / base）。
 - 未经确认的 AI 推断：应先放入 `candidate/`，不要直接写入本目录。
-- 个人经验或踩坑记录：应放入 `personal/`，确认后再进入正式目录。
+- 个人经验或踩坑记录：应放入对应 `personal/<ownerCode>/`，确认后再进入正式目录。
 
 ## 维护规则
 

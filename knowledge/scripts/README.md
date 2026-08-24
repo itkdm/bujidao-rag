@@ -37,6 +37,7 @@ python knowledge/scripts/validate.py --git-range <base>...<head>
 - INDEX 与直接子项一致
 - 应用知识的正文证据链接有效
 - `candidate/` 使用目标镜像目录，候选正文包含拟晋升位置、证据缺口和验证条件
+- `personal/` 的内容按稳定 ownerCode 隔离，所有者 README 与目录标识一致，且不预造空所有者或主题目录
 - `archive/` 只使用规定的六个镜像根目录
 - `knowledge/` 其他位置没有旁路归档目录
 - 暂存区或指定提交范围中的归档操作确实是移动，并严格保留来源内容域与原相对路径

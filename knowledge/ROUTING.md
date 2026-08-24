@@ -14,7 +14,7 @@
    - 应用或模块任务 → `applications/`
    - 上游官方材料、外部文章、证据核对 → `reference/`
    - 未确认推断或新发现 → 按拟晋升范围进入 `candidate/main/` 或 `candidate/applications/`
-   - 个人经验或原始素材 → `personal/`
+   - 个人经验或原始素材 → `personal/<ownerCode>/`
    - 写作结构约束模板 → `template/`
    - 显式追溯已退出知识 → `archive/`
 4. 只加载当前任务需要的最小知识文件集合。
@@ -30,7 +30,7 @@
 | 后端、前端、具体模块 | `applications/` |
 | 上游官方文档、外部参考文章、证据核对 | `reference/` |
 | 不确定推断、新发现 | `candidate/main/` 或 `candidate/applications/<appCode>/`；目标范围也无法判断时才使用按需建立的 `candidate/unclassified/` |
-| 排障、个人经验、碎片记录 | `personal/` |
+| 排障、个人经验、碎片记录 | 先按所有者进入 `personal/<ownerCode>/`；没有真实内容时不创建所有者目录 |
 | 新建知识文件、统一写法 | `template/` |
 | 显式追溯旧版本、已废弃规则或退休应用 | `archive/INDEX.md` |
 
@@ -45,6 +45,7 @@
 | 修改前端管理后台 | `applications/{appCode}/INDEX.md` → 对应 `base/README.md` 或 `rule/README.md` → `tech/README.md` | 已确认当前是否已有正式知识；没有则回到代码和候选知识 |
 | 梳理功能或运行流程 | 对应应用 `feature/README.md` → 当前代码 → 相关 `docs/changes/` | 已确认功能事实来自当前实现、已落地 Change 或人工确认，不把空 feature 当事实 |
 | 写入新知识 | `template/` 对应模板 → 目标目录 README | 已确认知识类型、事实来源和目标路径；未确认内容使用 `template/candidate/candidate.md` 并进入目标镜像 |
+| 写入个人素材 | 已有所有者读取 `personal/<ownerCode>/INDEX.md`；首次写入先用 `template/personal/{ownerCode}/` 建立目录 | 已确认 ownerCode 稳定且仓库内唯一，并且本次存在真实个人内容 |
 
 ## 应用关键词路由
 
@@ -60,7 +61,7 @@
 | --- | --- |
 | 架构约束、框架用法、事务、缓存、MQ、定时任务、异常、日志、权限、构建、测试、排障 | 先按应用关键词进入对应 `applications/{appCode}/INDEX.md`，再读取该应用的 `tech/README.md` |
 | 无法判断属于哪个应用的通用技术约束 | 先查 `main/tech/`，没有稳定知识时写入 `candidate/` |
-| 只是个人踩坑或一次性排查过程 | 写入 `personal/`，不要直接进入正式 `tech/` |
+| 只是个人踩坑或一次性排查过程 | 写入对应 `personal/<ownerCode>/`，不要直接进入正式 `tech/` |
 
 ## 基础事实路由
 

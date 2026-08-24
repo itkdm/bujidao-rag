@@ -74,6 +74,8 @@ description: 根据当前工作区可验证的项目事实，初始化或调整 
 
 `candidate/` 必须建立 `main/` 与 `applications/` 两个目标镜像入口。候选文件保留未来正式知识的相对路径和文件名，并从 `knowledge/template/candidate/candidate.md` 实例化；只有目标范围也无法判断时才按需建立 `unclassified/`。每级 `README.md` 与 `INDEX.md` 是保留的导航基础设施，不是候选正文，也不参与镜像晋升。候选正文必须说明候选结论、拟晋升位置、证据缺口、待确认问题和验证条件。不要创建状态子目录，不要把外部资料、个人素材、实施方案或普通 TODO 当作候选知识。
 
+`personal/` 的个人内容必须按 `personal/<ownerCode>/` 隔离来源归属。ownerCode 是当前仓库内唯一且长期不变的小写 kebab-case 标识；姓名和昵称只作为 README 中的显示信息。只有产生真实个人内容时才从 `knowledge/template/personal/{ownerCode}/` 实例化目录，每级目录继续使用 README + INDEX 协议，不预造空所有者或主题目录，也不在 personal 中强制镜像正式知识分类。个人素材形成可独立验证的候选结论后，再进入 candidate。所有者目录不提供权限或隐私隔离；personal 会进入共享版本库并可能被自动化工具读取，不得写入密码、Token、私密通信、个人隐私或其他不应进入仓库的信息。
+
 重新生成所有受影响的 INDEX，并按真实文件系统和应用边界更新 ROUTING。Agent 新生成的项目知识未经用户或项目负责人确认，不得从 `candidate/` 移入 `main/` 或 `applications/`。
 
 `archive/` 必须建立 `main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/` 六个微缩镜像根目录。归档文件按来源内容域保留原相对路径；对已跟踪文件优先使用 `git mv`，随后更新来源 INDEX、归档 INDEX、ROUTING 和所有相关相对链接。六个来源内容域根部的 README 与 INDEX 是导航基础设施，只在原位更新并由 Git 保留历史，不归档到同名路径。原始导入资料根目录必须使用 `.raw-reference` 标记，归档时连同标记和本地资源整体移动。不得在其他知识目录下另建 `archive`、`legacy`、`deprecated` 等旁路归档区。
@@ -97,7 +99,7 @@ git diff --check
 
 发生归档或恢复移动时，再按当前阶段运行 `python knowledge/scripts/validate.py --git-staged`，或在 CI 中运行 `python knowledge/scripts/validate.py --git-range <base>...<head>`，核对来源内容域、原相对路径和移动语义。
 
-结构校验器会检查无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、候选镜像与正文契约、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
+结构校验器会检查无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、候选镜像与正文契约、个人所有者边界、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
 
 必须同时检查 Git 列出的 tracked 和 untracked 文件；单独执行 `git diff` 无法覆盖新生成文件。
 

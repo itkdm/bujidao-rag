@@ -12,7 +12,7 @@
 | `knowledge/main/<relative-path>` | `knowledge/archive/main/<relative-path>` |
 | `knowledge/applications/<relative-path>` | `knowledge/archive/applications/<relative-path>` |
 | `knowledge/candidate/<relative-path>` | `knowledge/archive/candidate/<relative-path>` |
-| `knowledge/personal/<relative-path>` | `knowledge/archive/personal/<relative-path>` |
+| `knowledge/personal/<ownerCode>/<relative-path>` | `knowledge/archive/personal/<ownerCode>/<relative-path>` |
 | `knowledge/reference/<relative-path>` | `knowledge/archive/reference/<relative-path>` |
 | `knowledge/template/<relative-path>` | `knowledge/archive/template/<relative-path>` |
 
