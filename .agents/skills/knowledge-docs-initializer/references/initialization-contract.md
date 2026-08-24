@@ -22,8 +22,15 @@ knowledge/
 ├── candidate/
 ├── personal/
 ├── archive/
+│   ├── main/
+│   ├── applications/
+│   ├── candidate/
+│   ├── personal/
+│   ├── reference/
+│   └── template/
 ├── reference/
-└── template/
+├── template/
+└── scripts/
 
 docs/
 ├── changes/
@@ -102,7 +109,21 @@ docs/
 - `reference/` 是证据层，不是项目事实层；原始导入资料可以保留其上游来源追溯信息。
 - `candidate/` 接收初始化中的推断、缺口和待确认结论。
 - `personal/` 不作为团队正式结论。
-- `archive/` 只保存已确认退出当前有效知识路径的内容。
+- `archive/` 只保存已确认退出当前有效知识路径的内容，并按来源内容域保留原相对路径。
+
+### 4.5 归档镜像
+
+`archive/` 是知识内容目录的微缩镜像，只允许六个根目录：`main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/`。
+
+- `knowledge/<content-root>/<relative-path>` 归档到 `knowledge/archive/<content-root>/<relative-path>`。
+- 不镜像 `archive/` 自身，也不把 `docs/`、根级导航或校验脚本作为普通知识归档。
+- 六个来源内容域根部的 `README.md` 与 `INDEX.md` 是导航基础设施，只在原位更新并由 Git 保留历史，不归档到已占用的同名路径。
+- 对已跟踪文件使用 `git mv`；归档后更新来源和目标 INDEX、默认 ROUTING 及所有相关相对链接。
+- 标准归档路径冲突时，先在同一镜像树内重命名既有归档历史，再把当前来源文件移动到标准映射路径，禁止覆盖历史。
+- 原始导入资料根目录使用普通文件 `.raw-reference` 显式标记；标记只能放在 `reference/` 或 `archive/reference/` 的资料子目录根部，不能直接放在 reference 根部或使用符号链接。归档时必须连同标记、来源说明和本地资源整体移动。
+- 新的 appCode、分类或参考资料子目录只在真实归档发生时创建。
+- 禁止在 `knowledge/` 其他位置维护 `archive`、`archived`、`legacy`、`deprecated`、`obsolete` 等旁路归档目录。
+- `knowledge/` 下不得使用目录符号链接或 Windows junction 绕过内容域与归档边界。
 
 ## 5. docs 初始化
 
@@ -121,29 +142,36 @@ docs/
 - `ROUTING.md` 基于实际 appCode、真实入口和现有知识更新。
 - 删除或替换示例应用后，同步清理根 INDEX、applications INDEX、路由和正文引用。
 - 不保留指向不存在文件的本地 Markdown 链接。
+- 移动或归档文件后，所有继续引用该内容的相对链接必须改到新路径或替代知识。
 
 ## 7. 验证
 
 初始化完成后至少执行：
 
 ```text
-python .agents/skills/knowledge-docs-initializer/scripts/validate_initialization.py .
+python knowledge/scripts/validate.py
 git status --short
 git ls-files --others --exclude-standard
 git diff --check
 ```
+
+本次发生归档或恢复移动时，再运行 `python knowledge/scripts/validate.py --git-staged`。CI 或推送前流程使用 `python knowledge/scripts/validate.py --git-range <base>...<head>` 检查对应提交范围；不要求本地同时运行两种 Git 模式。
+
+归档和恢复应先用 `git mv` 完成标准路径移动，再编辑正文。暂存区模式要求 `knowledge/` 没有未暂存或未跟踪改动；校验器不根据两条无关的 A+D 记录猜测移动意图。
 
 同时检查：
 
 - 受管理的 `knowledge/` 与 `docs/` Markdown 没有自定义 YAML Front Matter
 - 所有本地 Markdown 链接存在且不越出工作区
 - 每个应用目录名称有效，目录骨架完整
+- archive 六个镜像根目录完整，其他位置没有旁路归档目录
+- 显式启用 Git 模式时，归档和恢复操作保持来源内容域与原相对路径，且没有以复制代替移动
 - INDEX 与真实文件系统一致
 - 实例化的应用、Change 与 Postmortem 没有模板占位符、旧项目名称、无关应用和无依据结论
 - 模板目录只保留契约允许的占位符
 - 已检查 tracked diff 与 untracked 新文件，且 `git diff --check` 通过
 
-原始导入参考资料的上游来源头，以及 Skill 包自身格式要求的 YAML，不属于知识文档自定义字段，允许保留。
+原始导入参考资料的上游来源头，以及 Skill 包自身格式要求的 YAML，不属于知识文档自定义字段，允许保留。`.raw-reference` 标记目录内部的链接不由通用 Markdown 校验器验证；其资源完整性由抓取清单或导入工具负责，受管理知识指向该目录的链接仍必须有效。
 
 ## 8. 初始化报告
 

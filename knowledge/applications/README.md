@@ -25,3 +25,4 @@
 - 新增应用前必须从构建、运行或部署事实确认边界，并使用小写 kebab-case appCode。
 - 每个应用目录统一包含 `README.md`、`INDEX.md`、`{appCode}.md` 及四类子目录（base / feature / rule / tech）。
 - 应用层知识的新增、修改、删除遵循对应子目录 README 的局部维护规则。
+- 退休应用或失效的应用知识，保留 appCode 和分类相对路径移动到 `archive/applications/`，并更新相关引用。

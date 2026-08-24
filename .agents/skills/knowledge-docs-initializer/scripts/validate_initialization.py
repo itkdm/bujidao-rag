@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import unquote
@@ -21,11 +22,40 @@ REFERENCE_DEFINITION_RE = re.compile(r"^\s*\[(?!\^)[^\]]+\]:\s*(<[^>]+>|\S+)", r
 EVIDENCE_ROW_RE = re.compile(r"^\|\s*(?:code|doc)\s*\|\s*(.*?)\s*\|", re.MULTILINE)
 INITIALIZATION_PLACEHOLDER_RE = re.compile(r"\{\{初始化:[^{}\r\n]+\}\}")
 FULL_MARKDOWN_LINK_RE = re.compile(r"^\[[^\]\r\n]+\]\((.+)\)$")
+ARCHIVE_MIRROR_ROOTS = {
+    "main",
+    "applications",
+    "candidate",
+    "personal",
+    "reference",
+    "template",
+}
+SCATTERED_ARCHIVE_NAMES = {
+    "archive",
+    "archived",
+    "deprecated",
+    "legacy",
+    "obsolete",
+    "历史",
+    "归档",
+}
+RAW_REFERENCE_MARKER = ".raw-reference"
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("workspace", nargs="?", default=".", help="工作区根目录")
+    git_group = parser.add_mutually_exclusive_group()
+    git_group.add_argument(
+        "--git-staged",
+        action="store_true",
+        help="校验暂存区中的知识归档移动是否保持原相对路径",
+    )
+    git_group.add_argument(
+        "--git-range",
+        metavar="BASE..HEAD",
+        help="校验指定 Git 提交范围中的知识归档移动，供 CI 或推送前流程使用",
+    )
     return parser.parse_args()
 
 
@@ -33,13 +63,28 @@ def is_template(path: Path) -> bool:
     parts = tuple(part.lower() for part in path.parts)
     return (
         parts[:2] == ("knowledge", "template")
+        or parts[:3] == ("knowledge", "archive", "template")
         or parts[:3] == ("docs", "changes", "templates")
         or parts[:3] == ("docs", "postmortem", "templates")
     )
 
 
-def is_raw_reference(relative: Path) -> bool:
-    return relative.parts[:3] == ("knowledge", "reference", "ruoyi-vue-pro官方文档")
+def is_raw_reference(workspace: Path, relative: Path) -> bool:
+    """通过显式标记识别原始导入资料，避免绑定具体项目或资料名称。"""
+    path = workspace / relative
+    for root_relative in (
+        Path("knowledge/reference"),
+        Path("knowledge/archive/reference"),
+    ):
+        root = workspace / root_relative
+        if not is_within_workspace(path, root):
+            continue
+        current = path if path.is_dir() else path.parent
+        while current != root and is_within_workspace(current, root):
+            if (current / RAW_REFERENCE_MARKER).is_file():
+                return True
+            current = current.parent
+    return False
 
 
 def without_code_fences(text: str, *, strip_inline: bool = True) -> str:
@@ -131,7 +176,7 @@ def is_within_workspace(path: Path, workspace: Path) -> bool:
 def validate_no_frontmatter(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_raw_reference(relative):
+        if is_raw_reference(workspace, relative):
             continue
         if FRONT_MATTER_RE.match(path.read_text(encoding="utf-8-sig")):
             errors.append(f"YAML 头：{relative.as_posix()} 不应包含自定义 Front Matter")
@@ -140,10 +185,10 @@ def validate_no_frontmatter(workspace: Path, paths: list[Path], errors: list[str
 def validate_links(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_raw_reference(relative):
+        if is_raw_reference(workspace, relative):
             continue
         template_path = is_template(relative)
-        if template_path and relative.parts[0] == "knowledge":
+        if template_path and relative.parts[:2] == ("knowledge", "template"):
             continue
         text = without_code_fences(path.read_text(encoding="utf-8-sig"))
         targets = inline_link_targets(text)
@@ -167,7 +212,7 @@ def validate_links(workspace: Path, paths: list[Path], errors: list[str]) -> Non
 def validate_evidence_rows(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_template(relative) or is_raw_reference(relative):
+        if is_template(relative) or is_raw_reference(workspace, relative):
             continue
         text = without_code_fences(
             path.read_text(encoding="utf-8-sig"), strip_inline=False
@@ -213,7 +258,12 @@ def validate_indexes(workspace: Path, errors: list[str]) -> None:
     knowledge = workspace / "knowledge"
     for index_path in sorted(knowledge.rglob("INDEX.md")):
         relative = index_path.relative_to(workspace)
-        if is_template(relative) or "reference" in relative.parts:
+        archive_template_root_index = relative == Path(
+            "knowledge/archive/template/INDEX.md"
+        )
+        if (
+            is_template(relative) and not archive_template_root_index
+        ) or is_raw_reference(workspace, relative):
             continue
         targets = index_targets(index_path)
         expected = [
@@ -254,6 +304,277 @@ def application_codes(workspace: Path, errors: list[str]) -> set[str]:
     return codes
 
 
+def validate_archive_layout(workspace: Path, errors: list[str]) -> None:
+    knowledge = workspace / "knowledge"
+    archive = knowledge / "archive"
+    if not archive.is_dir():
+        errors.append("归档结构：缺少 knowledge/archive")
+        return
+
+    direct_directories = {path.name for path in archive.iterdir() if path.is_dir()}
+    missing = sorted(ARCHIVE_MIRROR_ROOTS - direct_directories)
+    unexpected = sorted(direct_directories - ARCHIVE_MIRROR_ROOTS)
+    if missing:
+        errors.append(f"归档结构：缺少镜像目录：{', '.join(missing)}")
+    if unexpected:
+        errors.append(f"归档结构：存在非镜像根目录：{', '.join(unexpected)}")
+
+    unexpected_root_files = sorted(
+        path.name
+        for path in archive.iterdir()
+        if path.is_file() and path.name not in {"README.md", "INDEX.md"}
+    )
+    if unexpected_root_files:
+        errors.append(
+            "归档结构：归档内容不能直接放在 archive 根目录："
+            + ", ".join(unexpected_root_files)
+        )
+
+    for name in sorted(ARCHIVE_MIRROR_ROOTS):
+        root = archive / name
+        for infrastructure in ("README.md", "INDEX.md"):
+            if root.is_dir() and not (root / infrastructure).is_file():
+                errors.append(f"归档结构：缺少 archive/{name}/{infrastructure}")
+
+    archive_resolved = archive.resolve()
+    for path in knowledge.rglob("*"):
+        is_junction = getattr(path, "is_junction", lambda: False)()
+        if path.is_symlink() or is_junction:
+            errors.append(
+                "归档结构：knowledge/ 不允许文件或目录符号链接或 junction："
+                f"{path.relative_to(workspace).as_posix()}"
+            )
+            continue
+        if not path.is_dir():
+            continue
+        resolved = path.resolve()
+        if path == archive or archive in path.parents:
+            continue
+        if resolved == archive_resolved or archive_resolved in resolved.parents:
+            errors.append(
+                "归档结构：发现指向 knowledge/archive 的旁路目录链接："
+                f"{path.relative_to(workspace).as_posix()}"
+            )
+            continue
+        if is_raw_reference(workspace, path.relative_to(workspace)):
+            continue
+        if path.name.lower() in SCATTERED_ARCHIVE_NAMES:
+            errors.append(
+                "归档结构：发现旁路归档目录，内容必须移动到 knowledge/archive："
+                f"{path.relative_to(workspace).as_posix()}"
+            )
+
+    reference_roots = (
+        knowledge / "reference",
+        archive / "reference",
+    )
+    for marker in knowledge.rglob(RAW_REFERENCE_MARKER):
+        parent = marker.parent
+        allowed = any(
+            parent != root and is_within_workspace(parent, root)
+            for root in reference_roots
+        )
+        if not allowed:
+            errors.append(
+                "原始资料标记：.raw-reference 只能放在 reference 的资料子目录根部："
+                f"{marker.relative_to(workspace).as_posix()}"
+            )
+        if marker.is_symlink() or not marker.is_file():
+            errors.append(
+                "原始资料标记：.raw-reference 必须是普通文件："
+                f"{marker.relative_to(workspace).as_posix()}"
+            )
+
+
+def archive_mapping(path: str) -> str | None:
+    parts = Path(path).parts
+    if (
+        len(parts) < 3
+        or parts[0] != "knowledge"
+        or parts[1] not in ARCHIVE_MIRROR_ROOTS
+    ):
+        return None
+    if len(parts) == 3 and parts[2] in {"README.md", "INDEX.md"}:
+        return None
+    return Path("knowledge", "archive", parts[1], *parts[2:]).as_posix()
+
+
+def active_mapping(path: str) -> str | None:
+    parts = Path(path).parts
+    if (
+        len(parts) < 4
+        or parts[:2] != ("knowledge", "archive")
+        or parts[2] not in ARCHIVE_MIRROR_ROOTS
+    ):
+        return None
+    if len(parts) == 4 and parts[3] in {"README.md", "INDEX.md"}:
+        return None
+    return Path("knowledge", parts[2], *parts[3:]).as_posix()
+
+
+def git_name_status(
+    workspace: Path, *, staged: bool, revision_range: str | None
+) -> list[tuple[str, str, str | None]]:
+    if revision_range and (
+        revision_range.startswith("-")
+        or any(char.isspace() for char in revision_range)
+    ):
+        raise ValueError("Git 提交范围不能以 '-' 开头或包含空白字符")
+    command = [
+        "git",
+        "diff",
+        "--name-status",
+        "-z",
+        "--find-renames",
+        "--find-copies-harder",
+    ]
+    if staged:
+        unstaged = subprocess.run(
+            ["git", "diff", "--name-only", "-z", "--", "knowledge"],
+            cwd=workspace,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        if unstaged.returncode:
+            message = unstaged.stderr.decode("utf-8", errors="replace").strip()
+            raise RuntimeError(message or "无法检查 knowledge/ 未暂存改动")
+        unstaged_paths = [
+            path
+            for path in unstaged.stdout.decode(
+                "utf-8", errors="surrogateescape"
+            ).split("\0")
+            if path
+        ]
+        if unstaged_paths:
+            preview = ", ".join(unstaged_paths[:5])
+            suffix = "..." if len(unstaged_paths) > 5 else ""
+            raise RuntimeError(
+                "--git-staged 要求 knowledge/ 没有未暂存改动："
+                f"{preview}{suffix}"
+            )
+        untracked = subprocess.run(
+            [
+                "git",
+                "ls-files",
+                "--others",
+                "--exclude-standard",
+                "-z",
+                "--",
+                "knowledge",
+            ],
+            cwd=workspace,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        if untracked.returncode:
+            message = untracked.stderr.decode("utf-8", errors="replace").strip()
+            raise RuntimeError(message or "无法检查 knowledge/ 未跟踪文件")
+        untracked_paths = [
+            path
+            for path in untracked.stdout.decode(
+                "utf-8", errors="surrogateescape"
+            ).split("\0")
+            if path
+        ]
+        if untracked_paths:
+            preview = ", ".join(untracked_paths[:5])
+            suffix = "..." if len(untracked_paths) > 5 else ""
+            raise RuntimeError(
+                "--git-staged 要求 knowledge/ 没有未跟踪文件："
+                f"{preview}{suffix}"
+            )
+        command.append("--cached")
+    elif revision_range:
+        command.append(revision_range)
+    command.extend(("--", "knowledge"))
+    completed = subprocess.run(
+        command,
+        cwd=workspace,
+        check=False,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if completed.returncode:
+        message = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(message or "git diff 执行失败")
+    fields = completed.stdout.decode("utf-8", errors="surrogateescape").split("\0")
+    changes: list[tuple[str, str, str | None]] = []
+    index = 0
+    while index < len(fields) and fields[index]:
+        status = fields[index]
+        index += 1
+        if status.startswith(("R", "C")):
+            if index + 1 >= len(fields):
+                raise RuntimeError("无法解析 git diff 的重命名记录")
+            old_path, new_path = fields[index], fields[index + 1]
+            index += 2
+            changes.append((status, old_path, new_path))
+        else:
+            if index >= len(fields):
+                raise RuntimeError("无法解析 git diff 的文件记录")
+            changes.append((status, fields[index], None))
+            index += 1
+    return changes
+
+
+def validate_git_archive_moves(
+    workspace: Path,
+    errors: list[str],
+    *,
+    staged: bool,
+    revision_range: str | None,
+) -> None:
+    try:
+        changes = git_name_status(
+            workspace, staged=staged, revision_range=revision_range
+        )
+    except (OSError, RuntimeError, ValueError) as exc:
+        errors.append(f"Git 归档映射：{exc}")
+        return
+
+    deleted = {
+        old_path
+        for status, old_path, new_path in changes
+        if status.startswith("D") and new_path is None
+    }
+    for status, old_path, new_path in changes:
+        destination = new_path if new_path is not None else old_path
+        expected_source = active_mapping(destination)
+        old_is_archive = active_mapping(old_path) is not None
+        if expected_source is not None and not old_is_archive:
+            if status.startswith("R"):
+                if old_path != expected_source:
+                    errors.append(
+                        "Git 归档映射：归档目标未保留来源相对路径："
+                        f"{old_path} -> {destination}，应来自 {expected_source}"
+                    )
+            elif status.startswith("C"):
+                errors.append(
+                    "Git 归档映射：归档必须移动而非复制："
+                    f"{old_path} -> {destination}"
+                )
+            elif status.startswith("A") and expected_source not in deleted:
+                errors.append(
+                    "Git 归档映射：新增归档文件缺少对应来源删除："
+                    f"{destination}，应同时删除 {expected_source}"
+                )
+
+        expected_archive = archive_mapping(destination)
+        if expected_archive is not None and new_path is not None and active_mapping(old_path):
+            if status.startswith("C"):
+                errors.append(
+                    "Git 归档映射：恢复有效知识必须移动而非复制："
+                    f"{old_path} -> {destination}"
+                )
+            elif status.startswith("R") and old_path != expected_archive:
+                errors.append(
+                    "Git 归档映射：恢复路径未遵循归档反向映射："
+                    f"{old_path} -> {destination}，应来自 {expected_archive}"
+                )
+
+
 def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[str]) -> None:
     required = [
         "knowledge/README.md",
@@ -269,7 +590,22 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         "knowledge/personal/INDEX.md",
         "knowledge/archive/README.md",
         "knowledge/archive/INDEX.md",
+        "knowledge/archive/main/README.md",
+        "knowledge/archive/main/INDEX.md",
+        "knowledge/archive/applications/README.md",
+        "knowledge/archive/applications/INDEX.md",
+        "knowledge/archive/candidate/README.md",
+        "knowledge/archive/candidate/INDEX.md",
+        "knowledge/archive/personal/README.md",
+        "knowledge/archive/personal/INDEX.md",
+        "knowledge/archive/reference/README.md",
+        "knowledge/archive/reference/INDEX.md",
+        "knowledge/archive/template/README.md",
+        "knowledge/archive/template/INDEX.md",
         "knowledge/reference/README.md",
+        "knowledge/scripts/.gitignore",
+        "knowledge/scripts/README.md",
+        "knowledge/scripts/validate.py",
         "knowledge/template/common/README-template.md",
         "knowledge/template/common/INDEX-template.md",
         "knowledge/template/applications/{appCode}/application-README-template.md",
@@ -307,7 +643,7 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
 def validate_placeholders(workspace: Path, paths: list[Path], errors: list[str]) -> None:
     for path in paths:
         relative = path.relative_to(workspace)
-        if is_template(relative) or is_raw_reference(relative):
+        if is_template(relative) or is_raw_reference(workspace, relative):
             continue
         application_output = len(relative.parts) >= 4 and relative.parts[:2] == ("knowledge", "applications")
         change_output = (
@@ -333,7 +669,8 @@ def validate_placeholders(workspace: Path, paths: list[Path], errors: list[str])
 
 
 def main() -> int:
-    workspace = Path(parse_args().workspace).resolve()
+    args = parse_args()
+    workspace = Path(args.workspace).resolve()
     errors: list[str] = []
     paths = managed_markdown(workspace)
     validate_no_frontmatter(workspace, paths, errors)
@@ -341,6 +678,14 @@ def main() -> int:
     validate_evidence_rows(workspace, paths, errors)
     validate_indexes(workspace, errors)
     app_codes = application_codes(workspace, errors)
+    validate_archive_layout(workspace, errors)
+    if args.git_staged or args.git_range:
+        validate_git_archive_moves(
+            workspace,
+            errors,
+            staged=args.git_staged,
+            revision_range=args.git_range,
+        )
     validate_required_layout(workspace, app_codes, errors)
     validate_placeholders(workspace, paths, errors)
 
@@ -350,12 +695,20 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    raw_count = sum(is_raw_reference(path.relative_to(workspace)) for path in paths)
+    raw_count = sum(
+        is_raw_reference(workspace, path.relative_to(workspace)) for path in paths
+    )
     managed_count = len(paths) - raw_count
+    git_summary = (
+        "；Git 归档移动映射已检查"
+        if args.git_staged or args.git_range
+        else ""
+    )
     print(
         "初始化结构校验通过："
         f"已检查 {managed_count} 个受管理 Markdown 文件，跳过 {raw_count} 个原始导入参考文件；"
-        "YAML 头、目录骨架、链接、正文证据、应用目录、索引和占位符均已检查。"
+        "YAML 头、目录骨架、相对链接、正文证据、应用目录、归档镜像、索引和占位符均已检查"
+        f"{git_summary}。"
     )
     return 0
 

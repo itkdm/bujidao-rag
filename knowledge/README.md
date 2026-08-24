@@ -15,6 +15,7 @@
 - `personal/`：个人研发经验和踩坑记录，验证后可转为 candidate 再进正式知识库。
 - `template/`：强约束的知识写作模板与导航模板基础设施。
 - `reference/`：上游官方文档、外部文章、开源项目说明等证据材料（本次不强制纳入双文件协议）。
+- `archive/`：按内容域镜像原相对路径的历史知识，不参与默认检索。
 
 知识库提供稳定上下文；当前代码仍然是实现事实。尤其接口签名、DTO 字段、Topic 配置、feature key、状态枚举、开关配置等易变内容，知识库只提供定位入口，真正改代码前必须回到当前仓库核对真实代码。
 
@@ -30,7 +31,7 @@
 
 - 各层目录的稳定职责说明与维护契约。
 - 跨应用 / 应用内 / 候选 / 个人知识文件（feature、rule、tech、base 等类型）。
-- 基础设施文件：`README.md`、`INDEX.md`、`ROUTING.md` 和 `template/`。
+- 基础设施文件：`README.md`、`INDEX.md`、`ROUTING.md`、`template/` 和 `scripts/`。
 
 ## 不应包含的内容
 
@@ -42,9 +43,10 @@
 
 - AI 应通过 `ROUTING.md` 先定位，再按需求关键词、业务身份、状态码、接口名等线索逐步加载正确粒度的上下文，不全量读取。
 - 禁止 AI 直接将未确认内容写入 `main/` 或 `applications/`；禁止将个人经验直接当作团队结论引用。
-- 知识流转：`personal/` → `candidate/` →（确认）→ `main/` 或 `applications/`；失效知识移入 `archive/`。
+- 知识流转：`personal/` → `candidate/` →（确认）→ `main/` 或 `applications/`；失效知识按原相对路径移动到 `archive/<来源内容域>/`。
 - 正式知识必须在正文中写明必要的事实来源，并在修改代码前回到当前实现复核。
+- 归档或移动知识后必须更新相关 INDEX、ROUTING 和相对链接，并运行 `python knowledge/scripts/validate.py`。
 
 ## 补充说明
 
-`archive/` 用于归档已废弃或过期知识，不再作为正式引用来源，仅用于历史追溯。
+`archive/` 的完整路径映射和操作流程见 [`archive/README.md`](./archive/README.md)。
