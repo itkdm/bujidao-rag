@@ -25,6 +25,7 @@ REFERENCE_DEFINITION_RE = re.compile(r"^\s*\[(?!\^)[^\]]+\]:\s*(<[^>]+>|\S+)", r
 EVIDENCE_ROW_RE = re.compile(r"^\|\s*(?:code|doc)\s*\|\s*(.*?)\s*\|", re.MULTILINE)
 INITIALIZATION_PLACEHOLDER_RE = re.compile(r"\{\{初始化:[^{}\r\n]+\}\}")
 FULL_MARKDOWN_LINK_RE = re.compile(r"^\[[^\]\r\n]+\]\((.+)\)$")
+FENCE_LINE_RE = re.compile(r"^ {0,3}(?P<run>`{3,}|~{3,})(?P<rest>[^\r\n]*)(?:\r?\n)?$")
 ARCHIVE_MIRROR_ROOTS = {
     "main",
     "applications",
@@ -43,6 +44,32 @@ SCATTERED_ARCHIVE_NAMES = {
     "归档",
 }
 RAW_REFERENCE_MARKER = ".raw-reference"
+AGENTS_ROUTING_HEADING = "文档与知识路由"
+AGENTS_REQUIRED_HEADINGS = (
+    "项目概述",
+    "技术栈",
+    "目录与模块职责",
+    "运行与开发方式",
+    "验证策略",
+    "项目特有规则",
+)
+AGENTS_ROUTING_TARGETS = (
+    "knowledge/README.md",
+    "knowledge/ROUTING.md",
+    "docs/changes/README.md",
+    "docs/postmortem/README.md",
+)
+ROUTING_REQUIRED_TARGETS = (
+    "docs/changes/",
+    "docs/postmortem/",
+    "knowledge/reference/",
+    "knowledge/personal/",
+    "knowledge/archive/",
+    "knowledge/template/",
+    "knowledge/candidate/",
+    "knowledge/main/",
+    "knowledge/applications/",
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -90,31 +117,257 @@ def is_raw_reference(workspace: Path, relative: Path) -> bool:
     return False
 
 
+def fence_line(line: str) -> tuple[str, str] | None:
+    match = FENCE_LINE_RE.match(line)
+    if match is None:
+        return None
+    return match.group("run"), match.group("rest")
+
+
+def is_closing_fence(token: tuple[str, str], opening: str) -> bool:
+    run, rest = token
+    return run[0] == opening[0] and len(run) >= len(opening) and not rest.strip()
+
+
+def is_opening_fence(token: tuple[str, str]) -> bool:
+    run, rest = token
+    return not (run[0] == "`" and "`" in rest)
+
+
+def markdown_fenced_blocks(text: str) -> list[tuple[str, str]]:
+    blocks: list[tuple[str, str]] = []
+    opening: str | None = None
+    info = ""
+    body: list[str] = []
+    for line in text.splitlines(keepends=True):
+        token = fence_line(line)
+        if opening is None:
+            if token is not None and is_opening_fence(token):
+                opening, info = token
+                body = []
+            continue
+        if token is not None and is_closing_fence(token, opening):
+            blocks.append((info.strip(), "".join(body)))
+            opening = None
+            info = ""
+            body = []
+            continue
+        body.append(line)
+    return blocks
+
+
 def without_code_fences(text: str, *, strip_inline: bool = True) -> str:
     lines: list[str] = []
-    fence_marker: str | None = None
-    for line in text.splitlines():
-        stripped = line.lstrip()
-        marker = stripped[:3] if stripped[:3] in {"```", "~~~"} else None
-        if marker and fence_marker is None:
-            fence_marker = marker
+    opening: str | None = None
+    for line in text.splitlines(keepends=True):
+        token = fence_line(line)
+        if opening is None and token is not None and is_opening_fence(token):
+            opening = token[0]
             continue
-        if marker and marker == fence_marker:
-            fence_marker = None
+        if opening is not None and token is not None and is_closing_fence(token, opening):
+            opening = None
             continue
-        if fence_marker is None:
+        if opening is None:
             lines.append(line)
-    result = "\n".join(lines)
+    result = "".join(lines)
     return re.sub(r"`[^`\r\n]*`", "", result) if strip_inline else result
 
 
 def managed_markdown(workspace: Path) -> list[Path]:
     paths: list[Path] = []
+    agents = workspace / "AGENTS.md"
+    if agents.is_file():
+        paths.append(agents)
     for root_name in ("knowledge", "docs"):
         root = workspace / root_name
         if root.exists():
             paths.extend(path for path in root.rglob("*.md") if path.is_file())
     return sorted(paths)
+
+
+def without_html_comments(text: str) -> str:
+    return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+
+
+def mask_fenced_blocks(text: str) -> str:
+    """遮蔽代码围栏并保留字符位置，避免示例标题参与章节识别。"""
+    result = list(text)
+    opening: str | None = None
+    offset = 0
+    for line in text.splitlines(keepends=True):
+        token = fence_line(line)
+        was_inside = opening is not None
+        if not was_inside and token is not None and is_opening_fence(token):
+            opening = token[0]
+        if was_inside or opening is not None:
+            for index, char in enumerate(line, start=offset):
+                if char not in "\r\n":
+                    result[index] = " "
+        if was_inside and token is not None and is_closing_fence(token, opening):
+            opening = None
+        offset += len(line)
+    return "".join(result)
+
+
+def markdown_section(
+    text: str,
+    heading: str,
+    levels: tuple[int, ...],
+    *,
+    source_text: str | None = None,
+) -> str | None:
+    marks_pattern = "|".join("#" * level for level in levels)
+    match = re.search(
+        rf"^(?P<marks>{marks_pattern})[ \t]+{re.escape(heading)}[ \t]*$",
+        text,
+        re.MULTILINE,
+    )
+    if match is None:
+        return None
+    level = len(match.group("marks"))
+    end = re.search(rf"^#{{1,{level}}}\s+", text[match.end() :], re.MULTILINE)
+    end_index = match.end() + end.start() if end else len(text)
+    source = source_text if source_text is not None else text
+    return source[match.end() : end_index]
+
+
+def meaningful_section_body(section: str) -> str:
+    text = without_html_comments(section)
+    text = re.sub(r"^\s*(?:```|~~~).*?$", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^\s*#{1,6}\s+.*?$", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^\s*(?:---+|___+|\*\*\*+)\s*$", "", text, flags=re.MULTILINE)
+    return text.strip()
+
+
+def normalized_workspace_target(workspace: Path, raw_target: str) -> str | None:
+    target = local_target(raw_target)
+    if target is None:
+        return None
+    target_path = Path(target)
+    if target_path.is_absolute():
+        return None
+    resolved = (workspace / target_path).resolve()
+    if not is_within_workspace(resolved, workspace):
+        return None
+    return resolved.relative_to(workspace).as_posix()
+
+
+def detailed_routing_signal_count(text: str) -> int:
+    patterns = (
+        r"\[(?:proposed|implemented|rejected|archived)/\]",
+        r"knowledge/candidate/(?:main|applications|unclassified)/",
+        r"knowledge/applications/[<{]?appCode[>}]?/",
+        r"\[(?:base|feature|rule|tech)/\]",
+    )
+    return sum(len(set(re.findall(pattern, text))) for pattern in patterns)
+
+
+def validate_agents_routing(workspace: Path, errors: list[str]) -> None:
+    targets = (
+        workspace / "AGENTS.md",
+        workspace / "knowledge" / "template" / "common" / "AGENTS-template.md",
+    )
+    for path in targets:
+        if not path.is_file():
+            relative = path.relative_to(workspace).as_posix()
+            errors.append(f"AGENTS 结构：{relative} 必须是普通文件")
+            continue
+        relative = path.relative_to(workspace).as_posix()
+        raw_text = path.read_text(encoding="utf-8-sig")
+        text = without_html_comments(raw_text)
+        heading_text = mask_fenced_blocks(text)
+        for heading in AGENTS_REQUIRED_HEADINGS:
+            count = len(
+                re.findall(
+                    rf"^##[ \t]+{re.escape(heading)}[ \t]*$",
+                    heading_text,
+                    re.MULTILINE,
+                )
+            )
+            if count != 1:
+                errors.append(
+                    f"AGENTS 结构：{relative} 必须且只能包含一个“## {heading}”章节"
+                )
+                continue
+            section = markdown_section(
+                heading_text, heading, (2,), source_text=text
+            )
+            if section is None or not meaningful_section_body(section):
+                errors.append(f"AGENTS 结构：{relative} 的“## {heading}”章节不能为空")
+
+        route_headings = re.findall(
+            rf"^###?[ \t]+{re.escape(AGENTS_ROUTING_HEADING)}[ \t]*$",
+            heading_text,
+            re.MULTILINE,
+        )
+        route_section = markdown_section(
+            heading_text,
+            AGENTS_ROUTING_HEADING,
+            (2, 3),
+            source_text=text,
+        )
+        if len(route_headings) != 1 or route_section is None:
+            errors.append(
+                f"AGENTS 路由：{relative} 必须且只能包含一个"
+                f"“{AGENTS_ROUTING_HEADING}”章节"
+            )
+        else:
+            route_text = without_html_comments(without_code_fences(route_section))
+            targets_found = [
+                normalized
+                for raw_target in inline_link_targets(route_text)
+                if (normalized := normalized_workspace_target(workspace, raw_target))
+                is not None
+            ]
+            for target in AGENTS_ROUTING_TARGETS:
+                if targets_found.count(target) != 1:
+                    errors.append(
+                        f"AGENTS 路由：{relative} 的路由章节必须且只能链接一次 {target}"
+                    )
+        if re.search(r"^#{2,6}[ \t]+总路由图[ \t]*$", heading_text, re.MULTILINE):
+            errors.append(
+                f"AGENTS 路由：{relative} 不得复制 knowledge/ROUTING.md 的总路由图"
+            )
+        if detailed_routing_signal_count(raw_text) >= 6:
+            errors.append(
+                f"AGENTS 路由：{relative} 包含完整路由的详细分类，应只保留精简入口"
+            )
+
+    routing = workspace / "knowledge" / "ROUTING.md"
+    if not routing.is_file():
+        errors.append("AGENTS 路由：knowledge/ROUTING.md 必须是普通文件")
+    else:
+        routing_text = without_html_comments(routing.read_text(encoding="utf-8-sig"))
+        routing_heading_text = mask_fenced_blocks(routing_text)
+        routing_headings = re.findall(
+            r"^##[ \t]+总路由图[ \t]*$", routing_heading_text, re.MULTILINE
+        )
+        total_section = markdown_section(
+            routing_heading_text, "总路由图", (2,), source_text=routing_text
+        )
+        if len(routing_headings) != 1 or total_section is None:
+            errors.append(
+                "AGENTS 路由：knowledge/ROUTING.md 必须且只能包含一个“## 总路由图”章节"
+            )
+        else:
+            fenced_blocks = markdown_fenced_blocks(total_section)
+            route_graph = "\n".join(
+                body
+                for info, body in fenced_blocks
+                if info.lower() == "text" and body.strip()
+            )
+            if not route_graph:
+                errors.append(
+                    "AGENTS 路由：knowledge/ROUTING.md 的“总路由图”必须包含非空文本图"
+                )
+            else:
+                normalized_graph = route_graph.replace("[", "").replace("]", "")
+                for target in ROUTING_REQUIRED_TARGETS:
+                    if target not in normalized_graph:
+                        errors.append(
+                            "AGENTS 路由：knowledge/ROUTING.md 的“总路由图”"
+                            f"缺少顶层去向 {target}"
+                        )
 
 
 def inline_link_targets(text: str, *, include_images: bool = True) -> list[str]:
@@ -580,6 +833,7 @@ def validate_git_archive_moves(
 
 def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[str]) -> None:
     required = [
+        "AGENTS.md",
         "knowledge/README.md",
         "knowledge/INDEX.md",
         "knowledge/ROUTING.md",
@@ -615,6 +869,7 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         "knowledge/scripts/validate.py",
         "knowledge/template/common/README-template.md",
         "knowledge/template/common/INDEX-template.md",
+        "knowledge/template/common/AGENTS-template.md",
         "knowledge/template/candidate/README.md",
         "knowledge/template/candidate/candidate.md",
         "knowledge/template/personal/README.md",
@@ -648,8 +903,8 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         for category in ("base", "feature", "rule", "tech"):
             required.extend((f"{root}/{category}/README.md", f"{root}/{category}/INDEX.md"))
     for relative in required:
-        if not (workspace / relative).exists():
-            errors.append(f"目录骨架：缺少 {relative}")
+        if not (workspace / relative).is_file():
+            errors.append(f"目录骨架：缺少普通文件 {relative}")
 
 
 def validate_placeholders(workspace: Path, paths: list[Path], errors: list[str]) -> None:
@@ -685,6 +940,7 @@ def main() -> int:
     workspace = Path(args.workspace).resolve()
     errors: list[str] = []
     paths = managed_markdown(workspace)
+    validate_agents_routing(workspace, errors)
     validate_no_frontmatter(workspace, paths, errors)
     validate_links(workspace, paths, errors)
     validate_evidence_rows(workspace, paths, errors)
@@ -721,7 +977,7 @@ def main() -> int:
     print(
         "初始化结构校验通过："
         f"已检查 {managed_count} 个受管理 Markdown 文件，跳过 {raw_count} 个原始导入参考文件；"
-        "YAML 头、目录骨架、相对链接、正文证据、应用目录、候选契约、个人所有者边界、归档镜像、索引和占位符均已检查"
+        "AGENTS 必选结构与路由、YAML 头、目录骨架、相对链接、正文证据、应用目录、候选契约、个人所有者边界、归档镜像、索引和占位符均已检查"
         f"{git_summary}。"
     )
     return 0

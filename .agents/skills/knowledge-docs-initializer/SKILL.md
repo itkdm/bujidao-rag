@@ -1,6 +1,6 @@
 ---
 name: knowledge-docs-initializer
-description: 根据当前工作区可验证的项目事实，初始化或调整 knowledge/ 知识库与 docs/ 研发文档体系。适用于项目启动、接入模板，或需要重新识别应用边界、技术栈版本、芋道形态和启用模块的场景；不负责实现产品功能，也不编造项目知识。
+description: 根据当前工作区可验证的项目事实，初始化或调整根级 AGENTS.md、knowledge/ 知识库与 docs/ 研发文档体系。适用于项目启动、接入模板，或需要重新识别应用边界、技术栈版本、芋道形态和启用模块的场景；不负责实现产品功能，也不编造项目知识。
 ---
 
 # 知识库与研发文档初始化
@@ -19,6 +19,7 @@ description: 根据当前工作区可验证的项目事实，初始化或调整 
 
 本 Skill 可以初始化或调整：
 
+- 符合全局规范的根级 `AGENTS.md` 项目上下文、约束与 knowledge/docs 路由入口
 - `knowledge/` 的目录职责、路由、索引、模板和应用知识
 - `knowledge/archive/` 的内容域镜像、归档路径和引用完整性
 - `docs/changes/` 与 `docs/postmortem/` 的目录、说明和模板
@@ -76,6 +77,8 @@ description: 根据当前工作区可验证的项目事实，初始化或调整 
 
 `personal/` 的个人内容必须按 `personal/<ownerCode>/` 隔离来源归属。ownerCode 是当前仓库内唯一且长期不变的小写 kebab-case 标识；姓名和昵称只作为 README 中的显示信息。只有产生真实个人内容时才从 `knowledge/template/personal/{ownerCode}/` 实例化目录，每级目录继续使用 README + INDEX 协议，不预造空所有者或主题目录，也不在 personal 中强制镜像正式知识分类。个人素材形成可独立验证的候选结论后，再进入 candidate。所有者目录不提供权限或隐私隔离；personal 会进入共享版本库并可能被自动化工具读取，不得写入密码、Token、私密通信、个人隐私或其他不应进入仓库的信息。
 
+根级 `AGENTS.md` 必须遵循 `knowledge/main/rules/AGENTSmd 全局规范.md`，以 `knowledge/template/common/AGENTS-template.md` 为初始化结构。项目概述、技术栈、目录与模块职责、运行与开发方式、验证策略、项目特有规则六个必选章节必须结合工作区证据填写，不得用一段路由入口替代完整项目上下文。文档规范中的精简路由用于自动加载：首次接触指向 `knowledge/README.md`，每个具体任务指向 `knowledge/ROUTING.md`，并链接 Change 与 Postmortem 规范；完整路由图只在 `knowledge/ROUTING.md` 维护。重复的知识正文、过期示例、未经验证的业务目标、本机路径和凭据必须移除或改为权威来源链接。
+
 重新生成所有受影响的 INDEX，并按真实文件系统和应用边界更新 ROUTING。Agent 新生成的项目知识未经用户或项目负责人确认，不得从 `candidate/` 移入 `main/` 或 `applications/`。
 
 `archive/` 必须建立 `main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/` 六个微缩镜像根目录。归档文件按来源内容域保留原相对路径；对已跟踪文件优先使用 `git mv`，随后更新来源 INDEX、归档 INDEX、ROUTING 和所有相关相对链接。六个来源内容域根部的 README 与 INDEX 是导航基础设施，只在原位更新并由 Git 保留历史，不归档到同名路径。原始导入资料根目录必须使用 `.raw-reference` 标记，归档时连同标记和本地资源整体移动。不得在其他知识目录下另建 `archive`、`legacy`、`deprecated` 等旁路归档区。
@@ -99,7 +102,7 @@ git diff --check
 
 发生归档或恢复移动时，再按当前阶段运行 `python knowledge/scripts/validate.py --git-staged`，或在 CI 中运行 `python knowledge/scripts/validate.py --git-range <base>...<head>`，核对来源内容域、原相对路径和移动语义。
 
-结构校验器会检查无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、候选镜像与正文契约、个人所有者边界、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
+结构校验器会检查根级 AGENTS 必选结构与路由入口、无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、候选镜像与正文契约、个人所有者边界、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
 
 必须同时检查 Git 列出的 tracked 和 untracked 文件；单独执行 `git diff` 无法覆盖新生成文件。
 
@@ -124,3 +127,4 @@ git diff --check
 - 不得在缺乏证据和明确范围时覆盖用户已有项目记录。
 - 不得在实例化的 application、Change 或 Postmortem 中留下断链、失效 appCode 或未解析模板占位符。
 - 不得复制归档内容后继续让旧路径承担有效知识职责，也不得在 `knowledge/archive/` 之外维护旁路归档目录。
+- 不得在 AGENTS、knowledge、docs 或模板中写入密码、Token、API Key、私密通信、个人隐私或本机专属凭据。

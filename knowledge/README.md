@@ -23,6 +23,8 @@
 
 新项目采用本体系时，应使用 `.agents/skills/knowledge-docs-initializer/`。初始化时按目标工作区重新识别应用、技术栈、芋道形态（如适用）、前端版本和启用模块，不得直接继承本仓库示例应用的 appCode、模块状态、版本或证据路径。
 
+根级 `AGENTS.md` 只维护自动加载入口、必要项目事实和硬约束；完整 knowledge/docs 路由以 `ROUTING.md` 为唯一权威来源，避免两处重复维护。
+
 当前主分支采用轻量 Markdown：知识身份、类别和生命周期由目录表达，不为受管理文档维护 YAML Front Matter。需要继续研究结构化字段时，使用 `feat/structured-metadata` 分支；首个结构化基线为 `structured-metadata-v0.1` 标签。
 
 这一约束适用于团队自维护的 `knowledge/` 与 `docs/` 文档。`reference/` 中原样导入的外部资料可以保留抓取工具生成的来源追溯头；它们是只读证据，不纳入知识字段维护。

@@ -32,6 +32,7 @@ python knowledge/scripts/validate.py --git-range <base>...<head>
 
 当前入口会检查：
 
+- 根级 `AGENTS.md` 遵循全局规范的六个必选章节，存在唯一的精简 knowledge/docs 路由入口，且不复制完整总路由图
 - 受管理 Markdown 没有自定义 YAML Front Matter
 - 本地 Markdown 相对链接和图片目标存在且不越出工作区
 - INDEX 与直接子项一致

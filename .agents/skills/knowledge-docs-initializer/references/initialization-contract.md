@@ -5,55 +5,58 @@
 ## 1. 预期结果
 
 ```text
-knowledge/
-├── README.md
-├── INDEX.md
-├── ROUTING.md
-├── main/
-├── applications/
-│   └── <从目标工作区识别出的 appCode>/
-│       ├── README.md
-│       ├── INDEX.md
-│       ├── <appCode>.md
-│       ├── base/README.md + INDEX.md
-│       ├── feature/README.md + INDEX.md
-│       ├── rule/README.md + INDEX.md
-│       └── tech/README.md + INDEX.md
-├── candidate/
-│   ├── main/
-│   └── applications/
-├── personal/
-│   └── <存在真实个人内容时建立的 ownerCode>/
-├── archive/
+<workspace>/
+├── AGENTS.md
+├── knowledge/
+│   ├── README.md
+│   ├── INDEX.md
+│   ├── ROUTING.md
 │   ├── main/
 │   ├── applications/
+│   │   └── <从目标工作区识别出的 appCode>/
+│   │       ├── README.md
+│   │       ├── INDEX.md
+│   │       ├── <appCode>.md
+│   │       ├── base/README.md + INDEX.md
+│   │       ├── feature/README.md + INDEX.md
+│   │       ├── rule/README.md + INDEX.md
+│   │       └── tech/README.md + INDEX.md
 │   ├── candidate/
+│   │   ├── main/
+│   │   └── applications/
 │   ├── personal/
+│   │   └── <存在真实个人内容时建立的 ownerCode>/
+│   ├── archive/
+│   │   ├── main/
+│   │   ├── applications/
+│   │   ├── candidate/
+│   │   ├── personal/
+│   │   ├── reference/
+│   │   └── template/
 │   ├── reference/
-│   └── template/
-├── reference/
-├── template/
-│   ├── common/
-│   ├── candidate/
-│   ├── personal/
-│   │   └── {ownerCode}/
-│   └── applications/
-└── scripts/
-
-docs/
-├── changes/
-│   ├── README.md
-│   ├── proposed/
-│   ├── implemented/
-│   ├── rejected/
-│   ├── archived/
-│   └── templates/
-└── postmortem/
-    ├── README.md
-    └── templates/
+│   ├── template/
+│   │   ├── common/
+│   │   ├── candidate/
+│   │   ├── personal/
+│   │   │   └── {ownerCode}/
+│   │   └── applications/
+│   └── scripts/
+└── docs/
+    ├── changes/
+    │   ├── README.md
+    │   ├── proposed/
+    │   ├── implemented/
+    │   ├── rejected/
+    │   ├── archived/
+    │   └── templates/
+    └── postmortem/
+        ├── README.md
+        └── templates/
 ```
 
 空目录不靠虚构知识填充。没有正式 feature、rule 或 tech 时，只保留其 README 与 INDEX。
+
+根级 `AGENTS.md` 是自动加载入口，不是完整知识或研发文档的副本。
 
 ## 2. 内容分类
 
@@ -172,6 +175,11 @@ docs/
 
 ## 6. 索引和路由
 
+- 根级 `AGENTS.md` 遵循 `knowledge/main/rules/AGENTSmd 全局规范.md`，从 `knowledge/template/common/AGENTS-template.md` 建立或增量更新；必须按项目事实维护项目概述、技术栈、目录与模块职责、运行与开发方式、验证策略、项目特有规则六个必选章节。
+- AGENTS 的文档规范保留精简入口：首次接触指向 knowledge README，每个具体任务指向 ROUTING，并链接 Change 与 Postmortem 规范；不得用路由片段替代完整项目上下文。
+- 完整分类、读取顺序、写入位置和生命周期只在 `knowledge/ROUTING.md` 维护；AGENTS 不复制完整路由图。
+- AGENTS 只保留当前工作区已验证的项目事实、硬约束和必要命令；详细知识、规范正文和变更过程分别链接到 knowledge 与 docs。
+- AGENTS、knowledge、docs 和模板不得包含密码、Token、API Key、私密通信、个人隐私、本机专属路径或本地连接凭据。
 - `README.md` 描述稳定职责，不维护动态文件清单。
 - `INDEX.md` 覆盖当前目录所有有效直接子项，且不索引自身。
 - `ROUTING.md` 基于实际 appCode、真实入口和现有知识更新。
@@ -197,6 +205,7 @@ git diff --check
 同时检查：
 
 - 受管理的 `knowledge/` 与 `docs/` Markdown 没有自定义 YAML Front Matter
+- 根级 AGENTS 具有全局规范要求的六个必选章节、唯一的精简路由入口和有效链接，并且没有复制 `knowledge/ROUTING.md` 的完整总路由图
 - 所有本地 Markdown 链接存在且不越出工作区
 - 每个应用目录名称有效，目录骨架完整
 - candidate 目标镜像完整，候选正文的拟晋升位置与真实相对路径一致
