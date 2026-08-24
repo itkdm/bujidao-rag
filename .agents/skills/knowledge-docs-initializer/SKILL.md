@@ -23,15 +23,18 @@ description: 根据当前工作区可验证的项目事实，初始化或调整�
 - `knowledge/` 的目录职责、路由、索引、模板和应用知识
 - `knowledge/archive/` 的内容域镜像、归档路径和引用完整性
 - `docs/changes/` 与 `docs/postmortem/` 的目录、说明和模板
+- 与知识体系配套的 `knowledge-driven-development` 日常开发入口
 - 从当前代码或用户明确确认中得到的项目知识
 
 除非用户另行明确要求，否则不得修改产品代码、启用应用模块、变更依赖或创建实现决策。
 
 ## 使用前提
 
-本 Skill 默认随本知识库模板仓库或其副本交付。目标工作区必须已经包含本仓库提供的根级 `AGENTS.md`、`knowledge/` 与 `docs/` 骨架，或由用户提供可读取的模板仓库路径后先整体导入这些内容；只有 Skill、没有模板骨架或来源路径时必须停止并说明缺少输入，不得凭记忆重建。
+本 Skill 默认随本知识库模板仓库或其副本交付。目标工作区必须已经包含本仓库提供的根级 `AGENTS.md`、`knowledge/` 与 `docs/` 骨架，或由用户提供可读取的模板仓库路径后先整体导入这些内容；宿主支持项目级 Skill 时，还要从同一模板来源导入与本 Skill 同级的 `knowledge-driven-development/`。只有 Skill、没有模板骨架或来源路径时必须停止并说明缺少输入，不得凭记忆重建。
 
 宿主工具可能使用 `.agent/skills/` 或 `.agents/skills/` 保存项目 Skill；两种目录形态不改变初始化契约。初始化后的结构校验器位于 `knowledge/scripts/`，不依赖 Skill 继续安装在哪一种目录中。
+
+宿主支持项目级 Skill 时，先按宿主现有约定确定 `.agent/skills/`、`.agents/skills/` 或其他项目 Skill 根目录，再从同一模板来源完整复制或增量更新 `knowledge-driven-development/`；已有人工定制时先核对差异，不得无依据覆盖。随后在目标 AGENTS 中接入。宿主不支持时，删除 AGENTS 模板中要求调用该 Skill 的句子和 knowledge README 的“日常开发驱动”章节，保留 AGENTS 与 ROUTING 的直接加载规则作为最低可用入口，不得虚构不存在的 Skill 路径。
 
 ## 工作流程
 
@@ -62,6 +65,7 @@ description: 根据当前工作区可验证的项目事实，初始化或调整�
 - 根据目标工作区重建应用知识、索引和路由
 - 只有确认属于模板且与目标无关时，才移除自带示例
 - 归属不清的用户内容先保留，直到责任边界明确
+- 宿主支持项目级 Skill 时，将 `knowledge-driven-development` 的复制或增量更新纳入矩阵
 
 未经验证，不得把示例应用目录、appCode、版本、模块或证据路径复制到目标项目。
 

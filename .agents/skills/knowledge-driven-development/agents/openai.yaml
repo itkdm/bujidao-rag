@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识驱动开发"
+  short_description: "按项目知识路由加载最小上下文，核对实现并完成开发、验证与知识闭环"
+  default_prompt: "使用 $knowledge-driven-development，依据当前项目知识路由完成这项研发任务并闭环验证与文档。"

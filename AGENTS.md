@@ -58,8 +58,11 @@
 | `knowledge/` | 跨任务长期有效的知识与资料 |
 | `docs/changes/` | 一次研发变更的提议、实施和历史状态 |
 | `docs/postmortem/` | 已发生且暴露系统性防线缺口的问题复盘 |
-| `.agents/skills/knowledge-docs-initializer/` | 本仓库当前使用的初始化 Skill 路径；其他宿主可使用 `.agent/skills/` |
+| `.agents/skills/knowledge-docs-initializer/` | 按目标项目事实初始化 AGENTS、knowledge 与 docs |
+| `.agents/skills/knowledge-driven-development/` | 日常研发时按知识路由加载约束、核对代码、验证并闭环文档 |
 | `.dev-tmp/` | 本地调试日志与临时脚本，不进入版本库 |
+
+本仓库使用 `.agents/skills/` 保存项目级 Skill；其他宿主可按其约定使用 `.agent/skills/`，Skill 职责不因宿主目录名变化。
 
 根 `pom.xml` 当前只聚合 `system` 与 `infra` 业务模块。其他 `yudao-module-*` 目录或被注释的模块均按未启用处理，启用状态必须同时核对根聚合构建、`yudao-server` 运行装配和环境配置。
 
@@ -137,7 +140,8 @@ git status --short
 5. **代码生成**：生成代码后必须人工审查；修改代码生成模板时记录原因和影响。
 6. **调试产物**：临时日志与脚本放入 `.dev-tmp/logs/` 或 `.dev-tmp/scripts/`，不得散落在仓库根目录或提交到版本库。
 7. **敏感信息**：密码、Token、API Key、私密通信、个人隐私和本机专属凭据不得进入版本库文件或提交信息。
-8. **独立审查**：修改 knowledge、docs 或 `knowledge-docs-initializer` Skill 后，提交前必须由独立子 Agent 审查，并合理处理意见。
+8. **知识驱动开发**：理解、设计、审查或修改应用代码、配置、数据库、测试与工程结构时，使用项目提供的 `knowledge-driven-development` Skill，按 ROUTING 加载最小知识并复核当前实现。
+9. **独立审查**：修改 knowledge、docs 或项目级 Skill 后，提交前必须由独立子 Agent 审查，并合理处理意见。
 
 ---
 

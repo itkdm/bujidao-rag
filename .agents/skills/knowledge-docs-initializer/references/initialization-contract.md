@@ -68,6 +68,19 @@
 
 `knowledge/scripts/` 是初始化结果的自包含校验器，不依赖 `.agent/`、`.agents/` 或 Skill 安装位置。Skill 本身可按宿主约定放在 `.agent/skills/` 或 `.agents/skills/`；本契约不要求初始化完成后保留某一种宿主目录名称。
 
+宿主支持项目级 Skill 时，初始化结果还必须包含：
+
+```text
+<宿主项目 Skill 根目录>/
+└── knowledge-driven-development/
+    ├── SKILL.md
+    └── agents/openai.yaml
+```
+
+它必须从同一模板来源的同级 Skill 目录完整复制或增量更新，不能凭记忆重建；目标已有人工定制时先核对差异，不得直接覆盖。随后在根级 AGENTS 中接入。该 Skill 只编排 ROUTING、代码核对、验证和知识闭环，不复制 knowledge 或 docs 的规范正文。
+
+宿主不支持项目级 Skill 时，初始化必须删除 AGENTS 模板中要求调用该 Skill 的句子和 knowledge README 的“日常开发驱动”章节，直接保留 README 与 ROUTING 的加载入口。
+
 ## 2. 内容分类
 
 | 类别 | 处理方式 | 典型内容 |
@@ -189,6 +202,7 @@
 
 - 根级 `AGENTS.md` 遵循 `knowledge/main/rules/AGENTSmd 全局规范.md`，从 `knowledge/template/common/AGENTS-template.md` 建立或增量更新；必须按项目事实维护项目概述、技术栈、目录与模块职责、运行与开发方式、验证策略、项目特有规则六个必选章节。
 - AGENTS 的文档规范保留精简入口：首次接触指向 knowledge README，每个具体任务指向 ROUTING，并链接 Change 与 Postmortem 规范；不得用路由片段替代完整项目上下文。
+- 宿主支持项目级 Skill 时，AGENTS 还应要求研发任务使用 `knowledge-driven-development`；Skill 根目录由宿主决定，不在知识文档中绑定 `.agent` 或 `.agents`。初始化报告必须说明实际交付位置；不支持时按第 1 节删除两处 Skill 入口。
 - 完整分类、读取顺序、写入位置和生命周期只在 `knowledge/ROUTING.md` 维护；AGENTS 不复制完整路由图。
 - AGENTS 只保留当前工作区已验证的项目事实、硬约束和必要命令；详细知识、规范正文和变更过程分别链接到 knowledge 与 docs。
 - AGENTS、knowledge、docs 和模板不得包含密码、Token、API Key、私密通信、个人隐私、本机专属路径或本地连接凭据。

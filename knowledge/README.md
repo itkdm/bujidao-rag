@@ -23,6 +23,10 @@
 
 新项目采用本体系时，应使用项目实际提供的 `knowledge-docs-initializer` Skill（本仓库位于 `.agents/skills/knowledge-docs-initializer/`）。初始化时按目标工作区重新识别应用、技术栈、芋道形态（如适用）、前端版本和启用模块，不得直接继承本仓库示例应用的 appCode、模块状态、版本或证据路径。
 
+## 日常开发驱动
+
+初始化完成后的代码理解、方案设计、代码审查和实现任务使用项目提供的 `knowledge-driven-development` Skill；具体存放目录遵循宿主的项目级 Skill 约定。该 Skill 只负责读取 ROUTING、选择最小知识集合、核对当前代码、执行验证并闭环知识与 Change；具体规范正文继续由 knowledge 与 docs 维护，Skill 不复制第二份规则。宿主不支持项目级 Skill 时，初始化过程删除本节，由根级 AGENTS 直接驱动 README 与 ROUTING。
+
 根级 `AGENTS.md` 只维护自动加载入口、必要项目事实和硬约束；完整 knowledge/docs 路由以 `ROUTING.md` 为唯一权威来源，避免两处重复维护。
 
 当前主分支采用轻量 Markdown：知识身份、类别和生命周期由目录表达，不为受管理文档维护 YAML Front Matter。需要继续研究结构化字段时，使用 `feat/structured-metadata` 分支；首个结构化基线为 `structured-metadata-v0.1` 标签。

@@ -53,6 +53,7 @@
 
 - 首次接触项目先读 [knowledge/README.md](knowledge/README.md)。
 - 每个具体任务开始前必须读 [knowledge/ROUTING.md](knowledge/ROUTING.md)，再加载任务所需的最小文件集合。
+- 理解、设计、审查或修改项目实现时，使用项目提供的 `knowledge-driven-development` Skill 执行知识加载、代码核对、验证与知识闭环。
 - Change 的触发条件和生命周期见 [docs/changes/README.md](docs/changes/README.md)。
 - Postmortem 的触发条件和边界见 [docs/postmortem/README.md](docs/postmortem/README.md)。
 - 完整分类、读取顺序、写入位置和生命周期以 `knowledge/ROUTING.md` 为唯一权威来源；本文件只维护自动加载入口，不复制完整路由图。
