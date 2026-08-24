@@ -20,6 +20,8 @@ knowledge/
 │       ├── rule/README.md + INDEX.md
 │       └── tech/README.md + INDEX.md
 ├── candidate/
+│   ├── main/
+│   └── applications/
 ├── personal/
 ├── archive/
 │   ├── main/
@@ -30,6 +32,9 @@ knowledge/
 │   └── template/
 ├── reference/
 ├── template/
+│   ├── common/
+│   ├── candidate/
+│   └── applications/
 └── scripts/
 
 docs/
@@ -107,11 +112,27 @@ docs/
 
 - `main/` 只保留跨应用强制统一、已确认且长期有效的知识。
 - `reference/` 是证据层，不是项目事实层；原始导入资料可以保留其上游来源追溯信息。
-- `candidate/` 接收初始化中的推断、缺口和待确认结论。
+- `candidate/` 接收可能成为长期知识、但证据、范围或确认条件尚未闭环的结论；它不是草稿箱、资料库或任务列表。
 - `personal/` 不作为团队正式结论。
 - `archive/` 只保存已确认退出当前有效知识路径的内容，并按来源内容域保留原相对路径。
 
-### 4.5 归档镜像
+### 4.5 候选知识
+
+`candidate/` 使用目标镜像而不是状态目录：
+
+- `candidate/main/<relative-path>` 拟晋升到 `main/<relative-path>`。
+- `candidate/applications/<appCode>/<relative-path>` 拟晋升到 `applications/<appCode>/<relative-path>`。
+- candidate 中的 appCode 必须已经存在于正式 applications；应用边界尚未确认时进入 unclassified。
+- 只有目标范围也无法判断时才按需建立 `candidate/unclassified/`，完成分类后必须迁出。
+- 文件名使用未来正式知识的文件名，不添加 candidate 前缀；每个子目录继续使用 README + INDEX 协议。
+- 每级 `README.md` 与 `INDEX.md` 是保留的导航基础设施，不是候选正文，不参与目标镜像和晋升；候选知识不得使用这两个文件名。
+- 候选正文从 `template/candidate/candidate.md` 实例化，必须写明候选结论、唯一拟晋升位置、仍为候选的原因、证据、待确认问题和验证与晋升条件。
+- 不使用百分比可信度，不建立 pending、reviewed、approved 等状态目录。确认后的内容必须退出 candidate。
+- 外部资料进入 reference，个人素材进入 personal，待实施方案进入 `docs/changes/proposed/`，普通 TODO 进入任务系统。
+- 正式文档中的局部复核提醒可以保留；形成独立假设、独立证据或跨文件影响时才抽成候选。
+- 目标文件不存在时可用 `git mv` 晋升并重写为正式结构；目标已存在时合入已验证内容，禁止覆盖正式知识。
+
+### 4.6 归档镜像
 
 `archive/` 是知识内容目录的微缩镜像，只允许六个根目录：`main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/`。
 
@@ -164,6 +185,7 @@ git diff --check
 - 受管理的 `knowledge/` 与 `docs/` Markdown 没有自定义 YAML Front Matter
 - 所有本地 Markdown 链接存在且不越出工作区
 - 每个应用目录名称有效，目录骨架完整
+- candidate 目标镜像完整，候选正文的拟晋升位置与真实相对路径一致
 - archive 六个镜像根目录完整，其他位置没有旁路归档目录
 - 显式启用 Git 模式时，归档和恢复操作保持来源内容域与原相对路径，且没有以复制代替移动
 - INDEX 与真实文件系统一致

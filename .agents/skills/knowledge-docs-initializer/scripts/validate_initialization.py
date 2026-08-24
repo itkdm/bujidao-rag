@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
+from validate_candidate import validate_candidate_layout
+
 
 for stream in (sys.stdout, sys.stderr):
     if hasattr(stream, "reconfigure"):
@@ -586,6 +588,10 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         "knowledge/applications/INDEX.md",
         "knowledge/candidate/README.md",
         "knowledge/candidate/INDEX.md",
+        "knowledge/candidate/applications/README.md",
+        "knowledge/candidate/applications/INDEX.md",
+        "knowledge/candidate/main/README.md",
+        "knowledge/candidate/main/INDEX.md",
         "knowledge/personal/README.md",
         "knowledge/personal/INDEX.md",
         "knowledge/archive/README.md",
@@ -608,6 +614,8 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         "knowledge/scripts/validate.py",
         "knowledge/template/common/README-template.md",
         "knowledge/template/common/INDEX-template.md",
+        "knowledge/template/candidate/README.md",
+        "knowledge/template/candidate/candidate.md",
         "knowledge/template/applications/{appCode}/application-README-template.md",
         "knowledge/template/applications/{appCode}/application-INDEX-template.md",
         "knowledge/template/applications/{appCode}/application-overview-template.md",
@@ -678,6 +686,7 @@ def main() -> int:
     validate_evidence_rows(workspace, paths, errors)
     validate_indexes(workspace, errors)
     app_codes = application_codes(workspace, errors)
+    validate_candidate_layout(workspace, errors)
     validate_archive_layout(workspace, errors)
     if args.git_staged or args.git_range:
         validate_git_archive_moves(
@@ -707,7 +716,7 @@ def main() -> int:
     print(
         "初始化结构校验通过："
         f"已检查 {managed_count} 个受管理 Markdown 文件，跳过 {raw_count} 个原始导入参考文件；"
-        "YAML 头、目录骨架、相对链接、正文证据、应用目录、归档镜像、索引和占位符均已检查"
+        "YAML 头、目录骨架、相对链接、正文证据、应用目录、候选契约、归档镜像、索引和占位符均已检查"
         f"{git_summary}。"
     )
     return 0

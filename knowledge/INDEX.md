@@ -8,7 +8,7 @@
 | [`README.md`](./README.md) | 文件 | 知识库的职责、分层定位与维护契约 |
 | [`applications/`](./applications/INDEX.md) | 目录 | 按应用或模块组织的知识 |
 | [`archive/`](./archive/INDEX.md) | 目录 | 保存已退出当前有效知识体系、但仍需历史追溯的内容 |
-| [`candidate/`](./candidate/INDEX.md) | 目录 | 候选知识暂存区，存放待确认的推断结论 |
+| [`candidate/`](./candidate/INDEX.md) | 目录 | 按拟晋升路径组织、等待验证或确认的候选知识队列 |
 | [`main/`](./main/INDEX.md) | 目录 | 跨应用、跨系统、跨业务线的通用知识 |
 | [`personal/`](./personal/INDEX.md) | 目录 | 个人研发经验、踩坑记录与碎片素材 |
 | [`reference/`](./reference/) | 目录 | 上游官方文档、外部文章等证据材料 |

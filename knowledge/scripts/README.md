@@ -36,6 +36,7 @@ python knowledge/scripts/validate.py --git-range <base>...<head>
 - 本地 Markdown 相对链接和图片目标存在且不越出工作区
 - INDEX 与直接子项一致
 - 应用知识的正文证据链接有效
+- `candidate/` 使用目标镜像目录，候选正文包含拟晋升位置、证据缺口和验证条件
 - `archive/` 只使用规定的六个镜像根目录
 - `knowledge/` 其他位置没有旁路归档目录
 - 暂存区或指定提交范围中的归档操作确实是移动，并严格保留来源内容域与原相对路径

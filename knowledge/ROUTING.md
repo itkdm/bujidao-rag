@@ -13,7 +13,7 @@
    - 全局业务概念、术语、规则 → `main/`
    - 应用或模块任务 → `applications/`
    - 上游官方材料、外部文章、证据核对 → `reference/`
-   - 未确认推断或新发现 → `candidate/`
+   - 未确认推断或新发现 → 按拟晋升范围进入 `candidate/main/` 或 `candidate/applications/`
    - 个人经验或原始素材 → `personal/`
    - 写作结构约束模板 → `template/`
    - 显式追溯已退出知识 → `archive/`
@@ -29,7 +29,7 @@
 | 术语、角色、全局规则 | `main/` |
 | 后端、前端、具体模块 | `applications/` |
 | 上游官方文档、外部参考文章、证据核对 | `reference/` |
-| 不确定推断、新发现 | `candidate/` |
+| 不确定推断、新发现 | `candidate/main/` 或 `candidate/applications/<appCode>/`；目标范围也无法判断时才使用按需建立的 `candidate/unclassified/` |
 | 排障、个人经验、碎片记录 | `personal/` |
 | 新建知识文件、统一写法 | `template/` |
 | 显式追溯旧版本、已废弃规则或退休应用 | `archive/INDEX.md` |
@@ -44,7 +44,7 @@
 | 判断上游模块能否直接复用 | `applications/{appCode}/INDEX.md` → `{appCode}.md` → `rule/rule-boundary-backend-baseline.md` → 必要时读取 `reference/` 对应证据 | 已确认模块启用状态、基线边界和待确认项 |
 | 修改前端管理后台 | `applications/{appCode}/INDEX.md` → 对应 `base/README.md` 或 `rule/README.md` → `tech/README.md` | 已确认当前是否已有正式知识；没有则回到代码和候选知识 |
 | 梳理功能或运行流程 | 对应应用 `feature/README.md` → 当前代码 → 相关 `docs/changes/` | 已确认功能事实来自当前实现、已落地 Change 或人工确认，不把空 feature 当事实 |
-| 写入新知识 | `template/` 对应模板 → 目标目录 README | 已确认知识类型、事实来源和目标路径；未确认内容进入 `candidate/` |
+| 写入新知识 | `template/` 对应模板 → 目标目录 README | 已确认知识类型、事实来源和目标路径；未确认内容使用 `template/candidate/candidate.md` 并进入目标镜像 |
 
 ## 应用关键词路由
 
@@ -84,7 +84,8 @@
 
 1. 不默认读取整个知识库。
 2. 不在未 review 的情况下晋升候选知识。
-3. 不把功能流程、业务规则、事实索引和技术约束混在同一个知识文件里。
-4. 不把项目正式决策混进知识文件；已确认决策应进入 `docs/`。
-5. 不将 `archive/` 中的知识作为正常路由结果返回（除非显式追溯历史）。
-6. 归档文件必须移动到 `archive/<来源内容域>/<原相对路径>`，并同步更新 INDEX、ROUTING 与相对链接。
+3. 不把 `candidate/` 当作正常实现依据；读取候选时必须同时核对其证据缺口和晋升条件。
+4. 不把功能流程、业务规则、事实索引和技术约束混在同一个知识文件里。
+5. 不把项目正式决策混进知识文件；已确认决策应进入 `docs/`。
+6. 不将 `archive/` 中的知识作为正常路由结果返回（除非显式追溯历史）。
+7. 归档文件必须移动到 `archive/<来源内容域>/<原相对路径>`，并同步更新 INDEX、ROUTING 与相对链接。

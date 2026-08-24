@@ -72,6 +72,8 @@ description: 根据当前工作区可验证的项目事实，初始化或调整 
 
 替换全部占位符后再写入目标目录。应用总览和四类应用知识必须包含标准 `## 证据来源` 表格；本地代码和文档来源写成可校验的 Markdown 链接。四类正式目录只写已确认知识；推断或未决结论写入 `candidate/`。外部资料保留在 `reference/`，不得自动提升为项目事实。
 
+`candidate/` 必须建立 `main/` 与 `applications/` 两个目标镜像入口。候选文件保留未来正式知识的相对路径和文件名，并从 `knowledge/template/candidate/candidate.md` 实例化；只有目标范围也无法判断时才按需建立 `unclassified/`。每级 `README.md` 与 `INDEX.md` 是保留的导航基础设施，不是候选正文，也不参与镜像晋升。候选正文必须说明候选结论、拟晋升位置、证据缺口、待确认问题和验证条件。不要创建状态子目录，不要把外部资料、个人素材、实施方案或普通 TODO 当作候选知识。
+
 重新生成所有受影响的 INDEX，并按真实文件系统和应用边界更新 ROUTING。Agent 新生成的项目知识未经用户或项目负责人确认，不得从 `candidate/` 移入 `main/` 或 `applications/`。
 
 `archive/` 必须建立 `main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/` 六个微缩镜像根目录。归档文件按来源内容域保留原相对路径；对已跟踪文件优先使用 `git mv`，随后更新来源 INDEX、归档 INDEX、ROUTING 和所有相关相对链接。六个来源内容域根部的 README 与 INDEX 是导航基础设施，只在原位更新并由 Git 保留历史，不归档到同名路径。原始导入资料根目录必须使用 `.raw-reference` 标记，归档时连同标记和本地资源整体移动。不得在其他知识目录下另建 `archive`、`legacy`、`deprecated` 等旁路归档区。
@@ -95,7 +97,7 @@ git diff --check
 
 发生归档或恢复移动时，再按当前阶段运行 `python knowledge/scripts/validate.py --git-staged`，或在 CI 中运行 `python knowledge/scripts/validate.py --git-range <base>...<head>`，核对来源内容域、原相对路径和移动语义。
 
-结构校验器会检查无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
+结构校验器会检查无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、候选镜像与正文契约、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
 
 必须同时检查 Git 列出的 tracked 和 untracked 文件；单独执行 `git diff` 无法覆盖新生成文件。
 
@@ -116,6 +118,7 @@ git diff --check
 - 不得让目标项目继承模板中的产品、行业、功能集合或芋道模块选择。
 - 不得把上游模块、目录、依赖或参考资料当成目标项目实际采用的证据。
 - 不得把未经确认的 Agent 推断直接写入 `main/` 或 `applications/`。
+- 不得让候选知识参与默认事实检索，也不得把 Change、reference、personal 或普通 TODO 的内容重复堆入 candidate。
 - 不得在缺乏证据和明确范围时覆盖用户已有项目记录。
 - 不得在实例化的 application、Change 或 Postmortem 中留下断链、失效 appCode 或未解析模板占位符。
 - 不得复制归档内容后继续让旧路径承担有效知识职责，也不得在 `knowledge/archive/` 之外维护旁路归档目录。
