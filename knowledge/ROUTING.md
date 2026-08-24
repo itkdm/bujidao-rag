@@ -1,85 +1,80 @@
-
 # 路由规则
 
 本文档是知识库的**需求级检索入口**。AI 在每个具体需求开始时，必须先读本文档进行定位。
 
 > **注意**：首次接触知识库时先读取 `README.md`；每个具体需求开始时，再读取本文档进行任务路由。
 
-## 路由顺序
+## 总路由图
 
-1. 读取 `ROUTING.md`（本文档），根据需求线索定位目标目录。
-2. 按路由结果进入对应目录，读取 `INDEX.md` 或应用总览。
-3. 判断当前任务属于哪一层：
-   - 全局业务概念、术语、规则 → `main/`
-   - 应用或模块任务 → `applications/`
-   - 上游官方材料、外部文章、证据核对 → `reference/`
-   - 未确认推断或新发现 → 按拟晋升范围进入 `candidate/main/` 或 `candidate/applications/`
-   - 个人经验或原始素材 → `personal/<ownerCode>/`
-   - 写作结构约束模板 → `template/`
-   - 显式追溯已退出知识 → `archive/`
-4. 只加载当前任务需要的最小知识文件集合。
-5. 如果知识缺失或结论不确定，先写入 `candidate/`，不要直接创造稳定知识。
-6. 如果 `feature/README.md` 标注当前无正式功能知识，不得自行脑补功能流程，应回到当前代码、对应 Change 或向项目负责人确认。
-7. **编码前必须回到当前仓库核对代码**。
+```text
+[任务 / 待写内容]
+        │
+        ▼
+[首次：README；每次：ROUTING]
+        │
+        ├─ 研发变更或设计决策 ─────────────► [docs/changes/]（先读 README）
+        │      ├─ 新建、讨论中或实施中 ─────► [proposed/] ← [templates/]
+        │      ├─ 当前仍有效的决策 ─────────► [implemented/]
+        │      ├─ 讨论后未采用 ─────────────► [rejected/]
+        │      └─ 已失效或被替代 ───────────► [archived/]
+        │
+        ├─ 达到 Postmortem 条件的已发生问题 ─► [docs/postmortem/]（先读 README）← [templates/]
+        │      └─ 修复或防线落地时，同时建立相关 proposed Change
+        ├─ 上游官方材料、外部文章或证据 ─────► [knowledge/reference/]
+        ├─ 个人经验、踩坑或碎片素材 ─────────► [knowledge/personal/<ownerCode>/]
+        ├─ 显式追溯已退出知识（非 Change） ───► [knowledge/archive/INDEX.md]
+        ├─ 知识写作结构或初始化配方 ─────────► [knowledge/template/]
+        ├─ 未确认但可能长期复用的结论
+        │      ├─ 已知全局目标 ─────────────► [knowledge/candidate/main/<relative-path>]
+        │      ├─ 已知应用目标 ─────────────► [knowledge/candidate/applications/<appCode>/...]
+        │      └─ 目标范围不明 ─────────────► [knowledge/candidate/unclassified/]（按需建立）
+        │
+        └─ 已确认且长期有效的项目知识
+               ├─ 跨应用统一 ──────────────► [knowledge/main/]
+               └─ 单一应用范围 ────────────► [knowledge/applications/<appCode>/]
+                      ├─ 当前事实与位置 ────► [base/]
+                      ├─ 已实现能力流程 ────► [feature/]
+                      ├─ 必须满足的约束 ────► [rule/]
+                      └─ 实际实现机制 ──────► [tech/]
 
-## 路由提示
+[知识目标目录] ─► [README / INDEX / 应用总览] ─► [任务所需的最小文件集]
+                                                        │
+                                           需要编码时回到当前代码核对
+                                                        │
+                                           发生知识变更时 ▼
+                                  [更新 INDEX / ROUTING / 相对链接]
+                                                        │
+                                                        ▼
+                                  [python knowledge/scripts/validate.py]
+```
 
-| 任务线索 | 优先读取 |
-| --- | --- |
-| 术语、角色、全局规则 | `main/` |
-| 后端、前端、具体模块 | `applications/` |
-| 上游官方文档、外部参考文章、证据核对 | `reference/` |
-| 不确定推断、新发现 | `candidate/main/` 或 `candidate/applications/<appCode>/`；目标范围也无法判断时才使用按需建立的 `candidate/unclassified/` |
-| 排障、个人经验、碎片记录 | 先按所有者进入 `personal/<ownerCode>/`；没有真实内容时不创建所有者目录 |
-| 新建知识文件、统一写法 | `template/` |
-| 显式追溯旧版本、已废弃规则或退休应用 | `archive/INDEX.md` |
+执行时只加载当前任务需要的最小知识集合。知识缺失时先回到当前代码或已有研发文档核对；只有形成“可能长期复用但尚未确认”的独立结论后才进入 candidate，不能把知识缺口或 TODO 当候选。`feature/` 为空时回到当前代码、相关 Change 或负责人确认。无论知识是否已有，编码前都必须复核当前实现。
 
-## 任务级最小读取路径
+## 当前芋道示例的最小读取路径
+
+以下路径只描述本仓库当前两个芋道示例应用。初始化到其他项目时，必须按真实 appCode 和实际存在的知识文件重建本表，不能照搬示例路径。
 
 | 任务意图 | 最小读取路径 | 停止条件 |
 | --- | --- | --- |
-| 新增后端管理接口 | `applications/{appCode}/INDEX.md` → `base/README.md` → `base/base-api-index.md` → `rule/rule-permission-admin-app-boundary.md` → `tech/tech-framework-web-api.md` → `tech/tech-error-exception-log.md` | 已定位 Controller、权限边界、请求/响应规范、错误码规范 |
-| 新增后端表或查询 | `applications/{appCode}/INDEX.md` → `base/base-database-index.md` → `base/base-model-index.md` → `tech/tech-data-mybatis-cache.md` | 已定位 SQL/DO/Mapper 规则和查询约束 |
-| 新增后端定时任务或消息消费 | `applications/{appCode}/INDEX.md` → `base/base-async-index.md` → `tech/tech-async-job-mq.md` → `tech/tech-error-exception-log.md` | 已定位 Job/MQ 入口、异常处理和重试风险 |
-| 判断上游模块能否直接复用 | `applications/{appCode}/INDEX.md` → `{appCode}.md` → `rule/rule-boundary-backend-baseline.md` → 必要时读取 `reference/` 对应证据 | 已确认模块启用状态、基线边界和待确认项 |
-| 修改前端管理后台 | `applications/{appCode}/INDEX.md` → 对应 `base/README.md` 或 `rule/README.md` → `tech/README.md` | 已确认当前是否已有正式知识；没有则回到代码和候选知识 |
-| 梳理功能或运行流程 | 对应应用 `feature/README.md` → 当前代码 → 相关 `docs/changes/` | 已确认功能事实来自当前实现、已落地 Change 或人工确认，不把空 feature 当事实 |
-| 写入新知识 | `template/` 对应模板 → 目标目录 README | 已确认知识类型、事实来源和目标路径；未确认内容使用 `template/candidate/candidate.md` 并进入目标镜像 |
-| 写入个人素材 | 已有所有者读取 `personal/<ownerCode>/INDEX.md`；首次写入先用 `template/personal/{ownerCode}/` 建立目录 | 已确认 ownerCode 稳定且仓库内唯一，并且本次存在真实个人内容 |
+| 新增后端管理接口 | `applications/ruoyi-vue-pro/INDEX.md` → `base/base-api-index.md` → `rule/rule-permission-admin-app-boundary.md` → `tech/tech-framework-web-api.md` → `tech/tech-error-exception-log.md` | 已定位 Controller、权限边界、请求/响应规范、错误码规范 |
+| 新增后端表或查询 | `applications/ruoyi-vue-pro/INDEX.md` → `base/base-database-index.md` → `base/base-model-index.md` → `tech/tech-data-mybatis-cache.md` | 已定位 SQL、DO、Mapper 规则和查询约束 |
+| 新增后端定时任务或消息消费 | `applications/ruoyi-vue-pro/INDEX.md` → `base/base-async-index.md` → `tech/tech-async-job-mq.md` → `tech/tech-error-exception-log.md` | 已定位 Job、MQ 入口、异常处理和重试风险 |
+| 判断上游模块能否直接复用 | `applications/ruoyi-vue-pro/INDEX.md` → `ruoyi-vue-pro.md` → `rule/rule-boundary-backend-baseline.md` → 必要时读取 `reference/` 对应证据 | 已确认模块启用状态和基线边界 |
+| 修改 Vue3 管理后台 | `applications/yudao-ui-admin-vue3/INDEX.md` → `yudao-ui-admin-vue3.md` → 对应分类 README → 当前代码 | 已确认应用边界和知识覆盖范围；正式知识为空时不自行推断 |
+| 梳理已实现功能或运行流程 | 对应应用 `feature/README.md` → 当前代码 → 相关 `docs/changes/` | 已确认事实来自当前实现、已落地 Change 或负责人确认，不把空 feature 当事实 |
 
-## 应用关键词路由
+## 应用内分类
 
-| 关键词 | 优先读取 |
-| --- | --- |
-| 后端、Java、Spring Boot、接口、数据库、权限 | `applications/{appCode}/INDEX.md` |
-| 前端、管理后台、Vue3、Element Plus、用户管理 | `applications/{appCode}/INDEX.md` |
-| 移动端、小程序、uni-app、H5 | `applications/{appCode}/INDEX.md` |
+进入 `applications/<appCode>/INDEX.md` 后，只按问题本质选择一个主分类；需要补充上下文时再跨分类读取。
 
-## 技术任务路由
+| 要回答的问题 | 主入口 | 典型线索 |
+| --- | --- | --- |
+| 当前事实是什么、对象在哪里 | `base/README.md` | 模块、包、Controller、API、DO、VO、表、SQL、配置、权限编码、MQ、Job |
+| 当前已经实现了什么能力 | `feature/README.md` | 可观察功能、主要流程、用户可执行操作 |
+| 当前必须满足什么约束 | `rule/README.md` | 权限、状态、数据边界、安全例外、配置开关 |
+| 当前实际上如何实现 | `tech/README.md` | 架构、框架、事务、缓存、消息、异常、日志、构建、测试 |
 
-| 任务线索 | 路由方式 |
-| --- | --- |
-| 架构约束、框架用法、事务、缓存、MQ、定时任务、异常、日志、权限、构建、测试、排障 | 先按应用关键词进入对应 `applications/{appCode}/INDEX.md`，再读取该应用的 `tech/README.md` |
-| 无法判断属于哪个应用的通用技术约束 | 先查 `main/tech/`，没有稳定知识时写入 `candidate/` |
-| 只是个人踩坑或一次性排查过程 | 写入对应 `personal/<ownerCode>/`，不要直接进入正式 `tech/` |
-
-## 基础事实路由
-
-| 任务线索 | 路由方式 |
-| --- | --- |
-| 模块、包结构、Controller、API、DO、VO、DTO、表、SQL、配置、权限编码、MQ、Job | 先按应用关键词进入对应 `applications/{appCode}/INDEX.md`，再读取该应用的 `base/README.md` |
-| 需要知道"怎么实现、为什么这样实现" | 转到该应用的 `tech/README.md` |
-| 需要了解功能能力、主要业务流程 | 转到该应用的 `feature/` |
-| 需要了解业务规则、权限、状态约束、数据边界 | 转到该应用的 `rule/` |
-
-## 规则知识路由
-
-| 任务线索 | 路由方式 |
-| --- | --- |
-| 边界、权限、状态、数据可见性、安全例外、配置开关、合规追责 | 先按应用关键词进入对应 `applications/{appCode}/INDEX.md`，再读取该应用的 `rule/README.md` |
-| 需要定位规则涉及的代码对象 | 转到该应用的 `base/README.md` |
-| 需要实现规则对应代码 | 转到该应用的 `tech/README.md` |
-| 全局协作规范（Git Commit、分支规范等） | `main/rules/` |
+需要定位规则涉及的代码对象时，从 rule 转到 base；需要实现规则或能力时，再转到 tech。跨应用统一规则进入 `main/`，一次性个人排查过程进入对应 `personal/<ownerCode>/`。
 
 ## 禁止事项
 
