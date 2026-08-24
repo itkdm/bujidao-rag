@@ -27,6 +27,12 @@ description: 根据当前工作区可验证的项目事实，初始化或调整�
 
 除非用户另行明确要求，否则不得修改产品代码、启用应用模块、变更依赖或创建实现决策。
 
+## 使用前提
+
+本 Skill 默认随本知识库模板仓库或其副本交付。目标工作区必须已经包含本仓库提供的根级 `AGENTS.md`、`knowledge/` 与 `docs/` 骨架，或由用户提供可读取的模板仓库路径后先整体导入这些内容；只有 Skill、没有模板骨架或来源路径时必须停止并说明缺少输入，不得凭记忆重建。
+
+宿主工具可能使用 `.agent/skills/` 或 `.agents/skills/` 保存项目 Skill；两种目录形态不改变初始化契约。初始化后的结构校验器位于 `knowledge/scripts/`，不依赖 Skill 继续安装在哪一种目录中。
+
 ## 工作流程
 
 ### 1. 确认来源与目标
@@ -71,17 +77,9 @@ description: 根据当前工作区可验证的项目事实，初始化或调整�
 - `category-INDEX-template.md` → 四类目录的 `INDEX.md`
 - `base/`、`feature/`、`rule/`、`tech/` 的 `README.md` → 对应分类职责说明
 
-替换全部占位符后再写入目标目录。应用总览和四类应用知识必须包含标准 `## 证据来源` 表格；本地代码和文档来源写成可校验的 Markdown 链接。四类正式目录只写已确认知识；推断或未决结论写入 `candidate/`。外部资料保留在 `reference/`，不得自动提升为项目事实。
-
-`candidate/` 必须建立 `main/` 与 `applications/` 两个目标镜像入口。候选文件保留未来正式知识的相对路径和文件名，并从 `knowledge/template/candidate/candidate.md` 实例化；只有目标范围也无法判断时才按需建立 `unclassified/`。每级 `README.md` 与 `INDEX.md` 是保留的导航基础设施，不是候选正文，也不参与镜像晋升。候选正文必须说明候选结论、拟晋升位置、证据缺口、待确认问题和验证条件。不要创建状态子目录，不要把外部资料、个人素材、实施方案或普通 TODO 当作候选知识。
-
-`personal/` 的个人内容必须按 `personal/<ownerCode>/` 隔离来源归属。ownerCode 是当前仓库内唯一且长期不变的小写 kebab-case 标识；姓名和昵称只作为 README 中的显示信息。只有产生真实个人内容时才从 `knowledge/template/personal/{ownerCode}/` 实例化目录，每级目录继续使用 README + INDEX 协议，不预造空所有者或主题目录，也不在 personal 中强制镜像正式知识分类。个人素材形成可独立验证的候选结论后，再进入 candidate。所有者目录不提供权限或隐私隔离；personal 会进入共享版本库并可能被自动化工具读取，不得写入密码、Token、私密通信、个人隐私或其他不应进入仓库的信息。
-
-根级 `AGENTS.md` 必须遵循 `knowledge/main/rules/AGENTSmd 全局规范.md`，以 `knowledge/template/common/AGENTS-template.md` 为初始化结构。项目概述、技术栈、目录与模块职责、运行与开发方式、验证策略、项目特有规则六个必选章节必须结合工作区证据填写，不得用一段路由入口替代完整项目上下文。文档规范中的精简路由用于自动加载：首次接触指向 `knowledge/README.md`，每个具体任务指向 `knowledge/ROUTING.md`，并链接 Change 与 Postmortem 规范；完整路由图只在 `knowledge/ROUTING.md` 维护。重复的知识正文、过期示例、未经验证的业务目标、本机路径和凭据必须移除或改为权威来源链接。
+替换全部占位符后再写入目标目录。应用总览和四类应用知识必须包含标准 `## 证据来源` 表格；本地代码和文档来源写成可校验的 Markdown 链接。正式知识、candidate、personal、reference、archive 与 AGENTS 的详细内容和流转契约统一按 [初始化契约](references/initialization-contract.md) 第 4、6 节执行，不在本入口重复维护。
 
 重新生成所有受影响的 INDEX，并按真实文件系统和应用边界更新 ROUTING。Agent 新生成的项目知识未经用户或项目负责人确认，不得从 `candidate/` 移入 `main/` 或 `applications/`。
-
-`archive/` 必须建立 `main/`、`applications/`、`candidate/`、`personal/`、`reference/`、`template/` 六个微缩镜像根目录。归档文件按来源内容域保留原相对路径；对已跟踪文件优先使用 `git mv`，随后更新来源 INDEX、归档 INDEX、ROUTING 和所有相关相对链接。六个来源内容域根部的 README 与 INDEX 是导航基础设施，只在原位更新并由 Git 保留历史，不归档到同名路径。原始导入资料根目录必须使用 `.raw-reference` 标记，归档时连同标记和本地资源整体移动。不得在其他知识目录下另建 `archive`、`legacy`、`deprecated` 等旁路归档区。
 
 ### 5. 初始化 docs
 
@@ -102,7 +100,7 @@ git diff --check
 
 发生归档或恢复移动时，再按当前阶段运行 `python knowledge/scripts/validate.py --git-staged`，或在 CI 中运行 `python knowledge/scripts/validate.py --git-range <base>...<head>`，核对来源内容域、原相对路径和移动语义。
 
-结构校验器会检查根级 AGENTS 必选结构与路由入口、无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录、候选镜像与正文契约、个人所有者边界、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
+结构校验器会检查根级 AGENTS 必选结构与路由入口、无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录名/总览/README/INDEX 身份一致性、候选镜像与正文契约、个人所有者边界、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
 
 必须同时检查 Git 列出的 tracked 和 untracked 文件；单独执行 `git diff` 无法覆盖新生成文件。
 

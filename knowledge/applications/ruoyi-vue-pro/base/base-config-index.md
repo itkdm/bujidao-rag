@@ -66,7 +66,7 @@
 
 ## 变更影响
 
-配置文件变化会影响启动、接口前缀、数据库连接、Redis、Quartz、MQ、WebSocket、AI 后续排障路径。
+配置文件变化会影响启动、接口前缀、数据库连接、Redis、Quartz、MQ、WebSocket 和后续排障定位。
 
 ## 变更历史
 

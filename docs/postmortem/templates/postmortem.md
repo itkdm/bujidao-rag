@@ -4,7 +4,7 @@
 - 作者：{{初始化:作者 / Agent}}
 - 关联 Change：{{初始化:若已产生整改 Change，填路径；否则写「待定」}}
 
-> 模板依据 [`../../changes/README.md`](../../changes/README.md) 第 11 节。Postmortem 不是 Change，不写「怎么修」，只写「为什么逃过防线 + 以后怎么让同类问题更早失败」。本模板独立于 Change 模板，置于 `docs/postmortem/templates/`。
+> 定义与触发条件以 [Postmortem 规范]({{初始化:规范相对链接}}) 为准；实例化到默认的 `docs/postmortem/` 时，该链接填写 `./README.md`。Postmortem 不是 Change，不写「怎么修」，只写「为什么逃过防线 + 以后怎么让同类问题更早失败」。
 
 ## 执行摘要
 

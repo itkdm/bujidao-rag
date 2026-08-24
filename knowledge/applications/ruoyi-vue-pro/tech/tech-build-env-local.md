@@ -18,6 +18,7 @@
 | code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application.yaml) | 全局配置、base-package、MyBatis、WebSocket 等 |
 | code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application-local.yaml) | 本地环境端口、数据源、Redis、Quartz、MQ |
 | code | [`ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml`](../../../../ruoyi-vue-pro/yudao-server/src/main/resources/application-dev.yaml) | 开发环境配置 |
+| doc | [`ruoyi-vue-pro/README.md`](../../../../ruoyi-vue-pro/README.md) | 上游分支与 JDK、Spring Boot 版本的对应关系 |
 | doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/05.快速启动【后端】.md>) | 官方后端快速启动说明 |
 | doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md`](<../../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/08.技术选型.md>) | 官方技术栈说明 |
 
@@ -31,7 +32,7 @@
 
 ## 核心结论
 
-- 后端来源基线：`YunaiV/ruoyi-vue-pro` 的 `master-jdk17` 分支。
+- 后端来源基线：项目维护者确认为 `YunaiV/ruoyi-vue-pro` 的 `master-jdk17` 分支；当前 POM 与上游 README 的版本映射相符。
 - 根 `pom.xml` 配置 Java 17、Spring Boot 3.5.15。
 - 本地默认端口在 `application-local.yaml` / `application-dev.yaml` 中为 `48080`。
 - `application.yaml` 中 `yudao.info.base-package` 当前为 `cn.iocoder.yudao`，影响启动类扫描和 MyBatis type aliases。

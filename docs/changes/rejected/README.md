@@ -2,4 +2,4 @@
 
 讨论过但最终未采用的 Change 放在本目录。
 
-由 `proposed/` 移入，保留原方案并在 `change.md` 的 Rejection 节记录未采用原因。
+由 `proposed/` 移入，保留原方案并在 `change.md` 的「拒绝状态补充 / 拒绝原因」中记录未采用原因。

@@ -16,11 +16,12 @@
 | code | [`ruoyi-vue-pro/pom.xml`](../../../ruoyi-vue-pro/pom.xml) | Java 版本、工程版本和根工程模块 |
 | code | [`ruoyi-vue-pro/yudao-server/pom.xml`](../../../ruoyi-vue-pro/yudao-server/pom.xml) | 启动模块实际装配的业务模块 |
 | code | [`ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java`](../../../ruoyi-vue-pro/yudao-server/src/main/java/cn/iocoder/yudao/server/YudaoServerApplication.java) | 单体后端启动入口 |
+| doc | [`ruoyi-vue-pro/README.md`](../../../ruoyi-vue-pro/README.md) | 上游分支与 JDK、Spring Boot 版本的对应关系 |
 | doc | [`knowledge/reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md`](<../../reference/ruoyi-vue-pro官方文档/01.开发指南/01.萌新必读/09.项目结构.md>) | 芋道官方项目结构说明 |
 
 ## 概述
 
-`ruoyi-vue-pro/` 是本模板仓库采用的芋道单体后端示例，来源形态为 `master-jdk17`。它用于展示如何为一个真实应用建立 application、base、feature、rule、tech 五类知识入口。
+`ruoyi-vue-pro/` 是本模板仓库采用的芋道单体后端示例；项目维护者已确认来源形态为 `master-jdk17`，当前 POM 的 JDK 与 Spring Boot 版本也符合上游 README 给出的分支映射。它用于展示如何为一个真实应用建立 application、base、feature、rule、tech 五类知识入口。
 
 本文只记录当前示例工作区可从代码验证的技术事实，不定义任何目标用户的产品、行业或业务范围。目标项目可能使用芋道单体版、微服务版，也可能完全不使用芋道；初始化时必须根据真实代码重新生成应用知识。
 

@@ -187,150 +187,23 @@ proposed/feature/
 
 ---
 
-## 11. Postmortem（事后分析）的定位与边界
+## 11. Change 与 Postmortem 的关系
 
-> Postmortem 不是 Change，也不是 Agent Note。它针对**已经发生、并且逃过了现有防线**的问题做事后分析。
-> 核心问题始终是：**为什么这个问题能够发生并逃过现有防线，以及以后如何让同类问题更早、更响亮地失败。**
+Postmortem 的定义、触发条件、命名、内容边界和模板统一以 [`docs/postmortem/README.md`](../postmortem/README.md) 为唯一权威来源，本文件不重复维护。
 
-### 11.1 它负责什么、不负责什么
-
-它**不负责**：
+二者回答不同问题：
 
 ```text
-怎么修这个 Bug              → bug-fix Change
-准备采用什么新方案          → Change / Design
-具体开发步骤                → Plan
+已发生且逃过防线的问题
+        ├─ Postmortem：为什么发生、为什么防线没工作、要补什么 Guardrail
+        └─ bug-fix / process / testing Change：准备怎样修、行为如何变化、如何验收
 ```
 
-它**负责**：
-
-```text
-发生了什么？
-真正根因是什么？
-为什么测试没发现？
-为什么 Review 没发现？
-为什么 CI / 类型系统 / 规范没有阻止？
-以后增加什么 Guardrail？
-```
-
-### 11.2 比 Change 更「克制」——不写「每修一个 Bug 就写复盘」
-
-Postmortem 的触发**不单纯看事故严重度**。采用「两条 AND」的克制规则，避免「三选一」过宽：
-
-```text
-通常应至少满足：
-
-1. 问题具有明显隐蔽性，或高重新发现成本
-        AND
-2. 暴露出现有测试 / Review / CI / 工具 / 流程的系统性防线缺口
-
-        │
-        ▼
-  创建 Postmortem
-```
-
-- 第 1 条（隐蔽性或高复现成本）保证「值得写」；仅「调试了三小时但根因普通」不算。
-- 第 2 条（系统性防线缺口）保证「防线没工作」，而非单纯个人失误；普通 NPE、变量写错不在此列。
-
-**直接创建（豁免上述两条）**：生产事故、安全问题、严重数据一致性问题、重大发布故障——这类即使单一维度不显眼，也直接写。
-
-**典型应写场景**：
-
-- 已合并到主分支 / 发布版本，根因反直觉，且暴露系统性验证缺口（如测错对象）
-- CI 存在却没发现，且缺口机制性易复发
-- 某架构 / 工具机制导致隐蔽故障，且以后排查代价高、同类易再犯
-- 同类问题反复出现，且每次定位都困难，且每次都因同一防线缺口
-
-**不应该写**（工程防线已正常工作，或仅满足单条）：
-
-- `NullPointerException`：原因是忘记判空
-- 变量写错、普通接口返回字段错误
-- 依赖版本升级导致的简单兼容问题（修掉即可）
-- 测试已经正常失败并阻止合并
-- 仅「调试很久」但根因普通、一次修好、未来不易再犯（只满足第 1 条）
-- 仅「某个普通 Bug」但防线本就正常工作（不满足第 2 条）
-
-> 经验法则：Postmortem 关心的是**「为什么防线没有工作」**，而不是「Bug 怎么修」。如果防线正常工作，通常不写；即便防线失效，单一普通 Bug 也优先用 bug-fix Change，而非 Postmortem。
-
-### 11.3 与 bug-fix Change 的关系
-
-同一事故可同时产生 **Postmortem + 一个或多个 Change**，二者回答完全不同的问题：
-
-```text
-生产环境任务重复执行
-        │
-        ▼
-调查发现：分布式锁失效
-        │
-        ├───────────────┐
-        ▼               ▼
- Postmortem         bug-fix Change
- 为什么没挡住        怎么修当前问题
-```
-
-- **Postmortem**：为什么锁失效？单测为何没测出？集成测试为何没覆盖多实例？Review 为何没发现？以后怎么防止同类错误？
-- **bug-fix Change**：准备怎样修？采用什么新机制？行为怎么变化？怎么验收？
-
-### 11.4 必须导向 Guardrails，而非「总结经验」
-
-Postmortem 的产出不能是泛泛的「以后要更细心 / 加强测试 / 提高责任心」，而是要变成具体的、让工程系统替人记住事故的防线：
-
-```text
-Guardrail 1  新增并发集成测试
-Guardrail 2  CI 强制运行该测试
-Guardrail 3  AGENTS.md 增加：修改 xxx 时必须验证多实例行为
-Guardrail 4  增加静态检查 / 脚本
-```
-
-> 核心思想：**不要依赖人记住事故，要让工程系统记住事故。** 每条 Guardrail 应明确其落地形式（Test / CI / Rule / Tooling）与对应 Change 链接。
-
-### 11.5 内容边界（先定架构，模板后补）
-
-```text
-postmortem.md
-│
-├── Executive Summary
-│
-├── Impact / What Happened
-│
-├── Timeline（推荐，但允许简化）
-│
-├── Root Cause
-│
-├── Why It Escaped
-│   ├── Tests
-│   ├── Review
-│   ├── Tooling / CI
-│   └── Process / Rules
-│
-├── Guardrails
-│
-└── Related Changes
-```
-
-最重要的是 **Root Cause + Why It Escaped + Guardrails** 三块。Timeline 比传统 SRE Postmortem 更轻：
-
-- 大型线上事故可记精确时间线（发布 / 报错 / 告警 / 定位 / 回滚 / 根因确认）。
-- 普通隐蔽 PR Bug 可简化：发现 → 初步误判 → 排查 → 根因确认 → 修复。
-
-### 11.6 无生命周期目录
-
-Postmortem 描述的是**已经发生过的历史事实**，本身不需要 `proposed/implemented/archived` 流转。独立目录即可：
-
-```text
-docs/postmortem/
-├── README.md
-├── templates/
-│   └── postmortem.md
-├── 2026-08-23-wrong-session-validation.md
-└── 2026-08-24-lock-failure-in-multi-instance.md
-```
-
-命名沿用 Change 的 `日期 + slug` 风格；序号（如 `0001-`）可选，默认用日期更利于追溯。Postmortem 是独立于 Change 的文档类型，模板自置于本目录 `templates/`。
+同一问题可以同时产生一份 Postmortem 和一个或多个 Change。Postmortem 中的 Guardrail 应链接到负责落地的 Change；Change 只记录整改方案、最终决策与验证结果，不复制事故分析正文。普通 Bug 未达到 Postmortem 触发条件时，只创建必要的 bug-fix Change。
 
 ---
 
-## 12. ④⑤⑥ 完整关系与封板
+## 12. 文档关系与目录架构
 
 ```text
 ④ Change ───────────── 一次有意义的系统改变
@@ -348,40 +221,19 @@ docs/postmortem/
     产生新的 Change（Guardrails 落地）
 ```
 
-```text
-                    发生问题
-                       │
-                       ▼
-                普通 Bug 吗？
-                  │          │
-                 是          否/存在系统性价值
-                  │          │
-                  ▼          ▼
-           bug-fix Change   Postmortem
-                  │          │
-                  │      找根因 + 防线缺口
-                  │          │
-                  │          ▼
-                  │       Guardrails（Test/CI/Rule/Tooling）
-                  │          │
-                  └──────┬───┘
-                         ▼
-                    Change(s) 实施整改
-```
-
 ### 12.1 最终目录架构
 
 ```text
 docs/
-├── changes/                       # ④ Change + ⑤ Supplemental
-│   ├── README.md                  # ④⑤⑥ 总规范
+├── changes/                       # Change + Supplemental
+│   ├── README.md                  # Change 生命周期与治理规则
 │   ├── proposed/      <type>/<date>-<slug>/
 │   ├── implemented/   <type>/<date>-<slug>/
 │   ├── rejected/      <type>/<date>-<slug>/
 │   ├── archived/      <type>/<date>-<slug>/
 │   └── templates/                 # Change/Spec/Research/Design/Plan 模板
 │
-└── postmortem/                    # ⑥ 事后分析（无生命周期目录）
+└── postmortem/                    # 事后分析（无生命周期目录）
     ├── README.md
     ├── templates/
     │   └── postmortem.md
@@ -397,7 +249,7 @@ docs/
 | `research.md` | 可选 | 存在影响决策的重要未知，需调查 / 实验 / 验证 | ⑤ Research |
 | `design.md` | 可选 | 存在值得显式记录的重要技术设计或取舍 | ⑤ Design |
 | `plan.md` | 可选 | 实施涉及多步骤 / 阶段 / 模块 / 迁移 / 前后依赖 | ⑤ Plan |
-| `postmortem.md` | **必选**（每篇 Postmortem 一个） | 问题已发生且逃过防线；通常需同时满足：(1) 明显隐蔽性或高复现成本 AND (2) 暴露系统性防线缺口；生产 / 安全 / 严重数据一致性 / 重大发布事故直接创建 | ⑥ Postmortem |
+| `postmortem.md` | **必选**（每篇 Postmortem 一个） | 满足 [`docs/postmortem/README.md`](../postmortem/README.md) 定义的触发条件 | Postmortem |
 
 > 类型与状态以**目录路径为唯一事实源**（Change）；Postmortem 无状态流转，仅按日期归档。
 
@@ -405,9 +257,8 @@ docs/
 
 - **改 100 个文件的机械替换** → 未必需要 Change。
 - **改 1 个文件却改变安全语义** → 很可能需要 Change。
-- **普通 Bug，防线正常工作** → bug-fix Change 即可，不写 Postmortem。
-- **Bug 逃过防线、且有系统性缺口且具隐蔽性/高复现成本** → Postmortem + 相关 Change。
-- 判断不清时，倾向创建轻量 Change（仅 `change.md`）；Postmortem 则倾向「更克制」，宁可少写。
+- **普通 Bug** → 创建必要的 bug-fix Change；是否另建 Postmortem 按其[唯一规范](../postmortem/README.md)判断。
+- 判断不清是否创建 Change 时，倾向创建仅含 `change.md` 的轻量记录。
 
 ---
 

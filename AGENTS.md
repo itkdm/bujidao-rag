@@ -58,7 +58,7 @@
 | `knowledge/` | 跨任务长期有效的知识与资料 |
 | `docs/changes/` | 一次研发变更的提议、实施和历史状态 |
 | `docs/postmortem/` | 已发生且暴露系统性防线缺口的问题复盘 |
-| `.agents/skills/knowledge-docs-initializer/` | 按目标项目事实初始化 AGENTS、knowledge 与 docs |
+| `.agents/skills/knowledge-docs-initializer/` | 本仓库当前使用的初始化 Skill 路径；其他宿主可使用 `.agent/skills/` |
 | `.dev-tmp/` | 本地调试日志与临时脚本，不进入版本库 |
 
 根 `pom.xml` 当前只聚合 `system` 与 `infra` 业务模块。其他 `yudao-module-*` 目录或被注释的模块均按未启用处理，启用状态必须同时核对根聚合构建、`yudao-server` 运行装配和环境配置。

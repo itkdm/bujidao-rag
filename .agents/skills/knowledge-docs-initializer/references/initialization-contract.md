@@ -34,13 +34,21 @@
 │   │   ├── reference/
 │   │   └── template/
 │   ├── reference/
+│   │   ├── README.md
+│   │   └── INDEX.md
 │   ├── template/
+│   │   ├── README.md
+│   │   ├── INDEX.md
 │   │   ├── common/
 │   │   ├── candidate/
 │   │   ├── personal/
 │   │   │   └── {ownerCode}/
 │   │   └── applications/
 │   └── scripts/
+│       ├── README.md
+│       ├── validate.py
+│       ├── validate_candidate.py
+│       └── validate_personal.py
 └── docs/
     ├── changes/
     │   ├── README.md
@@ -57,6 +65,8 @@
 空目录不靠虚构知识填充。没有正式 feature、rule 或 tech 时，只保留其 README 与 INDEX。
 
 根级 `AGENTS.md` 是自动加载入口，不是完整知识或研发文档的副本。
+
+`knowledge/scripts/` 是初始化结果的自包含校验器，不依赖 `.agent/`、`.agents/` 或 Skill 安装位置。Skill 本身可按宿主约定放在 `.agent/skills/` 或 `.agents/skills/`；本契约不要求初始化完成后保留某一种宿主目录名称。
 
 ## 2. 内容分类
 
@@ -102,6 +112,8 @@
 模板是普通 Markdown 配方，`{{初始化:字段}}` 是必须替换的高识别度标记。目标文件不添加自定义 YAML Front Matter；应用身份和知识类别由目录及文件名表达。必须替换全部初始化标记。应用总览及 base、feature、rule、tech 正式知识统一使用 `## 证据来源` 下的 `code/doc` 表格，本地代码与文档来源使用工作区内可校验的 Markdown 链接。
 
 应用总览至少记录应用边界、版本与技术栈、构建或运行入口、已启用模块、应用关系和使用前应复核的易变事实。
+
+应用身份必须四处一致：目录名为 `applications/<appCode>/`，总览文件名为 `<appCode>.md`，总览“应用编码”值等于 appCode，README 声明同一应用边界，INDEX 链接同名总览。
 
 ### 4.3 四类知识边界
 
@@ -207,7 +219,7 @@ git diff --check
 - 受管理的 `knowledge/` 与 `docs/` Markdown 没有自定义 YAML Front Matter
 - 根级 AGENTS 具有全局规范要求的六个必选章节、唯一的精简路由入口和有效链接，并且没有复制 `knowledge/ROUTING.md` 的完整总路由图
 - 所有本地 Markdown 链接存在且不越出工作区
-- 每个应用目录名称有效，目录骨架完整
+- 每个应用目录名称有效，目录骨架完整，目录名、总览文件、“应用编码”、README 与 INDEX 身份一致
 - candidate 目标镜像完整，候选正文的拟晋升位置与真实相对路径一致
 - personal 内容按稳定 ownerCode 隔离，所有者 README 与目录标识一致，且不存在空所有者或主题目录
 - archive 六个镜像根目录完整，其他位置没有旁路归档目录

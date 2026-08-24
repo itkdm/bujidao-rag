@@ -1,6 +1,6 @@
 # 知识库校验脚本
 
-本目录提供知识库的只读校验入口，不存放业务脚本或元数据管理工具。
+本目录提供知识库的自包含只读校验入口，不存放业务脚本或元数据管理工具，也不依赖 `.agent/`、`.agents/` 或初始化 Skill 的安装位置。
 
 Python 本地产生的 `__pycache__/` 与 `*.py[cod]` 由本目录的 `.gitignore` 排除，不属于知识库文件。
 
@@ -37,6 +37,7 @@ python knowledge/scripts/validate.py --git-range <base>...<head>
 - 本地 Markdown 相对链接和图片目标存在且不越出工作区
 - INDEX 与直接子项一致
 - 应用知识的正文证据链接有效
+- 应用目录名、总览文件名、“应用编码”、README 与 INDEX 的 appCode 身份一致
 - `candidate/` 使用目标镜像目录，候选正文包含拟晋升位置、证据缺口和验证条件
 - `personal/` 的内容按稳定 ownerCode 隔离，所有者 README 与目录标识一致，且不预造空所有者或主题目录
 - `archive/` 只使用规定的六个镜像根目录

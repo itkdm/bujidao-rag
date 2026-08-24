@@ -67,6 +67,8 @@
 
 ## 相关文档（按需，必须用真实相对链接）
 
+只保留实际创建且链接目标存在的条目；未创建对应附件或 Postmortem 时必须删除该行。
+
 - [Spec](./spec.md) — 行为与验收
 - [Research](./research.md) — 技术调研
 - [Design](./design.md) — 技术方案
@@ -93,4 +95,4 @@
 
 ### 本 Change 取代（Supersedes）
 
-- 若本 Change 推翻了某份旧决策，填被取代的旧 Change 链接（与 13.1 治理规则呼应）。
+- 若本 Change 推翻了某份旧决策，填被取代的旧 Change 链接（与 `docs/changes/README.md` 第 13.1 节治理规则呼应）。
