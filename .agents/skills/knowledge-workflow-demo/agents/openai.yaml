@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识库流程演示"
+  short_description: "用一次临时研发任务演示知识库、文档与 Skill 的协作流程"
+  default_prompt: "请用一次临时分支小功能作为例子，讲解本项目知识库、研发文档与 Skill 如何协作，并说明人工判断与自动校验边界；默认只讲解，不实际修改。"
