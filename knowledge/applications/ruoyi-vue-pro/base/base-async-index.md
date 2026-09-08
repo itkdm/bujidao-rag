@@ -26,7 +26,7 @@
 
 ## 不收录范围
 
-本文不解释消息可靠性、幂等、失败重试等实现约束；这些见 `tech/tech-async-job-mq.md`。
+本文不解释消息可靠性、幂等、失败重试等实现约束；这些见 [`tech-async-job-mq.md`](../tech/tech-async-job-mq.md)。
 
 ## 事实索引
 
@@ -65,7 +65,7 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `tech/` | 异步任务可靠性和幂等约束见 `tech-async-job-mq.md` |
+| `tech/` | 异步任务可靠性和幂等约束见 [`tech-async-job-mq.md`](../tech/tech-async-job-mq.md) |
 | `feature/` | 业务流程会引用具体消息或任务 |
 | `rule/` | 重试、补偿、通知规则应进入 rule |
 

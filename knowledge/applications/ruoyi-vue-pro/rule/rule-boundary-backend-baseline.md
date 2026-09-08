@@ -30,11 +30,11 @@
 
 | 规则 | 内容 | 依据 |
 | --- | --- | --- |
-| 基线定位规则 | 当前 `ruoyi-vue-pro/` 只能描述为本模板仓库采用的芋道单体后端示例 | `ruoyi-vue-pro.md`、当前代码 |
+| 基线定位规则 | 当前 `ruoyi-vue-pro/` 只能描述为本模板仓库采用的芋道单体后端示例 | [应用总览](../ruoyi-vue-pro.md)、当前代码 |
 | 模块状态规则 | 根 `pom.xml` 中未注释的 `<module>` 只证明参与聚合构建；要认定进入当前运行装配，还必须核对 `yudao-server/pom.xml` 的依赖和相关运行配置 | 两个 POM、当前配置 |
 | 目录存在规则 | 可选模块目录存在，不代表这些模块已经参与目标项目构建或运行 | `pom.xml` 当前注释状态 |
 | 能力表述规则 | 文档和 AI 回答中不得把上游示例能力直接写成目标项目已确认能力 | 当前代码、目标项目确认 |
-| 初始化核对规则 | 复用任何上游模块前，必须核对模块启用、依赖、配置、数据库、菜单权限、API 和数据模型 | `base-module-index.md`、`tech-architecture-module-boundary.md` |
+| 初始化核对规则 | 复用任何上游模块前，必须核对模块启用、依赖、配置、数据库、菜单权限、API 和数据模型 | [模块索引](../base/base-module-index.md)、[模块边界约束](../tech/tech-architecture-module-boundary.md) |
 
 ## 例外情况
 
@@ -50,8 +50,8 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `base/` | 模块启用事实见 `base-module-index.md` |
-| `tech/` | 模块边界和启用约束见 `tech-architecture-module-boundary.md` |
+| `base/` | 模块启用事实见 [`base-module-index.md`](../base/base-module-index.md) |
+| `tech/` | 模块边界和启用约束见 [`tech-architecture-module-boundary.md`](../tech/tech-architecture-module-boundary.md) |
 | `feature/` | 只写目标项目当前可验证能力，避免把上游示例或未来规划写成现状 |
 
 ## 变更历史

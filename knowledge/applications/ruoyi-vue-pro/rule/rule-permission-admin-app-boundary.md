@@ -30,12 +30,12 @@
 
 | 规则 | 内容 | 依据 |
 | --- | --- | --- |
-| 端侧隔离规则 | 管理后台接口放在 `controller.admin`，用户端/小程序接口放在 `controller.app`，两端接口和 VO 不应无条件混用 | 官方项目结构、`base-api-index.md` |
+| 端侧隔离规则 | 管理后台接口放在 `controller.admin`，用户端/小程序接口放在 `controller.app`，两端接口和 VO 不应无条件混用 | 官方项目结构、[API 索引](../base/base-api-index.md) |
 | 后台权限规则 | 管理后台敏感接口通常必须使用 `@PreAuthorize("@ss.hasPermission(...)")` 声明权限 | `DictTypeController.java`、官方功能权限文档 |
 | app 权限规则 | 用户端接口不应直接套用后台菜单权限模型，除非有明确设计依据 | 官方功能权限文档 |
 | 数据权限默认规则 | 数据权限默认开启，不加 `@DataPermission` 也会生效 | `DataPermission.java`、官方数据权限文档 |
 | 数据权限例外规则 | 使用 `@DataPermission(enable = false)` 必须有明确原因，例如查询自身必要信息或系统公共信息 | 现有代码注释、官方数据权限文档 |
-| 权限编码规则 | 权限编码必须和菜单/按钮权限保持一致，不能只在 Controller 中孤立新增 | `base-permission-index.md` |
+| 权限编码规则 | 权限编码必须和菜单/按钮权限保持一致，不能只在 Controller 中孤立新增 | [权限索引](../base/base-permission-index.md) |
 
 ## 例外情况
 
@@ -54,8 +54,8 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `base/` | API 和权限入口见 `base-api-index.md`、`base-permission-index.md` |
-| `tech/` | 权限实现约束见 `tech-security-permission.md` |
+| `base/` | API 和权限入口见 [`base-api-index.md`](../base/base-api-index.md)、[`base-permission-index.md`](../base/base-permission-index.md) |
+| `tech/` | 权限实现约束见 [`tech-security-permission.md`](../tech/tech-security-permission.md) |
 | `feature/` | 具体功能流程后续引用对应权限规则 |
 
 ## 变更历史

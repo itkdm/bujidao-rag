@@ -59,7 +59,9 @@
 | `docs/changes/` | 一次研发变更的提议、实施和历史状态 |
 | `docs/postmortem/` | 已发生且暴露系统性防线缺口的问题复盘 |
 | `.agents/skills/knowledge-docs-initializer/` | 按目标项目事实初始化 AGENTS、knowledge 与 docs |
+| `.agents/skills/knowledge-docs-maintenance/` | 维护知识与研发文档的分类、生命周期、导航和归档 |
 | `.agents/skills/knowledge-driven-development/` | 日常研发时按知识路由加载约束、核对代码、验证并闭环文档 |
+| `.github/workflows/knowledge-docs-validate.yml` | 在相关 push 与 Pull Request 中自动校验知识和研发文档 |
 | `.dev-tmp/` | 本地调试日志与临时脚本，不进入版本库 |
 
 本仓库使用 `.agents/skills/` 保存项目级 Skill；其他宿主可按其约定使用 `.agent/skills/`，Skill 职责不因宿主目录名变化。
@@ -125,7 +127,7 @@ git diff --check
 git status --short
 ```
 
-发生归档或恢复移动时，再按阶段运行 `python knowledge/scripts/validate.py --git-staged`，或在 CI 中运行 `python knowledge/scripts/validate.py --git-range <base>...<head>`。
+发生归档或恢复移动时，再按阶段运行 `python knowledge/scripts/validate.py --git-staged`；CI 中 Pull Request 使用 `--git-range <base>...<head>`，push 事件使用 `--git-range <before>..<head>`。
 
 统一原则：优先运行与修改直接相关的最小验证；公共能力、基础设施或跨模块行为变化时扩大范围；不为通过测试改变本来正确的行为；无法执行的验证要明确说明；不得声称执行过实际未执行的验证。
 
@@ -140,8 +142,9 @@ git status --short
 5. **代码生成**：生成代码后必须人工审查；修改代码生成模板时记录原因和影响。
 6. **调试产物**：临时日志与脚本放入 `.dev-tmp/logs/` 或 `.dev-tmp/scripts/`，不得散落在仓库根目录或提交到版本库。
 7. **敏感信息**：密码、Token、API Key、私密通信、个人隐私和本机专属凭据不得进入版本库文件或提交信息。
-8. **知识驱动开发**：理解、设计、审查或修改应用代码、配置、数据库、测试与工程结构时，使用项目提供的 `knowledge-driven-development` Skill，按 ROUTING 加载最小知识并复核当前实现。
-9. **独立审查**：修改 knowledge、docs 或项目级 Skill 后，提交前必须由独立子 Agent 审查，并合理处理意见。
+8. **知识文档维护**：不涉及产品实现的知识录入、候选晋升、归档恢复、路由修复或研发文档治理，使用项目提供的 `knowledge-docs-maintenance` Skill。
+9. **知识驱动开发**：理解、设计、审查或修改应用代码、配置、数据库、测试与工程结构时，使用项目提供的 `knowledge-driven-development` Skill，按 ROUTING 加载最小知识并复核当前实现。
+10. **独立审查**：修改 knowledge、docs 或项目级 Skill 后，提交前必须由独立子 Agent 审查，并合理处理意见。
 
 ---
 

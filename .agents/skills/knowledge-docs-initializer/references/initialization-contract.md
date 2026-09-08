@@ -48,7 +48,9 @@
 │       ├── README.md
 │       ├── validate.py
 │       ├── validate_candidate.py
-│       └── validate_personal.py
+│       ├── validate_docs.py
+│       ├── validate_personal.py
+│       └── validate_skills.py
 └── docs/
     ├── changes/
     │   ├── README.md
@@ -66,20 +68,29 @@
 
 根级 `AGENTS.md` 是自动加载入口，不是完整知识或研发文档的副本。
 
-`knowledge/scripts/` 是初始化结果的自包含校验器，不依赖 `.agent/`、`.agents/` 或 Skill 安装位置。Skill 本身可按宿主约定放在 `.agent/skills/` 或 `.agents/skills/`；本契约不要求初始化完成后保留某一种宿主目录名称。
+`knowledge/scripts/` 是初始化结果的自包含校验器，不依赖 Skill 的运行时安装位置。Skill 本身可按宿主约定放在 `.agent/skills/`、`.agents/skills/` 或其他项目 Skill 根目录；内置 Skill 结构校验自动识别前两种标准目录，使用其他根目录时必须在交付阶段人工核对三个 Skill 的同根完整性与 UI 元数据。
+
+目标使用 GitHub Actions 时，保留或导入模板的 `.github/workflows/knowledge-docs-validate.yml`。目标使用其他 CI 时，将其中的当前结构校验与 Git 提交范围校验改写到现有流水线；目标尚无 CI 时不引入特定平台，只保留手工命令并在初始化报告中说明。
 
 宿主支持项目级 Skill 时，初始化结果还必须包含：
 
 ```text
 <宿主项目 Skill 根目录>/
+├── knowledge-docs-initializer/
+│   ├── SKILL.md
+│   ├── agents/openai.yaml
+│   └── references/
+├── knowledge-docs-maintenance/
+│   ├── SKILL.md
+│   └── agents/openai.yaml
 └── knowledge-driven-development/
     ├── SKILL.md
     └── agents/openai.yaml
 ```
 
-它必须从同一模板来源的同级 Skill 目录完整复制或增量更新，不能凭记忆重建；目标已有人工定制时先核对差异，不得直接覆盖。随后在根级 AGENTS 中接入。该 Skill 只编排 ROUTING、代码核对、验证和知识闭环，不复制 knowledge 或 docs 的规范正文。
+initializer 自身和两个日常 Skill 必须从同一模板来源的同级 Skill 目录完整复制或增量更新，不能凭记忆重建；目标已有人工定制时先核对差异，不得直接覆盖。只在根级 AGENTS 中自动接入两个日常 Skill，initializer 保留为以后重新校准的显式入口。维护 Skill 编排知识与文档生命周期，开发 Skill 编排 ROUTING、代码核对、验证和知识闭环；三者都不复制 knowledge 或 docs 的规范正文。
 
-宿主不支持项目级 Skill 时，初始化必须删除 AGENTS 模板中要求调用该 Skill 的句子和 knowledge README 的“日常开发驱动”章节，直接保留 README 与 ROUTING 的加载入口。
+宿主不支持项目级 Skill 时，初始化必须删除 AGENTS 模板中要求调用项目 Skill 的句子，以及 knowledge README 的“日常开发驱动”“日常知识与文档维护”章节，直接保留 README、ROUTING 与各目录 README 的加载入口。
 
 ## 2. 内容分类
 
@@ -200,9 +211,9 @@
 
 ## 6. 索引和路由
 
-- 根级 `AGENTS.md` 遵循 `knowledge/main/rules/AGENTSmd 全局规范.md`，从 `knowledge/template/common/AGENTS-template.md` 建立或增量更新；必须按项目事实维护项目概述、技术栈、目录与模块职责、运行与开发方式、验证策略、项目特有规则六个必选章节。
+- 根级 `AGENTS.md` 遵循 [AGENTS.md 全局规范](../../../../knowledge/main/rules/AGENTSmd%20全局规范.md)，从 [AGENTS 模板](../../../../knowledge/template/common/AGENTS-template.md) 建立或增量更新；必须按项目事实维护项目概述、技术栈、目录与模块职责、运行与开发方式、验证策略、项目特有规则六个必选章节。
 - AGENTS 的文档规范保留精简入口：首次接触指向 knowledge README，每个具体任务指向 ROUTING，并链接 Change 与 Postmortem 规范；不得用路由片段替代完整项目上下文。
-- 宿主支持项目级 Skill 时，AGENTS 还应要求研发任务使用 `knowledge-driven-development`；Skill 根目录由宿主决定，不在知识文档中绑定 `.agent` 或 `.agents`。初始化报告必须说明实际交付位置；不支持时按第 1 节删除两处 Skill 入口。
+- 宿主支持项目级 Skill 时，AGENTS 还应要求知识文档维护使用 `knowledge-docs-maintenance`、研发任务使用 `knowledge-driven-development`；Skill 根目录由宿主决定，不在知识文档中绑定 `.agent` 或 `.agents`。初始化报告必须说明实际交付位置；不支持时按第 1 节删除 Skill 入口。
 - 完整分类、读取顺序、写入位置和生命周期只在 `knowledge/ROUTING.md` 维护；AGENTS 不复制完整路由图。
 - AGENTS 只保留当前工作区已验证的项目事实、硬约束和必要命令；详细知识、规范正文和变更过程分别链接到 knowledge 与 docs。
 - AGENTS、knowledge、docs 和模板不得包含密码、Token、API Key、私密通信、个人隐私、本机专属路径或本地连接凭据。
@@ -210,6 +221,7 @@
 - `INDEX.md` 覆盖当前目录所有有效直接子项，且不索引自身。
 - `ROUTING.md` 基于实际 appCode、真实入口和现有知识更新。
 - 删除或替换示例应用后，同步清理根 INDEX、applications INDEX、路由和正文引用。
+- AGENTS、knowledge、docs 与模板文本中模板仓库专属的分支、标签与发布说明（例如结构化字段实验线）只描述模板仓库历史；目标仓库不存在对应 Git 事实时必须删除相关文字，存在自己的约定时按事实改写。未经用户明确要求，不得删除或改写真实 Git 分支、标签和提交历史。
 - 不保留指向不存在文件的本地 Markdown 链接。
 - 移动或归档文件后，所有继续引用该内容的相对链接必须改到新路径或替代知识。
 
@@ -224,7 +236,7 @@ git ls-files --others --exclude-standard
 git diff --check
 ```
 
-本次发生归档或恢复移动时，再运行 `python knowledge/scripts/validate.py --git-staged`。CI 或推送前流程使用 `python knowledge/scripts/validate.py --git-range <base>...<head>` 检查对应提交范围；不要求本地同时运行两种 Git 模式。
+本次发生归档或恢复移动时，再运行 `python knowledge/scripts/validate.py --git-staged`。CI 中 Pull Request 使用 `python knowledge/scripts/validate.py --git-range <base>...<head>`，push 事件使用 `python knowledge/scripts/validate.py --git-range <before>..<head>`；不要求本地同时运行两种 Git 模式。
 
 归档和恢复应先用 `git mv` 完成标准路径移动，再编辑正文。暂存区模式要求 `knowledge/` 没有未暂存或未跟踪改动；校验器不根据两条无关的 A+D 记录猜测移动意图。
 
@@ -236,6 +248,8 @@ git diff --check
 - 每个应用目录名称有效，目录骨架完整，目录名、总览文件、“应用编码”、README 与 INDEX 身份一致
 - candidate 目标镜像完整，候选正文的拟晋升位置与真实相对路径一致
 - personal 内容按稳定 ownerCode 隔离，所有者 README 与目录标识一致，且不存在空所有者或主题目录
+- Change 与 Postmortem 实例的目录、类型、日期命名、允许文件和生命周期必选章节符合各自规范
+- 宿主使用 `.agent/skills/` 或 `.agents/skills/` 时，initializer 与两个日常 Skill 同根交付且具备最小有效结构
 - archive 六个镜像根目录完整，其他位置没有旁路归档目录
 - 显式启用 Git 模式时，归档和恢复操作保持来源内容域与原相对路径，且没有以复制代替移动
 - INDEX 与真实文件系统一致
@@ -247,4 +261,4 @@ git diff --check
 
 ## 8. 初始化报告
 
-最终交付说明项目形态和应用清单、保留/重建/移除/暂存内容、事实来源、未确认问题、验证结果及应优先审查的候选知识。
+最终交付说明项目形态和应用清单、保留/重建/移除/暂存内容、事实来源、未确认问题、验证结果、initializer 与两个日常 Skill 的实际交付位置、自动或手工校验的接入状态，以及应优先审查的候选知识。

@@ -60,7 +60,7 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `tech/` | 本地构建与环境约束见 `tech-build-env-local.md` |
+| `tech/` | 本地构建与环境约束见 [`tech-build-env-local.md`](../tech/tech-build-env-local.md) |
 | `feature/` | 功能启用后可能需要新增配置项 |
 | `rule/` | 安全、权限、租户规则可能影响配置 |
 

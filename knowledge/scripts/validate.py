@@ -11,7 +11,9 @@ from pathlib import Path
 from urllib.parse import unquote
 
 from validate_candidate import validate_candidate_layout
+from validate_docs import validate_docs_layout
 from validate_personal import validate_personal_layout
+from validate_skills import validate_project_skills
 
 
 for stream in (sys.stdout, sys.stderr):
@@ -857,7 +859,7 @@ def validate_git_archive_moves(
     for status, old_path, new_path in changes:
         destination = new_path if new_path is not None else old_path
         expected_source = active_mapping(destination)
-        old_is_archive = active_mapping(old_path) is not None
+        old_is_archive = new_path is not None and active_mapping(old_path) is not None
         if expected_source is not None and not old_is_archive:
             if status.startswith("R"):
                 if old_path != expected_source:
@@ -870,20 +872,36 @@ def validate_git_archive_moves(
                     "Git 归档映射：归档必须移动而非复制："
                     f"{old_path} -> {destination}"
                 )
-            elif status.startswith("A") and expected_source not in deleted:
-                errors.append(
-                    "Git 归档映射：新增归档文件缺少对应来源删除："
-                    f"{destination}，应同时删除 {expected_source}"
-                )
+            elif status.startswith("A"):
+                if expected_source in deleted:
+                    errors.append(
+                        "Git 归档映射：归档必须是 Git 可识别的移动，不能以独立新增和删除代替："
+                        f"{expected_source} -> {destination}"
+                    )
+                else:
+                    errors.append(
+                        "Git 归档映射：新增归档文件缺少对应来源移动："
+                        f"{destination}，应移动自 {expected_source}"
+                    )
 
         expected_archive = archive_mapping(destination)
-        if expected_archive is not None and new_path is not None and active_mapping(old_path):
-            if status.startswith("C"):
+        if expected_archive is not None:
+            if status.startswith("A") and expected_archive in deleted:
+                errors.append(
+                    "Git 归档映射：恢复必须是 Git 可识别的移动，不能以独立新增和删除代替："
+                    f"{expected_archive} -> {destination}"
+                )
+            elif new_path is not None and status.startswith("C") and active_mapping(old_path):
                 errors.append(
                     "Git 归档映射：恢复有效知识必须移动而非复制："
                     f"{old_path} -> {destination}"
                 )
-            elif status.startswith("R") and old_path != expected_archive:
+            elif (
+                new_path is not None
+                and status.startswith("R")
+                and active_mapping(old_path)
+                and old_path != expected_archive
+            ):
                 errors.append(
                     "Git 归档映射：恢复路径未遵循归档反向映射："
                     f"{old_path} -> {destination}，应来自 {expected_archive}"
@@ -928,7 +946,9 @@ def validate_required_layout(workspace: Path, app_codes: set[str], errors: list[
         "knowledge/scripts/README.md",
         "knowledge/scripts/validate.py",
         "knowledge/scripts/validate_candidate.py",
+        "knowledge/scripts/validate_docs.py",
         "knowledge/scripts/validate_personal.py",
+        "knowledge/scripts/validate_skills.py",
         "knowledge/template/README.md",
         "knowledge/template/INDEX.md",
         "knowledge/template/common/README-template.md",
@@ -1014,6 +1034,8 @@ def main() -> int:
     validate_application_identity(workspace, app_codes, errors)
     validate_candidate_layout(workspace, errors)
     validate_personal_layout(workspace, errors)
+    validate_docs_layout(workspace, errors)
+    validate_project_skills(workspace, errors)
     validate_archive_layout(workspace, errors)
     if args.git_staged or args.git_range:
         validate_git_archive_moves(
@@ -1026,7 +1048,7 @@ def main() -> int:
     validate_placeholders(workspace, paths, errors)
 
     if errors:
-        print(f"初始化结构校验失败，共 {len(errors)} 个错误：")
+        print(f"知识与研发文档校验失败，共 {len(errors)} 个错误：")
         for error in errors:
             print(f"- {error}")
         return 1
@@ -1041,9 +1063,9 @@ def main() -> int:
         else ""
     )
     print(
-        "初始化结构校验通过："
+        "知识与研发文档校验通过："
         f"已检查 {managed_count} 个受管理 Markdown 文件，跳过 {raw_count} 个原始导入参考文件；"
-        "AGENTS 必选结构与路由、YAML 头、目录骨架、相对链接、正文证据、应用身份、候选契约、个人所有者边界、归档镜像、索引和占位符均已检查"
+        "AGENTS 必选结构与路由、YAML 头、目录骨架、相对链接、正文证据、应用身份、候选契约、个人所有者边界、Change/Postmortem 实例、标准目录中的项目 Skill、归档镜像、索引和占位符均已检查"
         f"{git_summary}。"
     )
     return 0

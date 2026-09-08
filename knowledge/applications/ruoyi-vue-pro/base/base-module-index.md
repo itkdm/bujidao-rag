@@ -25,7 +25,7 @@
 
 ## 不收录范围
 
-本文不解释模块边界为什么这样设计；相关实现约束见 `tech/tech-architecture-module-boundary.md`。
+本文不解释模块边界为什么这样设计；相关实现约束见 [`tech-architecture-module-boundary.md`](../tech/tech-architecture-module-boundary.md)。
 
 ## 事实索引
 
@@ -62,7 +62,7 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `tech/` | 模块边界和启用约束见 `tech-architecture-module-boundary.md` |
+| `tech/` | 模块边界和启用约束见 [`tech-architecture-module-boundary.md`](../tech/tech-architecture-module-boundary.md) |
 | `feature/` | 目标项目功能落地并确认后，应反向标记所属模块 |
 | `rule/` | 业务角色和权限规则确定后，会影响模块划分 |
 

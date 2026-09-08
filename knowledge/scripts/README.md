@@ -30,6 +30,8 @@ GitHub Actions 或推送前流程可以检查一个提交范围：
 python knowledge/scripts/validate.py --git-range <base>...<head>
 ```
 
+Pull Request 或分支相对共同基线的比较使用 `<base>...<head>`；push 事件使用真实事件范围 `<before>..<head>`。
+
 当前入口会检查：
 
 - 根级 `AGENTS.md` 遵循全局规范的六个必选章节，存在唯一的精简 knowledge/docs 路由入口，且不复制完整总路由图
@@ -42,7 +44,12 @@ python knowledge/scripts/validate.py --git-range <base>...<head>
 - `personal/` 的内容按稳定 ownerCode 隔离，所有者 README 与目录标识一致，且不预造空所有者或主题目录
 - `archive/` 只使用规定的六个镜像根目录
 - `knowledge/` 其他位置没有旁路归档目录
+- Change 的状态、类型、日期命名、必选 `change.md`、允许附件和状态必选章节符合契约
+- Postmortem 位于规定目录，使用日期命名并包含根因、逃逸原因和防线等必选章节
+- 使用 `.agent/skills/` 或 `.agents/skills/` 时，initializer 与两个日常 Skill 同根交付，且 SKILL 与 UI 元数据具备最小有效结构
 - 暂存区或指定提交范围中的归档操作确实是移动，并严格保留来源内容域与原相对路径
 - 实例文件没有遗留模板专用的双花括号初始化标记
 
-结构、链接等只读检查始终执行；Git 变更映射检查仅在显式传入 `--git-staged` 或 `--git-range` 时执行，两种 Git 模式按当前阶段二选一。`--git-staged` 要求 `knowledge/` 没有未暂存或未跟踪改动，避免工作树内容掩盖暂存快照问题。归档和恢复都应先用 `git mv` 完成标准路径移动，再编辑正文；Git 模式会启用重命名与复制识别，但不会根据两条无关的 A+D 记录猜测移动意图。该命令无第三方依赖，可在本地提交或推送前运行，也可以后续直接接入 GitHub Actions、其他 CI 或团队统一的 pre-push 流程。仓库当前只提供可复用命令，不自动修改用户本机 Git Hook。
+结构、链接等只读检查始终执行；Git 变更映射检查仅在显式传入 `--git-staged` 或 `--git-range` 时执行，两种 Git 模式按当前阶段二选一。`--git-staged` 要求 `knowledge/` 没有未暂存或未跟踪改动，避免工作树内容掩盖暂存快照问题。归档和恢复都应先用 `git mv` 完成标准路径移动，再编辑正文；Git 模式会启用重命名与复制识别，并拒绝用两条 A+D 记录代替 Git 可识别的移动。移动后大幅改写可能使 Git 无法识别重命名，应先完成并验证移动，再分步修改正文。
+
+该命令无第三方依赖，可在本地提交或推送前运行。模板仓库通过 `.github/workflows/knowledge-docs-validate.yml` 在相关 push 与 Pull Request 上自动执行当前结构校验和 Git 范围归档校验；新分支首次 push 因没有有效的 `before` 提交，只执行当前结构校验，后续 Pull Request 仍会检查完整变更范围。其他托管平台可调用同一命令接入 CI。仓库不自动修改用户本机 Git Hook。

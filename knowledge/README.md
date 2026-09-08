@@ -27,6 +27,10 @@
 
 初始化完成后的代码理解、方案设计、代码审查和实现任务使用项目提供的 `knowledge-driven-development` Skill；具体存放目录遵循宿主的项目级 Skill 约定。该 Skill 只负责读取 ROUTING、选择最小知识集合、核对当前代码、执行验证并闭环知识与 Change；具体规范正文继续由 knowledge 与 docs 维护，Skill 不复制第二份规则。宿主不支持项目级 Skill 时，初始化过程删除本节，由根级 AGENTS 直接驱动 README 与 ROUTING。
 
+## 日常知识与文档维护
+
+不涉及产品实现的知识录入、候选晋升、个人或参考资料整理、归档恢复、路由修复和研发文档治理，使用项目提供的 `knowledge-docs-maintenance` Skill。它按目标目录 README 执行生命周期操作并维护 INDEX、ROUTING 与相对链接，不重新识别整个项目，也不复制各目录的权威规则。宿主不支持项目级 Skill 时，初始化过程删除本节，由根级 AGENTS 与各目录 README 直接驱动维护。
+
 根级 `AGENTS.md` 只维护自动加载入口、必要项目事实和硬约束；完整 knowledge/docs 路由以 `ROUTING.md` 为唯一权威来源，避免两处重复维护。
 
 当前主分支采用轻量 Markdown：知识身份、类别和生命周期由目录表达，不为受管理文档维护 YAML Front Matter。需要继续研究结构化字段时，使用 `feat/structured-metadata` 分支；首个结构化基线为 `structured-metadata-v0.1` 标签。

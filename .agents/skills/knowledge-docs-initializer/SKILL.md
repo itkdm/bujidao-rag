@@ -1,6 +1,6 @@
 ---
 name: knowledge-docs-initializer
-description: 根据当前工作区可验证的项目事实，初始化或调整根级 AGENTS.md、knowledge/ 知识库与 docs/ 研发文档体系。适用于项目启动、接入模板，或需要重新识别应用边界、技术栈版本、芋道形态和启用模块的场景；不负责实现产品功能，也不编造项目知识。
+description: 根据当前工作区可验证的项目事实，首次初始化或重新校准根级 AGENTS.md、knowledge/ 知识库与 docs/ 研发文档体系。适用于项目启动、接入模板，或需要重新识别应用边界、技术栈版本、芋道形态和启用模块的场景；日常知识与文档维护使用 knowledge-docs-maintenance，本 Skill 不负责实现产品功能或编造项目知识。
 ---
 
 # 知识库与研发文档初始化
@@ -23,18 +23,19 @@ description: 根据当前工作区可验证的项目事实，初始化或调整�
 - `knowledge/` 的目录职责、路由、索引、模板和应用知识
 - `knowledge/archive/` 的内容域镜像、归档路径和引用完整性
 - `docs/changes/` 与 `docs/postmortem/` 的目录、说明和模板
-- 与知识体系配套的 `knowledge-driven-development` 日常开发入口
+- 与知识体系配套的 `knowledge-docs-maintenance` 和 `knowledge-driven-development` 日常入口
+- 与目标仓库持续集成方式匹配的知识文档自动校验入口
 - 从当前代码或用户明确确认中得到的项目知识
 
 除非用户另行明确要求，否则不得修改产品代码、启用应用模块、变更依赖或创建实现决策。
 
 ## 使用前提
 
-本 Skill 默认随本知识库模板仓库或其副本交付。目标工作区必须已经包含本仓库提供的根级 `AGENTS.md`、`knowledge/` 与 `docs/` 骨架，或由用户提供可读取的模板仓库路径后先整体导入这些内容；宿主支持项目级 Skill 时，还要从同一模板来源导入与本 Skill 同级的 `knowledge-driven-development/`。只有 Skill、没有模板骨架或来源路径时必须停止并说明缺少输入，不得凭记忆重建。
+本 Skill 默认随本知识库模板仓库或其副本交付。目标工作区必须已经包含本仓库提供的根级 `AGENTS.md`、`knowledge/` 与 `docs/` 骨架，或由用户提供可读取的模板仓库路径后先整体导入这些内容；宿主支持项目级 Skill 时，还要从同一模板来源导入与本 Skill 同级的 `knowledge-docs-maintenance/` 和 `knowledge-driven-development/`。只有 Skill、没有模板骨架或来源路径时必须停止并说明缺少输入，不得凭记忆重建。
 
-宿主工具可能使用 `.agent/skills/` 或 `.agents/skills/` 保存项目 Skill；两种目录形态不改变初始化契约。初始化后的结构校验器位于 `knowledge/scripts/`，不依赖 Skill 继续安装在哪一种目录中。
+宿主工具可能使用 `.agent/skills/` 或 `.agents/skills/` 保存项目 Skill；两种目录形态不改变初始化契约。初始化后的结构校验器位于 `knowledge/scripts/`，不依赖 Skill 继续安装在哪一种目录中。内置 Skill 结构校验自动识别这两种标准目录；宿主使用其他项目 Skill 根目录时，初始化交付必须人工核对三个 Skill 的同根完整性与 UI 元数据。
 
-宿主支持项目级 Skill 时，先按宿主现有约定确定 `.agent/skills/`、`.agents/skills/` 或其他项目 Skill 根目录，再从同一模板来源完整复制或增量更新 `knowledge-driven-development/`；已有人工定制时先核对差异，不得无依据覆盖。随后在目标 AGENTS 中接入。宿主不支持时，删除 AGENTS 模板中要求调用该 Skill 的句子和 knowledge README 的“日常开发驱动”章节，保留 AGENTS 与 ROUTING 的直接加载规则作为最低可用入口，不得虚构不存在的 Skill 路径。
+宿主支持项目级 Skill 时，先按宿主现有约定确定 `.agent/skills/`、`.agents/skills/` 或其他项目 Skill 根目录，再从同一模板来源完整复制或增量更新 initializer 自身和两个日常 Skill；已有人工定制时先核对差异，不得无依据覆盖。只在目标 AGENTS 中自动接入两个日常 Skill，initializer 保留为以后重新校准的显式入口。宿主不支持时，删除 AGENTS 模板中要求调用项目 Skill 的句子，以及 knowledge README 的“日常开发驱动”“日常知识与文档维护”章节，保留 AGENTS、ROUTING 与各目录 README 的直接加载规则作为最低可用入口，不得虚构不存在的 Skill 路径。
 
 ## 工作流程
 
@@ -65,7 +66,9 @@ description: 根据当前工作区可验证的项目事实，初始化或调整�
 - 根据目标工作区重建应用知识、索引和路由
 - 只有确认属于模板且与目标无关时，才移除自带示例
 - 归属不清的用户内容先保留，直到责任边界明确
-- 宿主支持项目级 Skill 时，将 `knowledge-driven-development` 的复制或增量更新纳入矩阵
+- 宿主支持项目级 Skill 时，将 initializer 自身和两个日常 Skill 的复制或增量更新纳入矩阵
+- 目标使用 GitHub Actions 时保留或接入模板校验工作流；使用其他 CI 时改写为等价命令；尚无 CI 时记录为手工校验，不擅自引入平台
+- 删除或按事实改写 AGENTS、knowledge、docs 与模板文本中模板仓库专属的分支、标签和发布说明，不让目标文档声称不存在的 Git 历史；未经用户明确要求不得删除或改写真实 Git 分支、标签和提交历史
 
 未经验证，不得把示例应用目录、appCode、版本、模块或证据路径复制到目标项目。
 
@@ -102,9 +105,11 @@ git ls-files --others --exclude-standard
 git diff --check
 ```
 
-发生归档或恢复移动时，再按当前阶段运行 `python knowledge/scripts/validate.py --git-staged`，或在 CI 中运行 `python knowledge/scripts/validate.py --git-range <base>...<head>`，核对来源内容域、原相对路径和移动语义。
+发生归档或恢复移动时，再按当前阶段运行 `python knowledge/scripts/validate.py --git-staged`；CI 中 Pull Request 使用 `--git-range <base>...<head>`，push 事件使用 `--git-range <before>..<head>`，核对来源内容域、原相对路径和移动语义。
 
-结构校验器会检查根级 AGENTS 必选结构与路由入口、无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录名/总览/README/INDEX 身份一致性、候选镜像与正文契约、个人所有者边界、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
+目标使用 GitHub Actions 时，保留或导入模板提供的 `.github/workflows/knowledge-docs-validate.yml`；使用其他 CI 时，在对应配置中执行相同的当前结构校验和提交范围校验。目标尚无 CI 时不强行新增平台配置，但必须在交付说明中明确校验仍需手工运行。
+
+结构校验器会检查根级 AGENTS 必选结构与路由入口、无自定义 YAML 头约束、目录骨架、本地 Markdown 链接、应用目录名/总览/README/INDEX 身份一致性、候选镜像与正文契约、个人所有者边界、Change/Postmortem 实例、标准目录中的三个配套项目 Skill、归档镜像、INDEX 完整性和实例化文件中的未完成占位符。模板可以保留契约定义的占位符；显式 Git 模式还会检查归档移动和恢复移动的相对路径。
 
 必须同时检查 Git 列出的 tracked 和 untracked 文件；单独执行 `git diff` 无法覆盖新生成文件。
 
@@ -117,6 +122,7 @@ git diff --check
 - 证据来源与未解决问题
 - 验证结果
 - 尚待确认的候选知识
+- initializer 与两个日常 Skill 的交付位置，以及自动或手工校验的接入状态
 
 除非用户同时要求修改应用代码，否则知识库和 docs 初始化完成后停止。
 

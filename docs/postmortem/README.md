@@ -4,7 +4,7 @@
 
 本目录只提供通用事后分析结构，不预置任何行业、产品或功能模块的事故样例；实际文件必须来自目标项目已经发生的真实问题。
 
-本文件是 Postmortem 定义、触发条件、文件位置和内容边界的唯一权威来源。Change 与 Postmortem 的关系见 `../changes/README.md` 第 11 节。
+本文件是 Postmortem 定义、触发条件、文件位置和内容边界的唯一权威来源。Change 与 Postmortem 的关系见 [Change 规范](../changes/README.md) 第 11 节。
 
 ---
 
@@ -51,13 +51,15 @@ docs/postmortem/
 
 | 章节 | 必选 | 说明 |
 |------|------|------|
-| Executive Summary | 必选 | 一句话结论 + 影响 |
-| Impact / What Happened | 必选 | 发生了什么、影响范围 |
-| Timeline | 推荐（可简化） | 大型事故记精确时间线；普通 Bug 简化为 发现→误判→排查→根因→修复 |
-| Root Cause | **必选** | 真正根因 |
-| Why It Escaped | **必选** | 分 Tests / Review / Tooling·CI / Process·Rules 四线说明防线为何没工作 |
-| Guardrails | **必选** | 具体落地防线：Test / CI / Rule / Tooling，并链接对应 Change |
-| Related Changes | 可选 | 关联的 Change 路径（Postmortem 通常催生新 Change） |
+| `## 执行摘要` | 必选 | Executive Summary：一句话结论 + 影响 |
+| `## 影响与发生了什么` | 必选 | Impact / What Happened：发生了什么、影响范围 |
+| `## 时间线（推荐，可简化）` | 推荐（可简化） | Timeline：大型事故记精确时间线；普通 Bug 简化为 发现→误判→排查→根因→修复 |
+| `## 根因` | **必选** | Root Cause：真正根因 |
+| `## 为什么逃过防线` | **必选** | Why It Escaped：分测试、评审、工具 / CI、流程 / 规范四线说明防线为何没工作 |
+| `## 防线（Guardrails）` | **必选** | 具体落地防线：测试、CI、规范、工具，并链接对应 Change |
+| `## 关联变更` | 可选 | Related Changes：关联的 Change 路径（Postmortem 通常催生新 Change） |
 
-> 最重要三块：**Root Cause + Why It Escaped + Guardrails**。
-> 模板见 `templates/postmortem.md`（本目录 `docs/postmortem/templates/`）。
+表内代码格式是实例必须使用的精确二级标题，所有必选章节都必须包含实际内容。`## 为什么逃过防线` 下还必须使用并填写四个精确三级标题：`### 测试`、`### 评审`、`### 工具 / CI`、`### 流程 / 规范`。
+
+最重要三块是：**根因 + 为什么逃过防线 + 防线**。
+> 模板见 [`templates/postmortem.md`](./templates/postmortem.md)。

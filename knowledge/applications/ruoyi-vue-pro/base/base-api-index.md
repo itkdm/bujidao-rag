@@ -25,7 +25,7 @@
 
 ## 不收录范围
 
-本文不解释 Controller 编写规范；相关实现约束见 `tech/tech-framework-web-api.md`。
+本文不解释 Controller 编写规范；相关实现约束见 [`tech-framework-web-api.md`](../tech/tech-framework-web-api.md)。
 
 ## 事实索引
 
@@ -59,7 +59,7 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `tech/` | API 返回、校验和 Controller 约束见 `tech-framework-web-api.md` |
+| `tech/` | API 返回、校验和 Controller 约束见 [`tech-framework-web-api.md`](../tech/tech-framework-web-api.md) |
 | `feature/` | 后续具体功能流程会引用对应 Controller |
 | `rule/` | 权限、展示、状态等规则会影响 API 行为 |
 

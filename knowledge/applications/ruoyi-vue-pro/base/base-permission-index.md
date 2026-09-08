@@ -60,7 +60,7 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `tech/` | 权限使用约束见 `tech-security-permission.md` |
+| `tech/` | 权限使用约束见 [`tech-security-permission.md`](../tech/tech-security-permission.md) |
 | `feature/` | 功能流程会引用具体接口权限 |
 | `rule/` | 角色权限矩阵应进入 rule |
 

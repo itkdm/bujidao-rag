@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识库与研发文档维护"
+  short_description: "按生命周期维护知识、研发文档、导航、引用与归档完整性"
+  default_prompt: "使用 $knowledge-docs-maintenance，按当前知识路由和生命周期规则完成这次知识或研发文档维护。"

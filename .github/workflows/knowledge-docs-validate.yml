@@ -1,0 +1,49 @@
+name: Knowledge and docs validation
+
+on:
+  push:
+    paths:
+      - "AGENTS.md"
+      - "knowledge/**"
+      - "docs/**"
+      - ".agent/skills/**"
+      - ".agents/skills/**"
+      - ".github/workflows/knowledge-docs-validate.yml"
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "knowledge/**"
+      - "docs/**"
+      - ".agent/skills/**"
+      - ".agents/skills/**"
+      - ".github/workflows/knowledge-docs-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate current structure
+        run: python3 knowledge/scripts/validate.py
+
+      - name: Validate pull request archive moves
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python3 knowledge/scripts/validate.py --git-range "${BASE_SHA}...${HEAD_SHA}"
+
+      - name: Validate pushed archive moves
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        env:
+          BASE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+        run: python3 knowledge/scripts/validate.py --git-range "${BASE_SHA}..${HEAD_SHA}"

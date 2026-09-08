@@ -9,7 +9,7 @@ description: 在当前项目中理解、设计、审查或修改应用代码、�
 
 ## 适用边界
 
-本 Skill 适用于会理解、评审或改变项目实现的研发任务。纯知识库初始化或重新识别项目边界使用 `knowledge-docs-initializer`；纯文案整理且不涉及项目实现时不使用本 Skill。
+本 Skill 适用于会理解、评审或改变项目实现的研发任务。纯知识库初始化或重新识别项目边界使用 `knowledge-docs-initializer`；不涉及产品实现的知识录入、晋升、归档、路由修复或研发文档治理使用 `knowledge-docs-maintenance`；其他纯文案任务不使用本 Skill。
 
 本 Skill 只编排项目上下文与研发闭环。具体语言、框架、测试、浏览器或部署能力仍使用当前环境中适用的工具和 Skill；不得因为使用本 Skill 扩大用户授权范围。
 

@@ -63,7 +63,7 @@
 
 | 知识类型 | 关系 |
 | --- | --- |
-| `tech/` | 数据访问和缓存约束见 `tech-data-mybatis-cache.md` |
+| `tech/` | 数据访问和缓存约束见 [`tech-data-mybatis-cache.md`](../tech/tech-data-mybatis-cache.md) |
 | `feature/` | 功能流程落地后会引用具体表 |
 | `rule/` | 状态规则和权限规则会影响表字段设计 |
 
