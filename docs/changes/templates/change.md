@@ -5,7 +5,8 @@
 
 > 类型与状态以目录路径为唯一事实源（`{{初始化:status}}/{{初始化:type}}/{{初始化:date}}-{{初始化:slug}}/`），不在本文件重复维护。
 > Change 内部主文档始终位于 `{{初始化:date}}-{{初始化:slug}}/change.md`；生命周期流转只改变外层状态目录，不会因增加 Supplemental Documents 改变 Change 内部结构。
-> 当 Change 从 `proposed` 移至 `implemented`，本文三处语义自动转换：**方案 → 最终决策**、**验收标准 → 验证结果**、**风险与约束 → 影响与后果**（见对应章节标注）。
+> 当 Change 从 `proposed` 移至 `implemented`，生命周期移动时必须同步转换本文三处语义：**方案 → 最终决策**、**验收标准 → 验证结果**、**风险与约束 → 影响与后果**（见对应章节标注）。
+> 生命周期移动前后都必须运行 `python knowledge/scripts/validate.py` 与 `git diff --check`；移动到 `implemented` 后，正文中的当前状态、当前路径和验证叙述必须与目录一致。
 
 ## 概要
 

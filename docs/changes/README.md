@@ -317,7 +317,7 @@ docs/
 
 ### 13.5 proposed → implemented 的完成 Gate
 
-将 Change 从 `proposed/` 移至 `implemented/` 前，必须确认：
+将 Change 从 `proposed/` 移至 `implemented/` 前，必须完成一次“移动前预检”，确认以下事项全部成立；移动目录后还必须执行一次“移动后终检”。两次校验都通过后，才能提交。
 
 1. 实际实现与最终 Decision 一致。
 2. Acceptance 已转换为真实 Verification（有证据）。
@@ -327,6 +327,17 @@ docs/
 6. Plan 与最终实现存在重要偏差时已更新。
 7. 相关测试 / 构建 / 验证已经通过。
 8. 文档之间不存在明显矛盾或失效链接。
+
+9. `change.md` 的正文已完成生命周期语义转换：不再把当前决策、已完成验证写成计划或将来时；正文中的当前 Change 链接、状态路径和章节名称与 `implemented/` 目录一致。历史过程描述可以保留，但必须明确标注为历史，不得造成当前状态歧义。
+
+移动前预检至少运行：
+
+```text
+python knowledge/scripts/validate.py
+git diff --check
+```
+
+完成目录移动和正文转换后，必须再次运行同样的完整校验；若终检失败，不得提交该生命周期移动。
 
 > 满足 Gate 才移动目录；这不是「挪个目录就算完成」。
 
